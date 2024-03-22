@@ -54,7 +54,7 @@
 
     <nav id="navList">
         <button onclick="Inicio()">INICIO</button>
-        <button onclick="Consultas()">MARCAR CONSULTAS</button>
+        <button onclick="Consultas()">AGENDAMENTO</button>
         <button onclick="Especialidades()">ESPECIALIDADES</button>
         <button onclick="Sobre()">SOBRE</button>
         <button onclick="Contato()">CONTATO</button>
@@ -63,10 +63,10 @@
 </header>
 <body>
     <div id="divIframe">
-    <iframe id="iframeSaude" src="saudeHome.html" frameborder="0"></iframe>
+    <iframe id="iframeSaude" src="Home/saudeHome.html" frameborder="0"></iframe>
     </div>
     
-    <a onclick="abrirInfo ()"><h1 id="h1Video">Clique Aqui</a> para conhecer um pouco sobre o Cure-Squad</h1>
+    <a onclick="abrirInfo ()" id="cliqueAquii"><h1 id="h1Video">Clique Aqui</a> para conhecer um pouco sobre o Cure-Squad</h1>
 
     <div id="divBody" hidden>
         <div id="divFechar">
@@ -81,7 +81,7 @@
                 <li id="liUl">EQUIPAMENTOS HOSPITALARES DE EXCELENTE QUALIDADE</li>
                 <li id="liUl">SERVIÇOS ÁGEIS</li>
                 <li id="liUl">E MAIS...</li>
-                Para mais Informações sobre os nossos serviços <a href="" id="cliqueAqui">clique aqui</a>
+                Para mais Informações sobre os nossos serviços <a onclick="sobreClique()" id="cliqueAqui">clique aqui</a>
             </ul>
     </div>
 </body>

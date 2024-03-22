@@ -168,7 +168,29 @@ body{
     background-color: rgb(230, 5, 5);
     color: white;
     padding: 10px;
+    
+}
+
+#cliqueAquii{
+    color: rgb(161, 149, 149);
     transition: 1s;
+
+}
+
+#cliqueAquii:hover{
+    color: orange;
+    cursor: pointer;
+}
+
+#cliqueAqui{
+    color: rgb(161, 149, 149);
+    transition: 1s;
+
+}
+
+#cliqueAqui:hover{
+    color: orange;
+    cursor: pointer;
 }
 
 #divBody {
@@ -187,11 +209,6 @@ iframe{
     
 }
 
-a:hover{
-    color: rgb(0, 0, 0);
-    font-style: italic;
-    cursor: pointer;
-}
 
 #divFechar{
    text-align: center;

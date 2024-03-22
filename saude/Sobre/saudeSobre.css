@@ -42,6 +42,7 @@ th{
 }
 
 table{
+    color: rgb(180, 196, 198);
     font-size: large;
     border: 2px solid;
     width: 400px;

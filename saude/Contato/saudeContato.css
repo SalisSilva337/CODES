@@ -1,23 +1,28 @@
-#Form{
+#form{
     text-align: center;
-    height: 300px;
-    width: 200px;
+    height: 400px;
+    width: 400px;
     background-color: rgb(193, 13, 13);
     color: rgb(180, 196, 198);
     padding: 20px;
     font-size: larger;
     border: 3px solid black;
     box-shadow: 5px 10px;
-    margin-top: 200px;
+    margin-top: 100px;
     border-radius: 10px;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    transition: 1s;
 }
 
-
+#form:hover{
+    background-color: orange;
+    color: rgb(0, 0, 0);
+    box-shadow: 5px 10px;
+    
+}
 
 input{
     margin-top: 10px;
-    box-shadow: 5px 5px;
 }
 
 input::-webkit-outer-spin-button,
@@ -38,6 +43,7 @@ button{
 
 button:hover{
     background-color: orange;
+    color: black;
     box-shadow: 2px 2px;
 }
 
@@ -53,11 +59,17 @@ button:hover{
 }
 
 iframe{
+    opacity: 0.7;
     box-shadow: 10px 20px rgb(180, 196, 198);
     width: 700px;
     height: 500px;
     border: 3px solid;
     border-radius: 10px;
+    transition: 1s;
+}
+iframe:hover{
+    opacity: 1;
+    box-shadow: 10px 20px black;
 }
 
 

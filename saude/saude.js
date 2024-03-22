@@ -2,6 +2,8 @@ const divBody = document.querySelector('#divBody');
 const horario = document.querySelector('#horario');
 const dataSpan = document.querySelector('#dataSpan');
 
+const cliqueAqui = document.querySelector('#cliqueAqui');
+
 const musica = document.querySelector('#musica');
 const modalMusica = document.querySelector("#modalMusica");
 
@@ -17,7 +19,11 @@ const divRelogioData = setInterval(function tempo() {
     dataSpan.textContent = diaMesAno;
 });
 
-
+function sobreClique(){
+    divBody.style.display = "none";
+    let iframe = document.querySelector('#iframeSaude');
+    iframe.src = 'Sobre/saudeSobre.html';
+}
 
 
 function abrirInfo (){
@@ -31,27 +37,27 @@ function fecharInfo (){
 
 function Inicio(){
     let iframe = document.querySelector('#iframeSaude');
-    iframe.src = 'saudeHome.html';
+    iframe.src = 'Home/saudeHome.html';
 }
 
 function Consultas(){
     let iframe = document.querySelector('#iframeSaude');
-    iframe.src = 'saudeHome.html';
+    iframe.src = 'Agendamento/saudeAgendamento.html';
 }
 
 function Especialidades(){
     let iframe = document.querySelector('#iframeSaude');
-    iframe.src = 'saudeEspecialidades.html';
+    iframe.src = 'Especialidades/saudeEspecialidades.html';
 }
 
 function Sobre(){
     let iframe = document.querySelector('#iframeSaude');
-    iframe.src = 'saudeSobre.html';
+    iframe.src = 'Sobre/saudeSobre.html';
 }
 
 function Contato(){
     let iframe = document.querySelector('#iframeSaude');
-    iframe.src = 'saudeContato.html';
+    iframe.src = 'Contato/saudeContato.html';
 }
 
 
