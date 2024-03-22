@@ -7,7 +7,7 @@
     padding: 20px;
     font-size: larger;
     border: 3px solid black;
-    box-shadow: 5px 10px;
+    box-shadow: 10px 20px;
     margin-top: 100px;
     border-radius: 10px;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -17,7 +17,7 @@
 #form:hover{
     background-color: orange;
     color: rgb(0, 0, 0);
-    box-shadow: 5px 10px;
+    box-shadow: 3px 5px;
     
 }
 
@@ -69,7 +69,7 @@ iframe{
 }
 iframe:hover{
     opacity: 1;
-    box-shadow: 10px 20px black;
+    box-shadow: 3px 5px black;
 }
 
 
