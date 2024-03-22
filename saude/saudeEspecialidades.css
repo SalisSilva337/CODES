@@ -1,0 +1,86 @@
+*{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+h1{
+    font-size: x-large;
+    color: rgb(180, 196, 198);
+}
+#homeDiv{
+    text-align: center;
+}
+button{
+    width: 1200px;
+    height: 50px;
+    text-align: left;
+    background-color: rgb(193, 13, 13);
+    color: rgb(180, 196, 198);
+    font-family: cursive;
+    font-size: medium;
+    box-shadow: 10px 10px;
+    transition: 1s;
+}
+
+button:hover{
+    background-color: orange;
+    color: black;
+}
+
+
+.divMostrarFechar{
+    text-align: right;
+}
+
+#divConteudo1{
+    width: 1200px;
+    height: 80px;
+    display: none;
+    margin: auto;
+}
+
+#divConteudo2{
+    width: 1200px;
+    height: 100px;
+    display: none;
+    margin: auto;
+}
+
+#divConteudo3{
+    width: 1200px;
+    height: 80px;
+    display: none;
+    margin: auto;
+}
+
+#divConteudo4{
+    width: 1200px;
+    height: 80px;
+    display: none;
+    margin: auto;
+}
+
+#divConteudo5{
+    width: 1200px;
+    height: 80px;
+    display: none;
+    margin: auto;
+}
+
+#divConteudo6{
+    width: 1200px;
+    height: 80px;
+    display: none;
+    margin: auto;
+}
+
+p{
+    font-size: medium;
+    
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+}
+  
+ 

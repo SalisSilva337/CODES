@@ -1,0 +1,42 @@
+body {
+    background: radial-gradient(circle, rgba(44,200,53,1) 0%, rgba(49,70,47,1) 72%, rgba(31,23,15,1) 100%);
+    text-align: center;
+}
+
+h1 {
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-shadow: 1px 1px 1px #000000;
+    font-style: oblique;
+}
+img{
+    border-radius: 5px;
+    border: 5px solid #000000;
+}
+
+.img{
+    margin-left: 320px;
+}
+img:hover {
+ cursor: pointer;
+ opacity: 0.8;
+}
+
+#nada {
+    height: 500px;
+    width: 800px;
+    margin-left: 245px;
+}
+
+#nada:hover {
+    opacity: 1;
+    cursor: auto;
+}
+h2 {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+button {
+color: white;
+background-color: green;
+}

@@ -1,0 +1,41 @@
+.header {
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    
+}
+body {
+background: linear-gradient(rgb(255, 8, 8),rgb(189, 201, 18));
+
+}
+
+textarea{
+    background-color: rgb(123, 94, 94, 0.8);
+    color: aliceblue;
+    width: 500px;
+    height: 300px;
+    border-color: black;
+    border-radius: 10px;
+    resize: none;
+}
+
+label {
+    font-size: x-large;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+textarea::placeholder{
+    color: yellow;
+}
+
+h2 {
+
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+span{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+label {
+    text-shadow: 1px 1px 1px;
+}

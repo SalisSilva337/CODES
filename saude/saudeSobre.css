@@ -1,0 +1,60 @@
+*{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h1{
+    font-size: large;
+}
+#homeDiv{
+    text-align: center;
+}
+button{
+    width: 1200px;
+    height: 50px;
+    text-align: left;
+    background-color: rgb(193, 13, 13);
+    color: rgb(180, 196, 198);
+    font-family: cursive;
+    font-size: medium;
+    box-shadow: 10px 10px;
+    transition: 1s;
+
+}
+
+button:hover{
+    background-color: orange;
+    color: black;
+}
+
+.divMostrarFechar{
+    text-align: right;
+}
+
+h1{
+    color: rgb(180, 196, 198);
+    font-size: xx-large;
+}
+
+th{
+    font-size: larger;
+    width: 400px;
+    border: 1px solid;
+}
+
+table{
+    font-size: large;
+    border: 2px solid;
+    width: 400px;
+    display: none;
+    margin: auto;
+    margin-top: 20px;
+}
+
+td{
+    border: 1px solid;
+    text-align: center;
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+}
