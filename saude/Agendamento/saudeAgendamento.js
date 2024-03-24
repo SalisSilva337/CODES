@@ -30,3 +30,13 @@ window.onload = function(){
     let cepTxt = document.querySelector('#cepTxt');
     cepTxt.addEventListener("blur", buscaCep);
 }
+
+
+const dadosEnviados = document.querySelector("#dadosEnviados");
+
+function dadosComputados(){
+    dadosEnviados.hidden = false;
+    setTimeout(() => {
+        dadosEnviados.hidden = true;
+    }, 2000);
+}
