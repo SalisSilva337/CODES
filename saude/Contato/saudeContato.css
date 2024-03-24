@@ -39,12 +39,14 @@ button{
     color: rgb(180, 196, 198);
     box-shadow: 5px 3px;
     transition: 1s;
+    width: 55px;
 }
 
 button:hover{
     background-color: orange;
     color: black;
     box-shadow: 2px 2px;
+    width: 100px;
 }
 
 

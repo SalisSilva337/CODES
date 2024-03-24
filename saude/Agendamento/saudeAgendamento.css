@@ -82,3 +82,23 @@ input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+
+button{
+    border-radius: 10px;
+    font-family: cursive;
+    background-color: rgb(193, 13, 13);
+    color: rgb(180, 196, 198);
+    box-shadow: 5px 3px;
+    transition: 1s;
+    width: 55px;
+}
+
+button:hover{
+    border-radius: 10px;
+    font-family: cursive;
+    background-color:orange;
+    color: rgb(0, 0, 0);
+    box-shadow: 2px 2px;
+    transition: 1s;
+    width: 100px;
+}
