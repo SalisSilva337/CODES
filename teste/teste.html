@@ -37,6 +37,16 @@
             <button>R&B</button>
             <button>FlashBack</button>
         </div>
+        <div>
+            <table>
+                <tr>
+                    <th>Nome:</th>
+                </tr>
+                <tr>
+                    <td id="musicasCurtidas"></td>
+                </tr>
+            </table>
+        </div>
 </body>
 
 <footer>
@@ -47,10 +57,11 @@
         <span id="nomeMusica">nome da musica</span><br>
         <span id="faixasMusica">num de faixas</span>
         <span id="limiteMusica">limite de faixas</span><br>
-        <button id="playerBotaoA" onclick="previousSong()">Anterior</button>
-        <button id="playerBotaoPausar" onclick="stopSong()" disabled>Pausar</button>
+        <span id="curtirMusica" onclick="musicaCurtida">❤</span><br>
+        <button id="playerBotaoAnterior" onclick="previousSong()">Anterior</button>
+        <button id="playerBotaoPausar" onclick="stopSong()">Pausar</button>
         <button id="playerBotaoContinuar" onclick="continueSong()" hidden>Continuar</button>
-        <button id="playerBotaoA" onclick="nextSong()">Proxima</button><br>
+        <button id="playerBotaoProximo" onclick="nextSong()">Proxima</button><br>
         <span id="musicaInicio">00:00</span>
         <input type="range" id="barraProgresso">
         <span id="musicaFinal">00:00</span>
