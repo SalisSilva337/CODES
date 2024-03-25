@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BEAT4BOX</title>
+    <link rel="stylesheet" href="teste.css">
+    <link rel="shortcut icon" href="imgs/beatbox.png" type="image/x-icon">
+    <script src="teste.js" defer></script>
+</head>
+<header>
+    <div id="logoHeader">
+        <img id="logo" src="imgs/beatbox.png" alt="">
+        <h1>BEAT4BOX</h1>
+    </div>
+    <div id="divPesquisa">
+        <input type="text" placeholder="Pesquise Aqui... 🎵">
+    </div>
+</header>
+
+<body id="divBody">
+    <div id="generoBotoesH1">
+        <nav>
+            <button id="navButton">DESCUBRA</button>
+            <button id="navButton">MINHAS PLAYLISTS</button>
+            <button id="navButton">RADIO</button>
+        
+        </nav><br>
+        <h2>Um mix de gêneros em alta atualmente:</h2>
+        </div> 
+         
+        <div id="generoBotoes">
+            <button onclick="Hiphop()">Hip-Hop</button>
+            <button onclick="Rock()">Rock</button>
+            <button>MPB</button>
+            <button>Pop</button>
+            <button>R&B</button>
+            <button>FlashBack</button>
+        </div>
+</body>
+
+<footer>
+    <h1>made by l1nx</h1>
+
+    <div id="player"> 
+        <audio src="" id="musicaPlayer"></audio>
+        <span id="nomeMusica">nome da musica</span><br>
+        <span id="faixasMusica">num de faixas</span>
+        <span id="limiteMusica">limite de faixas</span><br>
+        <button id="playerBotaoA" onclick="previousSong()">Anterior</button>
+        <button id="playerBotaoPausar" onclick="stopSong()" disabled>Pausar</button>
+        <button id="playerBotaoContinuar" onclick="continueSong()" hidden>Continuar</button>
+        <button id="playerBotaoA" onclick="nextSong()">Proxima</button><br>
+        <span id="musicaInicio">00:00</span>
+        <input type="range" id="barraProgresso">
+        <span id="musicaFinal">00:00</span>
+    </div>
+
+    <div id="logoFooter">
+        <img id="logo" src="imgs/beatbox.png" alt="">
+        <h1>BEAT4BOX</h1>
+    </div>
+</footer>
+
+</html>
