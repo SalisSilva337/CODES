@@ -30,34 +30,113 @@
         </div> 
          
         <div id="generoBotoes">
-            <button onclick="Hiphop()">Hip-Hop</button>
-            <button onclick="Rock()">Rock</button>
-            <button>MPB</button>
-            <button>Pop</button>
-            <button>R&B</button>
-            <button>FlashBack</button>
-        </div>
+            <button onclick="hiphop()">Hip-Hop</button>
+            <button onclick="rock()">Rock</button>
+            <button onclick="mpb()">MPB</button>
+            <button onclick="pop()">Pop</button>
+            <button onclick="reb()">R&B</button>
+            <button onclick="flashback()">FlashBack</button>
+        </div><br><br>
+
+        <h1>DESCUBRA:</h1><br>
+        <div id="divDescubra">
+            
+            <div class="grid">
+                <img id="imgg" src="imgs/busta.jpg" alt="">
+                <h2>100% Busta</h2>
+            </div>
+            
+            <div class="grid">
+                <img id="imgg" src="imgs/snoopdogg.jpg" alt=""> 
+                <h2>100% Snoop</h2>
+            </div>
+
+            <div class="grid">
+                <img id="imgg" src="imgs/rhcp.jpg" alt="">
+                <h2>100% R.H.C.P</h2>
+            </div>
+            
+            <div class="grid">
+                <img id="imgg" src="imgs/soad.png" alt=""> 
+                <h2>100% S.O.A.D</h2>
+            </div>
+
+            <div class="grid">
+                <img id="imgg" src="imgs/papa-roach.jpg" alt="">
+                <h2>100% Papa Roach</h2>
+            </div>
+            
+            <div class="grid">
+                <img id="imgg" src="imgs/neyo.jpg" alt=""> 
+                <h2>100% Ne-Yo</h2>
+            </div>
+        </div><br>
+        <div id="divDescubra">
+            
+            <div class="grid">
+                <img id="imgg" src="imgs/westcoast.png" alt="">
+                <h2>West Coast Classics</h2>
+            </div>
+            
+            <div class="grid">
+                <img id="imgg" src="imgs/eastcoast.jpg" alt=""> 
+                <h2>East Coast Classics</h2>
+            </div>
+
+            <div class="grid">
+                <img id="imgg" src="imgs/rock.jpg" alt=""> 
+                <h2>Rock 2000s</h2>
+            </div>
+
+            <div class="grid">
+                <img id="imgg" src="imgs/80s.jpg" alt=""> 
+                <h2>Best Of The 80s</h2>
+            </div>
+
+            <div class="grid">
+                <img id="imgg" src="imgs/funk.png" alt=""> 
+                <h2>Funkzão de Cria</h2>
+            </div>
+
+        </div><br><br>
+        <h1>POPULAR NA SUA REGIÃO:</h1><br>
+        <div id="divDescubra">
+            
+            <div class="grid">
+                <img id="imgg" src="imgs/trap.jpg" alt="">
+                <h2>Trapzera BR</h2>
+            </div>
+            
+            <div class="grid">
+                <img id="imgg" src="imgs/bregafunk.png" alt=""> 
+                <h2>Tropa do Brega Funk</h2>
+            </div>
+
+            <div class="grid">
+                <img id="imgg" src="imgs/sertanejo.jpg" alt=""> 
+                <h2>Sertanejão da Massa</h2>
+            </div>
+           
+        </div><br><br><br><br>
         <div>
-            <table>
-                <tr>
-                    <th>Nome:</th>
-                </tr>
-                <tr>
-                    <td id="musicasCurtidas"></td>
-                </tr>
-            </table>
+            <h1>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</h1>
+            <h1>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</h1>
+            <h1>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</h1>
+            <h1>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</h1>
+            <h1>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</h1>
         </div>
 </body>
 
 <footer>
     <h1>made by l1nx</h1>
-
-    <div id="player"> 
+    <span id="abrirPlayer" onclick="abrirFooter()" hidden>ABRIR PLAYER</span>
+    <div id="player">
+        <span id="fecharPlayer" onclick="fecharFooter()">FECHAR PLAYER</span><br> 
         <audio src="" id="musicaPlayer"></audio>
         <span id="nomeMusica">nome da musica</span><br>
         <span id="faixasMusica">num de faixas</span>
         <span id="limiteMusica">limite de faixas</span><br>
-        <span id="curtirMusica" onclick="musicaCurtida">❤</span><br>
+        <span id="curtirMusica" onclick="musicaCurtida()">❤</span><br>
         <button id="playerBotaoAnterior" onclick="previousSong()">Anterior</button>
         <button id="playerBotaoPausar" onclick="stopSong()">Pausar</button>
         <button id="playerBotaoContinuar" onclick="continueSong()" hidden>Continuar</button>
@@ -67,9 +146,9 @@
         <span id="musicaFinal">00:00</span>
     </div>
 
-    <div id="logoFooter">
-        <img id="logo" src="imgs/beatbox.png" alt="">
-        <h1>BEAT4BOX</h1>
+    <div id="logoFooter">   
+        
+        
     </div>
 </footer>
 
