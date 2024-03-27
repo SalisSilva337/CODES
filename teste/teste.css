@@ -105,7 +105,63 @@ table{
     color: white;
 }
 
+
+#fecharPlayer{
+    color: blue;
+    transition: 1s;
+}
+
+#fecharPlayer:hover{
+    color: rgb(12, 12, 53);
+    text-shadow: 1px 1px black;
+    font-style: italic;
+    cursor: pointer;
+}
+
+#abrirPlayer{
+    color: blue;
+    transition: 1s;
+}
+
+#abrirPlayer:hover{
+    color: rgb(12, 12, 53);
+    text-shadow: 1px 1px black;
+    font-style: italic;
+    cursor: pointer;
+}
+
+h2{
+    color: white;
+}
+#divDescubra{
+    grid: 1px solid;
+    width: 100%;
+    display: flex;
+    text-align: center;
+    gap: 50px;
+}
+
+h1{
+    color: white;
+}
+
+#imgg{
+    width: 100px;
+    height: 100px;
+    transition: 0.5s;
+    outline: 1px solid rgb(255, 255, 255);
+
+}
+
+#imgg:hover{
+    cursor: pointer;
+    opacity: 0.5;
+    width: 100px;
+    height: 100px;
+}
+
 footer{
+    
     display: flex;
     justify-content: space-between;
     position: fixed;
@@ -113,13 +169,14 @@ footer{
     background-color: rgba(72, 18, 116);
     color: white;
     width: 100%;
-    padding: 20px;
+    padding: 10px;
 }
 
 #player{
-    text-align: center;
+    text-align: left;
     margin: auto;
     width: 700px;
+
 }
 
 #playerBotaoPausar{
@@ -205,6 +262,7 @@ footer{
     opacity: 1;
     height: 10px;
 }
+
 #barraProgresso::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
@@ -216,11 +274,13 @@ footer{
     cursor: pointer;
 }
 
+
+
 #logoFooter{
     display: flex;
     justify-content: space-between;
     margin: left;
     text-align: center;
     width: 280px;
-    height: 50px;
+    height: 40px;
 }
