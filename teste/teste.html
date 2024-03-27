@@ -2,31 +2,32 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BEAT4BOX</title>
+    <meta name="viewport" content="width=device-width, initial-scale=0.75">
+    <title>Master Of Sounds</title>
     <link rel="stylesheet" href="teste.css">
-    <link rel="shortcut icon" href="imgs/beatbox.png" type="image/x-icon">
+    <link rel="shortcut icon" href="imgs/beatbox.ico" type="image/x-icon">
     <script src="teste.js" defer></script>
+    <script src="https://kit.fontawesome.com/995dcfb715.js" crossorigin="anonymous"></script>
 </head>
 <header>
     <div id="logoHeader">
         <img id="logo" src="imgs/beatbox.png" alt="">
-        <h1>BEAT4BOX</h1>
+        <h1>Master Of Sounds</h1>
     </div>
     <div id="divPesquisa">
-        <input type="text" placeholder="Pesquise Aqui... 🎵">
+        <i class="fa-solid fa-magnifying-glass"></i> <input type="text" placeholder="Pesquise Aqui...">
     </div>
 </header>
 
 <body id="divBody">
     <div id="generoBotoesH1">
         <nav>
-            <button id="navButton">DESCUBRA</button>
-            <button id="navButton">MINHAS PLAYLISTS</button>
-            <button id="navButton">RADIO</button>
+            <button id="navButton" onclick="descubra()">DESCUBRA</button>
+            <!-- <button id="navButton" onclick="suaPlaylist()">MINHAS PLAYLISTS</button> -->
+            <button id="navButton" onclick="radios()">RADIO</button>
         
         </nav><br>
-        <h2>Um mix de gêneros em alta atualmente:</h2>
+        <h2>THE VIBE: mix de gêneros musicais</h2>
         </div> 
          
         <div id="generoBotoes">
@@ -38,114 +39,95 @@
             <button onclick="flashback()">FlashBack</button>
         </div><br><br>
 
-        <h1>DESCUBRA:</h1><br>
-        <div id="divDescubra">
+        <h1 id="descubraH1">DESCUBRA</h1><br>
+        <div id="divDescubra1">
             
             <div class="grid">
-                <img id="imgg" src="imgs/busta.jpg" alt="">
+                <img id="imgg" onclick="bustaMix()" src="imgs/busta.jpg" alt="">
                 <h2>100% Busta</h2>
             </div>
             
             <div class="grid">
-                <img id="imgg" src="imgs/snoopdogg.jpg" alt=""> 
+                <img id="imgg" onclick="snoopMix()" src="imgs/snoopdogg.jpg" alt=""> 
                 <h2>100% Snoop</h2>
             </div>
 
             <div class="grid">
-                <img id="imgg" src="imgs/rhcp.jpg" alt="">
+                <img id="imgg" onclick="rhcpMix()" src="imgs/rhcp.jpg" alt="">
                 <h2>100% R.H.C.P</h2>
             </div>
             
             <div class="grid">
-                <img id="imgg" src="imgs/soad.png" alt=""> 
+                <img id="imgg" onclick="soadMix()" src="imgs/soad.png" alt=""> 
                 <h2>100% S.O.A.D</h2>
-            </div>
-
-            <div class="grid">
-                <img id="imgg" src="imgs/papa-roach.jpg" alt="">
-                <h2>100% Papa Roach</h2>
             </div>
             
             <div class="grid">
-                <img id="imgg" src="imgs/neyo.jpg" alt=""> 
+                <img id="imgg" onclick="neyoMix()" src="imgs/neyo.jpg" alt=""> 
                 <h2>100% Ne-Yo</h2>
             </div>
         </div><br>
-        <div id="divDescubra">
+        <div id="divDescubra2">
             
             <div class="grid">
-                <img id="imgg" src="imgs/westcoast.png" alt="">
+                <img id="imgg"  onclick="westcoastMix()" src="imgs/westcoast.png" alt="">
                 <h2>West Coast Classics</h2>
             </div>
             
             <div class="grid">
-                <img id="imgg" src="imgs/eastcoast.jpg" alt=""> 
+                <img id="imgg" onclick="eastcoastMix()" src="imgs/eastcoast.jpg" alt=""> 
                 <h2>East Coast Classics</h2>
             </div>
 
             <div class="grid">
-                <img id="imgg" src="imgs/rock.jpg" alt=""> 
+                <img id="imgg" onclick="rock2000Mix()" src="imgs/rock.jpg" alt=""> 
                 <h2>Rock 2000s</h2>
             </div>
 
             <div class="grid">
-                <img id="imgg" src="imgs/80s.jpg" alt=""> 
-                <h2>Best Of The 80s</h2>
-            </div>
-
-            <div class="grid">
-                <img id="imgg" src="imgs/funk.png" alt=""> 
+                <img id="imgg" onclick="funkMix()" src="imgs/funk.png" alt=""> 
                 <h2>Funkzão de Cria</h2>
             </div>
 
         </div><br><br>
-        <h1>POPULAR NA SUA REGIÃO:</h1><br>
-        <div id="divDescubra">
-            
-            <div class="grid">
-                <img id="imgg" src="imgs/trap.jpg" alt="">
-                <h2>Trapzera BR</h2>
-            </div>
-            
-            <div class="grid">
-                <img id="imgg" src="imgs/bregafunk.png" alt=""> 
-                <h2>Tropa do Brega Funk</h2>
-            </div>
 
-            <div class="grid">
-                <img id="imgg" src="imgs/sertanejo.jpg" alt=""> 
-                <h2>Sertanejão da Massa</h2>
-            </div>
-           
-        </div><br><br><br><br>
-        <div>
-            <h1>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</h1>
-            <h1>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</h1>
-            <h1>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</h1>
-            <h1>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</h1>
-            <h1>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</h1>
+        <div id="divRadio" hidden>
+            <h1>Radios:</h1><br>
+            <button class="botaoRadio" onclick="radioReggaeton()">Reggaeton</button>
+            <button class="botaoRadio" onclick="radioHiphop()">Hip-Hop/Rap</button>
+            <button class="botaoRadio" onclick="radioPop()">Pop</button>
+            <button class="botaoRadio" onclick="radioCountry()">Country</button>
+            <button class="botaoRadio" onclick="radio80s()">The 80s</button>
         </div>
 </body>
 
 <footer>
     <h1>made by l1nx</h1>
-    <span id="abrirPlayer" onclick="abrirFooter()" hidden>ABRIR PLAYER</span>
+    <span id="abrirPlayer" onclick="abrirFooter()" hidden><i class="fa-solid fa-chevron-up"></i></span>
     <div id="player">
-        <span id="fecharPlayer" onclick="fecharFooter()">FECHAR PLAYER</span><br> 
+        <span id="fecharPlayer" onclick="fecharFooter()"><i class="fa-solid fa-chevron-down"></i></span><br> 
         <audio src="" id="musicaPlayer"></audio>
-        <span id="nomeMusica">nome da musica</span><br>
-        <span id="faixasMusica">num de faixas</span>
-        <span id="limiteMusica">limite de faixas</span><br>
-        <span id="curtirMusica" onclick="musicaCurtida()">❤</span><br>
-        <button id="playerBotaoAnterior" onclick="previousSong()">Anterior</button>
-        <button id="playerBotaoPausar" onclick="stopSong()">Pausar</button>
-        <button id="playerBotaoContinuar" onclick="continueSong()" hidden>Continuar</button>
-        <button id="playerBotaoProximo" onclick="nextSong()">Proxima</button><br>
+        <span id="nomeMusica"></span><br>
+        <span id="faixasMusica"></span>
+        <span id="limiteMusica"></span><br>
+        <!-- <span id="curtirMusica" onclick="playList()">❤</span><br> -->
+        <button id="playerBotaoAnterior" onclick="previousSong()"><i class="fa-solid fa-backward"></i></button>
+        <button id="playerBotaoPausar" onclick="stopSong()"><i class="fa-solid fa-pause"></i></button>
+        <button id="playerBotaoContinuar" onclick="continueSong()" hidden><i class="fa-solid fa-play"></i></button>
+        <button id="playerBotaoProximo" onclick="nextSong()"><i class="fa-solid fa-forward"></i></button><br>
         <span id="musicaInicio">00:00</span>
         <input type="range" id="barraProgresso">
         <span id="musicaFinal">00:00</span><br>
-        <span id="spanVolume" onclick="mostrarVolume()">Volume</span><br>
-        <input type="range" id="barraVolume" min="1" max="100" value="" oninput="volume()" hidden>
+        
+        
+    </div>
+    <div id="volumeFooter">
+        <!-- <i class="fa-solid fa-volume-xmark" id="mutado"></i> -->
+        <i class="fa-solid fa-volume-high" id="spanVolume" onmouseover="mostrarVolume()" onclick="mutarVolume()"></i>
+
+        <div id="divVolume" onmouseleave="sumirVolume()" hidden>
+            <input type="range" id="barraVolume" min="1" max="100" value="" oninput="volume()">
+        </div>
     </div>
 
 </footer>
