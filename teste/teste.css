@@ -18,16 +18,14 @@ header{
 
 #logoHeader{
     display: flex;
-    justify-content: space-between;
-    margin: auto;
-    text-align: center;
-    width: 280px;
+    float: left;
+    width: 580px;
     height: 50px;
 }
 
 #logo{
-    width: 80px;
-    height: 80px;
+    width: 100px;
+    height: 100px;
     margin-top: -25px;
 }
 
@@ -107,24 +105,37 @@ table{
 
 
 #fecharPlayer{
-    color: blue;
+    font-size: 30px;
+    color: rgb(255, 255, 255);
     transition: 1s;
 }
 
 #fecharPlayer:hover{
-    color: rgb(12, 12, 53);
+    color: rgb(124, 249, 7);
     text-shadow: 1px 1px black;
     font-style: italic;
     cursor: pointer;
 }
 
+.botaoRadio{
+    border-radius: 0px;
+    width: 200px;
+    height: 100px;
+}
+
+.botaoRadio:hover{
+    border-radius: 0px;
+    width: 300px;
+}
+
 #abrirPlayer{
-    color: blue;
+    color: rgb(255, 255, 255);
     transition: 1s;
+    font-size: 30px;
 }
 
 #abrirPlayer:hover{
-    color: rgb(12, 12, 53);
+    color: rgb(124, 249, 7);
     text-shadow: 1px 1px black;
     font-style: italic;
     cursor: pointer;
@@ -133,14 +144,34 @@ table{
 h2{
     color: white;
 }
-#divDescubra{
+
+#divDescubra1{
+    display: inline;
     grid: 1px solid;
     width: 100%;
     display: flex;
     text-align: center;
     gap: 50px;
 }
-
+#divDescubra2{
+    display: inline;
+    grid: 1px solid;
+    width: 100%;
+    display: flex;
+    text-align: center;
+    gap: 50px;
+}
+#divDescubra3{
+    display: inline;
+    grid: 1px solid;
+    width: 100%;
+    display: flex;
+    text-align: center;
+    gap: 50px;
+}
+.grid{
+    display: inline-block;
+}
 h1{
     color: white;
 }
@@ -161,6 +192,7 @@ h1{
 }
 
 footer{
+    
     display: flex;
     justify-content: space-between;
     position: fixed;
@@ -175,6 +207,7 @@ footer{
     text-align: center;
     margin: auto;
     width: 700px;
+
 }
 
 #playerBotaoPausar{
@@ -183,15 +216,15 @@ footer{
     padding: 10px;
     transition: 1s;
     border-radius: 100px;
-    height: 100px;
-    width: 100px;
+    height: 70px;
+    width: 70px;
 }
 
 #playerBotaoPausar:hover{
     background-color: rgb(124, 249, 7);
     color: rgb(0, 0, 0);
-    width: 105px;
-    height: 105px;
+    width: 80px;
+    height: 80px;
 }
 #playerBotaoContinuar{
     background-color: rgb(108, 108, 229);
@@ -199,15 +232,15 @@ footer{
     padding: 10px;
     transition: 1s;
     border-radius: 100px;
-    height: 100px;
-    width: 100px;
+    height: 70px;
+    width: 70px;
 }
 
 #playerBotaoContinuar:hover{
     background-color: rgb(124, 249, 7);
     color: rgb(0, 0, 0);
-    width: 105px;
-    height: 105px;
+    width: 80px;
+    height: 80px;
 }
 
 #playerBotaoAnterior{
@@ -216,15 +249,15 @@ footer{
     padding: 10px;
     transition: 1s;
     border-radius: 100px;
-    height: 70px;
-    width: 70px;
+    height: 50px;
+    width: 50px;
 }
 
 #playerBotaoAnterior:hover{
     background-color: rgb(124, 249, 7);
     color: rgb(0, 0, 0);
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
 }
 #playerBotaoProximo{
     background-color: rgb(108, 108, 229);
@@ -232,22 +265,22 @@ footer{
     padding: 10px;
     transition: 1s;
     border-radius: 100px;
-    height: 70px;
-    width: 70px;
+    height: 50px;
+    width: 50px;
 }
 
 #playerBotaoProximo:hover{
     background-color: rgb(124, 249, 7);
     color: rgb(0, 0, 0);
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
 }
 
 #barraProgresso{
-    width: 250px;
+    width: 350px;
     -webkit-appearance: none;
-    background-color: rgb(12, 12, 53);
-    border: 1px solid;
+    background-color: rgb(12, 12, 53,0.8);
+    border: 1px solid rgb(12, 12, 53);;
     border-radius: 10px;
     color: white;
     outline: none;
@@ -273,12 +306,59 @@ footer{
 }
 
 
-
-#logoFooter{
-    display: flex;
-    justify-content: space-between;
+#volumeFooter{
     margin: left;
     text-align: center;
-    width: 280px;
+    width: 180px;
     height: 40px;
+}
+
+#divVolume{
+    border-radius: 5px;
+    box-shadow: 5px 5px 40px black;
+}
+
+#spanVolume i{
+    color: rgb(255, 255, 255);
+    transition: 1s;
+}
+
+#spanVolume:hover{
+    color: rgb(124, 249, 7);
+}
+
+#barraVolume{
+    width: 150px;
+    -webkit-appearance: none;
+    background-color: rgb(245, 245, 246);
+    border: 1px solid ;
+    border-radius: 10px;
+    color: white;
+    opacity: 0.5;
+    transition: 0.5s;
+    height: 10px;
+}
+
+#barraVolume:hover{
+    opacity: 1;
+    height: 10px;
+}
+
+#barraVolume::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+    border: 2px solid;
+    background-color: rgb(108, 108, 229);
+    cursor: pointer;
+}
+
+#mutado{
+    visibility: hidden;
+}
+
+li{
+    color: white;
 }
