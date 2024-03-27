@@ -34,46 +34,25 @@ contador = 0;
 
 
 
-// function mutarVolume(){
-//     if (spanVolume.style.display = 'none') {
-//         mutado.style.display = 'block';
-//         musicaPlayer.volume = 0;
-//     } if (spanVolume.style.display = 'block') {
-//         mutado.visibility = 'none';
-//     }
 
-    
-// }
 
 //FUNCAO DOS BOTOES DO PLAYER
 function descubra(){
     descubraH1.style.display = 'block';
-    descubra2H1.style.display = 'block';
     divDescubra1.style.display = 'flex';
     divDescubra2.style.display = 'flex';
-    divDescubra3.style.display = 'flex';
+    
 
     divRadio.style.display = 'none';
     divPlaylist.style.display = 'none';
 }
-function suaPlaylist(){
-    divPlaylist.style.display = 'block';
 
-    descubraH1.style.display = 'none';
-    descubra2H1.style.display = 'none';
-    divDescubra1.style.display = 'none';
-    divDescubra2.style.display = 'none';
-    divDescubra3.style.display = 'none';
-    divRadio.style.display = 'none';
-}
 function radios(){
     divRadio.style.display = 'block';
 
     descubraH1.style.display = 'none';
-    descubra2H1.style.display = 'none';
     divDescubra1.style.display = 'none';
     divDescubra2.style.display = 'none';
-    divDescubra3.style.display = 'none';
     divPlaylist.style.display = 'none';
     
 }
@@ -183,6 +162,88 @@ function flashback(){
     nomeMusica.textContent = musicas[contador];
     faixasMusica.textContent = contador + 1;
     limiteMusica.textContent = '/ ' + musicas.length;
+}
+
+// Mixes dos Artistas
+function bustaMix() {
+    faixasMusica.textContent = '1';
+    limiteMusica.textContent = '/ ' + '1';
+    nomeMusica.textContent = 'Mixes - Busta Rhymes';
+    musicaPlayer.volume = 0.2;
+    musicaPlayer.src = 'songs/mixes/BUSTA RHYMES HITS MIX.mp3';
+    musicaPlayer.play();
+}
+
+function snoopMix() {
+    faixasMusica.textContent = '1';
+    limiteMusica.textContent = '/ ' + '1';
+    nomeMusica.textContent = 'Mixes - Snoop Dogg';
+    musicaPlayer.volume = 0.2;
+    musicaPlayer.src = 'songs/mixes/Snoop Dogg - Greatest Hits.mp3';
+    musicaPlayer.play();
+}
+
+function rhcpMix() {
+    faixasMusica.textContent = '1';
+    limiteMusica.textContent = '/ ' + '1';
+    nomeMusica.textContent = 'Mixes - Red Hot Chilli Peppers';
+    musicaPlayer.volume = 0.2;
+    musicaPlayer.src = 'songs/mixes/Red Hot Chili Peppers Greatest Hits.mp3';
+    musicaPlayer.play();
+}
+
+function soadMix() {
+    faixasMusica.textContent = '1';
+    limiteMusica.textContent = '/ ' + '1';
+    nomeMusica.textContent = 'Mixes - System of a Down';
+    musicaPlayer.volume = 0.2;
+    musicaPlayer.src = 'songs/mixes/S.O.A.D Greatest Hits.mp3';
+    musicaPlayer.play();
+}
+
+function neyoMix() {
+    faixasMusica.textContent = '1';
+    limiteMusica.textContent = '/ ' + '1';
+    nomeMusica.textContent = 'Mixes - Ne-Yo';
+    musicaPlayer.volume = 0.2;
+    musicaPlayer.src = 'songs/mixes/Ne-Yo - Greatest Hits.mp3';
+    musicaPlayer.play();
+}
+
+function westcoastMix() {
+    faixasMusica.textContent = '1';
+    limiteMusica.textContent = '/ ' + '1';
+    nomeMusica.textContent = 'Mixes - West Coast Classics';
+    musicaPlayer.volume = 0.2;
+    musicaPlayer.src = 'songs/mixes/West Coast Classics.mp3';
+    musicaPlayer.play();
+}
+
+function eastcoastMix() {
+    faixasMusica.textContent = '1';
+    limiteMusica.textContent = '/ ' + '1';
+    nomeMusica.textContent = 'Mixes - East Coast Classics';
+    musicaPlayer.volume = 0.2;
+    musicaPlayer.src = 'songs/mixes/East Coast Classics.mp3';
+    musicaPlayer.play();
+}
+
+function rock2000Mix() {
+    faixasMusica.textContent = '1';
+    limiteMusica.textContent = '/ ' + '1';
+    nomeMusica.textContent = 'Mixes - Rock 2000s';
+    musicaPlayer.volume = 0.2;
+    musicaPlayer.src = 'songs/mixes/Rock 2000s.mp3';
+    musicaPlayer.play();
+}
+
+function funkMix() {
+    faixasMusica.textContent = '1';
+    limiteMusica.textContent = '/ ' + '1';
+    nomeMusica.textContent = 'Mixes - Funkzão';
+    musicaPlayer.volume = 0.2;
+    musicaPlayer.src = 'songs/mixes/Os Melhores Funk 2017.mp3';
+    musicaPlayer.play();
 }
 
 //FUNCAO DAS RADIOS

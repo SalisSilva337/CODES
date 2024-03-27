@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=0.8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.75">
     <title>Master Of Sounds</title>
     <link rel="stylesheet" href="teste.css">
     <link rel="shortcut icon" href="imgs/beatbox.ico" type="image/x-icon">
@@ -27,7 +27,7 @@
             <button id="navButton" onclick="radios()">RADIO</button>
         
         </nav><br>
-        <h2>Um mix de gêneros em alta atualmente:</h2>
+        <h2>THE VIBE: mix de gêneros musicais</h2>
         </div> 
          
         <div id="generoBotoes">
@@ -43,94 +43,55 @@
         <div id="divDescubra1">
             
             <div class="grid">
-                <img id="imgg" src="imgs/busta.jpg" alt="">
+                <img id="imgg" onclick="bustaMix()" src="imgs/busta.jpg" alt="">
                 <h2>100% Busta</h2>
             </div>
             
             <div class="grid">
-                <img id="imgg" src="imgs/snoopdogg.jpg" alt=""> 
+                <img id="imgg" onclick="snoopMix()" src="imgs/snoopdogg.jpg" alt=""> 
                 <h2>100% Snoop</h2>
             </div>
 
             <div class="grid">
-                <img id="imgg" src="imgs/rhcp.jpg" alt="">
+                <img id="imgg" onclick="rhcpMix()" src="imgs/rhcp.jpg" alt="">
                 <h2>100% R.H.C.P</h2>
             </div>
             
             <div class="grid">
-                <img id="imgg" src="imgs/soad.png" alt=""> 
+                <img id="imgg" onclick="soadMix()" src="imgs/soad.png" alt=""> 
                 <h2>100% S.O.A.D</h2>
-            </div>
-
-            <div class="grid">
-                <img id="imgg" src="imgs/papa-roach.jpg" alt="">
-                <h2>100% Papa Roach</h2>
             </div>
             
             <div class="grid">
-                <img id="imgg" src="imgs/neyo.jpg" alt=""> 
+                <img id="imgg" onclick="neyoMix()" src="imgs/neyo.jpg" alt=""> 
                 <h2>100% Ne-Yo</h2>
             </div>
         </div><br>
         <div id="divDescubra2">
             
             <div class="grid">
-                <img id="imgg" src="imgs/westcoast.png" alt="">
+                <img id="imgg"  onclick="westcoastMix()" src="imgs/westcoast.png" alt="">
                 <h2>West Coast Classics</h2>
             </div>
             
             <div class="grid">
-                <img id="imgg" src="imgs/eastcoast.jpg" alt=""> 
+                <img id="imgg" onclick="eastcoastMix()" src="imgs/eastcoast.jpg" alt=""> 
                 <h2>East Coast Classics</h2>
             </div>
 
             <div class="grid">
-                <img id="imgg" src="imgs/rock.jpg" alt=""> 
+                <img id="imgg" onclick="rock2000Mix()" src="imgs/rock.jpg" alt=""> 
                 <h2>Rock 2000s</h2>
             </div>
 
             <div class="grid">
-                <img id="imgg" src="imgs/80s.jpg" alt=""> 
-                <h2>Best Of The 80s</h2>
-            </div>
-
-            <div class="grid">
-                <img id="imgg" src="imgs/funk.png" alt=""> 
+                <img id="imgg" onclick="funkMix()" src="imgs/funk.png" alt=""> 
                 <h2>Funkzão de Cria</h2>
-            </div>
-            <div class="grid">
-                <img id="imgg" src="imgs/reggae.jpg" alt=""> 
-                <h2>Reggaezin pra Relaxar</h2>
             </div>
 
         </div><br><br>
-        <h1 id="descubra2H1">POPULAR NA SUA REGIÃO:</h1><br>
-        <div id="divDescubra3">
-            
-            <div class="grid">
-                <img id="imgg" src="imgs/trap.jpg" alt="">
-                <h2>Trapzera BR</h2>
-            </div>
-            
-            <div class="grid">
-                <img id="imgg" src="imgs/bregafunk.png" alt=""> 
-                <h2>Tropa do Brega Funk</h2>
-            </div>
 
-            <div class="grid">
-                <img id="imgg" src="imgs/sertanejo.jpg" alt=""> 
-                <h2>Sertanejão da Massa</h2>
-            </div>
-           
-        </div><br>
-
-        <!-- <div id="divPlaylist">
-            <h1>SUAS PLAYLISTS:</h1><br>
-            <h2>Nome da Música</h2>
-            <h3 id="musicaFavorita"></h3>
-        </div> -->
-
-        <div id="divRadio">
+        <div id="divRadio" hidden>
             <h1>Radios:</h1><br>
             <button class="botaoRadio" onclick="radioReggaeton()">Reggaeton</button>
             <button class="botaoRadio" onclick="radioHiphop()">Hip-Hop/Rap</button>
@@ -146,10 +107,10 @@
     <div id="player">
         <span id="fecharPlayer" onclick="fecharFooter()"><i class="fa-solid fa-chevron-down"></i></span><br> 
         <audio src="" id="musicaPlayer"></audio>
-        <span id="nomeMusica">nome da musica</span><br>
-        <span id="faixasMusica">num de faixas</span>
-        <span id="limiteMusica">limite de faixas</span><br>
-        <span id="curtirMusica" onclick="playList()">❤</span><br>
+        <span id="nomeMusica"></span><br>
+        <span id="faixasMusica"></span>
+        <span id="limiteMusica"></span><br>
+        <!-- <span id="curtirMusica" onclick="playList()">❤</span><br> -->
         <button id="playerBotaoAnterior" onclick="previousSong()"><i class="fa-solid fa-backward"></i></button>
         <button id="playerBotaoPausar" onclick="stopSong()"><i class="fa-solid fa-pause"></i></button>
         <button id="playerBotaoContinuar" onclick="continueSong()" hidden><i class="fa-solid fa-play"></i></button>
