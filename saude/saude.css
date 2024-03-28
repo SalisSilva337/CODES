@@ -22,11 +22,11 @@ h2{
 
 #botaoMusica{
     width: 100px;
-    box-shadow: 5px 4px;
+    box-shadow: 5px 4px 10px black;
 }
 
 #botaoMusica:hover{
-    box-shadow: 2px 2px;
+    box-shadow: 2px 2px 10px black;
     
 }
 
@@ -137,7 +137,7 @@ button{
     border-radius: 100px;
     background-color: rgb(193, 13, 13);
     color: rgb(180, 196, 198);
-    box-shadow: 5px 5px;
+    box-shadow: 5px 5px 10px black;
     font-family: cursive;
     transition: 1s;
     
@@ -147,7 +147,7 @@ button:hover{
     color: black;
     background-color: orange;
     cursor: pointer;
-    box-shadow: 1px 2px;
+    box-shadow: 1px 2px 10px black;
     width: 300px;
 }
 

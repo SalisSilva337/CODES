@@ -15,10 +15,10 @@ button{
     height: 50px;
     text-align: left;
     background-color: rgb(193, 13, 13);
-    color: rgb(180, 196, 198);
+    color: rgb(0, 0, 0);
     font-family: cursive;
     font-size: medium;
-    box-shadow: 10px 10px;
+    box-shadow: 10px 10px 10px;
     transition: 1s;
 }
 
