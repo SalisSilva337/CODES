@@ -44,7 +44,6 @@ function descubra(){
     
 
     divRadio.style.display = 'none';
-    divPlaylist.style.display = 'none';
 }
 
 function radios(){
@@ -53,16 +52,13 @@ function radios(){
     descubraH1.style.display = 'none';
     divDescubra1.style.display = 'none';
     divDescubra2.style.display = 'none';
-    divPlaylist.style.display = 'none';
-    
+
 }
-
-
-
 
 function mostrarVolume() {
     divVolume.style.display = 'block';
 }
+
 function sumirVolume() {
     divVolume.style.display = 'none';
 }
@@ -95,6 +91,9 @@ function continueSong(){
    
 }
 
+musicaPlayer.addEventListener("ended", (event) => {
+    nextSong();
+});
 
 //FUNCAO DAS MUSICAS
 function hiphop(){
