@@ -40,3 +40,4 @@ function dadosComputados(){
         dadosEnviados.hidden = true;
     }, 2000);
 }
+

@@ -44,7 +44,6 @@ function descubra(){
     
 
     divRadio.style.display = 'none';
-    divPlaylist.style.display = 'none';
 }
 
 function radios(){
@@ -53,16 +52,13 @@ function radios(){
     descubraH1.style.display = 'none';
     divDescubra1.style.display = 'none';
     divDescubra2.style.display = 'none';
-    divPlaylist.style.display = 'none';
-    
+
 }
-
-
-
 
 function mostrarVolume() {
     divVolume.style.display = 'block';
 }
+
 function sumirVolume() {
     divVolume.style.display = 'none';
 }
@@ -95,6 +91,9 @@ function continueSong(){
    
 }
 
+musicaPlayer.addEventListener("ended", (event) => {
+    nextSong();
+});
 
 //FUNCAO DAS MUSICAS
 function hiphop(){
@@ -294,6 +293,7 @@ function radio80s() {
 
 
 function nextSong(){
+    if (contador < musicas.length - 1) {
     contador++;
     musicaPlayer.volume = 0.2;
     musicaPlayer.src = musicas[contador];
@@ -301,11 +301,12 @@ function nextSong(){
     nomeMusica.textContent = musicas[contador];
     faixasMusica.textContent = contador + 1;
     limiteMusica.textContent = '/ ' + musicas.length;
-    
+ }
     
 }
 
 function previousSong(){
+    if (contador > 0) {
     contador--;
     musicaPlayer.volume = 0.2;
     musicaPlayer.src = musicas[contador];
@@ -313,6 +314,7 @@ function previousSong(){
     nomeMusica.textContent = musicas[contador];
     faixasMusica.textContent = contador + 2 - 1;
     limiteMusica.textContent = '/ ' + musicas.length;
+    }
 }
 
 function musicaCurtida(){
