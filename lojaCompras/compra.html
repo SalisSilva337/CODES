@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Big-Buy</title>
+    <script src="compra.js" defer></script>
+    <link rel="stylesheet" href="compra.css">
+    <link rel="shortcut icon" href="imgs/logo.png" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/995dcfb715.js" crossorigin="anonymous"></script>
+</head>
+<header>
+    <div id="divLogoHeader">
+        <img id="logo" src="imgs/logo.png" alt="">
+        <h1 id="nomeLogo">Big-Buy</h1>
+        <div id="player">
+            <audio src="" id="musicaPlayer"></audio>
+            <button onclick="previousSong()" class="playerBotao"><i class="fa-solid fa-backward"></i></button>
+            <button onclick="pauseSong()" class="playerBotao"><i class="fa-solid fa-pause"></i></button>
+            <button onclick="playSong()" class="playerBotao"><i class="fa-solid fa-play"></i></button>
+            <button onclick="nextSong()" class="playerBotao"><i class="fa-solid fa-forward"></i></button>
+            <button class="playerBotao" onclick="abrirModal()"><i class="fa-solid fa-bars"></i></button>
+                <div id="playerBarra">
+                    <span id="nomeMusica">nomedamusica</span><br>
+                    <span id="faixasMusica">num de faixas</span>
+                    <span id="limiteMusica">limite de faixas</span><br>
+                    <input type="range" id="barraProgresso">
+                </div>
+        </div>
+    </div>
+
+    <div id="modalMusica" hidden>
+        <div id="modalMusicaConteudo">
+            <h2>Selecionar Playlist</h2>
+            <br><br>
+            <select name="" id="selecaoMusica">
+            <option value="" hidden>Selecione uma Playlist</option>
+
+            <option value="Pop1">Pop 1</option>
+            <option value="Pop2">Pop 2</option>
+            <option value="Pop3">Pop 3</option>
+            <option value="Rock1">Rock 1</option>
+            <option value="Rock2">Rock 2</option>
+            </select>
+            <br><br><br><br><br>
+            
+            <button type="submit" id="botaoEscolherMusica" onclick="escolherMusica()">Confirmar</button>
+        </div>
+    </div>
+
+    <nav id="navList">
+        <button class="navBotao" onclick="iframeHome()">Home</button>
+        <button class="navBotao" onclick="iframeAlta()">Em Alta</button>
+        <button class="navBotao" onclick="iframeOfertas()">Ofertas</button>
+        <div id="dropdown">
+        <button class="navBotao">Categorias<i class="fa-solid fa-chevron-down" style="float: right;"></i></button>
+            <div id="dropdownContent">
+                <button class="dropdownBotao">Alimentos</button>
+                <button class="dropdownBotao">Limpeza</button>
+                <button class="dropdownBotao">Eletrodomésticos</button>
+                <button class="dropdownBotao">Informática e Games</button>
+            </div>
+        </div>
+        <i onclick="iframeCarrinho()" id="carrinho" class="fa-solid fa-cart-shopping"><span id="carrinhoQuantidade"></span></i>
+    </nav>
+
+</header>
+<body>
+    <iframe id="iframeConteudo" src="home/comprasHome.html" frameborder="0"></iframe>
+</body>
+<footer>
+    <nav id="suporte">
+        <button class="supBotao">Ajuda 🆘</button>
+        <button class="supBotao">Contato 📞</button>
+        <button class="supBotao">Termos e Condições 📓</button>
+        <div id="dropdown">
+            <button class="supBotao">Redes Sociais <i class="fa-solid fa-chevron-down" style="float: right;"></i></button>
+                <div id="dropdownContent">
+                    <button class="dropdownBotao"><i class="fa-brands fa-youtube"></i></button>
+                    <button class="dropdownBotao"><i class="fa-brands fa-x-twitter"></i></button>
+                    <button class="dropdownBotao"><i class="fa-brands fa-instagram"></i></button>
+                    <button class="dropdownBotao"><i class="fa-brands fa-whatsapp"></i></button>
+                </div>
+            </div>
+        <button class="supBotao">Sobre</button>
+    </nav>
+
+    <div id="divLogoFooter">
+        <img id="logo" src="imgs/logo.png" alt="">
+        <h1 id="nomeLogo">Big-Buy</h1>
+        <div id="madeBy">
+            <h1 id="nomeDesenvolvedor">Developed By @L1nX_337</h1>
+        </div>   
+    </div>
+</footer>
+</html>

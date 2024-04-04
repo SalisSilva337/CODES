@@ -24,34 +24,22 @@
         <br><br>
 
         <label for="">Especialidade:</label>
-        <select name="" id="selectEspecialidade" onchange="especialidadeMedico()">
+        <select name="" id="selectEspecialidade" onchange="adicionarSelect()">
         <option value="" hidden>Selecione uma Especialidade:</option>
         <option value="Cardiologia">Cardiologia</option>
         <option value="Endocrinologia">Endocrinologia</option>
         <option value="Infectologia">Infectologia</option>
         <option value="Mastologia">Mastologia</option>
         <option value="Oftalmologia">Oftalmologia</option>
-        <option value="Otorrinolaringologia">Otorrinolaringologia</option>
+        <option value="Otorrino">Otorrinolaringologia</option>
 
         </select><br><br>
 
         <label for="">Médico:</label>
         <select name="" id="selectMedico">
             <option value="" hidden>Selecione um Médico:</option>
-            <option value="JamesKend" class="cardio">James Kend</option>
-            <option value="Jones Andrew" class="cardio">Jones Andrew</option>
-            <option value="Alekson Silva">Alekson Silva</option>
-            <option value="Roberta Steves">Roberta Steves</option>
-            <option value="Wilson Rapina">Wilson Rapina</option>
-            <option value="Leno Brega">Leno Brega</option>
-            <option value="Mack Dex">Mack Dex</option>
-            <option value="Jack Mills">Jack Mills</option>
-            <option value="Cynthia Rose">Cynthia Rose</option>
-            <option value="Ernaldo Gomes">Ernaldo Gomes</option>
-            <option value="Sarah Santos">Sarah Santos</option>
-            <option value="Samantha Flores">Samantha Flores</option>
         </select>
-
+        <span id="testando"></span>
         
         
     </div>
@@ -59,7 +47,7 @@
     <div id="form2">
         <h1>Endereço:</h1>
         <label for="">CEP:</label>
-        <input type="number" id="cepTxt" >
+        <input type="number" id="cepTxt">
         <br><br>
 
         <label for="">Estado:</label>
@@ -100,7 +88,7 @@
 
         <label for="">Observações:</label><br><br>
         <textarea name="" id="" cols="30" rows="5" placeholder="digite aqui..."></textarea>
-        <br><br><span hidden id="dadosEnviados">Dados Enviados com Sucesso</span><br><br>
+        <br><br><span hidden id="dadosEnviados"></span><br><br>
         <button id="botaoEnviar" onclick="dadosComputados()">Enviar</button>
     </div>
 </div>

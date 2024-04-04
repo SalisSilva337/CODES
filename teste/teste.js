@@ -100,7 +100,7 @@ function hiphop(){
     musicas = generoHipHop;
     console.log(musicas);
     musicaPlayer.src = musicas[contador = 0];
-    musicaPlayer.volume = 0.2;
+    musicaPlayer.volume = barraVolume.value/100;
     musicaPlayer.play();
     nomeMusica.textContent = musicas[contador];
     faixasMusica.textContent = contador + 1;
@@ -293,6 +293,7 @@ function radio80s() {
 
 
 function nextSong(){
+    if (contador < musicas.length - 1) {
     contador++;
     musicaPlayer.volume = 0.2;
     musicaPlayer.src = musicas[contador];
@@ -300,11 +301,12 @@ function nextSong(){
     nomeMusica.textContent = musicas[contador];
     faixasMusica.textContent = contador + 1;
     limiteMusica.textContent = '/ ' + musicas.length;
-    
+ }
     
 }
 
 function previousSong(){
+    if (contador > 0) {
     contador--;
     musicaPlayer.volume = 0.2;
     musicaPlayer.src = musicas[contador];
@@ -312,6 +314,7 @@ function previousSong(){
     nomeMusica.textContent = musicas[contador];
     faixasMusica.textContent = contador + 2 - 1;
     limiteMusica.textContent = '/ ' + musicas.length;
+    }
 }
 
 function musicaCurtida(){
