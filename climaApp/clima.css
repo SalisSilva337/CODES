@@ -30,22 +30,17 @@ body{
 }
 
 #botaoEnviar{
-    border: 1px solid;
-    border-radius: 100px;
+    border: transparent;
     color: rgb(255, 255, 255);
-    padding: 10px;
-    background: radial-gradient(circle, rgba(252,0,0,1) 22%, rgba(86,51,209,1) 47%, rgba(55,37,21,1) 76%, rgba(210,155,35,1) 100%);
-    background-size: 700%;
-    background-position: left;
+    padding: 5px;
+    background: transparent;
     transition: 1s;
 }
 
 #botaoEnviar:hover{
+    border-bottom: 1px solid;
     cursor: pointer;
-    opacity: 0.6;
-    background: radial-gradient(circle, rgba(252,0,0,1) 22%, rgba(86,51,209,1) 47%, rgba(55,37,21,1) 76%, rgba(210,155,35,1) 100%);
-    background-size: 700%;
-    background-position: right;
+   
 
 }
 
