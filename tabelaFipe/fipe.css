@@ -1,0 +1,89 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+img{
+    width: 50px;
+    height: 50px;
+}
+
+#divHeader{
+    color: rgb(0, 159, 0);
+    background-color: rgb(31, 26, 26);
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+    box-shadow: 0px 10px 30px black;
+}
+
+body{
+    background-color: rgb(50, 48, 48);
+}
+
+#divSelect{
+    justify-content: center;
+    position: relative;
+    top: 100px;
+    float: left;
+    display: flex;
+    flex-wrap: wrap;
+    border-left: 2px solid rgb(0, 159, 0);
+    border-right: 2px solid rgb(0, 159, 0);
+    border-radius: 100px;
+    color: rgb(0, 159, 0);
+    width: 500px;
+    height: 300px;
+    left: 10px;
+    padding-top: 30px;
+    row-gap: 10px;
+    gap: 5px;
+}
+
+#divDados{
+    position: relative;
+    right: 10px;
+    top: 100px;
+    float: right;
+    border-left: 2px solid rgb(0, 159, 0);
+    border-right: 2px solid rgb(0, 159, 0);
+    border-radius: 100px;
+    color: rgb(0, 159, 0);
+    width: 600px;
+    height: 300px;
+    text-align: center;
+    padding-top: 30px;
+}
+
+h2{
+    
+    color: rgb(0, 159, 0);
+    text-shadow: 2px 2px 2px  rgb(31, 26, 26) ;
+}
+
+select{
+    width: 200px;
+    height: 30px;
+    border-radius: 10px;
+    background-color: rgb(31, 26, 26);
+    color: rgb(0, 159, 0);
+}
+
+button {
+    width: 100px;
+    height: 30px;
+    border: 1px solid gray;
+    border-radius: 10px;
+    background-color: rgb(31, 26, 26);
+    color: rgb(0, 159, 0);
+    transition: 1s;
+}
+
+button:hover{
+    cursor: pointer;
+    opacity: .8;
+    transform: scale(1.1);
+}

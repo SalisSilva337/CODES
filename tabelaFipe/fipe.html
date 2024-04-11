@@ -8,36 +8,48 @@
     <link rel="stylesheet" href="fipe.css">
     <script src="fipe.js" defer></script>
 </head>
+
+<header>
+    <div id="divHeader">
+        <img src="imgs/money.png" alt="">
+        <h1>BIG CA$H AUTOS - TABELA FIPE</h1>
+    </div>
+</header>
+
 <body>
+    
+
     <div id="divSelect">
-    <h1>BIG CA$H AUTOS - TABELA FIPE</h1>
+        <h1>Insira as informações do veículo:</h1>
 
-    <select id="selectVeiculo" onchange="buscarMarcas()">
-        <option value="" hidden>Selecione um tipo de Veiculo</option>
-        <option value="carros">Carro</option>
-        <option value="caminhoes">Caminhão</option>
-        <option value="motos">Moto</option>
-    </select>
-
-
-    <select name="" id="selectMarca" onchange="buscarModelos()">
-        <option value="" hidden>Selecione uma marca</option>
-    </select>
+        <select id="selectVeiculo" onchange="buscarMarcas()">
+            <option value="" hidden>Selecione um tipo de Veiculo</option>
+            <option value="carros">Carro</option>
+            <option value="caminhoes">Caminhão</option>
+            <option value="motos">Moto</option>
+        </select>
 
 
-    <select name="" id="selectModelo" onchange="buscarAnos()">
-        <option value="" hidden>Selecione um modelo</option>
-    </select>
+        <select name="" id="selectMarca" onchange="buscarModelos()">
+            <option value="" hidden>Selecione uma marca</option>
+        </select>
 
-    <select name="" id="selectAno">
-        <option value="" hidden>Selecione o ano de fabricação</option>
-    </select>
 
-    <button id="botaoEncontrar" onclick="buscarVeiculo()">Encontrar...</button>
+        <select name="" id="selectModelo" onchange="buscarAnos()">
+            <option value="" hidden>Selecione um modelo</option>
+        </select>
+
+        <select name="" id="selectAno">
+            <option value="" hidden>Selecione o ano de fabricação</option>
+        </select>
+
+        <button id="botaoEncontrar" onclick="buscarVeiculo()">Encontrar...</button>
 
     </div>
 
+
     <div id="divDados">
+        <h1>Informações do Veículo Solicitado:</h1>
         <h2 id="anoModelo"></h2>
         <h2 id="codigoFipe"></h2>
         <h2 id="combustivel"></h2>
