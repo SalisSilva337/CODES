@@ -4,7 +4,7 @@ let tempMin = document.querySelector('#temperaturaMin')
 let tempMax = document.querySelector('#temperaturaMax')
 let vento = document.querySelector('#vento')
 let umidade = document.querySelector('#umidade')
-
+let spanDados = document.querySelector('#spanDados')
 
 
 function buscarClima() {
@@ -27,12 +27,12 @@ function buscarClima() {
                 console.log(urlInputada);
                 let cidade = JSON.parse(request.response);
                 console.log(cidade);
-                tempAtual.value = cidade.main.temp + " ºC";
-                sensacaoTermica.value =  cidade.main.feels_like + " ºC";
-                tempMin.value =  cidade.main.temp_min + " ºC";
-                tempMax.value =  cidade.main.temp_max + " ºC";
-                vento.value =  cidade.wind.speed + " km/h";
-                umidade.value =  cidade.main.humidity + " g/m³";
+                tempAtual.textContent = cidade.main.temp + " ºC";
+                sensacaoTermica.textContent =  cidade.main.feels_like + " ºC";
+                tempMin.textContent =  cidade.main.temp_min + " ºC";
+                tempMax.textContent =  cidade.main.temp_max + " ºC";
+                vento.textContent =  cidade.wind.speed + " km/h";
+                umidade.textContent =  cidade.main.humidity + " g/m³";
             }
 
             else if (request.status === 404){
