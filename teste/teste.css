@@ -84,7 +84,20 @@ button{
     height: 80px;
     width: 80px;
     padding: 10px;
-    transition: 1s;
+    transition: 0.5s;
+    
+}
+
+
+@keyframes clickMassa {
+    0% {
+        outline: 10px solid;
+    }
+
+    100% {
+        outline: 10px solid;
+        outline-offset: 10px;
+    }
 }
 
 button:hover{
@@ -92,6 +105,7 @@ button:hover{
     color: rgb(0, 0, 0);
     width: 100px;
     height: 100px;
+    cursor: pointer;
 }
 
 #divBody{
@@ -203,9 +217,9 @@ h1{
 }
 
 #imgg{
-    border-radius: 100px;
     width: 100px;
     height: 100px;
+    border-radius: 100px;
     transition: 0.5s;
     outline: 1px solid rgb(255, 255, 255);
 
@@ -216,6 +230,7 @@ h1{
     opacity: 0.5;
     width: 100px;
     height: 100px;
+    transform: scale(1.2);
 }
 
 footer{
@@ -245,7 +260,7 @@ footer{
     background-color: rgb(108, 108, 229);
     color: white;
     padding: 10px;
-    transition: 1s;
+    transition: 0.5s;
     border-radius: 100px;
     height: 70px;
     width: 70px;
@@ -254,14 +269,14 @@ footer{
 #playerBotaoPausar:hover{
     background-color: rgb(124, 249, 7);
     color: rgb(0, 0, 0);
-    width: 80px;
-    height: 80px;
+    
 }
+
 #playerBotaoContinuar{
     background-color: rgb(108, 108, 229);
     color: white;
     padding: 10px;
-    transition: 1s;
+    transition: 0.5s;
     border-radius: 100px;
     height: 70px;
     width: 70px;
@@ -270,15 +285,14 @@ footer{
 #playerBotaoContinuar:hover{
     background-color: rgb(124, 249, 7);
     color: rgb(0, 0, 0);
-    width: 80px;
-    height: 80px;
+    
 }
 
 #playerBotaoAnterior{
     background-color: rgb(108, 108, 229);
     color: white;
     padding: 10px;
-    transition: 1s;
+    transition: 0.5s;
     border-radius: 100px;
     height: 50px;
     width: 50px;
@@ -287,14 +301,14 @@ footer{
 #playerBotaoAnterior:hover{
     background-color: rgb(124, 249, 7);
     color: rgb(0, 0, 0);
-    width: 60px;
-    height: 60px;
+    width: 55px;
+    height: 55px;
 }
 #playerBotaoProximo{
     background-color: rgb(108, 108, 229);
     color: white;
     padding: 10px;
-    transition: 1s;
+    transition: 0.5s;
     border-radius: 100px;
     height: 50px;
     width: 50px;
@@ -303,8 +317,8 @@ footer{
 #playerBotaoProximo:hover{
     background-color: rgb(124, 249, 7);
     color: rgb(0, 0, 0);
-    width: 60px;
-    height: 60px;
+    width: 55px;
+    height: 55px;
 }
 
 #barraProgresso{
@@ -334,8 +348,12 @@ footer{
     border: 2px solid;
     background-color: rgb(108, 108, 229);
     cursor: pointer;
+    transition: 0.5s;
 }
-
+#barraProgresso::-webkit-slider-thumb:hover {
+    background-color: rgb(0, 0, 0);
+    color: rgb(0, 255, 17);
+}
 
 #volumeFooter{
     margin: left;
@@ -349,15 +367,25 @@ footer{
     box-shadow: 5px 5px 40px black;
 }
 
-#spanVolume i{
+#spanVolume{
     color: rgb(255, 255, 255);
-    transition: 1s;
+    transition: 0.5s;
 }
 
 #spanVolume:hover{
+    cursor: pointer;
     color: rgb(124, 249, 7);
 }
 
+#spanMutado{
+    color: rgb(255, 255, 255);
+    transition: 0.5s;
+}
+
+#spanMutado:hover{
+    cursor: pointer;
+    color: rgb(124, 249, 7);
+}
 #barraVolume{
     width: 150px;
     -webkit-appearance: none;

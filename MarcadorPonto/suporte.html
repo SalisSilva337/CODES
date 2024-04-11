@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suporte Marcador de Ponto</title>
+    <link rel="stylesheet" href="suporte.css">
+    <script src="suporte.js" defer></script>
+</head>
+<body>
+<h1>Suporte :</h1>
+<br>
+        <input type="text" id="nome" value="" placeholder="Digite seu Nome*" required><br>
+        <input type="email" id="email"  value="" placeholder="Digite seu Email*" required><br><br>
+        
+        <select id="empresa" required>
+            <option value="" hidden>Selecione sua empresa* </option>
+            <option value="SENAI">SENAI</option>
+            <option value="AMBEV">AMBEV</option>
+            <option value="UNILEVER">UNILEVER</option>
+            <option value="KABUM">KABUM</option>
+            <option value="GOOGLE">GOOGLE</option>
+            <option value="MICROSOFT">MICROSOFT</option>
+        </select><br>
+        
+        <select id="assunto" required>
+            <option value="" hidden>Selecione uma opção*</option>
+            <option value="App Erro">Erros com a Aplicação</option>
+            <option value="Matricula Erro">Problemas com o acesso a matrícula</option>
+            <option value="Carregamento Lento">Carregamento Lento da Aplicação</option>
+            <option value="site Pouco Intuitivo">Pouco Intuitivo</option>
+        </select><br><br>
+    
+        <textarea id="textarea" cols="30" rows="5" maxlength="300" placeholder="Mensagem*"></textarea><br>
+        
+        <button id="enviar" onclick="enviarTudo ()">Enviar</button>
+
+    
+    <div>
+        <ul id="resultado"></ul>
+        
+    </div>
+
+</body>
+</html>

@@ -9,6 +9,8 @@ const musicasCurtidas = document.querySelector('#musicasCurtidas');
 
 const musicaPlayer = document.querySelector('#musicaPlayer');
 const barraVolume = document.querySelector('#barraVolume');
+const spanMutado = document.querySelector('#spanMutado');
+const spanVolume = document.querySelector('#spanVolume');
 
 const fecharPlayer = document.querySelector('#fecharPlayer');
 
@@ -31,8 +33,35 @@ var musicas = [];
 
 contador = 0;
 
-
-
+//FUNCAO ANIMAÇÃO DOS BOTOES DO PLAYER
+function botaoAnimAnt() {
+    const playerBotaoAnterior = document.querySelector("#playerBotaoAnterior")
+    playerBotaoAnterior.style.animation = 'clickMassa 0.2s';
+    setTimeout(() => {
+        playerBotaoAnterior.style.animation = "";
+    }, 200);
+}
+function botaoAnimPause() {
+    const playerBotaoPausar = document.querySelector("#playerBotaoPausar")
+    playerBotaoPausar.style.animation = 'clickMassa 0.1s';
+    setTimeout(() => {
+        playerBotaoPausar.style.animation = "";
+    }, 100);
+}
+function botaoAnimPlay() {
+    const playerBotaoContinuar = document.querySelector("#playerBotaoContinuar")
+    playerBotaoContinuar.style.animation = 'clickMassa 0.1s';
+    setTimeout(() => {
+        playerBotaoContinuar.style.animation = "";
+    }, 100);
+}
+function botaoAnimProx() {
+    const playerBotaoProximo = document.querySelector("#playerBotaoProximo")
+    playerBotaoProximo.style.animation = 'clickMassa 0.2s';
+    setTimeout(() => {
+        playerBotaoProximo.style.animation = "";
+    }, 200);
+}
 
 
 
@@ -65,6 +94,19 @@ function sumirVolume() {
 
 function volume(){
     musicaPlayer.volume = barraVolume.value/100;
+}
+function desmutarVolume() {
+    spanMutado.style.display = 'none';
+    spanVolume.style.display = 'block';
+    musicaPlayer.volume = 0.2;
+    barraVolume.value = 4;
+}
+function mutarVolume () {
+    spanMutado.style.display = 'block';
+    spanVolume.style.display = 'none';
+
+    musicaPlayer.volume = 0;
+    barraVolume.value = 0; 
 }
 
 function fecharFooter(){
@@ -100,7 +142,6 @@ function hiphop(){
     musicas = generoHipHop;
     console.log(musicas);
     musicaPlayer.src = musicas[contador = 0];
-    musicaPlayer.volume = barraVolume.value/100;
     musicaPlayer.play();
     nomeMusica.textContent = musicas[contador];
     faixasMusica.textContent = contador + 1;
@@ -112,7 +153,6 @@ function rock(){
     musicas = generoRock;
     console.log(musicas);
     musicaPlayer.src = musicas[contador = 0];
-    musicaPlayer.volume = 0.2;
     musicaPlayer.play();
     nomeMusica.textContent = musicas[contador];
     faixasMusica.textContent = contador + 1;
@@ -123,7 +163,6 @@ function mpb(){
     musicas = generoMpb;
     console.log(musicas);
     musicaPlayer.src = musicas[contador = 0];
-    musicaPlayer.volume = 0.2;
     musicaPlayer.play();
     nomeMusica.textContent = musicas[contador];
     faixasMusica.textContent = contador + 1;
@@ -134,7 +173,6 @@ function pop(){
     musicas = generoPop;
     console.log(musicas);
     musicaPlayer.src = musicas[contador = 0];
-    musicaPlayer.volume = 0.2;
     musicaPlayer.play();
     nomeMusica.textContent = musicas[contador];
     faixasMusica.textContent = contador + 1;
@@ -145,7 +183,6 @@ function reb(){
     musicas = generoReb;
     console.log(musicas);
     musicaPlayer.src = musicas[contador = 0];
-    musicaPlayer.volume = 0.2;
     musicaPlayer.play();
     nomeMusica.textContent = musicas[contador];
     faixasMusica.textContent = contador + 1;
@@ -156,7 +193,6 @@ function flashback(){
     musicas = generoFlashback;
     console.log(musicas);
     musicaPlayer.src = musicas[contador = 0];
-    musicaPlayer.volume = 0.2;
     musicaPlayer.play();
     nomeMusica.textContent = musicas[contador];
     faixasMusica.textContent = contador + 1;
@@ -168,7 +204,6 @@ function bustaMix() {
     faixasMusica.textContent = '1';
     limiteMusica.textContent = '/ ' + '1';
     nomeMusica.textContent = 'Mixes - Busta Rhymes';
-    musicaPlayer.volume = 0.2;
     musicaPlayer.src = 'songs/mixes/BUSTA RHYMES HITS MIX.mp3';
     musicaPlayer.play();
 }
@@ -177,7 +212,6 @@ function snoopMix() {
     faixasMusica.textContent = '1';
     limiteMusica.textContent = '/ ' + '1';
     nomeMusica.textContent = 'Mixes - Snoop Dogg';
-    musicaPlayer.volume = 0.2;
     musicaPlayer.src = 'songs/mixes/Snoop Dogg - Greatest Hits.mp3';
     musicaPlayer.play();
 }
@@ -186,7 +220,6 @@ function rhcpMix() {
     faixasMusica.textContent = '1';
     limiteMusica.textContent = '/ ' + '1';
     nomeMusica.textContent = 'Mixes - Red Hot Chilli Peppers';
-    musicaPlayer.volume = 0.2;
     musicaPlayer.src = 'songs/mixes/Red Hot Chili Peppers Greatest Hits.mp3';
     musicaPlayer.play();
 }
@@ -195,7 +228,6 @@ function soadMix() {
     faixasMusica.textContent = '1';
     limiteMusica.textContent = '/ ' + '1';
     nomeMusica.textContent = 'Mixes - System of a Down';
-    musicaPlayer.volume = 0.2;
     musicaPlayer.src = 'songs/mixes/S.O.A.D Greatest Hits.mp3';
     musicaPlayer.play();
 }
@@ -204,7 +236,6 @@ function neyoMix() {
     faixasMusica.textContent = '1';
     limiteMusica.textContent = '/ ' + '1';
     nomeMusica.textContent = 'Mixes - Ne-Yo';
-    musicaPlayer.volume = 0.2;
     musicaPlayer.src = 'songs/mixes/Ne-Yo - Greatest Hits.mp3';
     musicaPlayer.play();
 }
@@ -213,7 +244,6 @@ function westcoastMix() {
     faixasMusica.textContent = '1';
     limiteMusica.textContent = '/ ' + '1';
     nomeMusica.textContent = 'Mixes - West Coast Classics';
-    musicaPlayer.volume = 0.2;
     musicaPlayer.src = 'songs/mixes/West Coast Classics.mp3';
     musicaPlayer.play();
 }
@@ -222,7 +252,6 @@ function eastcoastMix() {
     faixasMusica.textContent = '1';
     limiteMusica.textContent = '/ ' + '1';
     nomeMusica.textContent = 'Mixes - East Coast Classics';
-    musicaPlayer.volume = 0.2;
     musicaPlayer.src = 'songs/mixes/East Coast Classics.mp3';
     musicaPlayer.play();
 }
@@ -231,7 +260,6 @@ function rock2000Mix() {
     faixasMusica.textContent = '1';
     limiteMusica.textContent = '/ ' + '1';
     nomeMusica.textContent = 'Mixes - Rock 2000s';
-    musicaPlayer.volume = 0.2;
     musicaPlayer.src = 'songs/mixes/Rock 2000s.mp3';
     musicaPlayer.play();
 }
@@ -240,7 +268,6 @@ function funkMix() {
     faixasMusica.textContent = '1';
     limiteMusica.textContent = '/ ' + '1';
     nomeMusica.textContent = 'Mixes - Funkzão';
-    musicaPlayer.volume = 0.2;
     musicaPlayer.src = 'songs/mixes/Os Melhores Funk 2017.mp3';
     musicaPlayer.play();
 }
@@ -250,7 +277,6 @@ function radioReggaeton(){
     faixasMusica.textContent = '1';
     limiteMusica.textContent = '/ ' + '1';
     nomeMusica.textContent = 'Radio - Reggaeton';
-    musicaPlayer.volume = 0.2;
     musicaPlayer.src = 'https://latinareggaeton.ice.infomaniak.ch/latinareggaeton.mp3';
     musicaPlayer.play();
 }
@@ -259,7 +285,6 @@ function radioHiphop(){
     faixasMusica.textContent = '1';
     limiteMusica.textContent = '/ ' + '1';
     nomeMusica.textContent = 'Radio - HipHop/Rap';
-    musicaPlayer.volume = 0.2;
     musicaPlayer.src = 'https://regiocast.streamabc.net/regc-90s90shiphop9858510-mp3-192-3156332?sABC=66046p9s%230%2302sno1nn41213qpn5op3op016qo0s710%23enqvbqr&aw_0_1st.playerid=radiode&amsparams=playerid:radiode;skey:1711565983';
     musicaPlayer.play();
 }
@@ -268,7 +293,6 @@ function radioPop(){
     faixasMusica.textContent = '1';
     limiteMusica.textContent = '/ ' + '1';
     nomeMusica.textContent = 'Radio - Pop';
-    musicaPlayer.volume = 0.2;
     musicaPlayer.src = 'https://antenaone.crossradio.com.br/stream/1/';
     musicaPlayer.play();
 }
@@ -277,7 +301,6 @@ function radioCountry(){
     faixasMusica.textContent = '1';
     limiteMusica.textContent = '/ ' + '1';
     nomeMusica.textContent = 'Radio - Country';
-    musicaPlayer.volume = 0.2;
     musicaPlayer.src = 'https://19473.live.streamtheworld.com/KFWRFMAAC.aac';
     musicaPlayer.play();
 }
@@ -286,7 +309,6 @@ function radio80s() {
     faixasMusica.textContent = '1';
     limiteMusica.textContent = '/ ' + '1';
     nomeMusica.textContent = 'Radio - 80s';
-    musicaPlayer.volume = 0.2;
     musicaPlayer.src = 'https://listen.181fm.com/181-awesome80s_128k.mp3';
     musicaPlayer.play();
 }
@@ -295,7 +317,6 @@ function radio80s() {
 function nextSong(){
     if (contador < musicas.length - 1) {
     contador++;
-    musicaPlayer.volume = 0.2;
     musicaPlayer.src = musicas[contador];
     musicaPlayer.play();
     nomeMusica.textContent = musicas[contador];
@@ -308,7 +329,6 @@ function nextSong(){
 function previousSong(){
     if (contador > 0) {
     contador--;
-    musicaPlayer.volume = 0.2;
     musicaPlayer.src = musicas[contador];
     musicaPlayer.play();
     nomeMusica.textContent = musicas[contador];

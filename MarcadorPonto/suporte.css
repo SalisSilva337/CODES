@@ -1,0 +1,67 @@
+* {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin: 0;
+    
+}
+body{
+    background-color: black;
+}
+
+form {
+    width: 100px;
+    height: 200px;
+    
+}
+h1 {
+    color: yellow;
+}
+
+input {
+    background-color: yellow; 
+    width: 200px;
+    height: 30px;
+    font-size: large;
+}
+
+select {
+    background-color: yellow;
+    font-size: large;
+    width: 207px;
+}
+
+button {
+    background-color: yellow;
+    width: 80px;
+    height: 50px;
+    font-size: large;
+}
+
+button:hover {
+    background-color:rgb(57, 191, 189);
+    font-style: italic;
+    width: 80px;
+    height: 50px;
+    font-size: large;
+    cursor:crosshair;
+}
+
+
+textarea {
+    resize: none;
+    background-color: yellow;
+    font-size: large;
+}
+
+img {
+    width: 500px;
+    height: 357px;
+}
+div{
+ margin-top: 100px;
+ border: 1px  yellow solid;
+}
+
+li {
+    color: yellow;
+    font-size: large;
+}

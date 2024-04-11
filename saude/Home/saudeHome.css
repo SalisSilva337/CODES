@@ -1,0 +1,11 @@
+body{
+    overflow: hidden;
+}
+
+
+#videoHospital{
+    width: 99.7%;
+    height: 80%;
+    border: 5px solid;
+    
+}

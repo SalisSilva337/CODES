@@ -37,15 +37,16 @@ button{
     font-family: cursive;
     background-color: rgb(193, 13, 13);
     color: rgb(180, 196, 198);
-    transition: 1s;
+    box-shadow: 5px 5px 10px  black;
+    transition: 0.5s;
     width: 55px;
 }
 
 button:hover{
     background-color: orange;
     color: black;
-    box-shadow: 2px 2px;
-    width: 100px;
+    box-shadow: 0px 0px 40px 5px rgb(255, 255, 0);
+    transform: scale(1.2);
 }
 
 

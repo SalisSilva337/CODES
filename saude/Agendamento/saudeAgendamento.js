@@ -108,26 +108,29 @@ function adicionarSelect() {
 
 
 
-console.log(selectMedico)
-
-
 const dadosEnviados = document.querySelector("#dadosEnviados");
+const cepTxt = document.querySelector('#cepTxt');
+const dataInput = document.querySelector('#dataInput');
+const nomeInput = document.querySelector('#nomeInput');
+const emailInput = document.querySelector('#emailInput');
+const telefoneInput = document.querySelector('#telefoneInput');
+const selectPlano = document.querySelector('#selectPlano');
+
 
 function dadosComputados(){
-    var inputs = document.getElementsByTagName('input'); 
-    if (inputs) {
-        for (let contador = 0; contador < inputs.length; contador++) {
-                dadosEnviados.textContent = '';
-            
-            
-                
-            
-            
-        } 
-    }
+    dadosEnviados.hidden = false;
+    dadosEnviados.textContent = "ADICIONE VALORES AOS CAMPOS";
     setTimeout(() => {
         dadosEnviados.hidden = true;
     }, 2000);
+
+    if ((cepTxt.value != '') && (selectPlano.value != '') && (selectEspecialidade.value != '') && (selectMedico.value != '') && (dataInput.value != '') &&(nomeInput.value != '') && (emailInput.value != '') && (telefoneInput.value != '')){
+        dadosEnviados.hidden = false;
+        dadosEnviados.textContent = "DADOS ENVIADOS COM SUCESSO";
+        setTimeout(() => {
+            dadosEnviados.hidden = true;
+        }, 2000);
+    }
 }
 
 

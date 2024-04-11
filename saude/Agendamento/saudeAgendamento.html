@@ -11,19 +11,19 @@
     <div id="divAll">
     <div id="form1">
         <h1>Dados Pessoais:</h1>
-        <label for="">Nome:</label>
-        <input type="text">
+        <label for="">Nome*:</label>
+        <input type="text" id="nomeInput">
         <br><br>
 
-        <label for="">Email:</label>
-        <input type="email">
+        <label for="">Email*:</label>
+        <input type="email" id="emailInput">
         <br><br>
 
-        <label for="">Telefone:</label>
-        <input type="number">
+        <label for="">Telefone*:</label>
+        <input type="number" id="telefoneInput">
         <br><br>
 
-        <label for="">Especialidade:</label>
+        <label for="">Especialidade*:</label>
         <select name="" id="selectEspecialidade" onchange="adicionarSelect()">
         <option value="" hidden>Selecione uma Especialidade:</option>
         <option value="Cardiologia">Cardiologia</option>
@@ -35,7 +35,7 @@
 
         </select><br><br>
 
-        <label for="">Médico:</label>
+        <label for="">Médico*:</label>
         <select name="" id="selectMedico">
             <option value="" hidden>Selecione um Médico:</option>
         </select>
@@ -46,7 +46,7 @@
 
     <div id="form2">
         <h1>Endereço:</h1>
-        <label for="">CEP:</label>
+        <label for="">CEP*:</label>
         <input type="number" id="cepTxt">
         <br><br>
 
@@ -73,8 +73,8 @@
     </div>
     <div id="form3">
         <h1>Finalizando:</h1>
-        <label for="">Plano:</label>
-        <select name="" id="">
+        <label for="">Plano*:</label>
+        <select name="" id="selectPlano">
         <option value="" hidden>Selecione seu Plano:</option>
         <option value="Basico">Básico</option>
         <option value="Premium">Premium</option>
@@ -82,7 +82,7 @@
         <option value="Familiar Premium">Familiar Premium</option>
         </select><br><br>
 
-        <label for="">Data da Consulta:</label>
+        <label for="">Data da Consulta*:</label>
         <input id="dataInput" type="date" max=""><br><br>
         
 

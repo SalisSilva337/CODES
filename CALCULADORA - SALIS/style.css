@@ -1,0 +1,98 @@
+body{
+background-color: rgb(83, 70, 70);
+background-image: url(https://img.freepik.com/fotos-premium/um-por-do-sol-rosa-com-palmeiras-no-horizonte_654523-31.jpg);
+background-repeat: no-repeat;
+background-size:100%;
+}
+
+button:hover{
+    font-style: oblique;
+    color: blue;
+    opacity: 1.0;
+}
+
+h1{
+ font-size: 50px;
+ font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ color: white;
+ font-style: oblique;
+ text-shadow: 1px 1px 2px black;
+}
+
+h5{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    font-style: oblique;
+    text-shadow: 1px 1px 2px black;
+    width: -10rem;
+}
+   
+
+input{
+    font-size: large;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-style: oblique;
+    color: white;
+    background-color: black;
+    height: 2rem;
+}
+
+label{
+    font-size: larger;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    font-style: oblique;
+    background-color: black;
+    width: 10rem;
+}
+
+button{
+    font-size: larger;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif ;
+    background-color:rgb(22, 14, 13);
+    color: white;
+    width: 10rem;
+    height: 3rem;
+}
+
+
+.dropbtn {
+    background-color: #04AA6D;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+  }
+  
+  /* The container <div> - needed to position the dropdown content */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Dropdown Content (Hidden by Default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  /* Change color of dropdown links on hover */
+  .dropdown-content a:hover {background-color: #ddd;}
+  
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {display: block;}
+  
+  /* Change the background color of the dropdown button when the dropdown content is shown */
+  .dropdown:hover .dropbtn {background-color: #3e8e41;}
