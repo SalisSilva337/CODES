@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pre-Weather</title>
+    <link rel="shortcut icon" href="img/nuvem.png" type="image/x-icon">
+    <link rel="stylesheet" href="clima.css">
+    <script src="clima.js" defer></script>
+</head>
+<body>
+    <div id="divAll">
+        <h1>Pre-Weather</h1>
+        <label for="">Digite o nome da sua Cidade:</label><br><br>
+        <input type="text" id="cidadeInput">
+
+        <button id="botaoEnviar" onclick="buscarClima()">ENVIAR</button><br><br>
+        <span id="spanDados"></span>
+        <br><br>
+        <label for="">Temperatura Atual:</label>
+        <input type="text" id="temperaturaAtual" disabled><br><br>
+
+        <label for="">Sensação Térmica:</label>
+        <input type="text" id="sensacaoTermica" disabled><br><br>
+
+        <label for="">Temperatura Mínima:</label>
+        <input type="text" id="temperaturaMin" disabled><br><br>
+
+        <label for="">Temperatura Máxima:</label>
+        <input type="text" id="temperaturaMax" disabled><br><br>
+        
+        <label for="">Velocidade do Vento:</label>
+        <input type="text" id="vento" disabled><br><br>
+
+        <label for="">Umidade do Ar:</label>
+        <input type="text" id="umidade" disabled>
+    </div>
+</body>
+</html>

@@ -1,0 +1,103 @@
+#form1{
+    text-align: center;
+    height: 400px;
+    width: 400px;
+    background-color: rgb(186, 25, 25);
+    color:  rgb(180, 196, 198);
+    padding: 20px;
+    font-size: larger;
+    border: 3px solid black;
+    box-shadow: 10px 20px 10px black;
+    margin-top: 100px;
+    border-radius: 10px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    transition: 1s;
+}
+
+#form1:hover{
+    background-color: orange;
+    color: rgb(0, 0, 0);
+    box-shadow: 5px 10px;
+    
+}
+
+#form2{
+    margin: auto;
+    text-align: center;
+    height: 500px;
+    width: 200px;
+    background-color: rgb(186, 25, 25);
+    color:  rgb(180, 196, 198);
+    padding: 20px;
+    font-size: larger;
+    border: 3px solid black;
+    box-shadow: 10px 20px 10px black;
+    margin-top: -445px;
+    border-radius: 10px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    transition: 1s;
+}
+
+#form2:hover{
+    background-color: orange;
+    color: rgb(0, 0, 0);
+    box-shadow: 5px 10px;
+    
+}
+
+#form3{
+    margin-left: auto;
+    text-align: center;
+    height: 400px;
+    width: 400px;
+    background-color: rgb(186, 25, 25);
+    color:  rgb(180, 196, 198);
+    padding: 20px;
+    font-size: larger;
+    border: 3px solid black;
+    box-shadow: 10px 20px 10px black;
+    margin-top: -545px;
+    border-radius: 10px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    transition: 1s;
+}
+
+#form3:hover{
+    background-color: orange;
+    color: rgb(0, 0, 0);
+    box-shadow: 5px 10px;
+    
+}
+
+select{
+    width: 200px;
+}
+
+textarea{
+    resize: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+button{
+    border-radius: 10px;
+    font-family: cursive;
+    background-color: rgb(193, 13, 13);
+    color: rgb(180, 196, 198);
+    transition: 1s;
+    width: 55px;
+}
+
+button:hover{
+    border-radius: 10px;
+    font-family: cursive;
+    background-color:orange;
+    color: rgb(0, 0, 0);
+    box-shadow: 2px 2px;
+    transition: 1s;
+    width: 100px;
+}

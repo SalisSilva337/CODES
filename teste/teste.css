@@ -1,0 +1,395 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: cursive;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    background-color: rgba(72, 18, 116);
+    color: white;
+    width: 100%;
+    padding: 20px;
+    box-shadow: 1px 10px 30px black;
+}
+
+#logoHeader{
+    display: flex;
+    float: left;
+    width: 580px;
+    height: 50px;
+}
+
+#logo{
+    width: 100px;
+    height: 100px;
+    margin-top: -25px;
+}
+
+body{
+    background-color: rgb(12, 12, 53);
+    height: 100px;
+}
+
+#navButton{
+    background-color: rgb(0, 0, 0,0);
+    color: white;
+    border: 0px;
+    border-radius: 0px;
+    width: 200px;
+    height: 50px;
+    padding: 10px;
+    border-bottom: 2px solid;
+}
+
+#navButton:hover{
+    background-color: rgb(0, 0, 0,0);
+    color: rgb(124, 249, 7);
+    border: 0px;
+    border-radius: 0px;
+    width: 300px;
+    height: 50px;
+    border-bottom: 2px solid;
+}
+
+#generoBotoesH1{
+    text-align: center;
+    color: white;
+    padding: 10px;
+    cursor: default;
+}
+
+#generoBotoes{
+    text-align: center;
+}
+
+#curtirMusica{
+    opacity: .5;
+    color: white;
+    transition: 1s;
+}
+#curtirMusica:hover{
+    opacity: 1;
+    color: rgb(108, 108, 229);
+    cursor: pointer;
+}
+button{
+    background-color: rgb(108, 108, 229);
+    color: white;
+    border-radius: 100px;
+    height: 80px;
+    width: 80px;
+    padding: 10px;
+    transition: 1s;
+}
+
+button:hover{
+    background-color: rgb(124, 249, 7);
+    color: rgb(0, 0, 0);
+    width: 100px;
+    height: 100px;
+}
+
+#divBody{
+    background: rgb(131,58,180);
+    background: linear-gradient(90deg, rgba(131,58,180,1) 0%, 
+    rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+
+    background-size: 500%;
+    margin-top: 6.6%;
+    width: 100%;
+    height: 400px;
+    overflow: scroll;
+    animation: testgradient 10s infinite alternate;
+}
+
+@keyframes testgradient {
+    0% {background-position: left;}
+    100%{background-position: right;}
+}
+
+
+table{
+    color: white;
+}
+
+
+#fecharPlayer{
+    font-size: 30px;
+    color: rgb(255, 255, 255);
+    transition: 1s;
+}
+
+#fecharPlayer:hover{
+    color: rgb(124, 249, 7);
+    text-shadow: 1px 1px black;
+    font-style: italic;
+    cursor: pointer;
+}
+
+.botaoRadio{
+    border-radius: 0px;
+    width: 200px;
+    height: 100px;
+}
+
+.botaoRadio:hover{
+    border-radius: 0px;
+    width: 300px;
+}
+
+#abrirPlayer{
+    color: rgb(255, 255, 255);
+    transition: 1s;
+    font-size: 30px;
+}
+
+#abrirPlayer:hover{
+    color: rgb(124, 249, 7);
+    text-shadow: 1px 1px black;
+    font-style: italic;
+    cursor: pointer;
+}
+
+h2{
+    color: white;
+}
+
+#descubraH1{
+    text-align: center;
+}
+
+#divDescubra1{
+    justify-content: center;
+    display: inline;
+    grid: 1px solid;
+    width: 100%;
+    display: flex;
+    text-align: center;
+    gap: 50px;
+}
+
+#divDescubra2{
+    justify-content: center;
+    display: inline;
+    grid: 1px solid;
+    width: 100%;
+    display: flex;
+    text-align: center;
+    gap: 50px;
+}
+
+#divRadio{
+    justify-content: center;
+    text-align: center;
+    display: inline;
+    grid: 1px solid;
+    width: 100%;
+    display: flex;
+    text-align: center;
+    gap: 50px;
+}
+
+.grid{
+    display: inline-block;
+}
+
+h1{
+    color: white;
+}
+
+#imgg{
+    border-radius: 100px;
+    width: 100px;
+    height: 100px;
+    transition: 0.5s;
+    outline: 1px solid rgb(255, 255, 255);
+
+}
+
+#imgg:hover{
+    cursor: pointer;
+    opacity: 0.5;
+    width: 100px;
+    height: 100px;
+}
+
+footer{
+    box-shadow: 1px 10px 30px black;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    bottom: 0;
+    background-color: rgba(72, 18, 116);
+   
+    background-size: 100%;
+    color: white;
+    width: 100%;
+    padding: 10px;
+}
+
+#player{
+    
+    text-align: center;
+    margin: auto;
+    width: 700px;
+
+}
+
+#playerBotaoPausar{
+    
+    background-color: rgb(108, 108, 229);
+    color: white;
+    padding: 10px;
+    transition: 1s;
+    border-radius: 100px;
+    height: 70px;
+    width: 70px;
+}
+
+#playerBotaoPausar:hover{
+    background-color: rgb(124, 249, 7);
+    color: rgb(0, 0, 0);
+    width: 80px;
+    height: 80px;
+}
+#playerBotaoContinuar{
+    background-color: rgb(108, 108, 229);
+    color: white;
+    padding: 10px;
+    transition: 1s;
+    border-radius: 100px;
+    height: 70px;
+    width: 70px;
+}
+
+#playerBotaoContinuar:hover{
+    background-color: rgb(124, 249, 7);
+    color: rgb(0, 0, 0);
+    width: 80px;
+    height: 80px;
+}
+
+#playerBotaoAnterior{
+    background-color: rgb(108, 108, 229);
+    color: white;
+    padding: 10px;
+    transition: 1s;
+    border-radius: 100px;
+    height: 50px;
+    width: 50px;
+}
+
+#playerBotaoAnterior:hover{
+    background-color: rgb(124, 249, 7);
+    color: rgb(0, 0, 0);
+    width: 60px;
+    height: 60px;
+}
+#playerBotaoProximo{
+    background-color: rgb(108, 108, 229);
+    color: white;
+    padding: 10px;
+    transition: 1s;
+    border-radius: 100px;
+    height: 50px;
+    width: 50px;
+}
+
+#playerBotaoProximo:hover{
+    background-color: rgb(124, 249, 7);
+    color: rgb(0, 0, 0);
+    width: 60px;
+    height: 60px;
+}
+
+#barraProgresso{
+    width: 350px;
+    -webkit-appearance: none;
+    background-color: rgb(12, 12, 53,0.8);
+    border: 1px solid rgb(12, 12, 53);;
+    border-radius: 10px;
+    color: white;
+    outline: none;
+    opacity: 0.5;
+    transition: 0.5s;
+    height: 10px;
+}
+
+#barraProgresso:hover{
+    opacity: 1;
+    height: 10px;
+}
+
+#barraProgresso::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+    border: 2px solid;
+    background-color: rgb(108, 108, 229);
+    cursor: pointer;
+}
+
+
+#volumeFooter{
+    margin: left;
+    text-align: center;
+    width: 180px;
+    height: 40px;
+}
+
+#divVolume{
+    border-radius: 5px;
+    box-shadow: 5px 5px 40px black;
+}
+
+#spanVolume i{
+    color: rgb(255, 255, 255);
+    transition: 1s;
+}
+
+#spanVolume:hover{
+    color: rgb(124, 249, 7);
+}
+
+#barraVolume{
+    width: 150px;
+    -webkit-appearance: none;
+    background-color: rgb(245, 245, 246);
+    border: 1px solid ;
+    border-radius: 10px;
+    color: white;
+    opacity: 0.5;
+    transition: 0.5s;
+    height: 10px;
+}
+
+#barraVolume:hover{
+    opacity: 1;
+    height: 10px;
+}
+
+#barraVolume::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+    border: 2px solid;
+    background-color: rgb(108, 108, 229);
+    cursor: pointer;
+}
+
+#mutado{
+    visibility: hidden;
+}
+
+li{
+    color: white;
+}

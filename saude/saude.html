@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cure-Squad</title>
+    <link rel="stylesheet" href="saude.css">
+    <link rel="icon" type="image/icon" href="imgs/hosp.png">
+    <script src="saude.js" defer></script>
+</head>
+<header>
+    <br>
+    <div id="divRelogioData">
+        <span id="horarioAtual">Horário Atual:</span>
+        <span id="horario"></span>
+        <span id="dataSpanLabel">Data:</span>
+        <span id="dataSpan"></span>
+    </div>
+
+    <div id="divLogoHeader">
+        <img src="imgs/hosp.png" alt="logo">
+        <h1 id="h1Header">Cure-Squad</h1>
+        <h2 id="h2Header">Aqui a tropa médica te salva</h2>
+        <audio id="musica" src="index:none"  loop></audio>
+    </div>
+
+    <div id="divMusica">
+        <span id="dataSpanLabel">Tocar Musica:</span>
+        <button id="botaoMusica" onclick="playMusica()">Tocar</button>
+        <span id="dataSpanLabel">Pausar Musica:</span>
+        <button id="botaoMusica" onclick="pauseMusica()">Pausar</button>
+        <span id="dataSpanLabel">Escolher Musica:</span>
+        <button id="botaoMusica" onclick="abrirModal()">Escolher</button>
+    </div>
+
+    <div id="modalMusica">
+        <div id="modalMusicaConteudo">
+            <h2>Selecionar Música</h2>
+            <br><br>
+            <select name="" id="selecaoMusica">
+            <option value="" hidden>Selecione uma Música</option>
+
+            <option value="SamSmith">Sam Smith</option>
+            <option value="JustinBieber">Justin Bieber</option>
+            <option value="BrunoMars">Bruno Mars</option>
+            <option value="GreenDay">Green Day</option>
+            <option value="DrDre">Dr Dre</option>
+            </select>
+            <br><br><br><br><br>
+            
+            <button type="submit" id="botaoMusica" onclick="escolherMusica()">Confirmar</button>
+        </div>
+    </div>
+
+    <nav id="navList">
+        <button class="navBotao" onclick="Inicio()">INICIO</button>
+        <button class="navBotao" onclick="Consultas()">AGENDAMENTO</button>
+        <button class="navBotao" onclick="Especialidades()">ESPECIALIDADES</button>
+        <button class="navBotao" onclick="Sobre()">SOBRE</button>
+        <button class="navBotao" onclick="Contato()">CONTATO</button>
+    </nav>
+    
+</header>
+<body>
+    <div id="divIframe">
+    <iframe id="iframeSaude" src="Home/saudeHome.html" frameborder="0"></iframe>
+    </div>
+    
+    <a onclick="abrirInfo ()" id="cliqueAquii"><h1 id="h1Video">Clique Aqui</a> para conhecer um pouco sobre o Cure-Squad</h1>
+
+    <div id="divBody" hidden>
+        <div id="divFechar">
+            <span id="fechar" onclick="fecharInfo()"><img id="iconeFechar" src="imgs/arrow.png"></span>
+        </div>
+        <h1 id="welcome2">Nós Temos:</h1>
+            <br>
+            <ul id="welcome2ul">
+                <li id="liUl">PROFISSIONAIS QUALIFICADOS</li>
+                <li id="liUl">PLANOS DE SAÚDE COM ÓTIMO VALORES</li>
+                <li id="liUl">DIVERSOS PONTOS 'Cure-Squad' POR TODO O BRASIL</li>
+                <li id="liUl">EQUIPAMENTOS HOSPITALARES DE EXCELENTE QUALIDADE</li>
+                <li id="liUl">SERVIÇOS ÁGEIS</li>
+                <li id="liUl">E MAIS...</li>
+                Para mais Informações sobre os nossos serviços <a onclick="sobreClique()" id="cliqueAqui">clique aqui</a>
+            </ul>
+    </div>
+</body>
+    <footer>
+        <div id="divLogoFooter">
+            <img id="logoCure" src="imgs/hosp.png" alt="logo">
+            <h1 id="h1logoFooter">Cure-Squad</h1>
+        </div>
+        <div id="divFooter">
+            <h1 id="h1Footer">Developed by <a href="https://www.instagram.com/_l1nx337?igsh=amV2MGROdmJsdDdh" id="desenvolvedor">@_l1nx337</a></h1>
+            <h1 id="h1Footer">A.K.A Salis Silva</h1>   
+        </div>
+        <div id="divRedesSociais">
+            <h1 id="h1Redes">Nossas redes sociais:</h1>
+            <a href="https://www.instagram.com/cure_squad?igsh=YWhmaXl2Zzl3cnJj"><img id='icone' src="imgs/insta.png"></a>
+            <a href="https://youtube.com/@CureSquadAL?si=YdpW_w5-p116cFkV"><img id='icone' src="imgs/yt.png"></a>
+            <a href="https://x.com/cure_squad_al?t=zXEj4YxzdefJeM0vPRKaWw&s=08"><img id='icone' src="imgs/x.png"></a>
+        </div>
+</footer>
+</html>

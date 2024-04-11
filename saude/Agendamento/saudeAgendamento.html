@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendamento</title>
+    <link rel="stylesheet" href="saudeAgendamento.css">
+    <script src="saudeAgendamento.js" defer></script>
+</head>
+<body>
+    <div id="divAll">
+    <div id="form1">
+        <h1>Dados Pessoais:</h1>
+        <label for="">Nome:</label>
+        <input type="text">
+        <br><br>
+
+        <label for="">Email:</label>
+        <input type="email">
+        <br><br>
+
+        <label for="">Telefone:</label>
+        <input type="number">
+        <br><br>
+
+        <label for="">Especialidade:</label>
+        <select name="" id="selectEspecialidade" onchange="adicionarSelect()">
+        <option value="" hidden>Selecione uma Especialidade:</option>
+        <option value="Cardiologia">Cardiologia</option>
+        <option value="Endocrinologia">Endocrinologia</option>
+        <option value="Infectologia">Infectologia</option>
+        <option value="Mastologia">Mastologia</option>
+        <option value="Oftalmologia">Oftalmologia</option>
+        <option value="Otorrino">Otorrinolaringologia</option>
+
+        </select><br><br>
+
+        <label for="">Médico:</label>
+        <select name="" id="selectMedico">
+            <option value="" hidden>Selecione um Médico:</option>
+        </select>
+        <span id="testando"></span>
+        
+        
+    </div>
+
+    <div id="form2">
+        <h1>Endereço:</h1>
+        <label for="">CEP:</label>
+        <input type="number" id="cepTxt">
+        <br><br>
+
+        <label for="">Estado:</label>
+        <input type="text" id="estadoTxt"disabled>
+        <br><br>
+
+        <label for="">Cidade:</label>
+        <input type="text" id="cidadeTxt" disabled>
+        <br><br>
+
+        <label for="">Bairro:</label>
+        <input type="text" id="bairroTxt" disabled>
+        <br><br>
+
+        <label for="">Rua:</label>
+        <input type="text" id="ruaTxt" disabled>
+        <br><br>
+
+        
+        <label for="">Complemento:</label>
+        <input type="text" id="complementoTxt">
+        <br><br>
+    </div>
+    <div id="form3">
+        <h1>Finalizando:</h1>
+        <label for="">Plano:</label>
+        <select name="" id="">
+        <option value="" hidden>Selecione seu Plano:</option>
+        <option value="Basico">Básico</option>
+        <option value="Premium">Premium</option>
+        <option value="Familiar Basico">Familiar Básico</option>
+        <option value="Familiar Premium">Familiar Premium</option>
+        </select><br><br>
+
+        <label for="">Data da Consulta:</label>
+        <input id="dataInput" type="date" max=""><br><br>
+        
+
+        <label for="">Observações:</label><br><br>
+        <textarea name="" id="" cols="30" rows="5" placeholder="digite aqui..."></textarea>
+        <br><br><span hidden id="dadosEnviados"></span><br><br>
+        <button id="botaoEnviar" onclick="dadosComputados()">Enviar</button>
+    </div>
+</div>
+</body>
+</html>
