@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BIG CA$H AUTOS</title>
+    <link rel="shortcut icon" href="imgs/money.png" type="image/x-icon">
+    <link rel="stylesheet" href="fipe.css">
+    <script src="fipe.js" defer></script>
+</head>
+<body>
+    <div id="divSelect">
+    <h1>BIG CA$H AUTOS - TABELA FIPE</h1>
+
+    <select id="selectVeiculo" onchange="buscarMarcas()">
+        <option value="" hidden>Selecione um tipo de Veiculo</option>
+        <option value="carros">Carro</option>
+        <option value="caminhoes">Caminhão</option>
+        <option value="motos">Moto</option>
+    </select>
+
+
+    <select name="" id="selectMarca" onchange="buscarModelos()">
+        <option value="" hidden>Selecione uma marca</option>
+    </select>
+
+
+    <select name="" id="selectModelo" onchange="buscarAnos()">
+        <option value="" hidden>Selecione um modelo</option>
+    </select>
+
+    <select name="" id="selectAno">
+        <option value="" hidden>Selecione o ano de fabricação</option>
+    </select>
+
+    <button id="botaoEncontrar" onclick="buscarVeiculo()">Encontrar...</button>
+
+    </div>
+
+    <div id="divDados">
+        <h2 id="anoModelo"></h2>
+        <h2 id="codigoFipe"></h2>
+        <h2 id="combustivel"></h2>
+        <h2 id="marca"></h2>
+        <h2 id="mesReferencia"></h2>
+        <h2 id="modelo"></h2>
+        <h2 id="valor"></h2>
+
+
+    </div>
+</body>
+</html>
