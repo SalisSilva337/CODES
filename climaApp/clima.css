@@ -45,9 +45,11 @@ body{
 }
 
 input {
+    text-align: center;
+    border: 1px solid;
     width: 200px;
     padding: 10px;
-    border: 1px solid;
+  
     background-color: transparent;
 }
 
