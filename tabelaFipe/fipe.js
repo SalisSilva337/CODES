@@ -20,6 +20,11 @@ function buscarMarcas() {
             console.log(fipeMarcas);
             selectMarca.innerHTML = '';
             
+            let optionVazia = document.createElement("option");
+            optionVazia.value = "";
+            optionVazia.textContent = "Selecione uma marca";
+            selectMarca.appendChild(optionVazia);
+
             for (let index = 0; index < fipeMarcas.length; index++) {
                 let option = document.createElement("option");
                 
@@ -57,8 +62,12 @@ function buscarModelos() {
                 let fipeModelos = JSON.parse(request.response);
                 let selectModelo = document.querySelector("#selectModelo");
                 console.log(fipeModelos);
-
                 selectModelo.innerHTML = '';
+
+                let optionVazia = document.createElement("option");
+                optionVazia.value = "";
+                optionVazia.textContent = "Selecione um modelo";
+                selectModelo.appendChild(optionVazia);
                 for (let index = 0; index < fipeModelos.modelos.length; index++) {
                     let option = document.createElement("option");
 
@@ -99,8 +108,14 @@ function buscarAnos() {
                 let fipeAnos = JSON.parse(request.response);
                 let selectAno = document.querySelector("#selectAno");
                 console.log(fipeAnos);
-
                 selectAno.innerHTML = '';
+
+                let optionVazia = document.createElement("option");
+                optionVazia.value = "";
+                optionVazia.textContent = "Selecione o ano de fabricação";
+                selectAno.appendChild(optionVazia);
+
+                
                 for (let index = 0; index < fipeAnos.length; index++) {
                     let option = document.createElement("option");
                     
@@ -132,7 +147,7 @@ let modelo = document.querySelector("#modelo");
 let valor = document.querySelector("#valor");
 
 function buscarVeiculo() {
-    if (selectModelo !== "") {
+    if (selectAno !== "") {
         let url = "https://parallelum.com.br/fipe/api/v1/" + selectVeiculo.value + "/marcas/" +  selectMarca.value + "/modelos/" + selectModelo.value + "/anos/" + selectAno.value;
         
         
