@@ -14,19 +14,33 @@
     box-shadow: 0px 0px 0px;
 }
 
+#carrinhoImg{
+    width: 200px;
+    height: 100px;
+    transition: 0.5s;
+}
 
-img{
+#carrinhoImg:hover{
+    width: 200px;
+    height: 100px;
+    opacity: 0.5;
+    transform: scale(1.1);
+}
+
+#imagensAPI{
     width: 200px;
     height: 200px;
     border: 10px solid;
     color: black;
     border-radius: 10px;
+    transition: 0.2s;
 }
 
-img:hover{
+#imagensAPI:hover{
     cursor: pointer;
     filter: opacity(0.7);
     box-shadow: 0px 0px 20px  rgb(216, 207, 207);
+    transform: scale(1.1);
 }
 
 #headerLogo{
@@ -60,7 +74,6 @@ img:hover{
     flex-wrap: wrap;
     overflow: auto;
     gap: 50px;
-    
     width: 66.4%;
     height: 1000px;
     padding: 10px;
@@ -87,11 +100,12 @@ img:hover{
 }
 
 #spanFechar{
+    float: right;
     font-size: x-large;
     position: relative;
     height: 10px;
     top: -30px;
-    left: -10px;
+    left: 450px;
     transition: 0.5s;
 }
 
@@ -101,6 +115,7 @@ img:hover{
 }
 
 #modalConteudo{
+    justify-content: center;
     margin: auto;
     color: white;
     font-family: cursive;
@@ -108,6 +123,8 @@ img:hover{
     position: relative;
     top: 200px;
     left: 50px;
+    gap: 10px;
+    flex-wrap: wrap;
     background-color: rgb(44, 34, 34);
     text-align: center;
     padding: 50px;
@@ -116,14 +133,23 @@ img:hover{
     box-shadow: 0px 0px 100px  rgb(216, 207, 207);
     width: 50%; 
     height: 400px;
+    overflow: auto;
 }
-
+@keyframes modalAnim {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
+}
 
 #carrinhoDiv{
     text-align: center;
     float: right;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     gap: 50px;
     border-left: 1px solid;
     width: 20%;
@@ -132,6 +158,8 @@ img:hover{
     box-shadow: 1px 1px 40px black;
     background-color: rgb(44, 34, 34);
     color: white;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 
