@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Buy-In</title>
     <link rel="stylesheet" href="loja.css">
+    <link rel="shortcut icon" href="imgs/cash.png" type="image/x-icon">
     <script src="loja.js" defer></script>
 </head>
     <header>
@@ -16,20 +17,24 @@
 <body>
 
     <div id="categoriaDiv">
-        <button class="botoesCategorias">Categoria 1</button>
-        <button class="botoesCategorias">Categoria 2</button>
-        <button class="botoesCategorias">Categoria 3</button>
-        <button class="botoesCategorias"> Categoria 4</button>
-        <button class="botoesCategorias">Ver Tudo</button>
+        <button class="botoesCategorias" id="botaoEletronicos" onclick="categoriaEletronicos()">Eletrônicos</button>
+        <button class="botoesCategorias" id="botaoJoias" onclick="categoriaJoias()">Joias</button>
+        <button class="botoesCategorias" id="botaoHomem" onclick="categoriaRoupasMasculinas()">Roupas para Homens</button>
+        <button class="botoesCategorias" id="botaoMulher" onclick="categoriaRoupasFemininas()">Roupas para Mulheres</button>
+        <button class="botoesCategorias" id="botaoTudo" onclick="verTudo()">Ver Tudo</button>
     </div>
+
+
+    <div id="modal">
+        <div id="modalConteudo">
+            <span id="spanFechar">X</span>
+        </div>
+    </div>
+
 
     <div id="mainDiv">
 
-        <div id="modal">
-            <div id="modalConteudo">
-                <span id="spanFechar">X</span>
-            </div>
-        </div>
+        
 
     </div>
 
