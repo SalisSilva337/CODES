@@ -3,8 +3,9 @@
     padding: 0;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
-
-
+h2{
+    font-size: large;
+}
 #logo{
     width: 100px;
     height: 100px;
@@ -14,15 +15,13 @@
     box-shadow: 0px 0px 0px;
 }
 
-#carrinhoImg{
+#carrinhoAdd{
     width: 200px;
     height: 100px;
-    transition: 0.5s;
+    
 }
 
-#carrinhoImg:hover{
-    width: 200px;
-    height: 100px;
+#carrinhoAdd:hover{
     opacity: 0.5;
     transform: scale(1.1);
 }
@@ -30,10 +29,39 @@
 #imagensAPI{
     width: 200px;
     height: 200px;
-    border: 10px solid;
-    color: black;
+    border: 5px solid;
+    color: rgb(9, 230, 9);
     border-radius: 10px;
     transition: 0.2s;
+    
+}
+
+#imgCarrinhoAPI{
+    width: 100px;
+    height: 100px;
+    border: 5px solid;
+    color: rgb(9, 230, 9);
+    border-radius: 10px;
+    
+    
+}
+
+#imgCarrinhoAPI:hover{
+    
+    border: 5px solid;
+    color: rgb(9, 230, 9);
+    border-radius: 10px;
+    
+    
+}
+
+#excluirImg{
+    width: 110px;
+    height: 110px;
+    transition: 0.5s;
+}
+#excluirImg:hover{
+    transform: scale(1.1);
 }
 
 #imagensAPI:hover{
@@ -61,7 +89,7 @@
     flex-direction: column;
     gap: 50px;
     border-right: 1px solid;
-    width: 10%;
+    width: 10.3%;
     height: 1000px;
     padding: 10px;
     box-shadow: 1px 1px 40px black;
@@ -79,6 +107,8 @@
     height: 1000px;
     padding: 10px;
     align-items: center;
+    text-align: left;
+    
     background-color: rgb(44, 34, 34);
     color: white;
 }
@@ -112,7 +142,7 @@
 
 #spanFechar:hover{
     cursor: pointer;
-    color: black;
+    color: rgb(9, 230, 9);
 }
 
 #modalConteudo{
@@ -129,7 +159,7 @@
     background-color: rgb(44, 34, 34);
     text-align: center;
     padding: 50px;
-    border: 1px solid rgb(255, 255, 255);
+    border: 3px solid rgb(9, 230, 9);
     border-radius: 10px;
     box-shadow: 0px 0px 100px  rgb(216, 207, 207);
     width: 50%; 
@@ -152,7 +182,7 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 50px;
+    gap: 20px;
     border-left: 1px solid;
     width: 20%;
     height: 1000px;
@@ -180,4 +210,28 @@
     transform: scale(1.1);
     font-style: italic;
     box-shadow: 0px 0px 10px rgb(9, 230, 9);
+}
+
+#avancarCarrinho{
+    position: sticky;
+    
+    top: -10px;
+    width: 400px;
+    height: 100px;
+    background-color: rgb(47, 34, 34);
+    border: 2px solid rgb(9, 230, 9);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-top: 0px;
+}
+
+#botaoAvancar{
+   
+    position: relative;
+    top:30px;
+    background-color: rgb(9, 230, 9);
+    border: 2px solid;
+    border-radius: 10px;
+    width: 300px;
+    height: 50px;
 }

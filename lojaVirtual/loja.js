@@ -3,7 +3,7 @@ let modal = document.querySelector("#modal");
 let spanFechar = document.querySelector("#spanFechar");
 let modalConteudo = document.querySelector("#modalConteudo");
 let carrinhoDiv = document.querySelector("#carrinhoDiv");
-let carrinhoImg = document.querySelector("#carrinhoImg");
+let carrinhoAdd = document.querySelector("#carrinhoAdd");
 
 window.onload = function buscarProdutos() {
     let url = "https://fakestoreapi.com/products/";
@@ -25,7 +25,7 @@ window.onload = function buscarProdutos() {
                 img.src = produtos[index].image;
 
                 let imgCarrinho = document.createElement("img");
-                imgCarrinho.id = "imagensAPI";
+                imgCarrinho.id = "imgCarrinhoAPI";
                 imgCarrinho.src = produtos[index].image;
 
                 
@@ -33,33 +33,58 @@ window.onload = function buscarProdutos() {
                 
 
                 let h2Modal = document.createElement("h2");
-                let h2ModalPrice = document.createElement("h2");
                 h2Modal.innerHTML = "";
-                h2ModalPrice.innerHTML = "";
                 
                 
+                let excluir = document.createElement("img");
+                excluir.src = "imgs/excluir.png";
+                excluir.id = "excluirImg";
+
+
+
+
                 img.addEventListener("click",function (){
+                    
                     modal.style.display = "block";
                     modalConteudo.style.animation = "modalAnim 0.5s";
                     h2Modal.textContent = produtos[index].description;
-                    h2ModalPrice.textContent ="Preço: $" + produtos[index].price;
+                    
                     modalConteudo.appendChild(h2Modal);
-                    modalConteudo.appendChild(h2ModalPrice);
-                    modalConteudo.appendChild(carrinhoImg);
+                    
+                    modalConteudo.appendChild(carrinhoAdd);
 
                     img.style.opacity = 0.7;
-                    carrinhoImg.addEventListener("click", function colocarCarrinho() {
-                        carrinhoDiv.appendChild(imgCarrinho);
-                        carrinhoDiv.appendChild(h2Carrinho);
+
+                    console.log(img);
+                    
+                    spanFechar.addEventListener("click",function (){
                         
+                        modal.style.display = "none";
+
+                        modalConteudo.removeChild(h2Modal);
+                        img.style.opacity = 1;
+                        
+                    }); 
+                    
+                    
+                    carrinhoAdd.addEventListener("click", function () {
+                        
+                        carrinhoDiv.appendChild(imgCarrinho);
+                        carrinhoDiv.appendChild(excluir);
+                        carrinhoDiv.appendChild(h2Carrinho);
+                       
                     });
+
+                    
                 });
 
-                spanFechar.addEventListener("click",function (){
-                    modal.style.display = "none";
-                    modalConteudo.removeChild(h2Modal);
-                    modalConteudo.removeChild(h2ModalPrice);
-                    img.style.opacity = 1;
+                
+
+                excluir.addEventListener("click", function () {
+                    carrinhoDiv.removeChild(imgCarrinho);
+                    carrinhoDiv.removeChild(excluir);
+                    carrinhoDiv.removeChild(h2Carrinho);
+                    
                 });
 
                 let h2 = document.createElement("h2");
@@ -70,12 +95,13 @@ window.onload = function buscarProdutos() {
                 h2Carrinho.textContent = produtos[index].title;
                 h2Carrinho.id = "nomeProduto";
 
+                let h2Price = document.createElement("h2");
+                h2Price.textContent ="Preço: $" + produtos[index].price;
 
 
-                
                 mainDiv.appendChild(img);
                 mainDiv.appendChild(h2);    
-
+                mainDiv.appendChild(h2Price);
                 
             }
         }
@@ -108,16 +134,21 @@ function categoriaEletronicos() {
                 
                 h2Modal.innerHTML = "";
                 
+                let excluir = document.createElement("img");
+                excluir.src = "imgs/excluir.png";
+                excluir.id = "excluirImg";
                 
                 img.addEventListener("click",function (){
                     modal.style.display = "block";
                     h2Modal.textContent = produtosEletronicos[index].description;
                     modalConteudo.style.animation = "modalAnim 0.5s";
                     modalConteudo.appendChild(h2Modal);
-                    modalConteudo.appendChild(carrinhoImg);
+                    
+                    modalConteudo.appendChild(carrinhoAdd);
                     img.style.opacity = 0.7;
-                    carrinhoImg.addEventListener("click", function colocarCarrinho() {
+                    carrinhoAdd.addEventListener("click", function colocarCarrinho() {
                         carrinhoDiv.appendChild(imgCarrinho);
+                        carrinhoDiv.appendChild(excluir);
                         carrinhoDiv.appendChild(h2Carrinho);
 
                     });
@@ -127,6 +158,13 @@ function categoriaEletronicos() {
                     modal.style.display = "none";
                     modalConteudo.removeChild(h2Modal);
                     img.style.opacity = 1;
+                });
+
+                excluir.addEventListener("click", function () {
+                    carrinhoDiv.removeChild(imgCarrinho);
+                    carrinhoDiv.removeChild(excluir);
+                    carrinhoDiv.removeChild(h2Carrinho);
+                    
                 });
 
                 let h2 = document.createElement("h2");
@@ -141,9 +179,15 @@ function categoriaEletronicos() {
                 let h2Carrinho = document.createElement("h2");
                 h2Carrinho.textContent = produtosEletronicos[index].title;
                 h2Carrinho.id = "nomeProduto";
+
+                let h2Price = document.createElement("h2");
+                h2Price.textContent ="Preço: $" + produtosEletronicos[index].price;
+
+
                 
                 mainDiv.appendChild(img);
-                mainDiv.appendChild(h2);    
+                mainDiv.appendChild(h2);   
+                mainDiv.appendChild(h2Price); 
             }
         }
     }
@@ -176,16 +220,20 @@ function categoriaJoias() {
                 
                 h2Modal.innerHTML = "";
                 
+                let excluir = document.createElement("img");
+                excluir.src = "imgs/excluir.png";
+                excluir.id = "excluirImg";
                 
                 img.addEventListener("click",function (){
                     modal.style.display = "block";
                     h2Modal.textContent = produtosJoias[index].description;
                     modalConteudo.style.animation = "modalAnim 0.5s";
                     modalConteudo.appendChild(h2Modal);
-                    modalConteudo.appendChild(carrinhoImg);
+                    modalConteudo.appendChild(carrinhoAdd);
                     img.style.opacity = 0.7;
-                    carrinhoImg.addEventListener("click", function colocarCarrinho() {
+                    carrinhoAdd.addEventListener("click", function colocarCarrinho() {
                         carrinhoDiv.appendChild(imgCarrinho);
+                        carrinhoDiv.appendChild(excluir);
                         carrinhoDiv.appendChild(h2Carrinho);
 
                     });
@@ -195,6 +243,13 @@ function categoriaJoias() {
                     modal.style.display = "none";
                     modalConteudo.removeChild(h2Modal);
                     img.style.opacity = 1;
+                });
+
+                excluir.addEventListener("click", function () {
+                    carrinhoDiv.removeChild(imgCarrinho);
+                    carrinhoDiv.removeChild(excluir);
+                    carrinhoDiv.removeChild(h2Carrinho);
+                    
                 });
 
                 let h2 = document.createElement("h2");
@@ -209,10 +264,14 @@ function categoriaJoias() {
                 h2Carrinho.textContent = produtosJoias[index].title;
                 h2Carrinho.id = "nomeProduto";
 
+                let h2Price = document.createElement("h2");
+                h2Price.textContent ="Preço: $" + produtosJoias[index].price;
+
 
                 
                 mainDiv.appendChild(img);
                 mainDiv.appendChild(h2); 
+                mainDiv.appendChild(h2Price);
             }   
         }
     }
@@ -244,16 +303,20 @@ function categoriaRoupasMasculinas() {
                 
                 h2Modal.innerHTML = "";
                 
+                let excluir = document.createElement("img");
+                excluir.src = "imgs/excluir.png";
+                excluir.id = "excluirImg";
                 
                 img.addEventListener("click",function (){
                     modal.style.display = "block";
                     h2Modal.textContent = produtosMasculino[index].description;
                     modalConteudo.style.animation = "modalAnim 0.5s";
                     modalConteudo.appendChild(h2Modal);
-                    modalConteudo.appendChild(carrinhoImg);
+                    modalConteudo.appendChild(carrinhoAdd);
                     img.style.opacity = 0.7;
-                    carrinhoImg.addEventListener("click", function colocarCarrinho() {
+                    carrinhoAdd.addEventListener("click", function colocarCarrinho() {
                         carrinhoDiv.appendChild(imgCarrinho);
+                        carrinhoDiv.appendChild(excluir);
                         carrinhoDiv.appendChild(h2Carrinho);
 
                     });
@@ -263,6 +326,13 @@ function categoriaRoupasMasculinas() {
                     modal.style.display = "none";
                     modalConteudo.removeChild(h2Modal);
                     img.style.opacity = 1;
+                });
+
+                excluir.addEventListener("click", function () {
+                    carrinhoDiv.removeChild(imgCarrinho);
+                    carrinhoDiv.removeChild(excluir);
+                    carrinhoDiv.removeChild(h2Carrinho);
+                    
                 });
 
                 let h2 = document.createElement("h2");
@@ -277,10 +347,14 @@ function categoriaRoupasMasculinas() {
                 h2Carrinho.textContent = produtosMasculino[index].title;
                 h2Carrinho.id = "nomeProduto";
 
+                let h2Price = document.createElement("h2");
+                h2Price.textContent ="Preço: $" + produtosMasculino[index].price;
+
 
                 
                 mainDiv.appendChild(img);
-                mainDiv.appendChild(h2);    
+                mainDiv.appendChild(h2); 
+                mainDiv.appendChild(h2Price);   
             }
         }
     }
@@ -312,6 +386,9 @@ function categoriaRoupasFemininas() {
                 
                 h2Modal.innerHTML = "";
                 
+                let excluir = document.createElement("img");
+                excluir.src = "imgs/excluir.png";
+                excluir.id = "excluirImg";
                 
                 img.addEventListener("click",function (){
                     modal.style.display = "block";
@@ -319,10 +396,12 @@ function categoriaRoupasFemininas() {
                     h2Modal.textContent = produtosFeminino[index].description;
                     modalConteudo.style.animation = "modalAnim 0.5s";
                     modalConteudo.appendChild(h2Modal);
-                    modalConteudo.appendChild(carrinhoImg);
+                    modalConteudo.appendChild(carrinhoAdd);
                     img.style.opacity = 0.7;
-                    carrinhoImg.addEventListener("click", function colocarCarrinho() {
+
+                    carrinhoAdd.addEventListener("click", function colocarCarrinho() {
                         carrinhoDiv.appendChild(imgCarrinho);
+                        carrinhoDiv.appendChild(excluir);
                         carrinhoDiv.appendChild(h2Carrinho);
 
                     });
@@ -334,12 +413,19 @@ function categoriaRoupasFemininas() {
                     img.style.opacity = 1;
                 });
 
+                excluir.addEventListener("click", function () {
+                    carrinhoDiv.removeChild(imgCarrinho);
+                    carrinhoDiv.removeChild(excluir);
+                    carrinhoDiv.removeChild(h2Carrinho);
+                    
+                });
+
                 let h2 = document.createElement("h2");
                 h2.textContent = produtosFeminino[index].title;
                 h2.id = "nomeProduto";
                 
                 let imgCarrinho = document.createElement("img");
-                imgCarrinho.id = "imagensAPI";
+                imgCarrinho.id = "imgCarrinhoAPI";
                 imgCarrinho.src = produtosFeminino[index].image;
 
                 let h2Carrinho = document.createElement("h2");
@@ -347,9 +433,14 @@ function categoriaRoupasFemininas() {
                 h2Carrinho.id = "nomeProduto";
 
 
+                let h2Price = document.createElement("h2");
+                h2Price.textContent ="Preço: $" + produtosFeminino[index].price;
+
+
                 
                 mainDiv.appendChild(img);
-                mainDiv.appendChild(h2);    
+                mainDiv.appendChild(h2);
+                mainDiv.appendChild(h2Price);    
             }
         }
     }
@@ -380,19 +471,28 @@ function verTudo() {
                 
                 h2Modal.innerHTML = "";
                 
+                let excluir = document.createElement("img");
+                excluir.src = "imgs/excluir.png";
+                excluir.id = "excluirImg";
                 
                 img.addEventListener("click",function (){
                     modal.style.display = "block";
                     h2Modal.textContent = produtos[index].description;
                     modalConteudo.style.animation = "modalAnim 0.5s";
                     modalConteudo.appendChild(h2Modal);
-                    modalConteudo.appendChild(carrinhoImg);
+                    modalConteudo.appendChild(carrinhoAdd);
                     img.style.opacity = 0.7;
-                    carrinhoImg.addEventListener("click", function colocarCarrinho() {
-                        carrinhoDiv.appendChild(imgCarrinho);
-                        carrinhoDiv.appendChild(h2Carrinho);
 
+                    carrinhoAdd.addEventListener("click", function colocarCarrinho() {
+                    
+                        carrinhoDiv.appendChild(imgCarrinho);
+                        carrinhoDiv.appendChild(excluir);
+                        carrinhoDiv.appendChild(h2Carrinho);
+    
                     });
+                    
+
+                    
                 });
 
                 spanFechar.addEventListener("click",function (){
@@ -401,12 +501,22 @@ function verTudo() {
                     img.style.opacity = 1;
                 });
 
+               
+                
+
+                excluir.addEventListener("click", function () {
+                    carrinhoDiv.removeChild(imgCarrinho);
+                    carrinhoDiv.removeChild(excluir);
+                    carrinhoDiv.removeChild(h2Carrinho);
+                    
+                });
+
                 let h2 = document.createElement("h2");
                 h2.textContent = produtos[index].title;
                 h2.id = "nomeProduto";
                 
                 let imgCarrinho = document.createElement("img");
-                imgCarrinho.id = "imagensAPI";
+                imgCarrinho.id = "imgCarrinhoAPI";
                 imgCarrinho.src = produtos[index].image;
 
                 let h2Carrinho = document.createElement("h2");
@@ -414,10 +524,14 @@ function verTudo() {
                 h2Carrinho.id = "nomeProduto";
 
 
+                let h2Price = document.createElement("h2");
+                h2Price.textContent ="Preço: $" + produtos[index].price;
+
+
                 
                 mainDiv.appendChild(img);
                 mainDiv.appendChild(h2);    
-
+                mainDiv.appendChild(h2Price);
                 
             }
         }
@@ -425,44 +539,4 @@ function verTudo() {
 }
 
 
-// carrinhoImg.addEventListener("click", function colocarCarrinho() {
-    
-    
-//     let url = "https://fakestoreapi.com/carts";
-        
-        
-//     let request = new XMLHttpRequest();
-//     request.open("GET", url);
-//     request.send();
-
-//     request.onload = function () {
-//         if (request.status === 200) {
-//             console.log(url);
-//             let produtosCarrinho = JSON.parse(request.response);
-//             console.log(produtosCarrinho);
-
-//             for (let index = 0; index < produtosCarrinho.length; index++) {
-//                 let img = document.createElement("img");
-//                 img.id = "imagensAPI";
-//                 img.src = produtosCarrinho[index].image;
-//                 let h2Modal = document.createElement("h2");
-                
-//                 h2Modal.innerHTML = "";
-                
-//                 let h2 = document.createElement("h2");
-//                 h2.textContent = produtosCarrinho[index].title;
-//                 h2.id = "nomeProduto";
-                
-
-
-
-                
-//                 mainDiv.appendChild(img);
-//                 mainDiv.appendChild(h2);    
-
-                
-//             }
-//         }
-//     }
-// });
 
