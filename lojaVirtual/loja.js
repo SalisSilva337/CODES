@@ -27,9 +27,8 @@ window.onload = function buscarProdutos() {
                 let imgCarrinho = document.createElement("img");
                 imgCarrinho.id = "imgCarrinhoAPI";
                 imgCarrinho.src = produtos[index].image;
-
                 
-
+                
                 
 
                 let h2Modal = document.createElement("h2");
@@ -44,11 +43,12 @@ window.onload = function buscarProdutos() {
 
 
                 img.addEventListener("click",function (){
-                    
+                   
+
                     modal.style.display = "block";
                     modalConteudo.style.animation = "modalAnim 0.5s";
                     h2Modal.textContent = produtos[index].description;
-                    
+                    avancarCarrinho.style.display = 'none';
                     modalConteudo.appendChild(h2Modal);
                     
                     modalConteudo.appendChild(carrinhoAdd);
@@ -56,24 +56,34 @@ window.onload = function buscarProdutos() {
                     img.style.opacity = 0.7;
 
                     console.log(img);
+                    console.log("evento disparado...")
                     
                     spanFechar.addEventListener("click",function (){
-                        
                         modal.style.display = "none";
-
+                        avancarCarrinho.style.display = 'block';
                         modalConteudo.removeChild(h2Modal);
                         img.style.opacity = 1;
                         
                     }); 
                     
-                    
                     carrinhoAdd.addEventListener("click", function () {
+                        
+                        
                         
                         carrinhoDiv.appendChild(imgCarrinho);
                         carrinhoDiv.appendChild(excluir);
                         carrinhoDiv.appendChild(h2Carrinho);
+
+                        objeto = {
+                            nome: h2Carrinho.textContent,
+                            img: imgCarrinho.src
+                        }
+
+                        sessionStorage.setItem("produtos", objeto);
+                        console.log(sessionStorage.setItem("produtos", h2Carrinho.textContent));
                        
                     });
+                    
 
                     
                 });
