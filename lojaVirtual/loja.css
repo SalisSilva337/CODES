@@ -258,14 +258,12 @@ h2{
 
 #avancarCarrinho{
     position: sticky;
-    
     top: -10px;
     width: 400px;
     height: 100px;
     background-color: rgb(47, 34, 34);
     border: 2px solid rgb(9, 230, 9);
     border-radius: 0px;
-    
     border-top: 0px;
     border-bottom: 0px;
     transition: 0.5s;
@@ -273,6 +271,7 @@ h2{
 
 #avancarCarrinho:hover{
     border-radius: 20px;
+    
 }
 
 #botaoAvancar{
@@ -284,11 +283,14 @@ h2{
     border-radius: 10px;
     width: 300px;
     height: 50px;
-    transition: 0.5s;
+    transition: 0.5s transform;
+    
 }
 
 #botaoAvancar:hover{
+    font-style: italic;
     cursor: pointer;
     transform: scale(1.1);
     box-shadow: 0px 0px 20px rgb(9, 230, 9);
+    
 }
