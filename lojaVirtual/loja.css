@@ -135,7 +135,7 @@ h2{
     font-size: x-large;
     position: relative;
     height: 10px;
-    top: -30px;
+    top: -130px;
     left: 450px;
     transition: 0.5s;
 }
@@ -166,6 +166,7 @@ h2{
     height: 400px;
     overflow: auto;
 }
+
 @keyframes modalAnim {
     from {
         transform: scale(0);
@@ -176,13 +177,13 @@ h2{
 }
 
 #carrinhoDiv{
-    justify-content: center;
     text-align: center;
+    justify-content: center;
     float: right;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 10px;
     border-left: 1px solid;
     width: 20%;
     height: 1000px;
@@ -193,7 +194,24 @@ h2{
     overflow-y: auto;
     overflow-x: hidden;
 }
-
+#carrinhoItem{
+    text-align: center;
+    justify-content: center;
+    float: right;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+    border: 1px solid;
+    border-radius: 10px;
+    width: 50%;
+    height: 320px;
+    padding: 10px;
+    box-shadow: 1px 1px 40px black;
+    background-color: rgb(44, 34, 34);
+    color: rgb(9, 230, 9);
+    
+}
 
 
 .botoesCategorias{

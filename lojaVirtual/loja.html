@@ -17,18 +17,17 @@
 <body>
 
     <div id="categoriaDiv">
-        <button class="botoesCategorias" id="botaoEletronicos" onclick="categoriaEletronicos()">Eletrônicos</button>
-        <button class="botoesCategorias" id="botaoJoias" onclick="categoriaJoias()">Joias</button>
-        <button class="botoesCategorias" id="botaoHomem" onclick="categoriaRoupasMasculinas()">Roupas para Homens</button>
-        <button class="botoesCategorias" id="botaoMulher" onclick="categoriaRoupasFemininas()">Roupas para Mulheres</button>
-        <button class="botoesCategorias" id="botaoTudo" onclick="verTudo()">Ver Tudo</button>
+        <button class="botoesCategorias" value="electronics" id="botaoEletronicos" onclick="categorias(this)">Eletrônicos</button>
+        <button class="botoesCategorias" value="jewelery" id="botaoJoias" onclick="categorias(this)">Joias</button>
+        <button class="botoesCategorias" value="men's clothing" id="botaoHomem" onclick="categorias(this)">Roupas para Homens</button>
+        <button class="botoesCategorias" value="women's clothing" id="botaoMulher" onclick="categorias(this)">Roupas para Mulheres</button>
+        <button class="botoesCategorias" id="botaoTudo" onclick="buscarProdutos()">Ver Tudo</button>
     </div>
 
 
     <div id="modal">
         <div id="modalConteudo">
-            <span id="spanFechar">X</span>
-            <img id="carrinhoAdd" src="imgs/carrinho.png">
+            
         </div>
     </div>
 
