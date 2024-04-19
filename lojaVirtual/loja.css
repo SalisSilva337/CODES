@@ -73,7 +73,7 @@ h2{
 #excluirImg{
     width: 110px;
     height: 110px;
-    border: 1px solid;
+    border: 1px solid rgb(9, 230, 9);
     border-radius: 20px;
     transition: 0.5s;
 }
@@ -197,6 +197,17 @@ h2{
     }
 }
 
+@keyframes modalAnimFechar {
+    from {
+        transform: scale(1);
+        
+    }
+    to {
+        transform: scale(0);
+        rotate: 100deg;
+    }
+}
+
 #spanAddCarrinho{
     font-size: larger;
 }
@@ -228,14 +239,14 @@ h2{
     flex-direction: row;
     flex-wrap: wrap;
     gap: 10px;
-    border: 1px solid;
+    border: 1px solid rgb(9, 230, 9);
     border-radius: 10px;
     width: 50%;
     height: 50%;
     padding: 10px;
     box-shadow: 1px 1px 40px black;
     background-color: rgb(44, 34, 34);
-    color: rgb(9, 230, 9);
+    color: white;
     
 }
 
@@ -263,7 +274,7 @@ h2{
     height: 100px;
     background-color: rgb(47, 34, 34);
     border: 2px solid rgb(9, 230, 9);
-    border-radius: 0px;
+    border-radius: 10px;
     border-top: 0px;
     border-bottom: 0px;
     transition: 0.5s;
@@ -271,7 +282,7 @@ h2{
 
 #avancarCarrinho:hover{
     border-radius: 20px;
-    
+    width: 350px;
 }
 
 #botaoAvancar{
@@ -280,7 +291,7 @@ h2{
     top:30px;
     background-color: rgb(9, 230, 9);
     border: 2px solid;
-    border-radius: 10px;
+    border-radius: 40px;
     width: 300px;
     height: 50px;
     transition: 0.5s transform;

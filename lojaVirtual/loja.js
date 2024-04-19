@@ -80,6 +80,7 @@ function buscarProdutos() {
                     carrinhoAdd.id = "carrinhoAdd";
 
                     modal.style.display = "block";
+                    img.style.animation = "modalAnim 0.5s";
                     modalConteudo.style.animation = "modalAnim 0.5s";
                     h2Modal.textContent = produtos[index].description;
                     avancarCarrinho.style.display = 'none';
@@ -105,8 +106,6 @@ function buscarProdutos() {
                         carrinhoDiv.appendChild(carrinhoItem);
                         
                         
-
-                       
                     });
                     
 
@@ -114,8 +113,14 @@ function buscarProdutos() {
                 });
 
                 spanFechar.addEventListener("click",function (){
-                    modal.style.display = "none";
-                    avancarCarrinho.style.display = 'block';
+                    modalConteudo.style.animation = "modalAnimFechar 0.5s";
+                    img.style.animation = "modalAnimFechar 0.5s";
+
+                    setTimeout(() => {
+                        modal.style.display = "none";
+                        avancarCarrinho.style.display = 'block';
+                    }, 400);
+                   
                     modalConteudo.removeChild(h2Modal);
                     img.style.opacity = 1;
                     
@@ -131,8 +136,6 @@ function buscarProdutos() {
                 });
 
                 
-
-
                 mainDiv.appendChild(img);
                 mainDiv.appendChild(h2);    
                 mainDiv.appendChild(h2Price);
@@ -168,9 +171,7 @@ function categorias(botao) {
                 imgCarrinho.id = "imgCarrinhoAPI";
                 imgCarrinho.src = produtos[index].image;
                 
-                
-                
-
+            
                 let h2Modal = document.createElement("h2");
                 h2Modal.innerHTML = "";
                 
@@ -181,8 +182,6 @@ function categorias(botao) {
 
                 let spanFechar = document.createElement("button");
                 let carrinhoAdd = document.createElement("button");
-                
-
                 
 
                 let h2 = document.createElement("h2");
@@ -207,7 +206,7 @@ function categorias(botao) {
                     
                     modalConteudo.innerHTML = "";
 
-                    
+                    img.style.animation = "modalAnim 0.5s";
                     spanFechar.textContent = "Fechar Modal";
                     spanFechar.id = "spanFechar";
                     carrinhoAdd.textContent = "Adicionar ao Carrinho";
@@ -239,18 +238,18 @@ function categorias(botao) {
                        
                         carrinhoDiv.appendChild(carrinhoItem);
                         
-                        
-
                        
                     });
-                    
-
                     
                 });
 
                 spanFechar.addEventListener("click",function (){
-                    modal.style.display = "none";
-                    avancarCarrinho.style.display = 'block';
+                    modalConteudo.style.animation = "modalAnimFechar 0.5s";
+                    img.style.animation = "modalAnimFechar 0.5s";
+                    setTimeout(() => {
+                        modal.style.display = "none";
+                        avancarCarrinho.style.display = 'block';
+                    }, 400);
                     modalConteudo.removeChild(h2Modal);
                     img.style.opacity = 1;
                     
@@ -264,9 +263,6 @@ function categorias(botao) {
                        
                         carrinhoDiv.removeChild(carrinhoItem);
                 });
-
-                
-
 
                 mainDiv.appendChild(img);
                 mainDiv.appendChild(h2);    
