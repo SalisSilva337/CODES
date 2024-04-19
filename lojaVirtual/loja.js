@@ -5,6 +5,8 @@ let modalConteudo = document.querySelector("#modalConteudo");
 let carrinhoDiv = document.querySelector("#carrinhoDiv");
 let carrinhoAdd = document.querySelector("#carrinhoAdd");
 
+let listaCompras = [];
+
 window.onload = buscarProdutos();
 
 function buscarProdutos() {
@@ -105,6 +107,15 @@ function buscarProdutos() {
                        
                         carrinhoDiv.appendChild(carrinhoItem);
                         
+                        objetoCarrinho = {
+                            produtoNome: h2Carrinho.textContent,
+                            produtoImg: imgCarrinho.src,
+                            produtoPreco: h2CarrinhoPrice.textContent
+                        }
+                        
+                        listaCompras.push(objetoCarrinho);
+                        sessionStorage.produto = JSON.stringify(listaCompras);
+                        
                         
                     });
                     
@@ -127,18 +138,26 @@ function buscarProdutos() {
                 }); 
 
                 excluir.addEventListener("click", function () {
+                        carrinhoAdd.disabled = false;
+                        
+                       
                         carrinhoItem.removeChild(imgCarrinho);
                         carrinhoItem.removeChild(h2Carrinho);
                         carrinhoItem.removeChild(h2CarrinhoPrice);
                         carrinhoItem.removeChild(excluir);
                        
                         carrinhoDiv.removeChild(carrinhoItem);
+
+                        console.log(listaCompras);
                 });
 
                 
                 mainDiv.appendChild(img);
                 mainDiv.appendChild(h2);    
                 mainDiv.appendChild(h2Price);
+
+                
+                
                 
             }
         }
