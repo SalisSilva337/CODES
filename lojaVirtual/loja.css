@@ -6,6 +6,7 @@
 h2{
     font-size: large;
 }
+
 #logo{
     width: 100px;
     height: 100px;
@@ -15,15 +16,29 @@ h2{
     box-shadow: 0px 0px 0px;
 }
 
+#h2modal{
+    font-size: larger;
+}
+
 #carrinhoAdd{
+    font-size: x-large;
     width: 200px;
     height: 100px;
-    
+    background-color: rgb(9, 230, 9);
+    color: black;
+    border: 1px solid;
+    border-radius: 100px;
 }
 
 #carrinhoAdd:hover{
     opacity: 0.5;
     transform: scale(1.1);
+    cursor: pointer;
+}
+
+#carrinhoAdd:disabled{
+    background-color: gray;
+    color: rgb(77, 69, 69);
 }
 
 #imagensAPI{
@@ -58,8 +73,11 @@ h2{
 #excluirImg{
     width: 110px;
     height: 110px;
+    border: 1px solid;
+    border-radius: 20px;
     transition: 0.5s;
 }
+
 #excluirImg:hover{
     transform: scale(1.1);
 }
@@ -130,31 +148,33 @@ h2{
     background-color: rgba(0,0,0,0.9); 
 }
 
-#spanFechar{
-    float: right;
+#spanFechar{    
     font-size: x-large;
-    position: relative;
-    height: 10px;
-    top: -130px;
-    left: 450px;
-    transition: 0.5s;
+    width: 200px;
+    height: 100px;
+    background-color: rgb(9, 230, 9);
+    color: black;
+    border: 1px solid;
+    border-radius: 100px;
 }
+
 
 #spanFechar:hover{
     cursor: pointer;
-    color: rgb(9, 230, 9);
+    opacity: 0.5;
+    transform: scale(1.1);
 }
 
 #modalConteudo{
     justify-content: center;
+    align-items: center;
     margin: auto;
     color: white;
-    font-family: cursive;
     display: flex;
     position: relative;
     top: 200px;
     left: 50px;
-    gap: 10px;
+    gap: 30px;
     flex-wrap: wrap;
     background-color: rgb(44, 34, 34);
     text-align: center;
@@ -170,10 +190,15 @@ h2{
 @keyframes modalAnim {
     from {
         transform: scale(0);
+        rotate: 100deg;
     }
     to {
         transform: scale(1);
     }
+}
+
+#spanAddCarrinho{
+    font-size: larger;
 }
 
 #carrinhoDiv{
@@ -194,6 +219,7 @@ h2{
     overflow-y: auto;
     overflow-x: hidden;
 }
+
 #carrinhoItem{
     text-align: center;
     justify-content: center;
@@ -205,7 +231,7 @@ h2{
     border: 1px solid;
     border-radius: 10px;
     width: 50%;
-    height: 320px;
+    height: 50%;
     padding: 10px;
     box-shadow: 1px 1px 40px black;
     background-color: rgb(44, 34, 34);
@@ -238,9 +264,15 @@ h2{
     height: 100px;
     background-color: rgb(47, 34, 34);
     border: 2px solid rgb(9, 230, 9);
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
+    border-radius: 0px;
+    
     border-top: 0px;
+    border-bottom: 0px;
+    transition: 0.5s;
+}
+
+#avancarCarrinho:hover{
+    border-radius: 20px;
 }
 
 #botaoAvancar{
@@ -252,4 +284,11 @@ h2{
     border-radius: 10px;
     width: 300px;
     height: 50px;
+    transition: 0.5s;
+}
+
+#botaoAvancar:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+    box-shadow: 0px 0px 20px rgb(9, 230, 9);
 }
