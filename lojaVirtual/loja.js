@@ -5,9 +5,9 @@ let modalConteudo = document.querySelector("#modalConteudo");
 let carrinhoDiv = document.querySelector("#carrinhoDiv");
 let carrinhoAdd = document.querySelector("#carrinhoAdd");
 let botaoAvancar = document.querySelector("#botaoAvancar");
+let avancarCarrinho = document.querySelector("#avancarCarrinho");
 
-
-
+let listaSoma = [];
 let listaCompras = [];
 
 window.onload = buscarProdutos();
@@ -68,11 +68,22 @@ function buscarProdutos() {
                 h2Price.textContent ="Preço: $" + produtos[index].price;
 
                 let h2CarrinhoPrice = document.createElement("span");
-                h2CarrinhoPrice.textContent ="Preço: $" + produtos[index].price; 
+                h2CarrinhoPrice.textContent = "Preço: $" + produtos[index].price; 
+                h2CarrinhoPrice.value = produtos[index].price; 
 
                 let carrinhoItem = document.createElement("div");
                 carrinhoItem.id = "carrinhoItem";
 
+                let botaoAvancar = document.createElement("button");
+                botaoAvancar.id = "botaoAvancar";
+                botaoAvancar.textContent = "AVANÇAR >>>";
+
+                let botaoLink = document.createElement("a");
+                botaoLink.href = "finalizarCompra/finalizar.html";
+                botaoLink.appendChild(botaoAvancar);
+
+                let spanSoma = document.createElement("span");
+                spanSoma.id = "spanSoma";
 
                 img.addEventListener("click",function (){
                     
@@ -103,6 +114,27 @@ function buscarProdutos() {
                         carrinhoAdd.disabled = true;
                         carrinhoAdd.textContent = "Produto já adicionado";
 
+                        listaSoma.push(Number (h2CarrinhoPrice.value));
+                        let soma = 0;
+
+                        avancarCarrinho.innerHTML = "";
+
+                        for (let cont = 0; cont < listaSoma.length; cont++) {
+                           
+                            soma += listaSoma[cont];
+                            
+                            spanSoma.value = soma;
+                            spanSoma.textContent = "Valor Total: $" + soma;
+                            
+
+                            
+                            
+                        }
+
+                        avancarCarrinho.appendChild(botaoLink);
+                        avancarCarrinho.appendChild(spanSoma);
+                        
+
                         carrinhoItem.appendChild(imgCarrinho);
                         carrinhoItem.appendChild(h2Carrinho);
                         carrinhoItem.appendChild(h2CarrinhoPrice);
@@ -131,11 +163,11 @@ function buscarProdutos() {
                 excluir.addEventListener("click", function () {
                     carrinhoAdd.disabled = false;
                     console.log(listaCompras);
+
                     let produtoIndice = listaCompras.findIndex((value)=> value.id == objetoCarrinho.id);
                     
                     listaCompras.splice(produtoIndice, 1);
-                    
-                    
+
                     carrinhoItem.removeChild(imgCarrinho);
                     carrinhoItem.removeChild(h2Carrinho);
                     carrinhoItem.removeChild(h2CarrinhoPrice);
@@ -263,7 +295,24 @@ function categorias(botao) {
                     carrinhoAdd.addEventListener("click", function () {
                         carrinhoAdd.disabled = true;
                         carrinhoAdd.textContent = "Produto já adicionado";
-                        
+
+                        listaSoma.push(Number (h2CarrinhoPrice.value));
+                        let soma = 0;
+
+                        avancarCarrinho.innerHTML = "";
+
+                        for (let cont = 0; cont < listaSoma.length; cont++) {
+                           
+                            soma += listaSoma[cont];
+                            console.log(soma);
+                            
+                            spanSoma.textContent = "Valor Total: $" + soma;
+                            console.log(spanSoma);
+
+                            avancarCarrinho.appendChild(botaoLink);
+                            avancarCarrinho.appendChild(spanSoma);
+                            
+                        }
                         
                         carrinhoItem.appendChild(imgCarrinho);
                         carrinhoItem.appendChild(h2Carrinho);

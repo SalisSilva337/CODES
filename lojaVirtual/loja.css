@@ -3,6 +3,7 @@
     padding: 0;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
+
 h2{
     font-size: large;
 }
@@ -68,6 +69,13 @@ h2{
     border-radius: 10px;
     
     
+}
+
+#spanSoma{
+    position: relative;
+    top: 50px;
+    font-size: x-large;
+    color: rgb(9, 230, 9);
 }
 
 #excluirImg{
@@ -270,8 +278,8 @@ h2{
 #avancarCarrinho{
     position: sticky;
     top: -10px;
-    width: 400px;
-    height: 100px;
+    width: 350px;
+    height: 150px;
     background-color: rgb(47, 34, 34);
     border: 2px solid rgb(9, 230, 9);
     border-radius: 10px;
@@ -282,7 +290,7 @@ h2{
 
 #avancarCarrinho:hover{
     border-radius: 20px;
-    width: 350px;
+    
 }
 
 #botaoAvancar{
