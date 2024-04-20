@@ -13,7 +13,8 @@ let valorInicio2 = 0;
 let valorFinal2 = 100;
 let velocidade2 = 100;
 
-
+circulo1.style.animation = "circuloAnim 1s"
+circulo2.style.animation = "circuloAnim2 1s"
 let progresso1 = setInterval(() => {
     valorInicio++;
 
@@ -22,7 +23,7 @@ let progresso1 = setInterval(() => {
     spanPorcentagem1.textContent = valorInicio + "%";
     if (valorInicio === valorFinal) {
         clearInterval(progresso1);
-       
+        circulo1.style.boxShadow ="0px 0px 1000px rgb(162, 255, 0)";
         
         let progresso2 = setInterval(() => {
             valorInicio2++;
@@ -32,6 +33,7 @@ let progresso1 = setInterval(() => {
 
             if (valorInicio2 === valorFinal2) {
                 clearInterval(progresso2);
+                circulo2.style.boxShadow ="0px 0px 1000px rgb(162, 255, 0)";
             }
             
         }, velocidade2);

@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    
 }
 
 #headerLogo{
@@ -14,6 +15,7 @@
     color: white;
     padding: 10px;
     gap: 10px;
+    position: sticky;
 }
 
 #logo{
@@ -26,9 +28,11 @@
 }
 
 body{
+    overflow-x: hidden;
     background-color: rgb(44, 34, 34);
     color: rgb(9, 230, 9);
 }
+
 #container{
     margin: auto;
     width: 100%;
@@ -41,7 +45,24 @@ body{
 }
 
 @keyframes circuloAnim{
-
+    from{
+        position: relative;
+        right: 1000px;
+    }
+    to{
+        position: relative;
+        right:  0px;
+    }
+}
+@keyframes circuloAnim2{
+    from{
+        position: relative;
+        left: 1000px;
+    }
+    to{
+        position: relative;
+        left:  0px;
+    }
 }
 .circulo{
     
@@ -53,6 +74,7 @@ body{
     height: 300px;
     width: 300px;
     border-radius: 100%;
+    
 }
 
 .porcentagem{
