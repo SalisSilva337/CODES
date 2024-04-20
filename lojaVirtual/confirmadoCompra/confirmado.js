@@ -22,7 +22,7 @@ let progresso1 = setInterval(() => {
     spanPorcentagem1.textContent = valorInicio + "%";
     if (valorInicio === valorFinal) {
         clearInterval(progresso1);
-        porcentagem.style.background = "black"
+       
         
         let progresso2 = setInterval(() => {
             valorInicio2++;
