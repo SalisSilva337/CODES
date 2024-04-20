@@ -164,7 +164,7 @@ function buscarProdutos() {
                     
                     sessionStorage.produto = JSON.stringify(listaCompras);
                     console.log(listaCompras);
-                    
+
                 });
 
                 mainDiv.appendChild(img);
@@ -272,8 +272,25 @@ function categorias(botao) {
                        
                         carrinhoDiv.appendChild(carrinhoItem);
                         
-                       
+                        objetoCarrinho = {
+                            "produtoNome": h2Carrinho.textContent,
+                            "produtoImg": imgCarrinho.src,
+                            "produtoPreco": h2CarrinhoPrice.textContent,
+                            "produtoID": produtos[index].id
+                        }
+                        
+                        listaCompras.push(objetoCarrinho);
+                        
                     });
+                    
+                });
+
+
+
+                botaoAvancar.addEventListener("click",function (){
+                    
+                    sessionStorage.produto = JSON.stringify(listaCompras);
+                    console.log(listaCompras);
                     
                 });
 
