@@ -8,6 +8,7 @@ let botaoAvancar = document.querySelector("#botaoAvancar");
 let avancarCarrinho = document.querySelector("#avancarCarrinho");
 
 let listaSoma = [];
+let listaSubtrair = [];
 let listaCompras = [];
 
 window.onload = buscarProdutos();
@@ -115,22 +116,24 @@ function buscarProdutos() {
                         carrinhoAdd.textContent = "Produto já adicionado";
 
                         listaSoma.push(Number (h2CarrinhoPrice.value));
-                        let soma = 0;
 
+                        let soma = 0;
+                        
                         avancarCarrinho.innerHTML = "";
 
                         for (let cont = 0; cont < listaSoma.length; cont++) {
                            
                             soma += listaSoma[cont];
                             
-                            spanSoma.value = soma;
-                            spanSoma.textContent = "Valor Total: $" + soma;
                             
-
+                            
+                            
                             
                             
                         }
 
+                        spanSoma.value = soma;
+                        spanSoma.textContent = "Valor Total: $" + soma;
                         avancarCarrinho.appendChild(botaoLink);
                         avancarCarrinho.appendChild(spanSoma);
                         

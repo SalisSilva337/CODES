@@ -25,11 +25,20 @@
 }
 
 body{
+    
     background-color: rgb(44, 34, 34);
     color: rgb(9, 230, 9);
 }
 
+#divAll{
+    display: inline-flex;
+}
+
 #seuCarrinhoDiv{
+    position: sticky;
+    top: 0;
+    padding: 10px;
+    background-color: rgb(44, 34, 34);
     text-align: left;
     width: 620px;
     border: 1px solid;
@@ -53,6 +62,144 @@ body{
     overflow-x: hidden;
 }
 
+#divEndereco{
+    pointer-events: none;
+    filter: blur(10px);
+    gap: 10px;
+    width: 565px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    border: 1px solid;
+    border-right: 0px;
+    padding: 10px;
+    padding-left: 40px;
+}
+
+#desc1{
+    border-bottom: 1px solid;
+    width: 211px;
+}
+
+#desc2{
+    border-bottom: 1px solid;
+    width: 133px;
+}
+
+#buscarCep{
+    border: 3px solid;
+    border-radius: 10px;
+    color: rgb(0, 0, 0);
+    background-color: rgb(9, 230, 9);
+    width: 475px;
+    height: 50px;
+    font-size: x-large;
+    transition: 0.5s;
+}
+#enviar0{
+    bottom: 0px;
+    border: 3px solid;
+    border-radius: 10px;
+    color: rgb(0, 0, 0);
+    background: linear-gradient(0deg, rgba(172,240,145,1) 0%, rgba(44,246,0,1));
+    width: 560px;
+    height: 50px;
+    font-size: x-large;
+    transition: 0.5s;
+}
+#enviar0:hover{
+    cursor: pointer;
+    box-shadow: 0px 0px 10px rgb(9, 230, 9);
+}
+#enviar1{
+    position: relative;
+    top: 250px;
+    border: 3px solid;
+    border-radius: 10px;
+    color: rgb(0, 0, 0);
+    background: linear-gradient(0deg, rgba(172,240,145,1) 0%, rgba(44,246,0,1));
+    width: 650px;
+    height: 50px;
+    font-size: x-large;
+    transition: 0.5s;
+}
+
+#enviar1:hover{
+   cursor: pointer;
+   box-shadow: 0px 0px 10px rgb(9, 230, 9);
+}
+
+#divNomePreco{
+    width: 390px;
+}
+
+#enviar2{
+    position: relative;
+    top: 100px;
+    border: 3px solid;
+    border-radius: 10px;
+    color: rgb(0, 0, 0);
+    background: linear-gradient(0deg, rgba(172,240,145,1) 0%, rgba(44,246,0,1) 100%);
+    width: 550px;
+    height: 50px;
+    font-size: x-large;
+    transition: 0.5s;
+}
+#enviar2:hover{
+   cursor: pointer;
+   box-shadow: 0px 0px 10px rgb(9, 230, 9);
+}
+#buscarCep:hover{
+    cursor: pointer;
+    transform: scaleX(1.1);
+    font-style: italic;
+    box-shadow: 0px 0px 10px rgb(9, 230, 9);
+}
+
+#selectPagamento{
+    background-color: rgb(9, 230, 9);
+    color: black;
+    border-radius: 10px;
+    border: 3px solid black;
+    font-size: x-large;
+    width: 480px;
+    height: 55px;
+
+}
+
+#divDados{
+    pointer-events: none;
+    filter: blur(10px);
+    gap: 10px;
+    width: 700px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    border: 1px solid;
+    padding: 10px;
+    padding-left: 40px;
+}
+
+label{
+    font-size: x-large;
+}
+
+input{
+    background-color: rgb(9, 230, 9);
+    border-radius: 10px;
+    border: 3px solid black;
+    font-size: x-large;
+    width: 450px;
+    height: 30px;
+    padding: 10px;
+}
+
+
+input:disabled{
+    background-color: rgba(9, 230, 9, 0.203);
+    color: rgb(9, 230, 9);
+    padding: 10px;
+}
 @keyframes divAnim{
     from {
         transform: scale(0);
@@ -78,6 +225,19 @@ body{
 }
 
 
-#precoProduto{
-    
-}
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: rgb(44, 34, 34);
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #37ff00;
+    border: 1px solid black;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #080808;
+  }

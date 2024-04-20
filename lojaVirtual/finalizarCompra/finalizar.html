@@ -15,11 +15,55 @@
     </div>
 </header>
 <body>
-    <div>
+    <div id="divAll">
         <div id="divCarrinho">
             <div id="seuCarrinhoDiv">
                 <h1>Valor Total:</h1>
+                <button id="enviar0">ETAPA 1 >>>></button>
             </div>
+            
+        </div>
+
+        <div id="divDados">
+            <div id="desc1">
+                <h1>Dados Pessoais:</h1>
+            </div>
+                <label>Nome:</label>
+                <input type="text">
+                <label>Email:</label>
+                <input type="text">
+                <label>Telefone:</label>
+                <input type="number">
+                <label>Opção de Pagamento:</label>
+                
+                <select id="selectPagamento">
+                    <option value="" hidden>Selecione uma Opção de Pagamento...</option>
+                    <option value="PIX">PIX</option>
+                    <option value="Cartão de Crédito">Cartão de Crédito</option>
+                    <option value="Cartão de Débito">Cartão de Débito</option>
+                    <option value="Paypal">Paypal</option>
+                </select>
+
+                <button id="enviar1">ETAPA 2 >>>></button>
+        </div>
+        
+        <div id="divEndereco">
+            <div id="desc2">
+                <h1>Endereço:</h1>
+            </div>
+                
+                <label>CEP:</label>
+                <input type="text"  id="cepTxt">
+                <button id="buscarCep">Buscar CEP...</button>
+                <label>Estado:</label>
+                <input type="text"  id="estadoTxt" disabled placeholder="Insira um CEP acima...">
+                <label>Cidade:</label>
+                <input type="text"  id="cidadeTxt" disabled placeholder="Insira um CEP acima...">
+                <label>Bairro:</label>
+                <input type="text" id="bairroTxt" disabled placeholder="Insira um CEP acima...">
+                <label>Rua:</label>
+                <input type="text" id="ruaTxt" disabled placeholder="Insira um CEP acima...">
+                <a href="../confirmadoCompra/confirmado.html"><button id="enviar2">ENVIAR >>>></button></a>
         </div>
     </div>
 </body>

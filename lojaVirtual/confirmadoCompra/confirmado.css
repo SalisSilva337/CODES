@@ -1,0 +1,78 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+#headerLogo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid ;
+    box-shadow: 1px 1px 40px black;
+    background-color: rgb(44, 34, 34);
+    color: white;
+    padding: 10px;
+    gap: 10px;
+}
+
+#logo{
+    width: 100px;
+    height: 100px;
+    filter:opacity(1);
+    cursor: auto;
+    border: 0px;
+    box-shadow: 0px 0px 0px;
+}
+
+body{
+    background-color: rgb(44, 34, 34);
+    color: rgb(9, 230, 9);
+}
+#container{
+    margin: auto;
+    width: 100%;
+    height: 500px;
+    border: 0px solid;
+    display: inline-flex;
+    align-items: center; 
+    justify-content: center;
+    gap: 50px;
+}
+
+@keyframes circuloAnim{
+
+}
+.circulo{
+    
+    display: grid;
+    padding: auto;
+    place-items: center;
+    
+    background: conic-gradient( rgb(162, 255, 0) 0deg, rgb(0, 0, 0) 0deg);
+    height: 300px;
+    width: 300px;
+    border-radius: 100%;
+}
+
+.porcentagem{
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    text-align: center;
+    border: 1px solid;
+    height: 250px;
+    width: 250px;
+    border-radius: 100%;
+    background-color: rgb(44, 34, 34);
+}
+
+.spanPorcentagem{
+    font-size: 50px;
+}
+
+#porcentagemConteudo{
+    display: block;
+    flex-wrap: wrap;
+   
+}
