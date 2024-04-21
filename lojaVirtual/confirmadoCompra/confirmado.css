@@ -28,7 +28,7 @@
 }
 
 body{
-    overflow-x: hidden;
+    overflow: hidden;
     background-color: rgb(44, 34, 34);
     color: rgb(9, 230, 9);
 }
@@ -120,6 +120,23 @@ body{
     width: 1000px;
     background: linear-gradient(90deg, rgba(46,255,0,1) 0%, rgb(0, 0, 0) 0%);
     border-radius: 100px;
+}
+
+#agradecimento{
+    transform: scale(0);
+    position: relative;
+    top: 50px;
+}
+
+@keyframes agradecerAnim{
+    from{
+        transform: scale(0);
+        top: 500px;
+    }
+    to{
+        transform: scale(1);
+        top: 50px;
+    }
 }
 
 #caminhao{

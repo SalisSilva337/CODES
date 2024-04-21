@@ -58,6 +58,8 @@ let progresso1 = setInterval(() => {
                     if (valorInicioEntrega === 80) {
                         nomeEntrega.textContent = "Entrega Concluída!";
                         barraProgresso.style.boxShadow ="0px 0px 1000px rgb(162, 255, 0)";
+                        agradecimento.style.animation = "agradecerAnim 1s";
+                        agradecimento.style.transform = "scale(1)";
                     }
                     if (valorInicioEntrega === valorFinalEntrega) {
                         clearInterval(progressoEntrega);
