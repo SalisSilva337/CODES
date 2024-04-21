@@ -61,6 +61,8 @@ let progresso1 = setInterval(() => {
                         barraProgresso.style.boxShadow ="0px 0px 1000px rgb(162, 255, 0)";
                         agradecimento.style.animation = "agradecerAnim 1s";
                         agradecimento.style.transform = "scale(1)";
+                        retornarLoja.style.animation = "retornarAnim 1.5s";
+                        retornarLoja.style.visibility = "visible";
                     }
                     if (valorInicioEntrega === valorFinalEntrega) {
                         clearInterval(progressoEntrega);
