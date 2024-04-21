@@ -16,8 +16,9 @@ let valorInicio2 = 0;
 let valorFinal2 = 100;
 let velocidade2 = 100;
 
-circulo1.style.animation = "circuloAnim 1s"
-circulo2.style.animation = "circuloAnim2 1s"
+circulo1.style.animation = "circuloAnim 1s";
+circulo2.style.animation = "circuloAnim2 1s";
+containerEntrega.style.animation = "barraAnim 1s";
 
 let progresso1 = setInterval(() => {
     valorInicio++;

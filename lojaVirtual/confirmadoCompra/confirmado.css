@@ -128,17 +128,6 @@ body{
     top: 50px;
 }
 
-@keyframes agradecerAnim{
-    from{
-        transform: scale(0);
-        top: 500px;
-    }
-    to{
-        transform: scale(1);
-        top: 50px;
-    }
-}
-
 #caminhao{
     position: relative;
     right: 47%;
@@ -186,5 +175,30 @@ body{
     }
     to {
         color: black;
+    }
+}
+
+@keyframes agradecerAnim{
+    from{
+        transform: scale(0);
+        top: 500px;
+    }
+    to{
+        transform: scale(1);
+        top: 50px;
+    }
+}
+
+@keyframes barraAnim {
+    from {
+        position: relative;
+        top: 500px;
+    
+        transform: scale(0);
+    }
+    to {
+        position: relative;
+        top: 0px;
+        transform: scale(1);
     }
 }
