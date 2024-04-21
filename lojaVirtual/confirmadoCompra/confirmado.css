@@ -98,3 +98,76 @@ body{
     flex-wrap: wrap;
    
 }
+
+#containerEntrega{
+   
+    width: 1000px;
+    margin: auto;
+    text-align: center;
+    align-items: center;
+}
+
+#barraEntrega{
+    
+    height: 50px;
+    width: 1000px;
+    
+}
+
+#barraProgresso{
+    border: 1px solid;
+    height: 50px;
+    width: 1000px;
+    background: linear-gradient(90deg, rgba(46,255,0,1) 0%, rgb(0, 0, 0) 0%);
+    border-radius: 100px;
+}
+
+#caminhao{
+    position: relative;
+    right: 47%;
+}
+
+@keyframes caminhaoAndar{
+    0% {
+        right: 47%;
+    }
+    10%{
+        right: 40%;
+    }
+    20%{
+        right: 30%;
+    }
+    30%{
+        right: 20%;
+    }
+    40%{
+        right: 10%;
+    }
+    50%{
+        right: 0%;
+    }
+    60%{
+        right: -10%;
+    }
+    70%{
+        right: -20%;
+    }
+    80%{
+        right: -30%;
+    }
+    90%{
+        right: -40%;
+    }
+    100% {
+        right: -47%;
+    }
+}
+
+@keyframes nomeCor{
+    from {
+        color: rgb(162, 255, 0);
+    }
+    to {
+        color: black;
+    }
+}
