@@ -96,6 +96,7 @@ body{
     font-size: x-large;
     transition: 0.5s;
 }
+
 #enviar0{
     bottom: 0px;
     border: 3px solid;
@@ -107,10 +108,12 @@ body{
     font-size: x-large;
     transition: 0.5s;
 }
+
 #enviar0:hover{
     cursor: pointer;
     box-shadow: 0px 0px 10px rgb(9, 230, 9);
 }
+
 #enviar1{
     position: relative;
     top: 250px;
@@ -129,6 +132,12 @@ body{
    box-shadow: 0px 0px 10px rgb(9, 230, 9);
 }
 
+#enviar1:disabled{
+    background: rgba(9, 230, 9, 0.203);
+    color: rgb(0, 0, 0);
+    padding: 10px;
+}
+ 
 #divNomePreco{
     width: 390px;
 }
@@ -145,6 +154,7 @@ body{
     font-size: x-large;
     transition: 0.5s;
 }
+
 #enviar2:hover{
    cursor: pointer;
    box-shadow: 0px 0px 10px rgb(9, 230, 9);

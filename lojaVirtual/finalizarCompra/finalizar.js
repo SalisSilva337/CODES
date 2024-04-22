@@ -7,6 +7,10 @@ let seuCarrinhoDiv= document.querySelector("#divCarrinho");
 let enviar0= document.querySelector("#enviar0");
 let enviar1= document.querySelector("#enviar1");
 let enviar2= document.querySelector("#enviar2");
+let inputs = document.querySelectorAll(".inputs");
+
+
+
 
 let comprasCarrinho = JSON.parse(sessionStorage.produto);
 console.log(comprasCarrinho);
@@ -93,13 +97,36 @@ enviar0.addEventListener("click", function(){
 
     divCarrinho.style.pointerEvents = "none";
     divCarrinho.style.filter = "blur(10px)"
-});
-
-enviar1.addEventListener("click", function(){  
-    divEndereco.style.filter = "blur(0px)"
-    divEndereco.style.pointerEvents = "all";
-
-    divDados.style.filter = "blur(10px)"
-    divDados.style.pointerEvents = "none";
     
 });
+
+
+
+for (let index = 0; index < inputs.length; index++) {
+inputs[index].addEventListener("change", function () {
+    console.log(inputs[index].value);
+    console.log(selectPagamento.value);
+        if ((inputs[index].value && (selectPagamento.value) === "")) {
+            enviar1.disabled = true;
+        }
+        if ((inputs[index].value && (selectPagamento.value) !== "")) {
+            enviar1.disabled = false;
+        }
+
+});
+
+
+
+enviar1.addEventListener("click", function(){
+        
+        divEndereco.style.filter = "blur(0px)"
+        divEndereco.style.pointerEvents = "all";
+
+        divDados.style.filter = "blur(10px)"
+        divDados.style.pointerEvents = "none";
+        
+    
+    
+      
+});
+}
