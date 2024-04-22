@@ -40,7 +40,7 @@ function chamada() {
     setTimeout(() => {
         botaoChamada.disabled = false;
         let aviso = document.createElement('textarea');
-        aviso.textContent = 'o botão já pode ser pressionado';
+        aviso.textContent = 'botão habilitado';
         var voz2 = new SpeechSynthesisUtterance(aviso.value);
         speechSynthesis.speak(voz2);
     }, 7000);
