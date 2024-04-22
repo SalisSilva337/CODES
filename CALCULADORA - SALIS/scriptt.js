@@ -6,7 +6,7 @@ const botaomulti = document.querySelector("#multi");
 const valorr1 = document.querySelector("#num1");
 const valorr2 = document.querySelector("#num2");
 const resultadoo = document.querySelector("#txtResultado");
-
+const musica = document.querySelector("#musica");
 //as respectivas funções de cada uma das operações
 function soma(a, b){
     return a + b;
@@ -68,12 +68,14 @@ botaomulti.addEventListener("click", (event) => {
 
 
 //função musica
-function playsong(){
-    var musica = new Audio("For The Night.mp3");
+function playSong(){
     musica.play();
-    musica.volume = 0.3
-    }
-
+    musica.volume = 0.2;
+}
+function pauseSong(){
+    musica.pause();
+  
+}
 
 
 
