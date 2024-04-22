@@ -86,6 +86,37 @@ function buscarProdutos() {
                 let spanSoma = document.createElement("span");
                 spanSoma.id = "spanSoma";
 
+                let quantidadeProduto = document.createElement("input");
+                quantidadeProduto.id = "quantidadeProduto";
+                quantidadeProduto.type = "number";
+
+                let spanQuantidadeProduto = document.createElement("span");
+                spanQuantidadeProduto.id = "spanQuantidadeProduto";
+                spanQuantidadeProduto.textContent = "Quantidade de Itens:";
+
+                let botaoAdicionar = document.createElement("button");
+                let botaoDecrementar = document.createElement("button");
+                botaoAdicionar.id = "botaoAdicionar";
+                botaoDecrementar.id = "botaoDecrementar";
+                botaoAdicionar.textContent = "+";
+                botaoDecrementar.textContent = "-";
+                contador = 0;
+                quantidadeProduto.disabled = true
+                botaoAdicionar.addEventListener("click", function () {
+                    if (contador < 10) {
+                        contador++;
+                        quantidadeProduto.value = contador
+                    }
+                    
+                })
+                botaoDecrementar.addEventListener("click", function () {
+                    if (contador > 1) {
+                        contador--;
+                    
+                    quantidadeProduto.value = contador
+                    }
+                    
+                })
                 img.addEventListener("click",function (){
                     
                     modalConteudo.innerHTML = "";
@@ -141,8 +172,11 @@ function buscarProdutos() {
                         carrinhoItem.appendChild(imgCarrinho);
                         carrinhoItem.appendChild(h2Carrinho);
                         carrinhoItem.appendChild(h2CarrinhoPrice);
-                        carrinhoItem.appendChild(excluir);
-                       
+                        carrinhoItem.appendChild(spanQuantidadeProduto);
+                        carrinhoItem.appendChild(botaoDecrementar);
+                        carrinhoItem.appendChild(quantidadeProduto);
+                        carrinhoItem.appendChild(botaoAdicionar);
+                        carrinhoItem.appendChild(excluir);     
                         carrinhoDiv.appendChild(carrinhoItem);
                         
                         objetoCarrinho = {
@@ -150,6 +184,7 @@ function buscarProdutos() {
                             "produtoImg": imgCarrinho.src,
                             "produtoPreco": h2CarrinhoPrice.textContent,
                             "produtoID": produtos[index].id
+
                         }
                         
                         listaCompras.push(objetoCarrinho);
@@ -175,7 +210,7 @@ function buscarProdutos() {
                     carrinhoItem.removeChild(h2Carrinho);
                     carrinhoItem.removeChild(h2CarrinhoPrice);
                     carrinhoItem.removeChild(excluir);
-                   
+                    carrinhoItem.removeChild(quantidadeProduto);
                     carrinhoDiv.removeChild(carrinhoItem);
 
                     
@@ -216,7 +251,7 @@ function buscarProdutos() {
 
 
 function categorias(botao) {
-    mainDiv.innerHTML= ""
+    mainDiv.innerHTML= "";
     let url = "https://fakestoreapi.com/products/category/" + botao.value;
         
         
@@ -270,7 +305,14 @@ function categorias(botao) {
                 let carrinhoItem = document.createElement("div");
                 carrinhoItem.id = "carrinhoItem";
 
+                let quantidadeProduto = document.createElement("input");
+                quantidadeProduto.id = "quantidadeProduto";
+                quantidadeProduto.type = "number";
 
+                let spanQuantidadeProduto = document.createElement("h2");
+                spanQuantidadeProduto.id = "spanQuantidadeProduto";
+                
+                
                 img.addEventListener("click",function (){
                     
                     modalConteudo.innerHTML = "";
@@ -309,26 +351,29 @@ function categorias(botao) {
                             soma += listaSoma[cont];
                             console.log(soma);
                             
-                            spanSoma.textContent = "Valor Total: $" + soma;
+                            spanSoma.textContent = "Valor Total: $" + soma.toFixed(2);
                             console.log(spanSoma);
 
-                            avancarCarrinho.appendChild(botaoLink);
-                            avancarCarrinho.appendChild(spanSoma);
+                            
                             
                         }
                         
+                       
+                        
+
                         carrinhoItem.appendChild(imgCarrinho);
                         carrinhoItem.appendChild(h2Carrinho);
                         carrinhoItem.appendChild(h2CarrinhoPrice);
+                        carrinhoItem.appendChild(quantidadeProduto);
                         carrinhoItem.appendChild(excluir);
-                       
                         carrinhoDiv.appendChild(carrinhoItem);
                         
                         objetoCarrinho = {
                             "produtoNome": h2Carrinho.textContent,
                             "produtoImg": imgCarrinho.src,
                             "produtoPreco": h2CarrinhoPrice.textContent,
-                            "produtoID": produtos[index].id
+                            "produtoID": produtos[index].id,
+                            "produtoQuantidade": quantidadeProduto.value
                         }
                         
                         listaCompras.push(objetoCarrinho);
@@ -363,7 +408,7 @@ function categorias(botao) {
                         carrinhoItem.removeChild(h2Carrinho);
                         carrinhoItem.removeChild(h2CarrinhoPrice);
                         carrinhoItem.removeChild(excluir);
-                       
+                        carrinhoItem.removeChild(quantidadeProduto);
                         carrinhoDiv.removeChild(carrinhoItem);
                 });
 
