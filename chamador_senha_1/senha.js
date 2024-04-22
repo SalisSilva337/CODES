@@ -31,7 +31,6 @@ function regular() {
     contadorRegular++;
 
     let aviso = document.createElement('textarea');
-    aviso.textContent = 'Aguarde 10 segundos para pressionar o botão novamente';
     var voz2 = new SpeechSynthesisUtterance(aviso.value);
     speechSynthesis.speak(voz2);
 
@@ -39,7 +38,6 @@ function regular() {
         botaoRegular.disabled = false;
         botaoPrioridade.disabled = false;
         let aviso = document.createElement('textarea');
-        aviso.textContent = 'o botão já pode ser pressionado';
         var voz2 = new SpeechSynthesisUtterance(aviso.value);
         speechSynthesis.speak(voz2);
     }, 1000);
@@ -65,7 +63,6 @@ function prioridade() {
     contadorPrioridade++;
 
     let aviso = document.createElement('textarea');
-    aviso.textContent = 'Aguarde 10 segundos para pressionar o botão novamente';
     var voz2 = new SpeechSynthesisUtterance(aviso.value);
     speechSynthesis.speak(voz2);
 
@@ -73,7 +70,6 @@ function prioridade() {
         botaoRegular.disabled = false;
         botaoPrioridade.disabled = false;
         let aviso = document.createElement('textarea');
-        aviso.textContent = 'o botão já pode ser pressionado';
         var voz2 = new SpeechSynthesisUtterance(aviso.value);
         speechSynthesis.speak(voz2);
     }, 1000);
