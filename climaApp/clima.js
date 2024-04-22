@@ -37,6 +37,7 @@ function buscarClima() {
             }
 
             else if (request.status === 404){
+                spanDados.style.display = 'block'; 
                 spanDados.textContent = "CIDADE INVÁLIDA"
                 setTimeout(() => {
                     spanDados.style.display = 'none'  
@@ -44,6 +45,7 @@ function buscarClima() {
             }
 
             else{
+                spanDados.style.display = 'block'; 
                 spanDados.textContent = "ERRO AO FAZER A REQUISIÇÃO"
                 setTimeout(() => {
                     spanDados.style.display = 'none'  
