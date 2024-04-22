@@ -136,6 +136,7 @@ body{
     background: rgba(9, 230, 9, 0.203);
     color: rgb(0, 0, 0);
     padding: 10px;
+    cursor:not-allowed;
 }
  
 #divNomePreco{
@@ -159,6 +160,16 @@ body{
    cursor: pointer;
    box-shadow: 0px 0px 10px rgb(9, 230, 9);
 }
+a{
+    border: 1px solid;
+}
+#enviar2:disabled{
+    background: rgba(9, 230, 9, 0.203);
+    color: rgb(0, 0, 0);
+    padding: 10px;
+    cursor:not-allowed;
+}
+
 #buscarCep:hover{
     cursor: pointer;
     transform: scaleX(1.1);
@@ -206,10 +217,16 @@ input{
 
 
 input:disabled{
+    cursor:not-allowed;
     background-color: rgba(9, 230, 9, 0.203);
     color: rgb(9, 230, 9);
     padding: 10px;
 }
+
+input:disabled::placeholder{
+    color: black;
+}
+
 @keyframes divAnim{
     from {
         transform: scale(0);

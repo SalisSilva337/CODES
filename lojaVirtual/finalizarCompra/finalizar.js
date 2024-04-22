@@ -8,15 +8,14 @@ let enviar0= document.querySelector("#enviar0");
 let enviar1= document.querySelector("#enviar1");
 let enviar2= document.querySelector("#enviar2");
 let inputs = document.querySelectorAll(".inputs");
-
+let inputsCep = document.querySelectorAll(".inputsCep");
 
 
 
 let comprasCarrinho = JSON.parse(sessionStorage.produto);
 console.log(comprasCarrinho);
 
-enviar1.style.animation = "botaoAnim 1s infinite";
-enviar2.style.animation = "botaoAnim 1s infinite";
+
 
 for (let index = 0; index < comprasCarrinho.length; index++) {
     
@@ -75,11 +74,16 @@ function buscaCep(){
 
         request.onload = function(){
             if (request.status === 200) {
+                enviar2.disabled = false;
                 let endereco = JSON.parse(request.response);
                 document.querySelector('#ruaTxt').value = endereco.street;
                 document.querySelector('#bairroTxt').value = endereco.neighborhood;
                 document.querySelector('#estadoTxt').value = endereco.state;
                 document.querySelector('#cidadeTxt').value = endereco.city;
+            }
+
+            else {
+                enviar2.disabled = true;
             }
         }
     }
@@ -115,8 +119,6 @@ inputs[index].addEventListener("change", function () {
 
 });
 
-
-
 enviar1.addEventListener("click", function(){
         
         divEndereco.style.filter = "blur(0px)"
@@ -130,3 +132,7 @@ enviar1.addEventListener("click", function(){
       
 });
 }
+
+
+   
+
