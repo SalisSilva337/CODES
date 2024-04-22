@@ -19,6 +19,7 @@ function buscarClima() {
 
         request.onload = function () {
             if (request.status === 200) {
+                spanDados.style.display = 'block'; 
                 spanDados.textContent = "CIDADE ENCONTRADA COM SUCESSO!"
                 setTimeout(() => {
                     spanDados.style.display = 'none'  
