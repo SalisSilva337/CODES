@@ -26,6 +26,10 @@ h2{
     color: black; 
 }
 
+#quantidadeProduto:hover{
+    cursor: not-allowed;
+}
+
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
@@ -39,11 +43,19 @@ input::-webkit-inner-spin-button {
     border: 1px solid;   
 }
 
+#botaoAdicionar:hover{
+    cursor: pointer;
+}
+
 #botaoDecrementar{
     height: 24px;
     width: 30px;
     background-color: rgb(9, 230, 9);
     border: 1px solid;   
+}
+
+#botaoDecrementar:hover{
+    cursor: pointer;
 }
 
 #h2modal{
