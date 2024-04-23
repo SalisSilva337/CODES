@@ -159,19 +159,39 @@ function buscarProdutos() {
                         carrinhoDiv.appendChild(carrinhoItem);
                         
                         botaoAdicionar.addEventListener("click", function () {
+                            contador = 0;
                             if (contador < 10) {
                                 contador++;
                                 quantidadeProduto.value = contador;
-                                
+
+                                objetoCarrinho = {
+                                    "produtoNome": h2Carrinho.textContent,
+                                    "produtoImg": imgCarrinho.src,
+                                    "produtoPreco": h2CarrinhoPrice.textContent,
+                                    "produtoID": produtos[index].id,
+                                    "produtoQuantidade": quantidadeProduto.value
+                                }
+                                console.log(objetoCarrinho);
                             }
                             
                         });
         
                         botaoDecrementar.addEventListener("click", function () {
+                            contador = 0;
                             if (contador > 1) {
                                 contador--;
                             
                                 quantidadeProduto.value = contador;
+                                
+                                objetoCarrinho = {
+                                    "produtoNome": h2Carrinho.textContent,
+                                    "produtoImg": imgCarrinho.src,
+                                    "produtoPreco": h2CarrinhoPrice.textContent,
+                                    "produtoID": produtos[index].id,
+                                    "produtoQuantidade": quantidadeProduto.value
+                                }
+                                console.log(objetoCarrinho);
+                                
                             }
                             
                         });
@@ -184,7 +204,7 @@ function buscarProdutos() {
                             "produtoQuantidade": quantidadeProduto.value
                         }
                         
-                        listaCompras.push(objetoCarrinho);
+                        
                         
 
                         
@@ -233,6 +253,8 @@ function buscarProdutos() {
 
                 botaoAvancar.addEventListener("click",function (){
                     
+                   
+                    listaCompras.push(objetoCarrinho);
                     sessionStorage.produto = JSON.stringify(listaCompras);
                     console.log(listaCompras);
                     
