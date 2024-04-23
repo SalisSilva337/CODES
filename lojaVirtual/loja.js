@@ -7,8 +7,8 @@ let carrinhoAdd = document.querySelector("#carrinhoAdd");
 let botaoAvancar = document.querySelector("#botaoAvancar");
 let avancarCarrinho = document.querySelector("#avancarCarrinho");
 
-let listaSoma = [];
-let listaSubtrair = [];
+
+
 let listaCompras = [];
 
 var produtoValorFinal = 0;
@@ -106,23 +106,7 @@ function buscarProdutos() {
                 contador = 0;
                 quantidadeProduto.readOnly = true;
 
-                botaoAdicionar.addEventListener("click", function () {
-                    if (contador < 10) {
-                        contador++;
-                        quantidadeProduto.value = contador
-                    }
-                    
-                });
-
-                botaoDecrementar.addEventListener("click", function () {
-                    
-                    if (contador > 1) {
-                        contador--;
-                    
-                    quantidadeProduto.value = contador;
-                    }
-                    
-                });
+                
 
                 img.addEventListener("click",function (){
                     
@@ -153,13 +137,12 @@ function buscarProdutos() {
                         carrinhoAdd.disabled = true;
                         carrinhoAdd.textContent = "Produto já adicionado";
 
-                        listaSoma.push(Number (h2CarrinhoPrice.value));
 
                         
                         avancarCarrinho.innerHTML = "";
 
                         produtoValorFinal = produtoValorFinal + produtos[index].price;
-                        spanSoma.textContent = "Valor Total: $" + produtoValorFinal;
+                        spanSoma.textContent = "Valor Total: $" + produtoValorFinal.toFixed(2);
 
                         avancarCarrinho.appendChild(botaoLink);
                         avancarCarrinho.appendChild(spanSoma);
@@ -174,6 +157,24 @@ function buscarProdutos() {
                         carrinhoItem.appendChild(botaoAdicionar);
                         carrinhoItem.appendChild(excluir);     
                         carrinhoDiv.appendChild(carrinhoItem);
+                        
+                        botaoAdicionar.addEventListener("click", function () {
+                            if (contador < 10) {
+                                contador++;
+                                quantidadeProduto.value = contador;
+                                
+                            }
+                            
+                        });
+        
+                        botaoDecrementar.addEventListener("click", function () {
+                            if (contador > 1) {
+                                contador--;
+                            
+                                quantidadeProduto.value = contador;
+                            }
+                            
+                        });
                         
                         objetoCarrinho = {
                             "produtoNome": h2Carrinho.textContent,
@@ -200,8 +201,7 @@ function buscarProdutos() {
 
                     let produtoIndice = listaCompras.findIndex((value)=> value.id == objetoCarrinho.id);
 
-                    produtoValorFinal = produtoValorFinal - produtos[index].price;
-                    spanSoma.textContent = "Valor Total: $" + produtoValorFinal;
+                    
 
                     listaCompras.splice(produtoIndice, 1);
 
@@ -235,7 +235,7 @@ function buscarProdutos() {
                     
                     sessionStorage.produto = JSON.stringify(listaCompras);
                     console.log(listaCompras);
-
+                    
                 });
 
                 mainDiv.appendChild(img);

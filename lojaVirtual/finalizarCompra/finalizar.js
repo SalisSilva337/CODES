@@ -38,7 +38,7 @@ for (let index = 0; index < comprasCarrinho.length; index++) {
 
     let quantidadeProdutos = document.createElement("h2");
     quantidadeProdutos.id = "quantidadeProdutos";
-    quantidadeProdutos.textContent = "Qtd: 10";
+    quantidadeProdutos.textContent = "Qtd:" + comprasCarrinho[index].produtoQuantidade;
 
 
     let divNomePreco = document.createElement("div");
