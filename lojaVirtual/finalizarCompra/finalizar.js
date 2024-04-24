@@ -108,7 +108,7 @@ enviar0.addEventListener("click", function(){
 
 
 for (let index = 0; index < inputs.length; index++) {
-inputs[index].addEventListener("change", function () {
+    inputs[index].addEventListener("input", function () {
         if ((inputs[index].value === "") && (selectPagamento.value === "")) {
             enviar1.disabled = true;
         }
