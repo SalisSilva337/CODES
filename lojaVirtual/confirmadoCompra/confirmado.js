@@ -10,11 +10,15 @@ let spanPorcentagemConteudo2 = document.querySelector("#spanPorcentagemConteudo2
 
 let valorInicio = 0;
 let valorFinal = 100;
-let velocidade = 100;
+let velocidade = 50;
 
 let valorInicio2 = 0;
 let valorFinal2 = 100;
-let velocidade2 = 100;
+let velocidade2 = 50;
+
+let valorInicioEntrega = 0;
+let valorFinalEntrega = 200;
+let velocidadeEntrega = 100;
 
 circulo1.style.animation = "circuloAnim 1s";
 circulo2.style.animation = "circuloAnim2 1s";
@@ -79,7 +83,5 @@ let progresso1 = setInterval(() => {
 }, velocidade);
 
 
-let valorInicioEntrega = 0;
-let valorFinalEntrega = 200;
-let velocidadeEntrega = 100;
+
 

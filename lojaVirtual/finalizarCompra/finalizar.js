@@ -9,7 +9,7 @@ let enviar1= document.querySelector("#enviar1");
 let enviar2= document.querySelector("#enviar2");
 let inputs = document.querySelectorAll(".inputs");
 let inputsCep = document.querySelectorAll(".inputsCep");
-
+let selectPagamento = document.querySelector("#selectPagamento");
 
 
 let comprasCarrinho = JSON.parse(sessionStorage.produto);
@@ -109,12 +109,10 @@ enviar0.addEventListener("click", function(){
 
 for (let index = 0; index < inputs.length; index++) {
 inputs[index].addEventListener("change", function () {
-    console.log(inputs[index].value);
-    console.log(selectPagamento.value);
-        if ((inputs[index].value && (selectPagamento.value) === "")) {
+        if ((inputs[index].value === "") && (selectPagamento.value === "")) {
             enviar1.disabled = true;
         }
-        if ((inputs[index].value && (selectPagamento.value) !== "")) {
+        if ((inputs[index].value !== "") && (selectPagamento.value !== "")) {
             enviar1.disabled = false;
         }
 
