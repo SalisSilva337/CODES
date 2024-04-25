@@ -117,7 +117,7 @@ body{
 
 #enviar1{
     position: relative;
-    top: 150px;
+    top: 110px;
     border: 3px solid;
     border-radius: 10px;
     color: rgb(0, 0, 0);
@@ -157,12 +157,12 @@ body{
 
 #enviar2{
     position: relative;
-    top: 100px;
+    top: 50px;
     border: 3px solid;
     border-radius: 10px;
     color: rgb(0, 0, 0);
     background: linear-gradient(0deg, rgba(172,240,145,1) 0%, rgba(44,246,0,1) 100%);
-    width: 550px;
+    width: 500px;
     height: 50px;
     font-size: x-large;
     transition: 0.5s;
