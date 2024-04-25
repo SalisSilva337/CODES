@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="finalizar.css">
     <link rel="shortcut icon" href="../imgs/cash.png" type="image/x-icon">
     <script src="finalizar.js" defer></script>
+    <script src="https://kit.fontawesome.com/995dcfb715.js" crossorigin="anonymous"></script>
 </head>
 <header>
     <div id="headerLogo">
@@ -30,11 +31,13 @@
             </div>
                 <label>Nome:</label>
                 <input type="text" class="inputs">
+                <i class="fa-solid fa-circle-check" id="ok"></i>
                 <label>Email:</label>
                 <input type="text" class="inputs">
+                <i class="fa-solid fa-circle-check" id="ok"></i>
                 <label>Telefone:</label>
                 <input type="number" class="inputs">
-
+                <i class="fa-solid fa-circle-check" id="ok"></i>
                 <label>Opção de Pagamento:</label>
                 <select id="selectPagamento">
                     <option value="" hidden>Selecione uma Opção de Pagamento...</option>
@@ -43,7 +46,7 @@
                     <option value="Cartão de Débito">Cartão de Débito</option>
                     <option value="Paypal">Paypal</option>
                 </select>
-
+                <i class="fa-solid fa-circle-check" id="okSelect"></i>
                 <button id="enviar1" disabled>ETAPA 2 >>>></button>
         </div>
         
@@ -54,15 +57,21 @@
                 
                 <label>CEP:</label>
                 <input type="text" class="inputsCep" id="cepTxt">
+                <i class="fa-solid fa-circle-check" id="okCep"></i>
+
                 <button id="buscarCep">Buscar CEP...</button>
                 <label>Estado:</label>
                 <input type="text" class="inputsCep" id="estadoTxt" disabled placeholder="Insira um CEP acima...">
+
                 <label>Cidade:</label>
                 <input type="text" class="inputsCep"  id="cidadeTxt" disabled placeholder="Insira um CEP acima...">
+
                 <label>Bairro:</label>
                 <input type="text" class="inputsCep" id="bairroTxt" disabled placeholder="Insira um CEP acima...">
+
                 <label>Rua:</label>
                 <input type="text" class="inputsCep" id="ruaTxt" disabled placeholder="Insira um CEP acima...">
+                
                <button id="enviar2" onclick="window.location.href='../confirmadoCompra/confirmado.html'" disabled>ENVIAR >>></button></a>
         </div>
     </div>

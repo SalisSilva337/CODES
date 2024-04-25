@@ -178,7 +178,7 @@ function buscarProdutos() {
                         
                         avancarCarrinho.innerHTML = "";
 
-                        // produtoValorFinal += produtos[index].price;
+                        produtoValorFinal += produtos[index].price;
                         // listaMultiplicador.push(quantidadeProduto.value);
                         // console.log(listaMultiplicador);
 
@@ -187,7 +187,7 @@ function buscarProdutos() {
                             
                         // }
                         
-                        spanSoma.textContent = "Valor Total: $" + (quantidadeTotal * produtoValorFinal.toFixed(2));
+                        spanSoma.textContent = "Valor Total: $" + (quantidadeProduto.value * produtoValorFinal.toFixed(2));
 
                         avancarCarrinho.appendChild(botaoLink);
                         avancarCarrinho.appendChild(spanSoma);

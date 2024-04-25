@@ -1,5 +1,5 @@
 
-
+let ok = document.querySelectorAll("#ok");
 let divAll = document.querySelector("#divAll");
 let divCarrinho = document.querySelector("#divCarrinho");
 let divEndereco = document.querySelector("#divEndereco");
@@ -70,15 +70,20 @@ function buscaCep(){
         request.send();
 
         request.onload = function(){
-            if (request.status === 200) {
-                enviar2.disabled = false;
-                let endereco = JSON.parse(request.response);
-                document.querySelector('#ruaTxt').value = endereco.street;
-                document.querySelector('#bairroTxt').value = endereco.neighborhood;
-                document.querySelector('#estadoTxt').value = endereco.state;
-                document.querySelector('#cidadeTxt').value = endereco.city;
-            }
+                if (request.status === 200) {
+                    okCep.style.display = "block";
+                    enviar2.disabled = false;
+                    let endereco = JSON.parse(request.response);
+                    document.querySelector('#ruaTxt').value = endereco.street;
+                    document.querySelector('#bairroTxt').value = endereco.neighborhood;
+                    document.querySelector('#estadoTxt').value = endereco.state;
+                    document.querySelector('#cidadeTxt').value = endereco.city;
+                    
 
+
+                    
+                }
+            
             else {
                 enviar2.disabled = true;
             }
@@ -103,14 +108,28 @@ enviar0.addEventListener("click", function(){
 
 
 
+
 for (let index = 0; index < inputs.length; index++) {
     inputs[index].addEventListener("input", function () {
-        if ((inputs[index].value === "") && (selectPagamento.value === "")) {
-            enviar1.disabled = true;
-        }
-        if ((inputs[index].value !== "") && (selectPagamento.value !== "")) {
-            enviar1.disabled = false;
-        }
+        inputs.forEach(item => {
+        
+            if ((item.value === "")&& (selectPagamento.value ==="") ) {
+                enviar1.disabled = true;
+                
+            }
+            if ((item.value !== "")  ) {
+                ok[index].style.display = "block";  
+            }
+            selectPagamento.addEventListener("change", function () {
+                if ((selectPagamento.value !=="")) {
+                    okSelect.style.display = "block";
+                    enviar1.disabled = false;
+                }
+            })
+           
+            console.log(item.value);
+            console.log(selectPagamento.value)
+        });
 
 });
 
