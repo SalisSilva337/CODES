@@ -70,6 +70,7 @@ function buscarProdutos() {
 
                 let h2CarrinhoPrice = document.createElement("span");
                 
+                let h2CarrinhoPriceUnico = document.createElement("span");
 
                 let carrinhoItem = document.createElement("div");
                 carrinhoItem.id = "carrinhoItem";
@@ -173,7 +174,9 @@ function buscarProdutos() {
                         carrinhoAdd.disabled = true;
                         carrinhoAdd.textContent = "Produto já adicionado";
                         spanQuantidadeProduto.textContent = "Quantidade de Itens: " + quantidadeProduto.value;
-                        h2CarrinhoPrice.textContent = "Preço: $" +quantidadeProduto.value * produtos[index].price; 
+                        h2CarrinhoPrice.textContent = "Subtotal dos Itens: $" + (quantidadeProduto.value * produtos[index].price.toFixed(2));
+                        h2CarrinhoPriceUnico.textContent = "Preço individual: $" + produtos[index].price.toFixed(2);
+
                         h2CarrinhoPrice.value = quantidadeProduto.value * produtos[index].price; 
                         
                         avancarCarrinho.innerHTML = "";
@@ -189,9 +192,9 @@ function buscarProdutos() {
 
                         carrinhoItem.appendChild(imgCarrinho);
                         carrinhoItem.appendChild(h2Carrinho);
-                        carrinhoItem.appendChild(h2CarrinhoPrice);
+                        carrinhoItem.appendChild(h2CarrinhoPriceUnico);
                         carrinhoItem.appendChild(spanQuantidadeProduto);
-                        
+                        carrinhoItem.appendChild(h2CarrinhoPrice);
                         carrinhoItem.appendChild(excluir);     
                         carrinhoDiv.appendChild(carrinhoItem);
                         
