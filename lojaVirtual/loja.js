@@ -8,10 +8,13 @@ let botaoAvancar = document.querySelector("#botaoAvancar");
 let avancarCarrinho = document.querySelector("#avancarCarrinho");
 
 
-let listaPrecoProdutos = [];
+let listaMultiplicador = [];
 let listaCompras = [];
 
 var produtoValorFinal = 0;
+let spanSoma = document.createElement("span");
+
+spanSoma.id = "spanSoma";
 
 window.onload = buscarProdutos();
 
@@ -80,8 +83,7 @@ function buscarProdutos() {
                 botaoLink.href = "finalizarCompra/finalizar.html";
                 botaoLink.appendChild(botaoAvancar);
 
-                let spanSoma = document.createElement("span");
-                spanSoma.id = "spanSoma";
+                
 
                 let quantidadeProduto = document.createElement("input");
                 quantidadeProduto.id = "quantidadeProduto";
@@ -176,8 +178,16 @@ function buscarProdutos() {
                         
                         avancarCarrinho.innerHTML = "";
 
-                        produtoValorFinal += produtos[index].price;
-                        spanSoma.textContent = "Valor Total: $" + produtoValorFinal.toFixed(2);
+                        // produtoValorFinal += produtos[index].price;
+                        // listaMultiplicador.push(quantidadeProduto.value);
+                        // console.log(listaMultiplicador);
+
+                        // for (let cont = 0; cont < listaMultiplicador.length; cont++) {
+                        //     let quantidadeTotal = listaMultiplicador[cont];
+                            
+                        // }
+                        
+                        spanSoma.textContent = "Valor Total: $" + (quantidadeTotal * produtoValorFinal.toFixed(2));
 
                         avancarCarrinho.appendChild(botaoLink);
                         avancarCarrinho.appendChild(spanSoma);
@@ -191,7 +201,9 @@ function buscarProdutos() {
                         carrinhoItem.appendChild(excluir);     
                         carrinhoDiv.appendChild(carrinhoItem);
                         
-                        
+                      
+
+
                         objetoCarrinho = {
                             "produtoNome": h2Carrinho.textContent,
                             "produtoImg": imgCarrinho.src,
@@ -202,7 +214,9 @@ function buscarProdutos() {
 
                         listaCompras.push(objetoCarrinho);
                         
-                      
+                        
+    
+                        
 
                         
                     });
@@ -218,8 +232,17 @@ function buscarProdutos() {
 
                     let produtoIndice = listaCompras.findIndex((value)=> value.id == objetoCarrinho.id);
 
+
+
                     produtoValorFinal -= produtos[index].price;
+                    console.log(produtoValorFinal);
+
+
+                    
                     spanSoma.textContent = "Valor Total: $" + produtoValorFinal.toFixed(2);
+
+
+
 
                     listaCompras.splice(produtoIndice, 1);
 
@@ -249,8 +272,11 @@ function buscarProdutos() {
 
                 botaoAvancar.addEventListener("click",function (){
                     
+    
+
+                    sessionStorage.preco = JSON.stringify(spanSoma.textContent);
                     sessionStorage.produto = JSON.stringify(listaCompras);
-                    console.log(listaCompras);
+                    console.log(listaPrecoProdutos);
                     
                 });
 

@@ -14,8 +14,8 @@ let selectPagamento = document.querySelector("#selectPagamento");
 
 let comprasCarrinho = JSON.parse(sessionStorage.produto);
 console.log(comprasCarrinho);
-
-
+let precoCarrinho = JSON.parse(sessionStorage.preco);
+console.log(precoCarrinho);
 
 for (let index = 0; index < comprasCarrinho.length; index++) {
     
@@ -32,9 +32,7 @@ for (let index = 0; index < comprasCarrinho.length; index++) {
     precoProduto.textContent = comprasCarrinho[index].produtoPreco;
 
 
-    let valorTotal = document.createElement("h2");
-    valorTotal.id = "valorTotal";
-    
+    valorTotalCarrinho.textContent =  precoCarrinho;
 
     let quantidadeProdutos = document.createElement("h2");
     quantidadeProdutos.id = "quantidadeProdutos";
@@ -56,8 +54,6 @@ for (let index = 0; index < comprasCarrinho.length; index++) {
     
 
     divCarrinho.appendChild(divProdutos);
-
-    seuCarrinhoDiv.appendChild(valorTotal);
 
     divProdutos.style.animation = "divAnim 1s";
     
