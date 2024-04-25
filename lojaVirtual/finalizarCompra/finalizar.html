@@ -33,13 +33,13 @@
                 <input type="text" class="inputs">
                 <i class="fa-solid fa-circle-check" id="ok"></i>
                 <label>Email:</label>
-                <input type="text" class="inputs">
+                <input type="text" class="inputs" disabled>
                 <i class="fa-solid fa-circle-check" id="ok"></i>
                 <label>Telefone:</label>
-                <input type="number" class="inputs">
+                <input type="number" class="inputs" disabled>
                 <i class="fa-solid fa-circle-check" id="ok"></i>
                 <label>Opção de Pagamento:</label>
-                <select id="selectPagamento">
+                <select id="selectPagamento" disabled>
                     <option value="" hidden>Selecione uma Opção de Pagamento...</option>
                     <option value="PIX">PIX</option>
                     <option value="Cartão de Crédito">Cartão de Crédito</option>
@@ -58,7 +58,7 @@
                 <label>CEP:</label>
                 <input type="text" class="inputsCep" id="cepTxt">
                 <i class="fa-solid fa-circle-check" id="okCep"></i>
-
+                <i class="fa-solid fa-circle-xmark" id="erradoCep"></i>
                 <button id="buscarCep">Buscar CEP...</button>
                 <label>Estado:</label>
                 <input type="text" class="inputsCep" id="estadoTxt" disabled placeholder="Insira um CEP acima...">

@@ -1,5 +1,6 @@
 
 let ok = document.querySelectorAll("#ok");
+
 let divAll = document.querySelector("#divAll");
 let divCarrinho = document.querySelector("#divCarrinho");
 let divEndereco = document.querySelector("#divEndereco");
@@ -72,6 +73,7 @@ function buscaCep(){
         request.onload = function(){
                 if (request.status === 200) {
                     okCep.style.display = "block";
+                    erradoCep.style.display = "none";
                     enviar2.disabled = false;
                     let endereco = JSON.parse(request.response);
                     document.querySelector('#ruaTxt').value = endereco.street;
@@ -85,7 +87,14 @@ function buscaCep(){
                 }
             
             else {
+                erradoCep.style.display = "block";
+                okCep.style.display = "none";
                 enviar2.disabled = true;
+
+                document.querySelector('#ruaTxt').value = "CEP INVÁLIDO";
+                    document.querySelector('#bairroTxt').value = "CEP INVÁLIDO";
+                    document.querySelector('#estadoTxt').value = "CEP INVÁLIDO";
+                    document.querySelector('#cidadeTxt').value = "CEP INVÁLIDO";
             }
         }
     }
@@ -110,28 +119,43 @@ enviar0.addEventListener("click", function(){
 
 
 for (let index = 0; index < inputs.length; index++) {
-    inputs[index].addEventListener("input", function () {
+    
         inputs.forEach(item => {
-        
-            if ((item.value === "")&& (selectPagamento.value ==="") ) {
+            inputs[index].addEventListener("input", function () {
+            if (item.value === "") {
                 enviar1.disabled = true;
                 
             }
-            if ((item.value !== "")  ) {
+            
+            if (item.value !== "")   {
                 ok[index].style.display = "block";  
-            }
-            selectPagamento.addEventListener("change", function () {
-                if ((selectPagamento.value !=="")) {
-                    okSelect.style.display = "block";
-                    enviar1.disabled = false;
+                inputs[1].disabled = false;
+
+                if (inputs[0].disabled = false) {
+                    inputs[2].disabled = true;
                 }
-            })
+
+                if (inputs[1].value != "") {
+                    inputs[2].disabled = false;
+                }
+
+                if (inputs[2].value != "") {
+                    selectPagamento.disabled = false;
+                    selectPagamento.addEventListener("change", function () {
+                        enviar1.disabled = false;
+                        okSelect.style.display = "block"
+                    });
+                }
+                
+                
+            }
+            });
            
-            console.log(item.value);
-            console.log(selectPagamento.value)
+            
+            
         });
 
-});
+};
 
 enviar1.addEventListener("click", function(){
         
@@ -145,7 +169,7 @@ enviar1.addEventListener("click", function(){
     
       
 });
-}
+
 
 
    

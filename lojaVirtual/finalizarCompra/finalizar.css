@@ -98,6 +98,12 @@ body{
     transition: 0.5s;
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 #enviar0{
     bottom: 0px;
     border: 3px solid;
@@ -126,6 +132,11 @@ body{
     height: 50px;
     font-size: x-large;
     transition: 0.5s;
+}
+
+#erradoCep{
+    color: red;
+    display: none;
 }
 
 #enviar1:hover{
@@ -172,9 +183,11 @@ body{
    cursor: pointer;
    box-shadow: 0px 0px 10px rgb(9, 230, 9);
 }
+
 a{
     border: 1px solid;
 }
+
 #enviar2:disabled{
     background: rgba(9, 230, 9, 0.203);
     color: rgb(0, 0, 0);
@@ -229,6 +242,13 @@ input{
 
 
 input:disabled{
+    cursor:not-allowed;
+    background-color: rgba(9, 230, 9, 0.203);
+    color: rgb(9, 230, 9);
+    padding: 10px;
+}
+
+#selectPagamento:disabled{
     cursor:not-allowed;
     background-color: rgba(9, 230, 9, 0.203);
     color: rgb(9, 230, 9);

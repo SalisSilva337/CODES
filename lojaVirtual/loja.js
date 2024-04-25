@@ -69,8 +69,7 @@ function buscarProdutos() {
                 h2Price.textContent ="Preço: $" + produtos[index].price;
 
                 let h2CarrinhoPrice = document.createElement("span");
-                h2CarrinhoPrice.textContent = "Preço: $" + produtos[index].price; 
-                h2CarrinhoPrice.value = produtos[index].price; 
+                
 
                 let carrinhoItem = document.createElement("div");
                 carrinhoItem.id = "carrinhoItem";
@@ -174,20 +173,15 @@ function buscarProdutos() {
                         carrinhoAdd.disabled = true;
                         carrinhoAdd.textContent = "Produto já adicionado";
                         spanQuantidadeProduto.textContent = "Quantidade de Itens: " + quantidadeProduto.value;
-
+                        h2CarrinhoPrice.textContent = "Preço: $" +quantidadeProduto.value * produtos[index].price; 
+                        h2CarrinhoPrice.value = quantidadeProduto.value * produtos[index].price; 
                         
                         avancarCarrinho.innerHTML = "";
 
-                        produtoValorFinal += produtos[index].price;
-                        // listaMultiplicador.push(quantidadeProduto.value);
-                        // console.log(listaMultiplicador);
-
-                        // for (let cont = 0; cont < listaMultiplicador.length; cont++) {
-                        //     let quantidadeTotal = listaMultiplicador[cont];
-                            
-                        // }
+                        produtoValorFinal += h2CarrinhoPrice.value;
+                       
                         
-                        spanSoma.textContent = "Valor Total: $" + (quantidadeProduto.value * produtoValorFinal.toFixed(2));
+                        spanSoma.textContent = "Valor Total: $" + produtoValorFinal.toFixed(2);
 
                         avancarCarrinho.appendChild(botaoLink);
                         avancarCarrinho.appendChild(spanSoma);
@@ -234,7 +228,7 @@ function buscarProdutos() {
 
 
 
-                    produtoValorFinal -= produtos[index].price;
+                    produtoValorFinal -= h2CarrinhoPrice.value;
                     console.log(produtoValorFinal);
 
 
