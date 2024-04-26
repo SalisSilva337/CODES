@@ -50,9 +50,10 @@ for (let index = 0; index < comprasCarrinho.length; index++) {
     divProdutos.id = "divProdutos";
 
     divNomePreco.appendChild(nomeProduto);
-    divNomePreco.appendChild(precoProduto);
+    
     divNomePreco.appendChild(precoProdutoUnico);
     divNomePreco.appendChild(quantidadeProdutos);
+    divNomePreco.appendChild(precoProduto);
     
     divProdutos.appendChild(imgProduto);
     divProdutos.appendChild(divNomePreco);
