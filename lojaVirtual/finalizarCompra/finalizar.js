@@ -32,6 +32,9 @@ for (let index = 0; index < comprasCarrinho.length; index++) {
     precoProduto.id = "precoProduto";
     precoProduto.textContent = comprasCarrinho[index].produtoPreco;
 
+    let precoProdutoUnico = document.createElement("h2");
+    precoProdutoUnico.id = "precoProduto";
+    precoProdutoUnico.textContent = comprasCarrinho[index].produtoPrecoUnico;
 
     valorTotalCarrinho.textContent =  precoCarrinho;
 
@@ -48,6 +51,7 @@ for (let index = 0; index < comprasCarrinho.length; index++) {
 
     divNomePreco.appendChild(nomeProduto);
     divNomePreco.appendChild(precoProduto);
+    divNomePreco.appendChild(precoProdutoUnico);
     divNomePreco.appendChild(quantidadeProdutos);
     
     divProdutos.appendChild(imgProduto);

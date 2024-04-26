@@ -205,6 +205,7 @@ function buscarProdutos() {
                             "produtoNome": h2Carrinho.textContent,
                             "produtoImg": imgCarrinho.src,
                             "produtoPreco": h2CarrinhoPrice.textContent,
+                            "produtoPrecoUnico": h2CarrinhoPriceUnico.textContent,
                             "produtoID": produtos[index].id,
                             "produtoQuantidade": quantidadeProduto.value
                         }
