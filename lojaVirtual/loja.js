@@ -315,8 +315,6 @@ function categorias(botao) {
                 imgCarrinho.id = "imgCarrinhoAPI";
                 imgCarrinho.src = produtos[index].image;
                 
-                
-                
 
                 let h2Modal = document.createElement("h2");
                 h2Modal.id = "h2modal";
@@ -330,10 +328,7 @@ function categorias(botao) {
 
                 let spanFechar = document.createElement("button");
                 let carrinhoAdd = document.createElement("button");
-                
-
-                
-
+            
                 let h2 = document.createElement("h2");
                 h2.textContent = produtos[index].title;
                 h2.id = "nomeProduto";
@@ -346,8 +341,8 @@ function categorias(botao) {
                 h2Price.textContent ="Preço: $" + produtos[index].price;
 
                 let h2CarrinhoPrice = document.createElement("span");
-                h2CarrinhoPrice.textContent = "Preço: $" + produtos[index].price; 
-                h2CarrinhoPrice.value = produtos[index].price; 
+                
+                let h2CarrinhoPriceUnico = document.createElement("span");
 
                 let carrinhoItem = document.createElement("div");
                 carrinhoItem.id = "carrinhoItem";
@@ -360,16 +355,15 @@ function categorias(botao) {
                 botaoLink.href = "finalizarCompra/finalizar.html";
                 botaoLink.appendChild(botaoAvancar);
 
-                let spanSoma = document.createElement("span");
-                spanSoma.id = "spanSoma";
+                
 
                 let quantidadeProduto = document.createElement("input");
                 quantidadeProduto.id = "quantidadeProduto";
                 quantidadeProduto.type = "number";
 
-                let spanQuantidadeProduto = document.createElement("span");
-                spanQuantidadeProduto.id = "spanQuantidadeProduto";
-                spanQuantidadeProduto.textContent = "Quantidade de Itens:";
+               
+                let spanQuantidadeModal = document.createElement("span");
+                spanQuantidadeModal.id = "spanQuantidadeModal";
 
                 let botaoAdicionar = document.createElement("button");
                 let botaoDecrementar = document.createElement("button");
@@ -378,26 +372,19 @@ function categorias(botao) {
                 botaoAdicionar.textContent = "+";
                 botaoDecrementar.textContent = "-";
 
-                contador = 0;
+                let divQuantidade = document.createElement("div");
+                divQuantidade.id = "divQuantidade";
+
+                let spanQuantidadeProduto = document.createElement("span");
+                spanQuantidadeProduto.id = "spanQuantidadeProduto";
+                spanQuantidadeModal.textContent = "QUANTIDADE:";
+
+
+                
                 quantidadeProduto.readOnly = true;
-
-                botaoAdicionar.addEventListener("click", function () {
-                    if (contador < 10) {
-                        contador++;
-                        quantidadeProduto.value = contador
-                    }
-                    
-                });
-
-                botaoDecrementar.addEventListener("click", function () {
-                    
-                    if (contador > 1) {
-                        contador--;
-                    
-                    quantidadeProduto.value = contador;
-                    }
-                    
-                });
+                
+                
+                
 
                 img.addEventListener("click",function (){
                     
@@ -415,26 +402,61 @@ function categorias(botao) {
                     h2Modal.textContent = produtos[index].description;
                     avancarCarrinho.style.display = 'none';
 
-                    modalConteudo.appendChild(spanFechar);
+                    divQuantidade.appendChild(spanQuantidadeModal);
+                    divQuantidade.appendChild(botaoDecrementar);
+                    divQuantidade.appendChild(quantidadeProduto);
+                    divQuantidade.appendChild(botaoAdicionar);
+
                     modalConteudo.appendChild(h2Modal);
-                    modalConteudo.appendChild(carrinhoAdd);
+                    modalConteudo.appendChild(divQuantidade);
                     modalConteudo.appendChild(spanFechar);
                     modalConteudo.appendChild(carrinhoAdd);
-                    
+
                     img.style.opacity = 0.7;
+
+                    quantidadeProduto.value = 1;
+                    let contador = 1;
                     
-                   
+                    
+
+                    botaoAdicionar.addEventListener("click", function () {
+                    
+                        if (contador < 10) {
+                            contador++;
+                            quantidadeProduto.value = contador;
+
+                            
+                        }
+                        
+                    });
+    
+                    botaoDecrementar.addEventListener("click", function () {
+                       
+                        if (contador > 1) {
+                            contador--;
+                        
+                            quantidadeProduto.value = contador;
+                            console.log(objetoCarrinho);
+                            
+                        }
+                        
+                    });
+                    
                     carrinhoAdd.addEventListener("click", function () {
                         carrinhoAdd.disabled = true;
                         carrinhoAdd.textContent = "Produto já adicionado";
+                        spanQuantidadeProduto.textContent = "Quantidade de Itens: " + quantidadeProduto.value;
+                        h2CarrinhoPrice.textContent = "Subtotal dos Itens: $" + (quantidadeProduto.value * produtos[index].price.toFixed(2));
+                        h2CarrinhoPriceUnico.textContent = "Preço individual: $" + produtos[index].price.toFixed(2);
 
-                        listaSoma.push(Number (h2CarrinhoPrice.value));
-
+                        h2CarrinhoPrice.value = quantidadeProduto.value * produtos[index].price; 
                         
                         avancarCarrinho.innerHTML = "";
 
-                        produtoValorFinal = produtoValorFinal + produtos[index].price;
-                        spanSoma.textContent = "Valor Total: $" + produtoValorFinal;
+                        produtoValorFinal += h2CarrinhoPrice.value;
+                       
+                        
+                        spanSoma.textContent = "Valor Total: $" + produtoValorFinal.toFixed(2);
 
                         avancarCarrinho.appendChild(botaoLink);
                         avancarCarrinho.appendChild(spanSoma);
@@ -442,23 +464,28 @@ function categorias(botao) {
 
                         carrinhoItem.appendChild(imgCarrinho);
                         carrinhoItem.appendChild(h2Carrinho);
-                        carrinhoItem.appendChild(h2CarrinhoPrice);
+                        carrinhoItem.appendChild(h2CarrinhoPriceUnico);
                         carrinhoItem.appendChild(spanQuantidadeProduto);
-                        carrinhoItem.appendChild(botaoDecrementar);
-                        carrinhoItem.appendChild(quantidadeProduto);
-                        carrinhoItem.appendChild(botaoAdicionar);
+                        carrinhoItem.appendChild(h2CarrinhoPrice);
                         carrinhoItem.appendChild(excluir);     
                         carrinhoDiv.appendChild(carrinhoItem);
                         
+                      
+
+
                         objetoCarrinho = {
                             "produtoNome": h2Carrinho.textContent,
                             "produtoImg": imgCarrinho.src,
                             "produtoPreco": h2CarrinhoPrice.textContent,
+                            "produtoPrecoUnico": h2CarrinhoPriceUnico.textContent,
                             "produtoID": produtos[index].id,
                             "produtoQuantidade": quantidadeProduto.value
                         }
-                        
+
                         listaCompras.push(objetoCarrinho);
+                        
+                        
+    
                         
 
                         
@@ -475,8 +502,17 @@ function categorias(botao) {
 
                     let produtoIndice = listaCompras.findIndex((value)=> value.id == objetoCarrinho.id);
 
-                    produtoValorFinal = produtoValorFinal - produtos[index].price;
-                    spanSoma.textContent = "Valor Total: $" + produtoValorFinal;
+
+
+                    produtoValorFinal -= h2CarrinhoPrice.value;
+                    console.log(produtoValorFinal);
+
+
+                    
+                    spanSoma.textContent = "Valor Total: $" + produtoValorFinal.toFixed(2);
+
+
+
 
                     listaCompras.splice(produtoIndice, 1);
 
@@ -484,9 +520,7 @@ function categorias(botao) {
                     carrinhoItem.removeChild(h2Carrinho);
                     carrinhoItem.removeChild(h2CarrinhoPrice);
                     carrinhoItem.removeChild(excluir);
-                    carrinhoItem.removeChild(quantidadeProduto);
-                    carrinhoItem.removeChild(botaoAdicionar);
-                    carrinhoItem.removeChild(botaoDecrementar);
+                    carrinhoItem.removeChild(spanQuantidadeProduto);
                     carrinhoDiv.removeChild(carrinhoItem);
 
                     
@@ -508,9 +542,12 @@ function categorias(botao) {
 
                 botaoAvancar.addEventListener("click",function (){
                     
-                    sessionStorage.produto = JSON.stringify(listaCompras);
-                    console.log(listaCompras);
+    
 
+                    sessionStorage.preco = JSON.stringify(spanSoma.textContent);
+                    sessionStorage.produto = JSON.stringify(listaCompras);
+                    console.log(listaPrecoProdutos);
+                    
                 });
 
                 mainDiv.appendChild(img);
@@ -524,6 +561,7 @@ function categorias(botao) {
         }
     }
 }
+
         
 
     
