@@ -24,12 +24,18 @@
     </div>
 </header>
 <body onclick="tocarMusica()">
+    <div id="modal">
+        <div id="modalConteudo">
+            
+        </div>
+    </div>
     <div id="container">
+        
         <div id="divOpcoes">
             <nav id="navBotoes">
                 <button class="botoesOpcoes" onclick="paginaInicial()">HOME</button>
                 <div id="dropdown">
-                    <button id="botaoSkin" class="botoesOpcoes" onclick="buscarSkins()">SKINS</button>
+                    <button id="botaoSkin" class="botoesOpcoes" onclick="allSkins()">SKINS</button>
                     <div id="dropdownSkins">
                         <button class="skinsCategorias" onclick="buscarSkins(this)">Pistolas</button>
                         <button class="skinsCategorias" onclick="buscarSkins(this)">Rifles</button>
@@ -54,7 +60,7 @@
 
                 </div>
             </div>
-
+            
             <div id="divLateral">
                 <div id="divJogarCsgo" class="miniDivs">
                     <div class="modalDesc" onclick="location.href = 'https://store.steampowered.com/app/730/CounterStrike_2/'">
@@ -98,12 +104,14 @@
         <div id="divOpcoes2">
             <img class="footerImg" src="imgs/valve.png" alt="">
             <nav id="navBotoes2">
-                <h2>Ultimas Notícias / Updates:</h2>
+                <h2>Ultimas Notícias / Atualizações:</h2>
                 <button class="botoesOpcoes2" onclick="location.href = 'https://twitter.com/CounterStrike'">X (Twitter)</button>
                 <button class="botoesOpcoes2" onclick="location.href = 'https://store.steampowered.com/news/app/730/view/4202497395513061959'">Steam</button>
             </nav>
             <img class="footerImg" src="imgs/source.png" alt="">
         </div>
+
     </div>
+    
 </body>
 </html>
