@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <!-- MADE ONLY FOR EDUCATIONAL AND ENTERTAINING PURPOSES, ALL RIGHTS GOES TO COUNTER-STRIKE / VALVE CORP. -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BRASIL-STRIKE</title>
+    <link rel="stylesheet" href="home.css">
+    <link rel="shortcut icon" href="imgs/csgoLogo.png" type="image/x-icon">
+    <script src="home.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+</head>
+<header>
+    <audio id="musica" src="imgs/Counter-Strike_ Global Offensive - Main Menu Music Theme Extended.mp3" hidden></audio>
+    <audio src="imgs/soundeffect.mp3" hidden id="clickSom"></audio>
+    <div id="divHeader">
+        <div id="divLogo">
+            <img id="logo" src="imgs/csgoLogo.png" alt="">
+            <h1>BRASIL-STRIKE</h1>
+        </div>
+
+    </div>
+</header>
+<body onclick="tocarMusica()">
+    <div id="container">
+        <div id="divOpcoes">
+            <nav id="navBotoes">
+                <button class="botoesOpcoes" onclick="paginaInicial()">HOME</button>
+                <div id="dropdown">
+                    <button id="botaoSkin" class="botoesOpcoes" onclick="buscarSkins()">SKINS</button>
+                    <div id="dropdownSkins">
+                        <button class="skinsCategorias" onclick="buscarSkins(this)">Pistolas</button>
+                        <button class="skinsCategorias" onclick="buscarSkins(this)">Rifles</button>
+                        <button class="skinsCategorias" onclick="buscarSkins(this)">Submetr.</button>
+                        <button class="skinsCategorias" onclick="buscarSkins(this)">Pesadas</button>
+                        <button class="skinsCategorias" onclick="buscarSkins(this)">Facas</button>
+                        <button class="skinsCategorias" onclick="buscarSkins(this)">Luvas</button>
+                    </div>
+                </div>
+                <button class="botoesOpcoes" value="stickers" onclick="buscarOutros(this)">ADESIVOS</button>
+                <button class="botoesOpcoes" value="crates" onclick="buscarOutros(this)">CAIXAS</button>
+                <button class="botoesOpcoes" value="agents" onclick="buscarOutros(this)">AGENTES</button>
+                <button class="botoesOpcoes" value="graffiti"  onclick="buscarOutros(this)">SPRAYS</button>
+                <button class="botoesOpcoes" value="music_kits" onclick="buscarOutros(this)">KITS DE MUSICA</button>
+            </nav>
+        </div>
+        
+        <div id="divCentral">
+            <div id="divPrincipal">
+                <h1>BEM VINDO AO SITE DO JOGO COMPETITIVO Nº1</h1>
+                <div id="divItens">
+
+                </div>
+            </div>
+
+            <div id="divLateral">
+                <div id="divJogarCsgo" class="miniDivs">
+                    <div class="modalDesc" onclick="location.href = 'https://store.steampowered.com/app/730/CounterStrike_2/'">
+                        JOGAR COUNTER-STRIKE
+                    </div>
+                    
+                    <img class="miniDivImg" src="imgs/jogarCSGO.jpg" alt="">
+                </div>
+                
+                <div class="miniDivs">
+                    <div class="modalDesc" onclick="location.href = 'https://counter-strike.net/riptide'">
+                        OPERAÇÃO RIPTIDE
+                    </div>
+                    <img class="miniDivImg" src="imgs/riptideOP.jpg" alt="">
+                    
+                </div>
+
+                <div class="miniDivs">
+                    <div class="modalDesc" onclick="location.href = 'https://counter-strike.net/brokenfang'">
+                        OPERAÇÃO BROKEN FANG
+                    </div>
+                    <img class="miniDivImg" src="imgs/brokenfangOP.jpg" alt="">
+                </div>
+
+                <div class="miniDivs">
+                    <div class="modalDesc" onclick="location.href = 'https://counter-strike.net/shatteredweb'">
+                        OPERAÇÃO SHATTERED WEB
+                    </div>
+                    <img class="miniDivImg" src="imgs/webOP.jpg" alt="">
+                </div>
+
+                <div class="miniDivs">
+                    <div class="modalDesc" onclick="location.href = 'https://www.counter-strike.net/dust2'">
+                        RETORNO DA DUST 2
+                    </div>
+                    <img class="miniDivImg" src="imgs/dust2.png" alt="">
+                </div>
+            </div>
+        </div>
+
+        <div id="divOpcoes2">
+            <img class="footerImg" src="imgs/valve.png" alt="">
+            <nav id="navBotoes2">
+                <h2>Ultimas Notícias / Updates:</h2>
+                <button class="botoesOpcoes2" onclick="location.href = 'https://twitter.com/CounterStrike'">X (Twitter)</button>
+                <button class="botoesOpcoes2" onclick="location.href = 'https://store.steampowered.com/news/app/730/view/4202497395513061959'">Steam</button>
+            </nav>
+            <img class="footerImg" src="imgs/source.png" alt="">
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Big Food</title>
+    <link rel="stylesheet" href="home.css">
+    <link rel="shortcut icon" href="img/images-removebg-preview.png" type="image/x-icon">
+    <script src="home.js" defer></script>
+</head>
+<header>
+    <div id="divHeader">
+        <div id="divLogo">
+            <img id="realBig" src="img/images-removebg-preview.png" alt="">
+            <h1 id="nomeLogo">Real Big Food</h1>
+            
+        </div>
+            <h2>"Everything Real Big"</h2>
+    </div>
+        <div id="divNav">
+            <button id="botaoHome" onclick="buscar()">Início</button>
+            <button id="botaoMostrar" onclick="abrirNav()">Mostrar Categorias</button>
+            <div id="divPesquisa">
+                <span>🔍</span>
+                <input type="text" oninput="pesquisaProduto(this)" placeholder="digite aqui...">
+            </div>
+            
+        </div>
+</header>
+<body>
+    <div id="divBotoes">
+        <nav id="navBotoes">
+            <button class="botoesCategorias" onclick="buscarCategoriaProdutos(this)" value="Beef">Carne</button>
+
+            <button class="botoesCategorias" onclick="buscarCategoriaProdutos(this)" value="Chicken">Frango</button>
+
+            <button class="botoesCategorias" onclick="buscarCategoriaProdutos(this)" value="Dessert">Sobremesas</button>
+
+            <button class="botoesCategorias" onclick="buscarCategoriaProdutos(this)" value="Lamb">Cordeiro</button>
+            
+            <button class="botoesCategorias" onclick="buscarCategoriaProdutos(this)" value="Miscellaneous">Misc.</button>
+            
+            <button class="botoesCategorias" onclick="buscarCategoriaProdutos(this)" value="Pasta">Massas</button>
+            <button class="botoesCategorias" onclick="buscarCategoriaProdutos(this)" value="Pork">Porco</button>
+            <button class="botoesCategorias" onclick="buscarCategoriaProdutos(this)" value="Seafood">Frutos do Mar</button>
+            <button class="botoesCategorias" onclick="buscarCategoriaProdutos(this)" value="Side
+            ">Acompanhamentos</button>
+            <button class="botoesCategorias" onclick="buscarCategoriaProdutos(this)" value="Starter">Entradas</button>
+
+            <button class="botoesCategorias" onclick="buscarCategoriaProdutos(this)" value="Vegan">Vegano</button>
+            <button class="botoesCategorias" onclick="buscarCategoriaProdutos(this)" value="Vegetarian">Vegetariano</button>
+            <button class="botoesCategorias" onclick="buscarCategoriaProdutos(this)" value="Breakfast">Café da Manhã</button>
+            <button class="botoesCategorias" onclick="buscarCategoriaProdutos(this)" value="Goat">Cabra</button>
+        </nav>
+    </div> 
+    <div id="divPrincipal">
+        
+    </div>
+</body>
+<footer>
+    <div>
+        
+    </div>
+</footer>
+</html>
