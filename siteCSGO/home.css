@@ -197,6 +197,7 @@ body{
 }
 
 .skinsCategorias:hover{
+    cursor: pointer;
     background-color: transparent;
     color: orange;
     border: 1px solid;
@@ -331,6 +332,30 @@ body{
     height: 10%;
 }
 
+#divPlay{
+    position: relative;
+    top: -33%;
+    justify-content: center;
+   
+    width: 100%;
+   
+}
+
+#botaoPlay{
+    font-size: large;
+    color: white;
+    background-color: rgb(44, 44, 64);
+    border: 0px solid;
+    border-radius: 10px;
+    width: 100%;
+    height: 50%;
+    transition: 0.5s;
+}
+
+#botaoPlay:hover{
+    font-size: x-large;
+    background-color: orange;
+}
 ::-webkit-scrollbar {
     width: 10px;
 }

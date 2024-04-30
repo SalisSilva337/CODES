@@ -41,7 +41,10 @@ function paginaInicial() {
 
     const divMaior = document.createElement("div")
     const divSlider = document.createElement("div");
+    const divPlay = document.createElement("div");
     const imgSlider = document.createElement("img");
+
+    const botaoPlay = document.createElement("button");
     const botaoProximo = document.createElement("button");
     const botaoRetroceder = document.createElement("button");
     let contador = 0;
@@ -56,11 +59,23 @@ function paginaInicial() {
     botaoRetroceder.classList = "botoesSlider";
     divMaior.id = "divMaior";
     divSlider.id = "divSlider";
+    divPlay.id = "divPlay";
+    botaoPlay.id = "botaoPlay";
+    botaoPlay.textContent = "DISPONÍVEL GRATUITAMENTE NO STEAM";
+    botaoPlay.addEventListener("click", function () {
+        window.location.href = 'https://store.steampowered.com/app/730/CounterStrike_2/';
+    });
+
+    divPlay.appendChild(botaoPlay);
     divSlider.appendChild(botaoRetroceder);
     divSlider.appendChild(imgSlider);
     divSlider.appendChild(botaoProximo);
-    divMaior.appendChild(divSlider)
+    divMaior.appendChild(divSlider);
+
     divItens.appendChild(divMaior);
+    divItens.appendChild(divPlay);
+
+
 
     botaoProximo.addEventListener("click", function () {
         setTimeout(() => {
@@ -258,7 +273,7 @@ function buscarOutros(botao){
             
             let todasSkins = JSON.parse(request.response);
             console.log(todasSkins);
-
+            todasSkins.length = 500;
             for (let index = 0; index < todasSkins.length; index++) {
                 let categoriaNome = document.createElement("h2");
                 let categoriaImg = document.createElement("img");
