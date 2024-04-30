@@ -2,22 +2,35 @@ const divLogo = document.querySelector("#divLogo");
 const divHeader = document.querySelector("#divHeader");
 const divItens = document.querySelector("#divItens");
 
-divLogo.addEventListener("mouseenter", function () {
-   divHeader.style.width = "100%"; 
-   divHeader.style.visibility = "visible"; 
-});
+
 
 divLogo.addEventListener("click", function () {
-    divHeader.style.width = "0%"; 
-    divHeader.style.visibility = "hidden"; 
+    if (divHeader.style.width === "0%") {
+        divHeader.style.width = "100%";
+        setTimeout(() => {
+            navBotoes.style.visibility= "visible";
+        }, 600);
+        divHeader.style.opacity = "1";
+        divHeader.style.visibility = "visible";
+        
+    }
+    else {
+        setTimeout(() => {
+            navBotoes.style.visibility= "hidden";
+        }, 0);
+        divHeader.style.width = "0%";
+        divHeader.style.opacity = "0"; 
+        divHeader.style.visibility = "hidden"; 
+    }
+    
 })
 
 
 
 
-window.onload = paginaInicial();
+window.onload = armasListar();
 
-function paginaInicial() {
+function armasListar() {
     let url = "https://valorant-api.com/v1/weapons";
 
     let request = new XMLHttpRequest();
@@ -28,10 +41,10 @@ function paginaInicial() {
     request.onload = function(){
         if (request.status === 200) {
             
-            let todasArmas = JSON.parse(request.response);
-            console.log(todasArmas);
+            let todosItens = JSON.parse(request.response);
+            console.log(todosItens);
             
-            for (let index = 0; index < todasArmas.data.length; index++) {
+            for (let index = 0; index < todosItens.data.length; index++) {
                 let categoriaNome = document.createElement("h1");
                 let categoriaImg = document.createElement("img");
                 let divCadaItem = document.createElement("div");
@@ -62,8 +75,8 @@ function paginaInicial() {
                 divCategoriaNomeDesc.id = "divCategoriaNomeDesc";
 
 
-                categoriaImg.src = todasArmas.data[index].displayIcon;
-                categoriaNome.textContent = todasArmas.data[index].displayName;
+                categoriaImg.src = todosItens.data[index].displayIcon;
+                categoriaNome.textContent = todosItens.data[index].displayName;
                     
                 
                 divCadaItem.appendChild(categoriaImg);
@@ -77,9 +90,9 @@ function paginaInicial() {
                     
                     modalConteudo.innerHTML = "";
 
-                    modal_CategoriaImg.src = todasArmas.data[index].displayIcon;
+                    modal_CategoriaImg.src = todosItens.data[index].displayIcon;
                     modal_CategoriaImg.id = "modalCategoriaImg";
-                    modal_CategoriaNome.textContent = todasArmas.data[index].displayName;
+                    modal_CategoriaNome.textContent = todosItens.data[index].displayName;
                     
                     let contador = -1;
                     
@@ -94,26 +107,26 @@ function paginaInicial() {
                     botaoPadrao.addEventListener("click", function () {
                         contador = -1;
                         spanCont.textContent = "";
-                        modal_CategoriaImg.src = todasArmas.data[index].displayIcon;
-                        modal_CategoriaNome.textContent = todasArmas.data[index].displayName;
+                        modal_CategoriaImg.src = todosItens.data[index].displayIcon;
+                        modal_CategoriaNome.textContent = todosItens.data[index].displayName;
                     });
 
                     botaoProximo.addEventListener("click", function () {
-                        if (contador < todasArmas.data[index].skins.length - 1) {
+                        if (contador < todosItens.data[index].skins.length - 1) {
                             contador++;
-                            spanCont.textContent = contador + 1 + "/" + todasArmas.data[index].skins.length;
-                            if (todasArmas.data[index].skins[contador].displayIcon === null) {
+                            spanCont.textContent = contador + 1 + "/" + todosItens.data[index].skins.length;
+                            if (todosItens.data[index].skins[contador].displayIcon === null) {
                                 contador++;
                             }
-                            if (todasArmas.data[index].skins[contador].displayName.startsWith("Standard")) {
+                            if (todosItens.data[index].skins[contador].displayName.startsWith("Standard")) {
                                contador++; 
                             }
-                            if (todasArmas.data[index].skins[contador].displayName.startsWith("Random")) {
+                            if (todosItens.data[index].skins[contador].displayName.startsWith("Random")) {
                                 contador++; 
                             }
 
-                            modal_CategoriaImg.src = todasArmas.data[index].skins[contador].displayIcon;
-                            modal_CategoriaNome.textContent = todasArmas.data[index].skins[contador].displayName;
+                            modal_CategoriaImg.src = todosItens.data[index].skins[contador].displayIcon;
+                            modal_CategoriaNome.textContent = todosItens.data[index].skins[contador].displayName;
                         }
                            
                     });
@@ -121,19 +134,19 @@ function paginaInicial() {
                     botaoRetroceder.addEventListener("click", function () {
                         if (contador > 0) {
                             contador--;
-                            spanCont.textContent = contador + 1 + "/" + todasArmas.data[index].skins.length;
-                            if (todasArmas.data[index].skins[contador].displayIcon === null) {
+                            spanCont.textContent = contador + 1 + "/" + todosItens.data[index].skins.length;
+                            if (todosItens.data[index].skins[contador].displayIcon === null) {
                                 contador--;
                             }
-                            if (todasArmas.data[index].skins[contador].displayName.startsWith("Standard")) {
+                            if (todosItens.data[index].skins[contador].displayName.startsWith("Standard")) {
                                 contador--; 
                             }
-                            if (todasArmas.data[index].skins[contador].displayName.startsWith("Random")) {
+                            if (todosItens.data[index].skins[contador].displayName.startsWith("Random")) {
                                 contador--; 
                             }
 
-                            modal_CategoriaImg.src = todasArmas.data[index].skins[contador].displayIcon;
-                            modal_CategoriaNome.textContent = todasArmas.data[index].skins[contador].displayName;
+                            modal_CategoriaImg.src = todosItens.data[index].skins[contador].displayIcon;
+                            modal_CategoriaNome.textContent = todosItens.data[index].skins[contador].displayName;
                         }
                     });
 
@@ -151,3 +164,166 @@ function paginaInicial() {
     }
 }
 
+
+function agentesListar() {
+    divItens.innerHTML="";
+    let url = "https://valorant-api.com/v1/agents";
+
+    let request = new XMLHttpRequest();
+    request.open("GET", url);
+    request.send();
+    console.log(url);
+
+    request.onload = function(){
+        if (request.status === 200) {
+            
+            let todosItens = JSON.parse(request.response);
+            console.log(todosItens);
+            
+            for (let index = 0; index < todosItens.data.length; index++) {
+                if (todosItens.data[index].isPlayableCharacter){
+                    
+                
+                    let categoriaNome = document.createElement("h1");
+                    let categoriaImg = document.createElement("img");
+                    let divCadaItem = document.createElement("div");
+                    let divCategoriaNomeDesc = document.createElement("div");
+
+                    let modal_divNome = document.createElement("div");
+                    let modal_divDesc = document.createElement("div");
+                    let modal_CategoriaNome = document.createElement("h2");
+                    let modal_CategoriaImg = document.createElement("img");
+                    
+
+                    
+
+                    modal_divNome.id = "modalDivNome";
+                    modal_divDesc.id = "modalDivDesc";
+
+                    categoriaNome.id = "categoriaNome";
+                    categoriaImg.id = "categoriaImg";
+                    divCadaItem.id = "divCadaItem";
+                    divCategoriaNomeDesc.id = "divCategoriaNomeDesc";
+
+
+                    categoriaImg.src = todosItens.data[index].displayIcon;
+                    categoriaNome.textContent = todosItens.data[index].displayName;
+                        
+                    
+                    divCadaItem.appendChild(categoriaImg);
+                    divCadaItem.appendChild(categoriaNome);
+                    divItens.appendChild(divCadaItem);
+
+                    divCadaItem.addEventListener("click",function (){
+                        modal.style.display = "block";
+                        divItens.style.visibility = "hidden";
+                        
+                        
+                        modalConteudo.innerHTML = "";
+
+                        modal_CategoriaImg.src = todosItens.data[index].displayIcon;
+                        modal_CategoriaImg.id = "modalCategoriaImg";
+                        modal_CategoriaNome.textContent = todosItens.data[index].displayName;
+                        
+                        
+                        
+                        modal_divNome.appendChild(modal_CategoriaImg);
+                        modal_divNome.appendChild(modal_CategoriaNome);
+                        modalConteudo.appendChild(modal_divNome);
+                       
+
+
+                        modalConteudo.addEventListener("mouseleave", function () {
+                            modal.style.display = "none";
+                            divItens.style.visibility = "visible";
+                        });
+
+                    });
+                
+                }
+            }
+        }
+    }
+}
+
+function ranksListar() {
+    divItens.innerHTML="";
+    let url = "https://valorant-api.com/v1/competitivetiers";
+
+    let request = new XMLHttpRequest();
+    request.open("GET", url);
+    request.send();
+    console.log(url);
+
+    request.onload = function(){
+        if (request.status === 200) {
+            
+            let todosItens = JSON.parse(request.response);
+            console.log(todosItens);
+            
+            
+                    
+
+                    for (let indexRank = 0; indexRank < todosItens.data[4].tiers.length; indexRank++) {
+                        
+                        let categoriaNome = document.createElement("h1");
+                        let categoriaImg = document.createElement("img");
+                        let divCadaItem = document.createElement("div");
+                        let divCategoriaNomeDesc = document.createElement("div");
+
+                        let modal_divNome = document.createElement("div");
+                        let modal_divDesc = document.createElement("div");
+                        let modal_CategoriaNome = document.createElement("h2");
+                        let modal_CategoriaImg = document.createElement("img");
+                    
+
+                    
+
+                    modal_divNome.id = "modalDivNome";
+                    modal_divDesc.id = "modalDivDesc";
+
+                    categoriaNome.id = "categoriaNome";
+                    categoriaImg.id = "categoriaImg";
+                    divCadaItem.id = "divCadaItem";
+                    divCategoriaNomeDesc.id = "divCategoriaNomeDesc";
+                        
+                    
+                        categoriaImg.src = todosItens.data[4].tiers[indexRank].largeIcon;
+                        categoriaNome.textContent = todosItens.data[4].tiers[indexRank].tierName;
+                            
+                        
+                        divCadaItem.appendChild(categoriaImg);
+                        divCadaItem.appendChild(categoriaNome);
+                        divItens.appendChild(divCadaItem);
+
+                        divCadaItem.addEventListener("click",function (){
+                            modal.style.display = "block";
+                            divItens.style.visibility = "hidden";
+                            
+                            
+                            modalConteudo.innerHTML = "";
+
+                            modal_CategoriaImg.src = todosItens.data[4].tiers[indexRank].largeIcon;
+                            modal_CategoriaImg.id = "modalCategoriaImg";
+                            modal_CategoriaNome.textContent = todosItens.data[4].tiers[indexRank].tierName;
+                            
+                            
+                            
+                            modal_divNome.appendChild(modal_CategoriaImg);
+                            modal_divNome.appendChild(modal_CategoriaNome);
+                            modalConteudo.appendChild(modal_divNome);
+                        
+
+
+                            modalConteudo.addEventListener("mouseleave", function () {
+                                modal.style.display = "none";
+                                divItens.style.visibility = "visible";
+                            });
+
+                        });
+                    }
+                
+            
+        }
+    }
+}
