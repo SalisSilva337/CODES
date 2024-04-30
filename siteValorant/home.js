@@ -43,10 +43,11 @@ function paginaInicial() {
                 let modal_CategoriaImg = document.createElement("img");
                 let botaoProximo = document.createElement("button");
                 let botaoRetroceder = document.createElement("button");
-                
+                let botaoPadrao = document.createElement("button");
 
                 botaoProximo.textContent = ">";
                 botaoRetroceder.textContent = "<";
+                botaoPadrao.textContent = "Voltar à Skin Padrão";
 
                 botaoProximo.classList = "botoesSlider";
                 botaoRetroceder.classList = "botoesSlider";
@@ -79,13 +80,20 @@ function paginaInicial() {
                     modal_CategoriaImg.id = "modalCategoriaImg";
                     modal_CategoriaNome.textContent = todasArmas.data[index].displayName;
                     
-                    let contador = 0 - 1;
+                    let contador = -1;
                     
                     modal_divNome.appendChild(modal_CategoriaImg);
                     modal_divNome.appendChild(modal_CategoriaNome);
+                    modal_divNome.appendChild(botaoPadrao);
                     modalConteudo.appendChild(botaoRetroceder);
                     modalConteudo.appendChild(modal_divNome);
                     modalConteudo.appendChild(botaoProximo);
+
+                    botaoPadrao.addEventListener("click", function () {
+                        contador = -1
+                        modal_CategoriaImg.src = todasArmas.data[index].displayIcon;
+                        modal_CategoriaNome.textContent = todasArmas.data[index].displayName;
+                    });
 
                     botaoProximo.addEventListener("click", function () {
                         if (contador < todasArmas.data[index].skins.length - 1) {
@@ -94,10 +102,13 @@ function paginaInicial() {
                             if (todasArmas.data[index].skins[contador].displayIcon === null) {
                                 contador++;
                             }
-
                             if (todasArmas.data[index].skins[contador].displayName.startsWith("Standard")) {
                                contador++; 
                             }
+                            if (todasArmas.data[index].skins[contador].displayName.startsWith("Random")) {
+                                contador++; 
+                            }
+
                             modal_CategoriaImg.src = todasArmas.data[index].skins[contador].displayIcon;
                             modal_CategoriaNome.textContent = todasArmas.data[index].skins[contador].displayName;
                         }
@@ -111,8 +122,10 @@ function paginaInicial() {
                             if (todasArmas.data[index].skins[contador].displayIcon === null) {
                                 contador--;
                             }
-
                             if (todasArmas.data[index].skins[contador].displayName.startsWith("Standard")) {
+                                contador--; 
+                            }
+                            if (todasArmas.data[index].skins[contador].displayName.startsWith("Random")) {
                                 contador--; 
                             }
 
@@ -120,6 +133,7 @@ function paginaInicial() {
                             modal_CategoriaNome.textContent = todasArmas.data[index].skins[contador].displayName;
                         }
                     });
+
 
                 });
 
