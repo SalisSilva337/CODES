@@ -31,6 +31,7 @@ divLogo.addEventListener("click", function () {
 window.onload = armasListar();
 
 function armasListar() {
+    divItens.innerHTML = "";
     let url = "https://valorant-api.com/v1/weapons";
 
     let request = new XMLHttpRequest();
@@ -65,6 +66,7 @@ function armasListar() {
 
                 botaoProximo.classList = "botoesSlider";
                 botaoRetroceder.classList = "botoesSlider";
+                botaoPadrao.id = "botaoPadrao"
 
                 modal_divNome.id = "modalDivNome";
                 modal_divDesc.id = "modalDivDesc";
@@ -201,13 +203,14 @@ function agentesListar() {
                     modal_divDesc.id = "modalDivDesc";
 
                     categoriaNome.id = "categoriaNome";
-                    categoriaImg.id = "categoriaImg";
+                    categoriaImg.id = "categoriaImgAgentes";
                     divCadaItem.id = "divCadaItem";
                     divCategoriaNomeDesc.id = "divCategoriaNomeDesc";
 
 
                     categoriaImg.src = todosItens.data[index].displayIcon;
-                    categoriaNome.textContent = todosItens.data[index].displayName;
+                    categoriaNome.textContent = todosItens.data[index].displayName + " - " + 
+                    todosItens.data[index].role.displayName;
                         
                     
                     divCadaItem.appendChild(categoriaImg);
@@ -222,7 +225,7 @@ function agentesListar() {
                         modalConteudo.innerHTML = "";
 
                         modal_CategoriaImg.src = todosItens.data[index].displayIcon;
-                        modal_CategoriaImg.id = "modalCategoriaImg";
+                        modal_CategoriaImg.id = "modalCategoriaImgAgentes";
                         modal_CategoriaNome.textContent = todosItens.data[index].displayName;
                         
                         
@@ -276,16 +279,16 @@ function ranksListar() {
                         let modal_CategoriaNome = document.createElement("h2");
                         let modal_CategoriaImg = document.createElement("img");
                     
-
+                        
                     
 
-                    modal_divNome.id = "modalDivNome";
-                    modal_divDesc.id = "modalDivDesc";
+                        modal_divNome.id = "modalDivNome";
+                        modal_divDesc.id = "modalDivDesc";
 
-                    categoriaNome.id = "categoriaNome";
-                    categoriaImg.id = "categoriaImg";
-                    divCadaItem.id = "divCadaItem";
-                    divCategoriaNomeDesc.id = "divCategoriaNomeDesc";
+                        categoriaNome.id = "categoriaNome";
+                        categoriaImg.id = "categoriaImgRank";
+                        divCadaItem.id = "divCadaItem";
+                        divCategoriaNomeDesc.id = "divCategoriaNomeDesc";
                         
                     
                         categoriaImg.src = todosItens.data[4].tiers[indexRank].largeIcon;
@@ -296,6 +299,18 @@ function ranksListar() {
                         divCadaItem.appendChild(categoriaNome);
                         divItens.appendChild(divCadaItem);
 
+                        if (todosItens.data[4].tiers[indexRank].tierName === "UNRANKED") {
+                            divCadaItem.remove();
+                        }
+
+                        if (todosItens.data[4].tiers[indexRank].tierName === "Unused1") {
+                            divCadaItem.remove();
+                        }
+
+                        if (todosItens.data[4].tiers[indexRank].tierName === "Unused2") {
+                            divCadaItem.remove();
+                        }
+
                         divCadaItem.addEventListener("click",function (){
                             modal.style.display = "block";
                             divItens.style.visibility = "hidden";
@@ -304,7 +319,7 @@ function ranksListar() {
                             modalConteudo.innerHTML = "";
 
                             modal_CategoriaImg.src = todosItens.data[4].tiers[indexRank].largeIcon;
-                            modal_CategoriaImg.id = "modalCategoriaImg";
+                            modal_CategoriaImg.id = "modalCategoriaImgRank";
                             modal_CategoriaNome.textContent = todosItens.data[4].tiers[indexRank].tierName;
                             
                             

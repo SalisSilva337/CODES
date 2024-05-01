@@ -76,7 +76,6 @@ body{
 
 #divItens{
     padding-top: 10px;
-    border: 1px solid;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -84,8 +83,13 @@ body{
 }
 
 #categoriaImg{
-    width: 600px;
-    height: 150px;
+    /* transform: scale(0.8); */
+    width: 450px;
+    height: 120px;
+}
+
+#categoriaImgRank{
+    width: 350px;
 }
 
 #categoriaNome{
@@ -143,7 +147,32 @@ body{
     font-size: xx-large;
     width: 50px;
     height: 150px;
+    background-color: rgb(0, 0, 0,0.4);
+    color: red;
+    border: 1px solid red;
 }
+
+.botoesSlider:hover{
+   opacity: 0.7;
+   cursor: pointer;
+   scale: 1.1;
+}
+
+#botaoPadrao{
+    font-size: x-large;
+    width: 200px;
+    height: 50px;
+    background-color: rgb(0, 0, 0,0.4);
+    color: red;
+    border: 1px solid red;
+}
+
+#botaoPadrao:hover{
+    opacity: 0.7;
+    cursor: pointer;
+    scale: 1.1;
+}
+
 #modalCategoriaImg{
     transform: scale(0.7);
     width: 500px;
