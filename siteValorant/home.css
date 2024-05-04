@@ -75,9 +75,11 @@ body{
 }
 
 #divItens{
+    margin: auto;
     padding-top: 10px;
     display: flex;
     flex-wrap: wrap;
+    width: 1200px;
     justify-content: center;
     gap: 10px;
 }
