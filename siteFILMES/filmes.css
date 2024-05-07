@@ -224,6 +224,7 @@ header{
     display: none;
     z-index: 1;
     font-size: medium;
+    color: white;
     text-shadow: 1px 1px 1px black;
     transition: 1s;
 }
