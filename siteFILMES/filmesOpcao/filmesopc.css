@@ -89,16 +89,55 @@ header{
     justify-content: right;
     align-items: right;
     gap: 10px;
+    padding-bottom: 10px;
 }
 
 #menuLateral{
     float: left;
-    width: 32%;
-    height: 1000px;
-    border: 1px solid;
-
+    width: 20%;
+    height: 700px;
+    display: flex;
+    box-shadow: 0px 0px 10px black;
+    border-radius: 10px;
+    padding: 10px;
+    flex-direction: column;
+    position: fixed;
+    left: 0;
+    gap: 10px;        
 }
 
+#divGenero{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+#divFaixaEtaria{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.botoesCategorias{
+    width: 100px;
+    height: 50px;
+    padding: 10px;
+    font-size: large;
+    text-align: center;
+    border-radius: 100px;
+}
+
+
+
+#botaoVerMais{
+    width: 99.5%;
+    height: 50px;
+    color: white;
+    font-size: x-large;
+    background-color: rgb(103, 36, 161);
+}
 
 #divCadaItem{
     width: 300px;

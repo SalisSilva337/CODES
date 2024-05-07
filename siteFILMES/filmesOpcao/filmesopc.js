@@ -18,7 +18,11 @@ trocaModo.addEventListener("click", function () {
     }
 });
 
+let botaoVerMais = document.createElement("button");
+botaoVerMais.textContent = "VER MAIS";
+botaoVerMais.id = "botaoVerMais"
 
+let contador = 0
 
 window.onload = filmes();
 
@@ -27,8 +31,8 @@ function home() {
 }
 
 function filmes() {
-    
-    let url = "https://api.themoviedb.org/3/movie/popular?language=pt-BR&page=";
+    contador++
+    let url = "https://api.themoviedb.org/3/movie/popular?language=pt-BR&page=" + contador;
 
     let request = new XMLHttpRequest();
     request.open("GET", url, false);
@@ -68,5 +72,10 @@ function filmes() {
         divCadaItem.appendChild(divImg);
         divCadaItem.appendChild(nomeItem);
         divFilmesSeries.appendChild(divCadaItem);
+        divFilmesSeries.appendChild(botaoVerMais);
+
+        botaoVerMais.addEventListener("click", function () {
+           filmes(); 
+        });
     }
 }
