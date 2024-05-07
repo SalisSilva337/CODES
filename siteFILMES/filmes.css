@@ -1,15 +1,131 @@
 *{
     margin: 0;
     padding: 0;
-    font-family: Pricedown;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+#modalEsquerda{
+    visibility: hidden;
+    top: 0;
+    left: 0;
+    position: fixed;
+    display: flex;
+    background-color: rgb(35, 32, 32);
+    width: 50%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+#modalDireita{
+    visibility: hidden;
+    top: 0;
+    right: 0;
+    position: fixed;
+    background-color: rgb(209, 185, 185);
+    display: flex;
+    width: 50%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+#loading1{
+    border: 1px solid white;
+    width: 500px;
+    height: 50px;
+    border-radius: 10px;
+    background-position: left;
+}
+
+#loading2{
+    border: 1px solid black;
+    width: 500px;
+    height: 50px;  
+    border-radius: 10px;
+    background-position: left;
+}
+
+#conteudoLoading1{
+    background-color: rgb(209, 185, 185);
+    border-radius: 10px;
+    width: 0%;
+    height: 100%;
+}
+
+#conteudoLoading2{
+    background-color: rgb(35, 32, 32);
+    border-radius: 10px;
+    width: 0%;
+    height: 100%;
+}
+
+
+
+@keyframes modalInicioAnim {
+    from {
+        width: 50%;
+    }
+
+    to {
+        width: 0%;
+    }
+}
+
+
+
+
+
+
+body{
+    background-color: rgb(25, 24, 24);
+    color: white;
 }
 
 #divHeader {
-    border: 1px solid black;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    gap: 500px;
+    gap: 300px;
+    height: 100%;
+   
+}
+
+#botaoModo{
+    width: 100px;
+    height: 50px;
+    font-size: larger;
+    border: 0px solid;
+    border-radius: 10px;
+    background-color: transparent;
+}
+
+#botaoModo:hover{
+    scale: 1.1;
+   border: 1px solid white;
+}
+
+#divModos{
+    display: none;
+    padding: 10px;
+    background-color: rgb(48, 47, 97);
+    box-shadow: 0px 0px 10px black;
+    position: fixed;
+    border-radius: 10px;
+    width: 200px;
+    height: 30px;
+    gap: 5px;
+    justify-content: center;
+}
+
+header{
+    height: 100px;
+    background-color: rgb(15, 15, 144);
+    color: white;
+    box-shadow: 0px 0px 10px rgb(255, 255, 255);
+    top: 0;
+    left: 0;
+    position: sticky;
 }
 
 #nomeLogo{
@@ -17,26 +133,105 @@
 }
 
 #navBotoes{
-    border: 1px solid;
     justify-self: center;
 }
 
 .botoesOpcoes{
     width: 150px;
     font-size: large;
+    color: white;
+    font-size: x-large;
+    background-color: transparent;
+    border-radius: 10px;
+    padding: 5px;
+    border: 0px;
 }
 
-#divCentral{
-    border: 1px solid;
-    display: flex;
-    overflow-x: auto;
+.botoesOpcoes:hover{
+   scale: 1.1;
+   border: 1px solid;
 }
+
+.divPopulares{
+    display: flex;
+    overflow-x: hidden;
+    gap: 20px;
+    padding: 10px;
+}
+
+.dragscroll{
+    cursor:grab;
+}
+
+
+.divAvaliados{
+    display: flex;
+    overflow-x: hidden;
+    gap: 20px;
+    padding: 10px;
+}
+
+.divTvPopulares{
+    display: flex;
+    overflow-x: hidden;
+    gap: 20px;
+    padding: 10px;
+}
+
 #divConjunto{
     display: flex;
     border: 1px solid;
+    border-radius: 10px;
     width: 1000px;
 }
 
 #divCadaItem{
-    width: 100px;
+    width: 400px;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0px 0px 10px white;
+    display: flex;
+    padding: 10px;
 }
+
+#divConjunto:hover{
+   scale: 1.05;
+}
+
+#imgItem{
+    border-radius: 10px;
+}
+
+#trocaModo {
+    width: 100%;
+    height: 25px;
+    -webkit-appearance: none;
+    border-radius: 10px;  
+    background: #727682;
+    outline: none;
+    
+    -webkit-transition: .2s;
+    
+}
+  
+#trocaModo::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%; 
+    background: #ffffff;
+    cursor: pointer;
+    transition: .3s;
+}
+
+#trocaModo::-webkit-slider-thumb:hover {
+    -webkit-appearance: none;
+    appearance: none;
+    opacity: 0.7;
+    background: black;
+
+  }
+  
