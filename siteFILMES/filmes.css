@@ -1,0 +1,42 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Pricedown;
+}
+
+#divHeader {
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 500px;
+}
+
+#nomeLogo{
+    float: left;
+}
+
+#navBotoes{
+    border: 1px solid;
+    justify-self: center;
+}
+
+.botoesOpcoes{
+    width: 150px;
+    font-size: large;
+}
+
+#divCentral{
+    border: 1px solid;
+    display: flex;
+    overflow-x: auto;
+}
+#divConjunto{
+    display: flex;
+    border: 1px solid;
+    width: 1000px;
+}
+
+#divCadaItem{
+    width: 100px;
+}

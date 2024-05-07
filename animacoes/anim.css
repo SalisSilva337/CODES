@@ -1,0 +1,50 @@
+#modal1{
+    background-color: black;
+    display: flex;
+    top: 0;
+    left: 0;
+    position: fixed;
+    width: 50%;
+    border: 1px solid white;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+p{
+    font-size: 400px;
+    
+}
+
+button{
+    width: 100px;
+    height: 100px;
+    position: absolute;
+}
+
+#modal2{
+    background-color: black;
+    display: flex;
+    top: 0;
+    right: 0;
+    position: fixed;
+    width: 50%;
+    border: 1px solid white;
+    height: 100%;
+}
+
+@keyframes modalAnim{
+    from{
+        width: 50%;
+    }
+
+    to{
+        width: 0%;
+    }
+}
