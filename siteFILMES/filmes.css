@@ -5,7 +5,7 @@
 }
 
 #modalEsquerda{
-    /* visibility: hidden; */
+    visibility: hidden;
     top: 0;
     left: 0;
     position: fixed;
@@ -18,7 +18,7 @@
 }
 
 #modalDireita{
-    /* visibility: hidden; */
+    visibility: hidden;
     top: 0;
     right: 0;
     position: fixed;
@@ -211,7 +211,7 @@ header{
 
 }
 
-#divImg:hover{
+#divImg:active{
     transform:rotateZ(90deg);
     scale: 1.5;
 }
@@ -230,12 +230,12 @@ header{
     transition: 1s;
 }
 
-#divImg:hover #descItem{
+#divImg:active #descItem{
     display: flex;
     transform:rotateZ(-90deg);
 }
 
-#divImg:hover #imgItem{
+#divImg:active #imgItem{
     filter: blur(5px);
 }
 
@@ -256,7 +256,7 @@ header{
     transition: 1s;
 }
 
-#trocaModo {
+#trocaModo{
     width: 100%;
     height: 25px;
     -webkit-appearance: none;

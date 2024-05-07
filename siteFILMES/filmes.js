@@ -2,9 +2,12 @@ let divPopulares = document.querySelector(".divPopulares");
 let divAvaliados = document.querySelector(".divAvaliados");
 let divTvPopulares = document.querySelector(".divTvPopulares");
 let divTvAvaliadas = document.querySelector(".divTvAvaliadas");
-
 let botaoModo = document.querySelector("#botaoModo");
 let trocaModo = document.querySelector("#trocaModo");
+
+
+
+
 
 
 
@@ -61,6 +64,10 @@ function home(){
 
         let divImg = document.createElement("div");
         let descItem = document.createElement("h2");
+
+        // divImg.addEventListener("click", function () {
+        //     this.style.transform = "rotateZ(90deg)"
+        // });
         
         divCadaItem.id = "divCadaItem";
         imgItem.id = "imgItem";
