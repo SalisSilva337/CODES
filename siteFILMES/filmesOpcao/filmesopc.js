@@ -1,3 +1,29 @@
+let botoesCategorias = document.querySelectorAll(".botoesCategorias");
+
+console.log(botoesCategorias)
+for (let contador = 0; contador < botoesCategorias.length; contador++) {
+    
+        botoesCategorias[contador].addEventListener("click", function () {
+            
+            
+        if (botoesCategorias[contador].className === "botoesCategorias") {
+            botoesCategorias[contador].classList.add ("selecionado");
+        }
+        
+        else{
+            botoesCategorias[contador].classList.replace("selecionado","botoesCategorias");
+            botoesCategorias[contador].classList.add("botoesCategorias");
+        }
+        
+        
+    
+    
+        }
+    )};
+
+
+
+
 botaoModo.addEventListener("click", function () {
     if (divModos.style.display === "none") {
         divModos.style.display = "flex";
@@ -42,6 +68,7 @@ function filmes() {
     console.log(url);
 
     let todaLista = JSON.parse(request.response);
+    // let tiposFilmes = todaLista.filter((item) => item.category.name == botao.textContent);
     console.log(todaLista);
 
     for (let index = 0; index < todaLista.results.length; index++) {
@@ -67,7 +94,6 @@ function filmes() {
         
         
         divImg.appendChild(imgItem);
-        divImg.appendChild(descItem);
 
         divCadaItem.appendChild(divImg);
         divCadaItem.appendChild(nomeItem);
@@ -79,3 +105,5 @@ function filmes() {
         });
     }
 }
+
+
