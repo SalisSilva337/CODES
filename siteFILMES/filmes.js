@@ -5,8 +5,7 @@ let divTvAvaliadas = document.querySelector(".divTvAvaliadas");
 let botaoModo = document.querySelector("#botaoModo");
 let trocaModo = document.querySelector("#trocaModo");
 
-
-
+let contador = 0;
 
 
 
@@ -42,7 +41,11 @@ window.onload = home();
 
 
 function home(){
-    let url = "https://api.themoviedb.org/3/movie/popular?language=pt-BR";
+    contador++;
+    console.log(contador);
+    
+    
+    let url = "https://api.themoviedb.org/3/movie/popular?language=pt-BR&page=" + contador;
 
     let request = new XMLHttpRequest();
     request.open("GET", url, false);
@@ -61,9 +64,10 @@ function home(){
         let divConjunto = document.createElement("div");
         let nomeItem = document.createElement("h2");
         let imgItem = document.createElement("img");
-
+        
         let divImg = document.createElement("div");
         let descItem = document.createElement("h2");
+        let botao = document.createElement("button");
 
         divCadaItem.id = "divCadaItem";
         imgItem.id = "imgItem";
@@ -75,6 +79,8 @@ function home(){
         nomeItem.textContent = todaLista.results[index].title;
         descItem.textContent = todaLista.results[index].overview.slice(0,200) + "...";
         
+        botao.textContent="JIASDIJS";
+        
         divImg.appendChild(imgItem);
         divImg.appendChild(descItem);
 
@@ -85,6 +91,11 @@ function home(){
 
         divConjunto.appendChild(divCadaItem);
         divPopulares.appendChild(divConjunto);
+        divPopulares.appendChild(botao);
+
+        botao.addEventListener("click", function () {
+            home();
+        });
     }
 
     let url2 = "https://api.themoviedb.org/3/movie/top_rated?language=pt-BR";
