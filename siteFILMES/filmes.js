@@ -1,7 +1,9 @@
 let divPopulares = document.querySelector(".divPopulares");
+let divFilmesSeries = document.querySelector("#divFilmesSeries");
 let divAvaliados = document.querySelector(".divAvaliados");
 let divTvPopulares = document.querySelector(".divTvPopulares");
 let divTvAvaliadas = document.querySelector(".divTvAvaliadas");
+let listar = document.querySelectorAll(".listar");
 let botaoModo = document.querySelector("#botaoModo");
 let trocaModo = document.querySelector("#trocaModo");
 
@@ -23,29 +25,36 @@ trocaModo.addEventListener("click", function () {
     if (trocaModo.value === "1") {
         body.style.backgroundColor = "white";
         body.style.color = "black";
-        header.style.boxShadow = "0px 0px 10px black";
+        
     }
     else {
         body.style.backgroundColor = "rgb(25, 24, 24)";
         body.style.color = "white";
-        header.style.boxShadow = "0px 0px 10px white";  
+       
     }
 });
 
 
 
-
+let h1nome = document.createElement("h1")
+let h1nome2 = document.createElement("h1")
+let h1nome3 = document.createElement("h1")
+let h1nome4 = document.createElement("h1")
+h1nome.textContent = "Filmes Populares:";
+h1nome2.textContent = "Filmes Melhores Avaliados:";
+h1nome3.textContent = "Séries/TV Populares:";
+h1nome4.textContent = "Séries/TV Melhores Avaliados:";
 
 window.onload = home();
 
 
-
 function home(){
-    contador++;
-    console.log(contador);
-    
-    
-    let url = "https://api.themoviedb.org/3/movie/popular?language=pt-BR&page=" + contador;
+    divPopulares.innerHTML="";
+    divAvaliados.innerHTML="";
+    divTvPopulares.innerHTML="";
+    divTvAvaliadas.innerHTML="";
+
+    let url = "https://api.themoviedb.org/3/movie/popular?language=pt-BR&page=";
 
     let request = new XMLHttpRequest();
     request.open("GET", url, false);
@@ -56,7 +65,9 @@ function home(){
 
     let todaLista = JSON.parse(request.response);
     console.log(todaLista);
-    
+
+    divPopulares.appendChild(h1nome);
+
     for (let index = 0; index < todaLista.results.length; index++) {
         let urlItens = "https://media.themoviedb.org/t/p/w200";
 
@@ -67,8 +78,7 @@ function home(){
         
         let divImg = document.createElement("div");
         let descItem = document.createElement("h2");
-        let botao = document.createElement("button");
-
+        
         divCadaItem.id = "divCadaItem";
         imgItem.id = "imgItem";
         descItem.id = "descItem";
@@ -79,7 +89,6 @@ function home(){
         nomeItem.textContent = todaLista.results[index].title;
         descItem.textContent = todaLista.results[index].overview.slice(0,200) + "...";
         
-        botao.textContent="JIASDIJS";
         
         divImg.appendChild(imgItem);
         divImg.appendChild(descItem);
@@ -91,11 +100,6 @@ function home(){
 
         divConjunto.appendChild(divCadaItem);
         divPopulares.appendChild(divConjunto);
-        divPopulares.appendChild(botao);
-
-        botao.addEventListener("click", function () {
-            home();
-        });
     }
 
     let url2 = "https://api.themoviedb.org/3/movie/top_rated?language=pt-BR";
@@ -108,7 +112,10 @@ function home(){
 
     let todaLista2 = JSON.parse(request.response);
     console.log(todaLista);
+
     
+    divAvaliados.appendChild(h1nome2);
+
     for (let index = 0; index < todaLista2.results.length; index++) {
         let urlItens = "https://media.themoviedb.org/t/p/w200";
 
@@ -149,7 +156,9 @@ function home(){
 
     let todaLista3 = JSON.parse(request.response);
     console.log(todaLista3);
-    
+
+    divTvPopulares.appendChild(h1nome3);
+
     for (let index = 0; index < todaLista3.results.length; index++) {
         let urlItens = "https://media.themoviedb.org/t/p/w200";
 
@@ -189,7 +198,9 @@ function home(){
 
     let todaLista4 = JSON.parse(request.response);
     console.log(todaLista4);
-    
+
+    divTvAvaliadas.appendChild(h1nome4);
+
     for (let index = 0; index < todaLista4.results.length; index++) {
         let urlItens = "https://media.themoviedb.org/t/p/w200";
 
@@ -221,3 +232,7 @@ function home(){
     }
 
 };
+
+function filmes() {
+    window.location.href = "filmesOpcao/filmesopc.html";
+}
