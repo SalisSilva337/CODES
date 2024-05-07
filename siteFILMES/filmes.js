@@ -65,10 +65,6 @@ function home(){
         let divImg = document.createElement("div");
         let descItem = document.createElement("h2");
 
-        // divImg.addEventListener("click", function () {
-        //     this.style.transform = "rotateZ(90deg)"
-        // });
-        
         divCadaItem.id = "divCadaItem";
         imgItem.id = "imgItem";
         descItem.id = "descItem";
