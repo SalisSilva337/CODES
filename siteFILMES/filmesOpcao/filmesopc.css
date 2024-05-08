@@ -131,7 +131,8 @@ header{
     flex-direction: column;
     position: fixed;
     left: 0;
-    gap: 10px;   
+    top: 110px;
+    gap: 80px;   
          
 }
 

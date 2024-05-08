@@ -342,28 +342,3 @@ function filmes(botao,pagina) {
     }
 
 }
-
-
-
-function verVideo() {
-    
-    let url = "https://api.themoviedb.org/3/movie/"+ +"/videos"
-
-    let request = new XMLHttpRequest();
-    request.open("GET", url, false);
-    request.setRequestHeader('Authorization', 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI2NGZmNWNjMGU0NDhkZDI0ODA2MTRkYjEwNTIyMjcyMCIsInN1YiI6IjY2Mzk1ZGQxNDcwZWFkMDEyYTEzOTdhNSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.v446Yj5-PLMOF25bAjvHOf4VNkrB2gP1n6Oimq26wpE');
-
-    request.send();
-    console.log(url);
-
-    let todaLista = JSON.parse(request.response);
-    console.log(todaLista);
-    for (let index = 0; index < todaLista.results.length; index++) {
-        let video = document.createElement("iframe")
-        video.src = "http://www.youtube.com/embed/" + todaLista.results[index].key;
-        divFilmesSeries.appendChild(video)
-        
-    }
-   
-
-}
