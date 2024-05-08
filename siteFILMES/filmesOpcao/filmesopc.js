@@ -55,6 +55,8 @@ abrirCategoria2.addEventListener("click", function () {
 });
 
 
+
+
 botaoModo.addEventListener("click", function () {
     if (divModos.style.display === "none") {
         divModos.style.display = "flex";
@@ -87,7 +89,7 @@ function home() {
 function todosFilmes(pagina) {
     divFilmesSeries.innerHTML = "";
     divPaginas.innerHTML="";
-
+   
     for (let cont = 1; cont < 21; cont++) {
         
         let botoesPaginas = document.createElement("button");
@@ -120,13 +122,28 @@ function todosFilmes(pagina) {
         let nomeItem = document.createElement("h2");
         let imgItem = document.createElement("img");
         let divImg = document.createElement("div");
-        
+        let divAvaliacao = document.createElement("div");
+        let avaliacaoItem = document.createElement("h2");
+
         divCadaItem.id = "divCadaItem";
         imgItem.id = "imgItem";
         divImg.id = "divImg";
+        avaliacaoItem.id = "avaliacaoItem";
+        divAvaliacao.id = "divAvaliacao";
 
         imgItem.src = urlItens + todaLista.results[index].poster_path;
         nomeItem.textContent = todaLista.results[index].title;
+        avaliacaoItem.textContent = todaLista.results[index].vote_average.toFixed(0) * 10 + "%"
+
+        divImg.appendChild(imgItem);
+        divAvaliacao.appendChild(avaliacaoItem);
+        divImg.appendChild(divAvaliacao)
+        // divCadaItem.appendChild(divAvaliacao);
+        divCadaItem.appendChild(divImg);
+        divCadaItem.appendChild(nomeItem);
+        divFilmesSeries.appendChild(divCadaItem);
+
+
 
         let modalNomeItem = document.createElement("h1");
         let modalDataItem = document.createElement("h2");
@@ -134,7 +151,9 @@ function todosFilmes(pagina) {
         let modalDescItem = document.createElement("h2");
         let modalDivImg = document.createElement("div");
         let modalDivDescVideo = document.createElement("div");
+        let modalFechar = document.createElement("button")
 
+        modalFechar.textContent = "X";
         modalImgItem.src = urlItens + todaLista.results[index].poster_path;
         modalNomeItem.textContent = todaLista.results[index].title;
         modalDataItem.textContent = todaLista.results[index].release_date;
@@ -143,12 +162,13 @@ function todosFilmes(pagina) {
         modalImgItem.id = "modalImgItem";
         modalDivImg.id = "modalDivImg";
         modalDivDescVideo.id = "modalDivDescVideo";
-
+        modalFechar.id = "modalFechar";
         modalDescItem.textContent = todaLista.results[index].overview;
 
 
         
         divCadaItem.addEventListener("click", function () {
+            modalConteudo.innerHTML= "";
             modal.style.display = "flex";
             modalDivImg.appendChild(modalImgItem);
             modalDivImg.appendChild(modalNomeItem);
@@ -156,15 +176,16 @@ function todosFilmes(pagina) {
             modalDivDescVideo.appendChild(modalDescItem);
             modalConteudo.appendChild(modalDivImg);
             modalConteudo.appendChild(modalDivDescVideo);
+            modal.appendChild(modalFechar)
 
+
+            modalFechar.addEventListener("click", function () {
+                modal.style.display = "none";
+            });
 
         });
         
-        divImg.appendChild(imgItem);
-
-        divCadaItem.appendChild(divImg);
-        divCadaItem.appendChild(nomeItem);
-        divFilmesSeries.appendChild(divCadaItem);
+        
 
     }
   
