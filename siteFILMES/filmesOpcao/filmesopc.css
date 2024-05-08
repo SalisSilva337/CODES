@@ -96,10 +96,12 @@ header{
 #divPaginas{
     padding-top: 10px;
     float: right;
-    width: 64%;
+    width: 70%;
     display: flex;
     gap: 10px;
     padding-bottom: 20px;
+    justify-content: center;
+    align-items: center;
 }
 
 .botoesPaginas{
@@ -344,7 +346,7 @@ header{
     width: 50px;
     height: 50px;
     position: fixed;
-    left: 1800px;
+    left: 2300px;
     top: 50px;
     font-size: 50px;
     background-color: transparent;

@@ -248,22 +248,25 @@ function filmes(botao,pagina) {
         let urlItens = "https://media.themoviedb.org/t/p/w200";
 
         let divCadaItem = document.createElement("div");
-        let divConjunto = document.createElement("div");
         let nomeItem = document.createElement("h2");
         let imgItem = document.createElement("img");
-        
         let divImg = document.createElement("div");
-        
+        let divAvaliacao = document.createElement("div");
+        let avaliacaoItem = document.createElement("h2");
+
         divCadaItem.id = "divCadaItem";
         imgItem.id = "imgItem";
         divImg.id = "divImg";
-        divConjunto.id = "divConjunto";
+        avaliacaoItem.id = "avaliacaoItem";
+        divAvaliacao.id = "divAvaliacao";
 
         imgItem.src = urlItens + todaLista.results[index].poster_path;
         nomeItem.textContent = todaLista.results[index].title;
+        avaliacaoItem.textContent = todaLista.results[index].vote_average.toFixed(0) * 10 + "%"
         
         divImg.appendChild(imgItem);
-
+        divAvaliacao.appendChild(avaliacaoItem);
+        divImg.appendChild(divAvaliacao);
         divCadaItem.appendChild(divImg);
         divCadaItem.appendChild(nomeItem);
         divFilmesSeries.appendChild(divCadaItem);
