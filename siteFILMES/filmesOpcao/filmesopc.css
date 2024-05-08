@@ -92,6 +92,17 @@ header{
     gap: 10px;
     padding-bottom: 10px;
 }
+#divPaginas{
+    float: right;
+    width: 1000px;
+    border: 1px solid;
+    display: flex;
+}
+
+.botoesPaginas{
+    width: 50px;
+    font-size: larger;
+}
 
 #menuLateral{
     padding-top: 10px;
