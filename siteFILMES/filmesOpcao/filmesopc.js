@@ -268,10 +268,76 @@ function filmes(botao,pagina) {
         divCadaItem.appendChild(nomeItem);
         divFilmesSeries.appendChild(divCadaItem);
         
+        let modalNomeItem = document.createElement("h1");
+        let modalDataItem = document.createElement("h2");
+        let modalImgItem = document.createElement("img");
+        let modalDescItem = document.createElement("h2");
+        let modalDivImg = document.createElement("div");
+        let modalDivDescVideo = document.createElement("div");
+        let modalFechar = document.createElement("button");
+        let modalIframe = document.createElement("iframe");
+
+        modalFechar.textContent = "X";
+        modalImgItem.src = urlItens + todaLista.results[index].poster_path;
+
+        modalNomeItem.textContent = todaLista.results[index].title;
+        modalNomeItem.value = todaLista.results[index].id;
+
+        modalDataItem.textContent = todaLista.results[index].release_date;
+        modalDescItem.textContent = todaLista.results[index].overview;
+        
+    
+        modalImgItem.id = "modalImgItem";
+        modalDivImg.id = "modalDivImg";
+        modalDivDescVideo.id = "modalDivDescVideo";
+        modalFechar.id = "modalFechar";
+        modalIframe.id = "modalIframe";
+        
+
+        
+        divCadaItem.addEventListener("click", function () {
+
+            puxarTrailer(modalNomeItem.value)
+
+            modal.style.display = "flex";
+            modalDivImg.appendChild(modalImgItem);
+            modalDivImg.appendChild(modalNomeItem);
+            modalDivImg.appendChild(modalDataItem);
+            modalDivDescVideo.appendChild(modalIframe);
+            modalDivDescVideo.appendChild(modalDescItem);
+            modalConteudo.appendChild(modalDivImg);
+            modalConteudo.appendChild(modalDivDescVideo);
+            modal.appendChild(modalFechar);
+
+            function puxarTrailer(idFilme) {
+                let urlVideos = "https://api.themoviedb.org/3/movie/"+ idFilme +"/videos"
+
+                let request = new XMLHttpRequest();
+                request.open("GET", urlVideos, false);
+                request.setRequestHeader('Authorization', 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI2NGZmNWNjMGU0NDhkZDI0ODA2MTRkYjEwNTIyMjcyMCIsInN1YiI6IjY2Mzk1ZGQxNDcwZWFkMDEyYTEzOTdhNSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.v446Yj5-PLMOF25bAjvHOf4VNkrB2gP1n6Oimq26wpE');
+            
+                request.send();
+                console.log(urlVideos);
+            
+                let todosVideos = JSON.parse(request.response);
+                console.log(todosVideos);
+                for (let index = 0; index < todosVideos.results.length; index++) {
+                   
+                    modalIframe.src = "http://www.youtube.com/embed/" + todosVideos.results[index].key;
+                      
+                }
+
+            }
+
+            modalFechar.addEventListener("click", function () {
+                modal.style.display = "none";
+                modalConteudo.innerHTML= "";
+            });
+
+        });
 
     }
 
-    
 }
 
 
