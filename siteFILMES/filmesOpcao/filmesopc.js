@@ -98,7 +98,7 @@ function todosFilmes(pagina) {
 
     let url = "https://api.themoviedb.org/3/movie/popular?language=pt-BR&page=" + pagina.textContent;
 
-    let urlVideos = "https://api.themoviedb.org/3/movie/"+ +"/videos"
+   
 
     let request = new XMLHttpRequest();
     request.open("GET", url, false);
@@ -150,22 +150,26 @@ function todosFilmes(pagina) {
 
         modalFechar.textContent = "X";
         modalImgItem.src = urlItens + todaLista.results[index].poster_path;
+
         modalNomeItem.textContent = todaLista.results[index].title;
+        modalNomeItem.value = todaLista.results[index].id;
+
         modalDataItem.textContent = todaLista.results[index].release_date;
         modalDescItem.textContent = todaLista.results[index].overview;
-        modalIframe.src = 
+        
     
         modalImgItem.id = "modalImgItem";
         modalDivImg.id = "modalDivImg";
         modalDivDescVideo.id = "modalDivDescVideo";
         modalFechar.id = "modalFechar";
+        modalIframe.id = "modalIframe";
         
-
 
         
         divCadaItem.addEventListener("click", function () {
-            
-            modalConteudo.innerHTML= "";
+
+            puxarTrailer(modalNomeItem.value)
+
             modal.style.display = "flex";
             modalDivImg.appendChild(modalImgItem);
             modalDivImg.appendChild(modalNomeItem);
@@ -176,9 +180,29 @@ function todosFilmes(pagina) {
             modalConteudo.appendChild(modalDivDescVideo);
             modal.appendChild(modalFechar);
 
+            function puxarTrailer(idFilme) {
+                let urlVideos = "https://api.themoviedb.org/3/movie/"+ idFilme +"/videos"
+
+                let request = new XMLHttpRequest();
+                request.open("GET", urlVideos, false);
+                request.setRequestHeader('Authorization', 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI2NGZmNWNjMGU0NDhkZDI0ODA2MTRkYjEwNTIyMjcyMCIsInN1YiI6IjY2Mzk1ZGQxNDcwZWFkMDEyYTEzOTdhNSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.v446Yj5-PLMOF25bAjvHOf4VNkrB2gP1n6Oimq26wpE');
+            
+                request.send();
+                console.log(urlVideos);
+            
+                let todosVideos = JSON.parse(request.response);
+                console.log(todosVideos);
+                for (let index = 0; index < todosVideos.results.length; index++) {
+                   
+                    modalIframe.src = "http://www.youtube.com/embed/" + todosVideos.results[index].key;
+                      
+                }
+
+            }
 
             modalFechar.addEventListener("click", function () {
                 modal.style.display = "none";
+                modalConteudo.innerHTML= "";
             });
 
         });
