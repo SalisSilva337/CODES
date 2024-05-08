@@ -1,8 +1,12 @@
 let botoesCategorias = document.querySelectorAll(".botoesCategorias");
 let divPaginas = document.querySelector("#divPaginas");
 let botoesPaginas = document.querySelectorAll(".botoesPaginas");
+let abrirCategoria1 = document.querySelector("#abrirCategoria1");
+let abrirCategoria2 = document.querySelector("#abrirCategoria2");
+let divGenero = document.querySelector("#divGenero");
+let divFaixaEtaria = document.querySelector("#divFaixaEtaria");
 
-console.log(botoesCategorias)
+
 for (let contador = 0; contador < botoesCategorias.length; contador++) {
     
     botoesCategorias[contador].addEventListener("click", function () {
@@ -17,14 +21,38 @@ for (let contador = 0; contador < botoesCategorias.length; contador++) {
             botoesCategorias[contador].classList.add("botoesCategorias");
         }
         
+    });
+};
+
+abrirCategoria1.addEventListener("click", function () {
+                
+                
+    if (divGenero.style.display === "none") {
+        divGenero.style.display = "flex";
+    }
+            
+    else{
+        divGenero.style.display = "none";
+    }
+            
+          
         
+        
+});
+
+abrirCategoria2.addEventListener("click", function () {
+                
+    if (divFaixaEtaria.style.display === "none") {
+        divFaixaEtaria.style.display = "flex";
+    }
     
+    else{
+        divFaixaEtaria.style.display = "none";
+    }
     
-     }
-    )};
 
 
-
+});
 
 
 botaoModo.addEventListener("click", function () {
@@ -59,7 +87,8 @@ function home() {
 function todosFilmes(pagina) {
     divFilmesSeries.innerHTML = "";
     divPaginas.innerHTML="";
-    for (let cont = 1; cont < 10; cont++) {
+
+    for (let cont = 1; cont < 21; cont++) {
         
         let botoesPaginas = document.createElement("button");
         botoesPaginas.textContent = cont;
@@ -88,26 +117,48 @@ function todosFilmes(pagina) {
         let urlItens = "https://media.themoviedb.org/t/p/w200";
 
         let divCadaItem = document.createElement("div");
-        let divConjunto = document.createElement("div");
         let nomeItem = document.createElement("h2");
         let imgItem = document.createElement("img");
-        
         let divImg = document.createElement("div");
-        let descItem = document.createElement("h2");
-
         
-
-
         divCadaItem.id = "divCadaItem";
         imgItem.id = "imgItem";
-        descItem.id = "descItem";
         divImg.id = "divImg";
-        divConjunto.id = "divConjunto";
 
         imgItem.src = urlItens + todaLista.results[index].poster_path;
         nomeItem.textContent = todaLista.results[index].title;
-        descItem.textContent = todaLista.results[index].overview.slice(0,200) + "...";
+
+        let modalNomeItem = document.createElement("h1");
+        let modalDataItem = document.createElement("h2");
+        let modalImgItem = document.createElement("img");
+        let modalDescItem = document.createElement("h2");
+        let modalDivImg = document.createElement("div");
+        let modalDivDescVideo = document.createElement("div");
+
+        modalImgItem.src = urlItens + todaLista.results[index].poster_path;
+        modalNomeItem.textContent = todaLista.results[index].title;
+        modalDataItem.textContent = todaLista.results[index].release_date;
+
+    
+        modalImgItem.id = "modalImgItem";
+        modalDivImg.id = "modalDivImg";
+        modalDivDescVideo.id = "modalDivDescVideo";
+
+        modalDescItem.textContent = todaLista.results[index].overview;
+
+
         
+        divCadaItem.addEventListener("click", function () {
+            modal.style.display = "flex";
+            modalDivImg.appendChild(modalImgItem);
+            modalDivImg.appendChild(modalNomeItem);
+            modalDivImg.appendChild(modalDataItem);
+            modalDivDescVideo.appendChild(modalDescItem);
+            modalConteudo.appendChild(modalDivImg);
+            modalConteudo.appendChild(modalDivDescVideo);
+
+
+        });
         
         divImg.appendChild(imgItem);
 
@@ -116,28 +167,29 @@ function todosFilmes(pagina) {
         divFilmesSeries.appendChild(divCadaItem);
 
     }
-
-    // let urlGeneros = "https://api.themoviedb.org/3/genre/movie/list?language=pt-BR&page=";
-
-    // let requestGeneros = new XMLHttpRequest();
-    // requestGeneros.open("GET", urlGeneros, false);
-    // requestGeneros.setRequestHeader('Authorization', 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI2NGZmNWNjMGU0NDhkZDI0ODA2MTRkYjEwNTIyMjcyMCIsInN1YiI6IjY2Mzk1ZGQxNDcwZWFkMDEyYTEzOTdhNSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.v446Yj5-PLMOF25bAjvHOf4VNkrB2gP1n6Oimq26wpE');
-
-    // requestGeneros.send();
-    // console.log(urlGeneros);
-
-    // let todosGeneros = JSON.parse(requestGeneros.response);
-    
-    // console.log(todosGeneros);
-    
+  
 }
 
 
 
 function filmes(botao,pagina) {
     divFilmesSeries.innerHTML = "";
+    divPaginas.innerHTML="";
+
+    for (let cont = 1; cont < 21; cont++) {
+        
+        let botoesPaginas = document.createElement("button");
+        botoesPaginas.textContent = cont;
+        botoesPaginas.className = "botoesPaginas";
+        
+        botoesPaginas.addEventListener("click", function () {
+            filmes(botao,this);
+        });
+        
+        divPaginas.appendChild(botoesPaginas);
+    }
     
-    let url = "https://api.themoviedb.org/3/discover/movie?language=pt-BR&with_genres=" + botao.value + "&page=";
+    let url = "https://api.themoviedb.org/3/discover/movie?language=pt-BR&with_genres=" + botao.value + "&page=" + pagina.textContent;
 
     let request = new XMLHttpRequest();
     request.open("GET", url, false);
@@ -158,18 +210,14 @@ function filmes(botao,pagina) {
         let imgItem = document.createElement("img");
         
         let divImg = document.createElement("div");
-        let descItem = document.createElement("h2");
         
         divCadaItem.id = "divCadaItem";
         imgItem.id = "imgItem";
-        descItem.id = "descItem";
         divImg.id = "divImg";
         divConjunto.id = "divConjunto";
 
         imgItem.src = urlItens + todaLista.results[index].poster_path;
         nomeItem.textContent = todaLista.results[index].title;
-        descItem.textContent = todaLista.results[index].overview.slice(0,200) + "...";
-        
         
         divImg.appendChild(imgItem);
 
@@ -180,18 +228,6 @@ function filmes(botao,pagina) {
 
     }
 
-    // let urlGeneros = "https://api.themoviedb.org/3/genre/movie/list?language=pt-BR&page=";
-
-    // let requestGeneros = new XMLHttpRequest();
-    // requestGeneros.open("GET", urlGeneros, false);
-    // requestGeneros.setRequestHeader('Authorization', 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI2NGZmNWNjMGU0NDhkZDI0ODA2MTRkYjEwNTIyMjcyMCIsInN1YiI6IjY2Mzk1ZGQxNDcwZWFkMDEyYTEzOTdhNSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.v446Yj5-PLMOF25bAjvHOf4VNkrB2gP1n6Oimq26wpE');
-
-    // requestGeneros.send();
-    // console.log(urlGeneros);
-
-    // let todosGeneros = JSON.parse(requestGeneros.response);
-    
-    // console.log(todosGeneros);
     
 }
 

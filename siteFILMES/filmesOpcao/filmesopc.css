@@ -92,16 +92,29 @@ header{
     gap: 10px;
     padding-bottom: 10px;
 }
+
 #divPaginas{
+    padding-top: 10px;
     float: right;
-    width: 1000px;
-    border: 1px solid;
+    width: 64%;
     display: flex;
+    gap: 10px;
+    padding-bottom: 20px;
 }
 
 .botoesPaginas{
     width: 50px;
     font-size: larger;
+    background-color: transparent;
+    border: 1px solid white;
+    border-radius: 10px;
+    padding: 10px;
+    color: white;
+}
+
+.botoesPaginas:hover{
+    background-color: rgb(103, 36, 161);
+    cursor: pointer;
 }
 
 #menuLateral{
@@ -120,15 +133,31 @@ header{
          
 }
 
+#abrirCategoria1{
+    cursor: pointer;
+}
+
+#abrirCategoria1:hover{
+    color: rgb(103, 36, 161);
+}
+
+#abrirCategoria2{
+    cursor: pointer;
+}
+
+#abrirCategoria2:hover{
+    color: rgb(103, 36, 161);
+}
+
 #divGenero{
-    display: flex;
+    display: none;
     flex-direction: row;
     flex-wrap: wrap;
     gap: 20px;
 }
 
 #divFaixaEtaria{
-    display: flex;
+    display: none;
     flex-direction: row;
     flex-wrap: wrap;
     gap: 20px;
@@ -210,14 +239,24 @@ header{
 }
 
 #divCadaItem:hover{
-   opacity: 0.7; 
+    opacity: 0.7; 
+    position: static;
+}
 
+@keyframes divAnim{
+    from {
+        scale: 1;
+        background-color: black;
+        opacity: 1;
+    }
+    to {
+        scale: 20;
+        opacity: 1;
+        background-color: black;
+    }
 }
 
 
-#divConjunto:hover{
-    scale: 1.05;
-}
 
 #descItem{
     position: fixed;
@@ -275,3 +314,49 @@ header{
 
 }
 
+#modal{
+    left: 0;
+    top: 0;
+    position: fixed;
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+#modalConteudo{
+    background-color: rgb(103, 36, 161);
+    border: 1px solid;
+    border-radius: 10px;
+    height: 80%;
+    width: 80%;
+    position: relative;
+}
+
+#modalImgItem{
+    width: 300px;
+    box-shadow: 10px 10px 10px black;
+}
+
+#modalDivImg{
+    
+    width: 20%;
+    float: left;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px;
+    gap: 30px;
+}
+
+#modalDivDescVideo{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    border: 1px solid;
+    float: right;
+    overflow: auto;
+    padding: 10px;
+}
