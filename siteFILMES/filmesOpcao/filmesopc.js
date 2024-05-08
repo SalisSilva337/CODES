@@ -11,7 +11,6 @@ for (let contador = 0; contador < botoesCategorias.length; contador++) {
     
     botoesCategorias[contador].addEventListener("click", function () {
             
-            
         if (botoesCategorias[contador].className === "botoesCategorias") {
             botoesCategorias[contador].classList.add ("selecionado");
         }
@@ -25,8 +24,7 @@ for (let contador = 0; contador < botoesCategorias.length; contador++) {
 };
 
 abrirCategoria1.addEventListener("click", function () {
-                
-                
+                      
     if (divGenero.style.display === "none") {
         divGenero.style.display = "flex";
     }
@@ -34,11 +32,9 @@ abrirCategoria1.addEventListener("click", function () {
     else{
         divGenero.style.display = "none";
     }
-            
-          
-        
-        
+                
 });
+
 
 abrirCategoria2.addEventListener("click", function () {
                 
@@ -53,9 +49,6 @@ abrirCategoria2.addEventListener("click", function () {
 
 
 });
-
-
-
 
 botaoModo.addEventListener("click", function () {
     if (divModos.style.display === "none") {
@@ -105,6 +98,8 @@ function todosFilmes(pagina) {
 
     let url = "https://api.themoviedb.org/3/movie/popular?language=pt-BR&page=" + pagina.textContent;
 
+    let urlVideos = "https://api.themoviedb.org/3/movie/"+ +"/videos"
+
     let request = new XMLHttpRequest();
     request.open("GET", url, false);
     request.setRequestHeader('Authorization', 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI2NGZmNWNjMGU0NDhkZDI0ODA2MTRkYjEwNTIyMjcyMCIsInN1YiI6IjY2Mzk1ZGQxNDcwZWFkMDEyYTEzOTdhNSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.v446Yj5-PLMOF25bAjvHOf4VNkrB2gP1n6Oimq26wpE');
@@ -134,15 +129,14 @@ function todosFilmes(pagina) {
         imgItem.src = urlItens + todaLista.results[index].poster_path;
         nomeItem.textContent = todaLista.results[index].title;
         avaliacaoItem.textContent = todaLista.results[index].vote_average.toFixed(0) * 10 + "%"
-
+        
         divImg.appendChild(imgItem);
         divAvaliacao.appendChild(avaliacaoItem);
-        divImg.appendChild(divAvaliacao)
-        // divCadaItem.appendChild(divAvaliacao);
+        divImg.appendChild(divAvaliacao);
         divCadaItem.appendChild(divImg);
         divCadaItem.appendChild(nomeItem);
         divFilmesSeries.appendChild(divCadaItem);
-
+        
 
 
         let modalNomeItem = document.createElement("h1");
@@ -151,32 +145,36 @@ function todosFilmes(pagina) {
         let modalDescItem = document.createElement("h2");
         let modalDivImg = document.createElement("div");
         let modalDivDescVideo = document.createElement("div");
-        let modalFechar = document.createElement("button")
+        let modalFechar = document.createElement("button");
+        let modalIframe = document.createElement("iframe");
 
         modalFechar.textContent = "X";
         modalImgItem.src = urlItens + todaLista.results[index].poster_path;
         modalNomeItem.textContent = todaLista.results[index].title;
         modalDataItem.textContent = todaLista.results[index].release_date;
-
+        modalDescItem.textContent = todaLista.results[index].overview;
+        modalIframe.src = 
     
         modalImgItem.id = "modalImgItem";
         modalDivImg.id = "modalDivImg";
         modalDivDescVideo.id = "modalDivDescVideo";
         modalFechar.id = "modalFechar";
-        modalDescItem.textContent = todaLista.results[index].overview;
+        
 
 
         
         divCadaItem.addEventListener("click", function () {
+            
             modalConteudo.innerHTML= "";
             modal.style.display = "flex";
             modalDivImg.appendChild(modalImgItem);
             modalDivImg.appendChild(modalNomeItem);
             modalDivImg.appendChild(modalDataItem);
+            modalDivDescVideo.appendChild(modalIframe);
             modalDivDescVideo.appendChild(modalDescItem);
             modalConteudo.appendChild(modalDivImg);
             modalConteudo.appendChild(modalDivDescVideo);
-            modal.appendChild(modalFechar)
+            modal.appendChild(modalFechar);
 
 
             modalFechar.addEventListener("click", function () {
@@ -252,3 +250,27 @@ function filmes(botao,pagina) {
     
 }
 
+
+
+function verVideo() {
+    
+    let url = "https://api.themoviedb.org/3/movie/"+ +"/videos"
+
+    let request = new XMLHttpRequest();
+    request.open("GET", url, false);
+    request.setRequestHeader('Authorization', 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI2NGZmNWNjMGU0NDhkZDI0ODA2MTRkYjEwNTIyMjcyMCIsInN1YiI6IjY2Mzk1ZGQxNDcwZWFkMDEyYTEzOTdhNSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.v446Yj5-PLMOF25bAjvHOf4VNkrB2gP1n6Oimq26wpE');
+
+    request.send();
+    console.log(url);
+
+    let todaLista = JSON.parse(request.response);
+    console.log(todaLista);
+    for (let index = 0; index < todaLista.results.length; index++) {
+        let video = document.createElement("iframe")
+        video.src = "http://www.youtube.com/embed/" + todaLista.results[index].key;
+        divFilmesSeries.appendChild(video)
+        
+    }
+   
+
+}
