@@ -1,0 +1,15 @@
+for (let contador = 0; contador < botoesCategorias.length; contador++) {
+    
+    botoesCategorias[contador].addEventListener("click", function () {
+            
+        if (botoesCategorias[contador].className === "botoesCategorias") {
+            botoesCategorias[contador].classList.add ("selecionado");
+        }
+        
+        else{
+            botoesCategorias[contador].classList.replace("selecionado","botoesCategorias");
+            botoesCategorias[contador].classList.add("botoesCategorias");
+        }
+        
+    });
+};
