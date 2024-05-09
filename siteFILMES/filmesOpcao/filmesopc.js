@@ -1,4 +1,5 @@
 let botoesCategorias = document.querySelectorAll(".botoesCategorias");
+let botoesCategorias2 = document.querySelectorAll(".botoesCategorias2");
 let divPaginas = document.querySelector("#divPaginas");
 let botoesPaginas = document.querySelectorAll(".botoesPaginas");
 let abrirCategoria1 = document.querySelector("#abrirCategoria1");
@@ -10,18 +11,52 @@ let divFaixaEtaria = document.querySelector("#divFaixaEtaria");
 for (let contador = 0; contador < botoesCategorias.length; contador++) {
     
     botoesCategorias[contador].addEventListener("click", function () {
-            
+        
         if (botoesCategorias[contador].className === "botoesCategorias") {
-            botoesCategorias[contador].classList.add ("selecionado");
+            botoesCategorias[contador].className = "selecionado"
+            let selecionado = document.querySelector(".selecionado");
+            console.log(selecionado)
         }
         
         else{
             botoesCategorias[contador].classList.replace("selecionado","botoesCategorias");
-            botoesCategorias[contador].classList.add("botoesCategorias");
         }
         
     });
 };
+
+for (let contador2 = 0; contador2 < botoesCategorias2.length; contador2++) {
+    
+    botoesCategorias2[contador2].addEventListener("click", function () {
+        
+        if (botoesCategorias2[contador2].className === "botoesCategorias2") {
+            botoesCategorias2[contador2].className = "selecionado2"
+            let selecionado2 = document.querySelector(".selecionado2");
+            console.log(selecionado2)
+        }
+        
+        else{
+            botoesCategorias2[contador2].classList.replace("selecionado2","botoesCategorias2");
+        }
+        
+        
+
+
+
+
+    });
+};
+
+
+
+
+
+
+
+
+
+
+
 
 abrirCategoria1.addEventListener("click", function () {
                       
@@ -79,7 +114,7 @@ function home() {
     window.location.href = "../filmes.html";
 }
 
-function todosFilmes(pagina) {
+function todosFilmes(pagina,classificar) {
     divFilmesSeries.innerHTML = "";
     divPaginas.innerHTML="";
    
@@ -95,16 +130,25 @@ function todosFilmes(pagina) {
         
         divPaginas.appendChild(botoesPaginas);
     }
-    
+
+    for (let contar = 0; contar < botoesCategorias2.length; contar++) {
+        botoesCategorias2[contar].addEventListener("click", function () {
+            todosFilmes(pagina,this);
+        });
+        
+    }
+
     let url = "";
-    if (pagina === undefined) {
+    if (pagina === undefined && classificar === undefined) {
         url = "https://api.themoviedb.org/3/movie/popular?language=pt-BR&page=";
     }
     
-    else {
-        url = "https://api.themoviedb.org/3/movie/popular?language=pt-BR&page=" + pagina.textContent;
+    else if (classificar !== undefined) {
+        url = "https://api.themoviedb.org/3/movie/popular?language=pt-BR&page=" + "&sort_by=" + classificar.value;
     }
-
+    else{
+        url = "https://api.themoviedb.org/3/movie/popular?language=pt-BR&page=" + pagina.textContent + "&sort_by=" + classificar.value;
+    }
    
 
     let request = new XMLHttpRequest();
@@ -222,7 +266,7 @@ function todosFilmes(pagina) {
 
 
 
-function filmes(botao,pagina) {
+function filmes(botao,pagina,classificar) {
     divFilmesSeries.innerHTML = "";
     divPaginas.innerHTML="";
 
@@ -239,13 +283,22 @@ function filmes(botao,pagina) {
         divPaginas.appendChild(botoesPaginas);
     }
 
+    for (let contar = 0; contar < botoesCategorias2.length; contar++) {
+        botoesCategorias2[contar].addEventListener("click", function () {
+            filmes(botao,pagina,this);
+        });
+        
+    }
+
+
+
     let url = "";
     if (pagina === undefined) {
-        url = "https://api.themoviedb.org/3/discover/movie?language=pt-BR&with_genres=" + botao.value + "&page=";
+        url = "https://api.themoviedb.org/3/discover/movie?language=pt-BR&with_genres=" + botao.value + "&page=" + "&sort_by=" + classificar.value;
     }
     
     else {
-        url = "https://api.themoviedb.org/3/discover/movie?language=pt-BR&with_genres=" + botao.value + "&page=" + pagina.textContent;
+        url = "https://api.themoviedb.org/3/discover/movie?language=pt-BR&with_genres=" + botao.value + "&page=" + pagina.textContent + "&sort_by=" + classificar.value;
     }
     
 
