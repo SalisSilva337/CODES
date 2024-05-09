@@ -95,8 +95,15 @@ function todosFilmes(pagina) {
         
         divPaginas.appendChild(botoesPaginas);
     }
-
-    let url = "https://api.themoviedb.org/3/movie/popular?language=pt-BR&page=" + pagina.textContent;
+    
+    let url = "";
+    if (pagina === undefined) {
+        url = "https://api.themoviedb.org/3/movie/popular?language=pt-BR&page=";
+    }
+    
+    else {
+        url = "https://api.themoviedb.org/3/movie/popular?language=pt-BR&page=" + pagina.textContent;
+    }
 
    
 
@@ -231,8 +238,16 @@ function filmes(botao,pagina) {
         
         divPaginas.appendChild(botoesPaginas);
     }
+
+    let url = "";
+    if (pagina === undefined) {
+        url = "https://api.themoviedb.org/3/discover/movie?language=pt-BR&with_genres=" + botao.value + "&page=";
+    }
     
-    let url = "https://api.themoviedb.org/3/discover/movie?language=pt-BR&with_genres=" + botao.value + "&page=" + pagina.textContent;
+    else {
+        url = "https://api.themoviedb.org/3/discover/movie?language=pt-BR&with_genres=" + botao.value + "&page=" + pagina.textContent;
+    }
+    
 
     let request = new XMLHttpRequest();
     request.open("GET", url, false);
