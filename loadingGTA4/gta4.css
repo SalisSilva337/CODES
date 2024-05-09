@@ -74,6 +74,11 @@ img{
     height: 100%;
 }
 
+#nome{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: white;
+}
+
 #rockstarLogo{
     display: none;
     scale: 0.4;

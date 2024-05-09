@@ -9,6 +9,8 @@ listaBackground = ["imgs/gta1.webp","imgs/gta2.jpg","imgs/gta3.jpg"];
 listaPersonagens = ["imgs/niko.png","imgs/roman.png","imgs/dimitri.png"];
 
 window.onclick = function playAudio() {
+    nome.style.display = "none";
+
     tema.play();
     tema.volume = 0.8;
 
@@ -86,7 +88,7 @@ setTimeout(() => {
             personagemAtual.src = listaPersonagens[contador];
             
     }, 8000);
-}, 3000);
+}, 2000);
    
 
     
