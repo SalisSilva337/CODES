@@ -1,0 +1,126 @@
+*{
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+#body{
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+}
+
+#divImg{
+    display: flex;
+    position:absolute;
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    right: 0;
+    
+
+}
+
+#divImg img{
+    display: flex;
+    position: relative;
+    left: 500px;
+    
+
+}
+
+img{
+    scale: 1.5;
+}
+
+
+
+@keyframes fundoAnim{
+    from{
+       opacity: 0;
+    }
+
+    to{
+       opacity: 1;
+    }
+}
+
+@keyframes imgAnim{
+    from{
+       opacity: 0.3; 
+    }
+
+    to{
+       opacity: 1;
+       scale: 1.1;
+    }
+}
+
+#personagemAtual{
+   scale: 1;
+}
+#modal{
+    background-color: black;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+}
+#modalConteudo{
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+#rockstarLogo{
+    display: none;
+    scale: 0.4;
+   
+}
+
+#rockstarNorthLogo{
+    display: none;
+    scale: 1.8;
+    
+}
+
+#gta4Logo{
+    display: none;
+    scale: 0.6;
+    
+}
+
+@keyframes logoAnim {
+    from {
+        opacity: 0.1;
+        scale: 0.4;
+    }
+    to {
+        opacity: 1;
+        scale: 0;
+    }
+}
+
+@keyframes gta4LogoAnim {
+    from {
+        opacity: 0.1;
+        scale: 0.6;
+    }
+    to {
+        opacity: 1;
+
+    }
+}
+
+@keyframes logoNorthAnim {
+    from {
+        opacity: 0.1;
+        scale: 1.8;
+    }
+    to {
+        opacity: 1;
+        scale: 0;
+    }
+}
