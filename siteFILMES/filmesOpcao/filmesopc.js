@@ -106,7 +106,7 @@ function todosFilmes(pagina) {
         }, 1600);
 
         setTimeout(() => {
-            modalAlerta.style.display = "none"
+            modalAlerta.style.display = "none";
             modalAlerta.style.animation = "";
         }, 2500);
 
@@ -136,7 +136,7 @@ function todosFilmes(pagina) {
         }, 1600);
 
         setTimeout(() => {
-            modalAlerta.style.display = "none"
+            modalAlerta.style.display = "none";
             modalAlerta.style.animation = "";
         }, 2500);
 
@@ -276,6 +276,26 @@ function filmes(botao,pagina,classificar) {
         botoesPaginas.className = "botoesPaginas";
         
         botoesPaginas.addEventListener("click", function () {
+            
+
+            modalAlerta.style.animation = "alertaAnim 1s";
+            modalAlerta.innerHTML="";
+            modalAlerta.style.display= "flex";
+            let nomeAlerta = document.createElement("h1");
+            nomeAlerta.textContent = "SELECIONE UM GÊNERO DE FILME";
+            modalAlerta.appendChild(nomeAlerta);
+            setTimeout(() => {
+                modalAlerta.style.animation = "";
+            }, 1500);
+
+            setTimeout(() => {
+                modalAlerta.style.animation = "alertaAnim reverse 1s";
+            }, 1600);
+
+            setTimeout(() => {
+                modalAlerta.style.display = "none";
+                modalAlerta.style.animation = "";
+            }, 2500);
             filmes(botao,this,classificar);
         });
         
