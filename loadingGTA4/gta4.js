@@ -76,10 +76,10 @@ setTimeout(() => {
                 
             }, 4000);
             setTimeout(() => {
-                personagemAtual.style.animation= "imgAnim 7.8s"
+                personagemAtual.style.animation= "imgAnim 7.85s"
                 setTimeout(() => {
                     personagemAtual.style.animationPlayState = "paused"
-                }, 7800);
+                }, 7850);
             }, 1);
             
             body.src = listaBackground[contador];
