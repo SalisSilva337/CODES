@@ -8,6 +8,7 @@ let divGenero = document.querySelector("#divGenero");
 let divFaixaEtaria = document.querySelector("#divFaixaEtaria");
 
 
+
 for (let contador = 0; contador < botoesCategorias.length; contador++) {
     
     botoesCategorias[contador].addEventListener("click", function () {
@@ -24,38 +25,6 @@ for (let contador = 0; contador < botoesCategorias.length; contador++) {
         
     });
 };
-
-for (let contador2 = 0; contador2 < botoesCategorias2.length; contador2++) {
-    
-    botoesCategorias2[contador2].addEventListener("click", function () {
-        
-        if (botoesCategorias2[contador2].className === "botoesCategorias2") {
-            botoesCategorias2[contador2].className = "selecionado2"
-            let selecionado2 = document.querySelector(".selecionado2");
-            console.log(selecionado2)
-        }
-        
-        else{
-            botoesCategorias2[contador2].classList.replace("selecionado2","botoesCategorias2");
-        }
-        
-        
-
-
-
-
-    });
-};
-
-
-
-
-
-
-
-
-
-
 
 
 abrirCategoria1.addEventListener("click", function () {
@@ -131,24 +100,43 @@ function todosFilmes(pagina,classificar) {
         divPaginas.appendChild(botoesPaginas);
     }
 
-    for (let contar = 0; contar < botoesCategorias2.length; contar++) {
-        botoesCategorias2[contar].addEventListener("click", function () {
-            todosFilmes(pagina,this);
+    for (let contador2 = 0; contador2 < botoesCategorias2.length; contador2++) {
+    
+        botoesCategorias2[contador2].addEventListener("click", function () {
+            
+            if (botoesCategorias2[contador2].className === "botoesCategorias2") {
+                botoesCategorias2[contador2].className = "selecionado2"
+                let selecionado2 = document.querySelector(".selecionado2");
+                console.log(selecionado2)
+                botaoAplicar.addEventListener("click", function () {
+                    todosFilmes(pagina,selecionado2) 
+                });
+
+            }
+            
+            else{
+                botoesCategorias2[contador2].classList.replace("selecionado2","botoesCategorias2");
+            }
+            if (divFilmesSeries.innerHTML === "") {
+                
+            }
+           
+
+
         });
-        
-    }
+    };
 
     let url = "";
     if (pagina === undefined && classificar === undefined) {
-        url = "https://api.themoviedb.org/3/movie/popular?language=pt-BR&page=";
+        url = "https://api.themoviedb.org/3/discover/movie?language=pt-BR&page=";
     }
     
-    else if (classificar !== undefined) {
-        url = "https://api.themoviedb.org/3/movie/popular?language=pt-BR&page=" + "&sort_by=" + classificar.value;
+    else {
+        url = "https://api.themoviedb.org/3/discover/movie?language=pt-BR&page=" + "&sort_by=" + classificar.value;
     }
-    else{
-        url = "https://api.themoviedb.org/3/movie/popular?language=pt-BR&page=" + pagina.textContent + "&sort_by=" + classificar.value;
-    }
+    // else{
+    //     url = "https://api.themoviedb.org/3/movie/popular?language=pt-BR&page=" + pagina.textContent + "&sort_by=" + classificar.value;
+    // }
    
 
     let request = new XMLHttpRequest();
