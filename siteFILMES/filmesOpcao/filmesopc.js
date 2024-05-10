@@ -257,12 +257,9 @@ function todosFilmes(pagina) {
 
         });
         
-        
-
     }
   
 }
-
 
 
 function filmes(botao,pagina,classificar) {
