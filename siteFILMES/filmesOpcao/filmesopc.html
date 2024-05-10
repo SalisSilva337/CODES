@@ -28,13 +28,13 @@
 </header>
 <body id="body">
     <div id="menuLateral">
+        <button id="botaoFodase">Mudar para a Área de Filtragem</button>
         <h1 id="abrirCategoria1">Gênero</h1>
         <div id="divGenero">
-            <button class="botoesCategorias" value="16" onclick="filmes(this)">Animação</button>
-            <button class="botoesCategorias" value="12" onclick="filmes(this)">Aventura</button>
-            <button class="botoesCategorias" value="28" onclick="filmes(this)">Ação</button>
-            <button class="botoesCategorias" value="27" onclick="filmes(this)">Terror</button>
-            <button class="botoesCategorias" value="27" onclick="todosFilmes()">Todos</button>
+            <button class="botoesCategorias" value="16">Animação</button>
+            <button class="botoesCategorias" value="12">Aventura</button>
+            <button class="botoesCategorias" value="28">Ação</button>
+            <button class="botoesCategorias" value="27">Terror</button>  
         </div>
         <h1 id="abrirCategoria2">Classificar Por</h1>
         <div id="divFaixaEtaria">
@@ -43,7 +43,8 @@
             <button class="botoesCategorias2" value="vote_average.asc">Avaliação ⬆</button>
             <button class="botoesCategorias2" value="vote_average.desc">Avaliação ⬇</button>
         </div>
-        <button id="botaoAplicar">APLICAR FILTROS</button>
+        
+        <button id="botaoPadrao" onclick="todosFilmes()">Voltar ao Padrão</button>
     </div>
     <div id="divFilmesSeries">
 
@@ -56,6 +57,9 @@
         <div id="modalConteudo">
             
         </div>
+    </div>
+    <div id="modalAlerta">
+
     </div>
 </body>
 </html>

@@ -8,25 +8,6 @@ let divGenero = document.querySelector("#divGenero");
 let divFaixaEtaria = document.querySelector("#divFaixaEtaria");
 
 
-
-for (let contador = 0; contador < botoesCategorias.length; contador++) {
-    
-    botoesCategorias[contador].addEventListener("click", function () {
-        
-        if (botoesCategorias[contador].className === "botoesCategorias") {
-            botoesCategorias[contador].className = "selecionado"
-            let selecionado = document.querySelector(".selecionado");
-            console.log(selecionado)
-        }
-        
-        else{
-            botoesCategorias[contador].classList.replace("selecionado","botoesCategorias");
-        }
-        
-    });
-};
-
-
 abrirCategoria1.addEventListener("click", function () {
                       
     if (divGenero.style.display === "none") {
@@ -83,7 +64,7 @@ function home() {
     window.location.href = "../filmes.html";
 }
 
-function todosFilmes(pagina,classificar) {
+function todosFilmes(pagina) {
     divFilmesSeries.innerHTML = "";
     divPaginas.innerHTML="";
    
@@ -100,49 +81,73 @@ function todosFilmes(pagina,classificar) {
         divPaginas.appendChild(botoesPaginas);
     }
 
-    for (let contador2 = 0; contador2 < botoesCategorias2.length; contador2++) {
     
-        botoesCategorias2[contador2].addEventListener("click", function () {
-            
-            if (botoesCategorias2[contador2].className === "botoesCategorias2") {
-                botoesCategorias2[contador2].className = "selecionado2"
-                let selecionado2 = document.querySelector(".selecionado2");
-                console.log(selecionado2)
-                
-                botaoAplicar.addEventListener("click", function () {
-                    botoesCategorias2[contador2].classList.replace("selecionado2","botoesCategorias2");
-                    todosFilmes(pagina,selecionado2)
-                    
-                });
+    
+    botaoFodase.addEventListener("click", function () {
+        modalAlerta.style.animation = "alertaAnim 1s";
+        modalAlerta.innerHTML="";
+        modalAlerta.style.display= "flex";
+        let nomeAlerta = document.createElement("h1");
+        nomeAlerta.textContent = "MUDOU PARA A ÁREA DE FILTRAGEM";
+        modalAlerta.appendChild(nomeAlerta);
+        abrirCategoria1.style.display= "block";
+        abrirCategoria2.style.display= "block";
+        botaoPadrao.style.display= "block";
+        botaoFodase.style.display= "none";
 
-            }
-            
-            else if (botoesCategorias2[contador2].classList === "selecionado2"){
-                botoesCategorias2[contador2].classList.replace("selecionado2","botoesCategorias2");
-            }
-            
-            else if (botoesCategorias2[contador2].className === "selecionado2"){
-                botoesCategorias2[contador2].className = "botoesCategorias2"
-            }
-           
+        setTimeout(() => {
+            modalAlerta.style.animation = "";
+        }, 1500);
 
+        setTimeout(() => {
+            modalAlerta.style.animation = "alertaAnim reverse 1s";
+        }, 1600);
 
-        });
-    };
+        setTimeout(() => {
+            modalAlerta.style.display = "none"
+            modalAlerta.style.animation = "";
+        }, 2500);
 
+        filmes();
+    });
+
+    botaoPadrao.addEventListener("click", function () {
+        modalAlerta.style.animation = "alertaAnim 1s";
+        modalAlerta.innerHTML="";
+        modalAlerta.style.display= "flex";
+        let nomeAlerta = document.createElement("h1");
+        nomeAlerta.textContent = "MUDOU PARA O MODO DE FILTRAGEM PADRÃO";
+        modalAlerta.appendChild(nomeAlerta);
+
+        abrirCategoria1.style.display= "none";
+        abrirCategoria2.style.display= "none";
+        botaoPadrao.style.display= "none";
+        botaoFodase.style.display= "block";
+        setTimeout(() => {
+            modalAlerta.style.animation = "";
+        }, 1500);
+
+        setTimeout(() => {
+            modalAlerta.style.animation = "alertaAnim reverse 1s";
+        }, 1600);
+
+        setTimeout(() => {
+            modalAlerta.style.display = "none"
+            modalAlerta.style.animation = "";
+        }, 2500);
+
+        todosFilmes();
+    });
+        
     let url = "";
-    if (pagina === undefined && classificar === undefined) {
+    if (pagina === undefined) {
         url = "https://api.themoviedb.org/3/discover/movie?language=pt-BR&page=";
     }
     
     else {
-        url = "https://api.themoviedb.org/3/discover/movie?language=pt-BR&page=" + "&sort_by=" + classificar.value;
+        url = "https://api.themoviedb.org/3/discover/movie?language=pt-BR&page="+ pagina.textContent + "&sort_by=" ;
     }
-    // else{
-    //     url = "https://api.themoviedb.org/3/movie/popular?language=pt-BR&page=" + pagina.textContent + "&sort_by=" + classificar.value;
-    // }
    
-
     let request = new XMLHttpRequest();
     request.open("GET", url, false);
     request.setRequestHeader('Authorization', 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI2NGZmNWNjMGU0NDhkZDI0ODA2MTRkYjEwNTIyMjcyMCIsInN1YiI6IjY2Mzk1ZGQxNDcwZWFkMDEyYTEzOTdhNSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.v446Yj5-PLMOF25bAjvHOf4VNkrB2gP1n6Oimq26wpE');
@@ -181,7 +186,6 @@ function todosFilmes(pagina,classificar) {
         divFilmesSeries.appendChild(divCadaItem);
         
 
-
         let modalNomeItem = document.createElement("h1");
         let modalDataItem = document.createElement("h2");
         let modalImgItem = document.createElement("img");
@@ -208,7 +212,6 @@ function todosFilmes(pagina,classificar) {
         modalIframe.id = "modalIframe";
         
 
-        
         divCadaItem.addEventListener("click", function () {
 
             puxarTrailer(modalNomeItem.value)
@@ -269,30 +272,42 @@ function filmes(botao,pagina,classificar) {
         botoesPaginas.className = "botoesPaginas";
         
         botoesPaginas.addEventListener("click", function () {
-            filmes(botao,this);
+            filmes(botao,this,classificar);
         });
         
         divPaginas.appendChild(botoesPaginas);
-    }
+    };
 
-    for (let contar = 0; contar < botoesCategorias2.length; contar++) {
-        botoesCategorias2[contar].addEventListener("click", function () {
-            filmes(botao,pagina,this);
+    for (let contador = 0; contador < botoesCategorias.length; contador++) {
+    
+        botoesCategorias[contador].addEventListener("click", function () {
+            console.log(botoesCategorias[contador]);
+            filmes(this,pagina,classificar);
+            
         });
-        
-    }
+    };
 
+    for (let contador = 0; contador < botoesCategorias2.length; contador++) {
+    
+        botoesCategorias2[contador].addEventListener("click", function () {
+           filmes(botao,pagina,this);
+        });
+    };
 
 
     let url = "";
-    if (pagina === undefined) {
+    if (pagina === undefined && classificar === undefined) {
+        url = "https://api.themoviedb.org/3/discover/movie?language=pt-BR&with_genres=" + botao.value + "&page=" + "&sort_by=";
+    }
+    else if (classificar === undefined) {
+        url = "https://api.themoviedb.org/3/discover/movie?language=pt-BR&with_genres=" + botao.value + "&page="+ pagina.textContent + "&sort_by=";
+    }
+    else if (pagina === undefined){
         url = "https://api.themoviedb.org/3/discover/movie?language=pt-BR&with_genres=" + botao.value + "&page=" + "&sort_by=" + classificar.value;
     }
-    
     else {
-        url = "https://api.themoviedb.org/3/discover/movie?language=pt-BR&with_genres=" + botao.value + "&page=" + pagina.textContent + "&sort_by=" + classificar.value;
+        url = "https://api.themoviedb.org/3/discover/movie?language=pt-BR&with_genres=" + botao.value + "&page=" + pagina.textContent +"&sort_by=" + classificar.value;
     }
-    
 
     let request = new XMLHttpRequest();
     request.open("GET", url, false);
@@ -387,7 +402,7 @@ function filmes(botao,pagina,classificar) {
                 for (let index = 0; index < todosVideos.results.length; index++) {
                    
                     modalIframe.src = "http://www.youtube.com/embed/" + todosVideos.results[index].key;
-                      
+                    
                 }
 
             }
