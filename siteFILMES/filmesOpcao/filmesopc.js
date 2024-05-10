@@ -92,6 +92,8 @@ function todosFilmes(pagina) {
         modalAlerta.appendChild(nomeAlerta);
         abrirCategoria1.style.display= "block";
         abrirCategoria2.style.display= "block";
+        
+        
         botaoPadrao.style.display= "block";
         botaoFodase.style.display= "none";
 
@@ -121,6 +123,8 @@ function todosFilmes(pagina) {
 
         abrirCategoria1.style.display= "none";
         abrirCategoria2.style.display= "none";
+        divGenero.style.display= "none";
+        divFaixaEtaria.style.display= "none";
         botaoPadrao.style.display= "none";
         botaoFodase.style.display= "block";
         setTimeout(() => {
