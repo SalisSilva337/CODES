@@ -108,17 +108,21 @@ function todosFilmes(pagina,classificar) {
                 botoesCategorias2[contador2].className = "selecionado2"
                 let selecionado2 = document.querySelector(".selecionado2");
                 console.log(selecionado2)
+                
                 botaoAplicar.addEventListener("click", function () {
-                    todosFilmes(pagina,selecionado2) 
+                    botoesCategorias2[contador2].classList.replace("selecionado2","botoesCategorias2");
+                    todosFilmes(pagina,selecionado2)
+                    
                 });
 
             }
             
-            else{
+            else if (botoesCategorias2[contador2].classList === "selecionado2"){
                 botoesCategorias2[contador2].classList.replace("selecionado2","botoesCategorias2");
             }
-            if (divFilmesSeries.innerHTML === "") {
-                
+            
+            else if (botoesCategorias2[contador2].className === "selecionado2"){
+                botoesCategorias2[contador2].className = "botoesCategorias2"
             }
            
 
