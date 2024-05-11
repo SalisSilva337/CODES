@@ -126,7 +126,7 @@ header{
     padding-top: 10px;
     float: left;
     width: 20%;
-    height: 740px;
+    height: 650px;
     display: flex;
     box-shadow: 0px 0px 10px black;
     border-radius: 10px;
@@ -137,6 +137,32 @@ header{
     top: 110px;
     gap: 50px;   
          
+}
+#miniMenuLateral{
+    padding-top: 10px;
+    float: right;
+    width: 12%;
+    height: 320px;
+    display: none;
+    box-shadow: 0px 0px 10px black;
+    border-radius: 10px;
+    padding: 10px;
+    flex-direction: column;
+    position: fixed;
+    left: 44vb;
+    top: 250px;
+    gap: 50px;   
+         
+}
+
+@keyframes menuAnim{
+    from {
+        width: 0%;
+    }
+    
+    to {
+        width: 12%;
+    }
 }
 
 #abrirCategoria1{
@@ -224,7 +250,7 @@ header{
     border-radius: 10px;
 }
 
-#botaoFodase{
+#botaoFiltrar{
     background-color: rgb(103, 36, 161);
     border: 1px solid rgb(103, 36, 161);
     font-size: larger;

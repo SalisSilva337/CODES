@@ -28,24 +28,26 @@
 </header>
 <body id="body">
     <div id="menuLateral">
-        <button id="botaoFodase">Mudar para a Área de Filtragem</button>
+        
+        <button id="botaoFiltrar">Mudar para a Área de Filtragem</button>
         <h1 id="abrirCategoria1">Gênero</h1>
         <div id="divGenero">
-            <button class="botoesCategorias" value="16" onclick="filmes(this)">Animação</button>
-            <button class="botoesCategorias" value="12" onclick="filmes(this)">Aventura</button>
-            <button class="botoesCategorias" value="28" onclick="filmes(this)">Ação</button>
-            <button class="botoesCategorias" value="27" onclick="filmes(this)">Terror</button>  
+            <button class="botoesCategorias" value="16" onclick="filmes(this);nomear(this)">Animação</button>
+            <button class="botoesCategorias" value="12" onclick="filmes(this);nomear(this)">Aventura</button>
+            <button class="botoesCategorias" value="28" onclick="filmes(this);nomear(this)">Ação</button>
+            <button class="botoesCategorias" value="27" onclick="filmes(this);nomear(this)">Terror</button>  
         </div>
         <h1 id="abrirCategoria2">Classificar Por</h1>
         <div id="divFaixaEtaria">
-            <button class="botoesCategorias2" id="filtro1" value="popularity.asc">Popularidade ⬆</button>
-            <button class="botoesCategorias2" id="filtro2" value="popularity.desc">Popularidade ⬇</button>
-            <button class="botoesCategorias2" id="filtro3" value="vote_average.asc">Avaliação ⬆</button>
-            <button class="botoesCategorias2" id="filtro4" value="vote_average.desc">Avaliação ⬇</button>
+            
         </div>
         
         <button id="botaoPadrao" onclick="todosFilmes()">Voltar ao Padrão</button>
         
+    </div>
+    <div id="miniMenuLateral">
+        <h1>Informações:</h1>
+
     </div>
     <div id="divFilmesSeries">
 

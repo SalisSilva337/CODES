@@ -55,7 +55,7 @@ trocaModo.addEventListener("click", function () {
 });
 
 
-botaoFodase.addEventListener("click", function () {
+botaoFiltrar.addEventListener("click", function () {
     modalAlerta.style.animation = "alertaAnim 1s";
     modalAlerta.innerHTML="";
     modalAlerta.style.display= "flex";
@@ -65,9 +65,13 @@ botaoFodase.addEventListener("click", function () {
     abrirCategoria1.style.display= "block";
     abrirCategoria2.style.display= "block";
     botaoPadrao.style.display= "block";
-    botaoFodase.style.display= "none";
+    botaoFiltrar.style.display= "none";
     divFiltros.style.display= "block";
     divFiltros2.style.display= "block";
+    miniMenuLateral.style.display= "flex";
+    miniMenuLateral.style.animation= "menuAnim 1s";
+
+
 
     setTimeout(() => {
         modalAlerta.style.animation = "";
@@ -98,9 +102,10 @@ botaoPadrao.addEventListener("click", function () {
     divGenero.style.display= "none";
     divFaixaEtaria.style.display= "none";
     botaoPadrao.style.display= "none";
-    botaoFodase.style.display= "block";
+    botaoFiltrar.style.display= "block";
     divFiltros.style.display= "none";
     divFiltros2.style.display= "none";
+    miniMenuLateral.style.display= "none";
 
     setTimeout(() => {
         modalAlerta.style.animation = "";
@@ -291,7 +296,7 @@ function filmes(botao,pagina,classificar) {
             modalAlerta.innerHTML="";
             modalAlerta.style.display= "flex";
             
-            let paginaAtual = document.createElement("h3");
+            let paginaAtual = document.createElement("h2");
             paginaAtual.textContent = "Pagina Atual: " + botoesPaginas.textContent;
             let nomeAlerta = document.createElement("h1");
             nomeAlerta.textContent = "SELECIONE UM GÊNERO DE FILME";
@@ -313,44 +318,51 @@ function filmes(botao,pagina,classificar) {
             filmes(botao,this,classificar);
             console.log(botoesPaginas);
             divPaginaAtual.appendChild(paginaAtual);
-            menuLateral.appendChild(divPaginaAtual);
+            miniMenuLateral.appendChild(divPaginaAtual);
         });
         
         divPaginas.appendChild(botoesPaginas);
     };
     
+    divFaixaEtaria.innerHTML="";
 
-    
-    // for (let contador = 0; contador < botoesCategorias.length; contador++) {
-        
-    //     botoesCategorias[contador].addEventListener("click", function () {
+    for (let contador = 0; contador < 4; contador++) {
 
-    //         let filtrosSelecionados = document.createElement("h3");
-    //         divFiltros.innerHTML="";
+        let botoesCategorias2 = document.createElement("button");
+        let nomeBotao = "";
+        let valorBotao = "";
+        if (contador === 0) {
+            nomeBotao = "Popularidade ⬆"
+            valorBotao = "popularity.asc"
+        }
+        if (contador === 1) {
+            nomeBotao = "Popularidade ⬇"
+            valorBotao = "popularity.desc"
+        }
+        if (contador === 2) {
+            nomeBotao = "Avaliação ⬆"
+            valorBotao = "vote_average.asc"
+        }
+        if (contador === 3) { 
+            nomeBotao = "Avaliação ⬇"
+            valorBotao = "vote_average.desc"
+        }
 
-    //         filmes(this,pagina,classificar);
-           
-    //         filtrosSelecionados.textContent = "Filtro Gênero: " + botoesCategorias[contador].textContent;
-    //         divFiltros.appendChild(filtrosSelecionados);
-    //         menuLateral.appendChild(divFiltros);
-    //         console.log(botoesCategorias[contador]);
-        
-    //     });
-        
-    // };
+        botoesCategorias2.textContent = nomeBotao;
+        botoesCategorias2.value = valorBotao;
+        botoesCategorias2.className = "botoesCategorias2";
 
-    for (let contador = 0; contador < botoesCategorias2.length; contador++) {
-    
-        botoesCategorias2[contador].addEventListener("click", function () {
-            let filtrosSelecionados2 = document.createElement("h3");
+        botoesCategorias2.addEventListener("click", function () {
+            let filtrosSelecionados2 = document.createElement("h2");
             divFiltros2.innerHTML="";
-            filtrosSelecionados2.textContent = "Filtro Classificar Por: " + botoesCategorias2[contador].textContent;
+            filtrosSelecionados2.textContent = "Filtro Classificar Por: " + botoesCategorias2.textContent;
             divFiltros2.appendChild(filtrosSelecionados2);
-            menuLateral.appendChild(divFiltros2);
+            miniMenuLateral.appendChild(divFiltros2);
 
            filmes(botao,pagina,this);
+           console.log(botoesCategorias2)
         });
-        
+        divFaixaEtaria.appendChild(botoesCategorias2);
     };
 
 
@@ -476,4 +488,11 @@ function filmes(botao,pagina,classificar) {
 
     }
 
+}
+
+function nomear(item) {
+    let generoSelecionado = document.createElement("h2")
+    generoSelecionado.textContent = "Gênero: " + item.textContent;
+    divFiltros.appendChild(generoSelecionado);
+    miniMenuLateral.appendChild(divFiltros);
 }
