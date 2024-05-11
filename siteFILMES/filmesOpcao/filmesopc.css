@@ -118,7 +118,9 @@ header{
     background-color: rgb(103, 36, 161);
     cursor: pointer;
 }
-
+.selecionado{
+    background-color: red;
+}
 
 #menuLateral{
     padding-top: 10px;

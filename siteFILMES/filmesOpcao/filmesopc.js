@@ -1,4 +1,3 @@
-let botoesCategorias = document.querySelectorAll(".botoesCategorias");
 let botoesCategorias2 = document.querySelectorAll(".botoesCategorias2");
 let divPaginas = document.querySelector("#divPaginas");
 let botoesPaginas = document.querySelectorAll(".botoesPaginas");
@@ -56,8 +55,76 @@ trocaModo.addEventListener("click", function () {
 });
 
 
-window.onload = todosFilmes();
+botaoFodase.addEventListener("click", function () {
+    modalAlerta.style.animation = "alertaAnim 1s";
+    modalAlerta.innerHTML="";
+    modalAlerta.style.display= "flex";
+    let nomeAlerta = document.createElement("h1");
+    nomeAlerta.textContent = "MUDOU PARA A ÁREA DE FILTRAGEM";
+    modalAlerta.appendChild(nomeAlerta);
+    abrirCategoria1.style.display= "block";
+    abrirCategoria2.style.display= "block";
+    botaoPadrao.style.display= "block";
+    botaoFodase.style.display= "none";
+    divFiltros.style.display= "block";
+    divFiltros2.style.display= "block";
 
+    setTimeout(() => {
+        modalAlerta.style.animation = "";
+    }, 1500);
+
+    setTimeout(() => {
+        modalAlerta.style.animation = "alertaAnim reverse 1s";
+    }, 1600);
+
+    setTimeout(() => {
+        modalAlerta.style.display = "none";
+        modalAlerta.style.animation = "";
+    }, 2500);
+    
+    filmes();
+});
+
+botaoPadrao.addEventListener("click", function () {
+    modalAlerta.style.animation = "alertaAnim 1s";
+    modalAlerta.innerHTML="";
+    modalAlerta.style.display= "flex";
+    let nomeAlerta = document.createElement("h1");
+    nomeAlerta.textContent = "MUDOU PARA O MODO DE FILTRAGEM PADRÃO";
+    modalAlerta.appendChild(nomeAlerta);
+
+    abrirCategoria1.style.display= "none";
+    abrirCategoria2.style.display= "none";
+    divGenero.style.display= "none";
+    divFaixaEtaria.style.display= "none";
+    botaoPadrao.style.display= "none";
+    botaoFodase.style.display= "block";
+    divFiltros.style.display= "none";
+    divFiltros2.style.display= "none";
+
+    setTimeout(() => {
+        modalAlerta.style.animation = "";
+    }, 1500);
+
+    setTimeout(() => {
+        modalAlerta.style.animation = "alertaAnim reverse 1s";
+    }, 1600);
+
+    setTimeout(() => {
+        modalAlerta.style.display = "none";
+        modalAlerta.style.animation = "";
+    }, 2500);
+
+    todosFilmes();
+});
+
+
+
+
+
+
+
+window.onload = todosFilmes();
 
 
 function home() {
@@ -82,70 +149,7 @@ function todosFilmes(pagina) {
     }
 
     
-    
-    botaoFodase.addEventListener("click", function () {
-        modalAlerta.style.animation = "alertaAnim 1s";
-        modalAlerta.innerHTML="";
-        modalAlerta.style.display= "flex";
-        let nomeAlerta = document.createElement("h1");
-        nomeAlerta.textContent = "MUDOU PARA A ÁREA DE FILTRAGEM";
-        modalAlerta.appendChild(nomeAlerta);
-        abrirCategoria1.style.display= "block";
-        abrirCategoria2.style.display= "block";
-        botaoPadrao.style.display= "block";
-        botaoFodase.style.display= "none";
-        divFiltros.style.display= "block";
-        divFiltros2.style.display= "block";
-
-        setTimeout(() => {
-            modalAlerta.style.animation = "";
-        }, 1500);
-
-        setTimeout(() => {
-            modalAlerta.style.animation = "alertaAnim reverse 1s";
-        }, 1600);
-
-        setTimeout(() => {
-            modalAlerta.style.display = "none";
-            modalAlerta.style.animation = "";
-        }, 2500);
-        
-        filmes();
-    });
-
-    botaoPadrao.addEventListener("click", function () {
-        modalAlerta.style.animation = "alertaAnim 1s";
-        modalAlerta.innerHTML="";
-        modalAlerta.style.display= "flex";
-        let nomeAlerta = document.createElement("h1");
-        nomeAlerta.textContent = "MUDOU PARA O MODO DE FILTRAGEM PADRÃO";
-        modalAlerta.appendChild(nomeAlerta);
-
-        abrirCategoria1.style.display= "none";
-        abrirCategoria2.style.display= "none";
-        divGenero.style.display= "none";
-        divFaixaEtaria.style.display= "none";
-        botaoPadrao.style.display= "none";
-        botaoFodase.style.display= "block";
-        divFiltros.style.display= "none";
-        divFiltros2.style.display= "none";
-
-        setTimeout(() => {
-            modalAlerta.style.animation = "";
-        }, 1500);
-
-        setTimeout(() => {
-            modalAlerta.style.animation = "alertaAnim reverse 1s";
-        }, 1600);
-
-        setTimeout(() => {
-            modalAlerta.style.display = "none";
-            modalAlerta.style.animation = "";
-        }, 2500);
-
-        todosFilmes();
-    });
-        
+   
     let url = "";
     if (pagina === undefined) {
         url = "https://api.themoviedb.org/3/discover/movie?language=pt-BR&page=";
@@ -264,13 +268,17 @@ function todosFilmes(pagina) {
 
 let divFiltros =  document.createElement("div");
 let divFiltros2 =  document.createElement("div");
+let divPaginaAtual = document.createElement("div");
+
 
 
 function filmes(botao,pagina,classificar) {
     
     divFilmesSeries.innerHTML = "";
     divPaginas.innerHTML="";
-
+    divPaginaAtual.innerHTML="";
+    
+    
     for (let cont = 1; cont < 21; cont++) {
         
         let botoesPaginas = document.createElement("button");
@@ -282,8 +290,13 @@ function filmes(botao,pagina,classificar) {
             modalAlerta.style.animation = "alertaAnim 1s";
             modalAlerta.innerHTML="";
             modalAlerta.style.display= "flex";
+            
+            let paginaAtual = document.createElement("h3");
+            paginaAtual.textContent = "Pagina Atual: " + botoesPaginas.textContent;
             let nomeAlerta = document.createElement("h1");
             nomeAlerta.textContent = "SELECIONE UM GÊNERO DE FILME";
+            
+            
             modalAlerta.appendChild(nomeAlerta);
             setTimeout(() => {
                 modalAlerta.style.animation = "";
@@ -298,27 +311,33 @@ function filmes(botao,pagina,classificar) {
                 modalAlerta.style.animation = "";
             }, 2500);
             filmes(botao,this,classificar);
+            console.log(botoesPaginas);
+            divPaginaAtual.appendChild(paginaAtual);
+            menuLateral.appendChild(divPaginaAtual);
         });
         
         divPaginas.appendChild(botoesPaginas);
     };
-
-    for (let contador = 0; contador < botoesCategorias.length; contador++) {
     
-        botoesCategorias[contador].addEventListener("click", function () {
 
-            let filtrosSelecionados = document.createElement("h3");
-            divFiltros.innerHTML="";
-
-            filmes(this,pagina,classificar);
-           
-            filtrosSelecionados.textContent = "Filtro Gênero: " + botoesCategorias[contador].textContent;
-            divFiltros.appendChild(filtrosSelecionados);
-            menuLateral.appendChild(divFiltros);
-            
-        });
+    
+    // for (let contador = 0; contador < botoesCategorias.length; contador++) {
         
-    };
+    //     botoesCategorias[contador].addEventListener("click", function () {
+
+    //         let filtrosSelecionados = document.createElement("h3");
+    //         divFiltros.innerHTML="";
+
+    //         filmes(this,pagina,classificar);
+           
+    //         filtrosSelecionados.textContent = "Filtro Gênero: " + botoesCategorias[contador].textContent;
+    //         divFiltros.appendChild(filtrosSelecionados);
+    //         menuLateral.appendChild(divFiltros);
+    //         console.log(botoesCategorias[contador]);
+        
+    //     });
+        
+    // };
 
     for (let contador = 0; contador < botoesCategorias2.length; contador++) {
     
