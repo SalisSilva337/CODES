@@ -92,10 +92,10 @@ function todosFilmes(pagina) {
         modalAlerta.appendChild(nomeAlerta);
         abrirCategoria1.style.display= "block";
         abrirCategoria2.style.display= "block";
-        
-        
         botaoPadrao.style.display= "block";
         botaoFodase.style.display= "none";
+        divFiltros.style.display= "block";
+        divFiltros2.style.display= "block";
 
         setTimeout(() => {
             modalAlerta.style.animation = "";
@@ -109,7 +109,7 @@ function todosFilmes(pagina) {
             modalAlerta.style.display = "none";
             modalAlerta.style.animation = "";
         }, 2500);
-
+        
         filmes();
     });
 
@@ -127,6 +127,9 @@ function todosFilmes(pagina) {
         divFaixaEtaria.style.display= "none";
         botaoPadrao.style.display= "none";
         botaoFodase.style.display= "block";
+        divFiltros.style.display= "none";
+        divFiltros2.style.display= "none";
+
         setTimeout(() => {
             modalAlerta.style.animation = "";
         }, 1500);
@@ -157,10 +160,8 @@ function todosFilmes(pagina) {
     request.setRequestHeader('Authorization', 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI2NGZmNWNjMGU0NDhkZDI0ODA2MTRkYjEwNTIyMjcyMCIsInN1YiI6IjY2Mzk1ZGQxNDcwZWFkMDEyYTEzOTdhNSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.v446Yj5-PLMOF25bAjvHOf4VNkrB2gP1n6Oimq26wpE');
 
     request.send();
-    console.log(url);
-
+    
     let todaLista = JSON.parse(request.response);
-    console.log(todaLista);
     
     for (let index = 0; index < todaLista.results.length; index++) {
         let urlItens = "https://media.themoviedb.org/t/p/w200";
@@ -261,8 +262,12 @@ function todosFilmes(pagina) {
   
 }
 
+let divFiltros =  document.createElement("div");
+let divFiltros2 =  document.createElement("div");
+
 
 function filmes(botao,pagina,classificar) {
+    
     divFilmesSeries.innerHTML = "";
     divPaginas.innerHTML="";
 
@@ -274,7 +279,6 @@ function filmes(botao,pagina,classificar) {
         
         botoesPaginas.addEventListener("click", function () {
             
-
             modalAlerta.style.animation = "alertaAnim 1s";
             modalAlerta.innerHTML="";
             modalAlerta.style.display= "flex";
@@ -302,17 +306,32 @@ function filmes(botao,pagina,classificar) {
     for (let contador = 0; contador < botoesCategorias.length; contador++) {
     
         botoesCategorias[contador].addEventListener("click", function () {
-            console.log(botoesCategorias[contador]);
+
+            let filtrosSelecionados = document.createElement("h3");
+            divFiltros.innerHTML="";
+
             filmes(this,pagina,classificar);
+           
+            filtrosSelecionados.textContent = "Filtro Gênero: " + botoesCategorias[contador].textContent;
+            divFiltros.appendChild(filtrosSelecionados);
+            menuLateral.appendChild(divFiltros);
             
         });
+        
     };
 
     for (let contador = 0; contador < botoesCategorias2.length; contador++) {
     
         botoesCategorias2[contador].addEventListener("click", function () {
+            let filtrosSelecionados2 = document.createElement("h3");
+            divFiltros2.innerHTML="";
+            filtrosSelecionados2.textContent = "Filtro Classificar Por: " + botoesCategorias2[contador].textContent;
+            divFiltros2.appendChild(filtrosSelecionados2);
+            menuLateral.appendChild(divFiltros2);
+
            filmes(botao,pagina,this);
         });
+        
     };
 
 
@@ -320,11 +339,12 @@ function filmes(botao,pagina,classificar) {
     if (pagina === undefined && classificar === undefined) {
         url = "https://api.themoviedb.org/3/discover/movie?language=pt-BR&with_genres=" + botao.value + "&page=" + "&sort_by=";
     }
+    
     else if (classificar === undefined) {
         url = "https://api.themoviedb.org/3/discover/movie?language=pt-BR&with_genres=" + botao.value + "&page="+ pagina.textContent + "&sort_by=";
     }
     else if (pagina === undefined){
-        url = "https://api.themoviedb.org/3/discover/movie?language=pt-BR&with_genres=" + botao.value + "&page=" + "&sort_by=" + classificar.value;
+        url = "https://api.themoviedb.org/3/discover/movie?language=pt-BR&with_genres="+ botao.value +"&page=" + "&sort_by=" + classificar.value;
     }
     else {
         url = "https://api.themoviedb.org/3/discover/movie?language=pt-BR&with_genres=" + botao.value + "&page=" + pagina.textContent +"&sort_by=" + classificar.value;
@@ -335,10 +355,10 @@ function filmes(botao,pagina,classificar) {
     request.setRequestHeader('Authorization', 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI2NGZmNWNjMGU0NDhkZDI0ODA2MTRkYjEwNTIyMjcyMCIsInN1YiI6IjY2Mzk1ZGQxNDcwZWFkMDEyYTEzOTdhNSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.v446Yj5-PLMOF25bAjvHOf4VNkrB2gP1n6Oimq26wpE');
 
     request.send();
-    console.log(url);
+    
 
     let todaLista = JSON.parse(request.response);
-    console.log(todaLista);
+   
 
     for (let index = 0; index < todaLista.results.length; index++) {
         let urlItens = "https://media.themoviedb.org/t/p/w200";
@@ -358,7 +378,7 @@ function filmes(botao,pagina,classificar) {
 
         imgItem.src = urlItens + todaLista.results[index].poster_path;
         nomeItem.textContent = todaLista.results[index].title;
-        avaliacaoItem.textContent = todaLista.results[index].vote_average.toFixed(0) * 10 + "%"
+        avaliacaoItem.textContent = (todaLista.results[index].vote_average * 10).toFixed(0) + "%"
         
         divImg.appendChild(imgItem);
         divAvaliacao.appendChild(avaliacaoItem);
