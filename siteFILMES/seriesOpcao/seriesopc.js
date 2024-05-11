@@ -86,7 +86,7 @@ botaoFiltrar.addEventListener("click", function () {
         modalAlerta.style.animation = "";
     }, 2500);
     
-    filmes();
+    series();
 });
 
 botaoPadrao.addEventListener("click", function () {
@@ -120,7 +120,7 @@ botaoPadrao.addEventListener("click", function () {
         modalAlerta.style.animation = "";
     }, 2500);
 
-    todosFilmes();
+    todasSeries();
 });
 
 
@@ -129,14 +129,14 @@ botaoPadrao.addEventListener("click", function () {
 
 
 
-window.onload = todosFilmes();
+window.onload = todasSeries();
 
 
 function home() {
-    window.location.href = "../filmes.html";
+    window.location.href = "../series.html";
 }
 
-function todosFilmes(pagina) {
+function todasSeries(pagina) {
     divFilmesSeries.innerHTML = "";
     divPaginas.innerHTML="";
    
@@ -147,7 +147,7 @@ function todosFilmes(pagina) {
         botoesPaginas.className = "botoesPaginas";
         
         botoesPaginas.addEventListener("click", function () {
-            todosFilmes(this);
+            todasSeries(this);
         });
         
         divPaginas.appendChild(botoesPaginas);
@@ -157,11 +157,11 @@ function todosFilmes(pagina) {
    
     let url = "";
     if (pagina === undefined) {
-        url = "https://api.themoviedb.org/3/discover/movie?language=pt-BR&page=";
+        url = "https://api.themoviedb.org/3/discover/tv?language=pt-BR&page=";
     }
     
     else {
-        url = "https://api.themoviedb.org/3/discover/movie?language=pt-BR&page="+ pagina.textContent + "&sort_by=" ;
+        url = "https://api.themoviedb.org/3/discover/tv?language=pt-BR&page="+ pagina.textContent + "&sort_by=" ;
     }
    
     let request = new XMLHttpRequest();
@@ -171,7 +171,7 @@ function todosFilmes(pagina) {
     request.send();
     
     let todaLista = JSON.parse(request.response);
-    
+    console.log(todaLista)
     for (let index = 0; index < todaLista.results.length; index++) {
         let urlItens = "https://media.themoviedb.org/t/p/w200";
 
@@ -189,7 +189,7 @@ function todosFilmes(pagina) {
         divAvaliacao.id = "divAvaliacao";
 
         imgItem.src = urlItens + todaLista.results[index].poster_path;
-        nomeItem.textContent = todaLista.results[index].title;
+        nomeItem.textContent = todaLista.results[index].name;
         avaliacaoItem.textContent = todaLista.results[index].vote_average.toFixed(0) * 10 + "%"
         
         divImg.appendChild(imgItem);
@@ -212,10 +212,10 @@ function todosFilmes(pagina) {
         modalFechar.textContent = "X";
         modalImgItem.src = urlItens + todaLista.results[index].poster_path;
 
-        modalNomeItem.textContent = todaLista.results[index].title;
+        modalNomeItem.textContent = todaLista.results[index].name;
         modalNomeItem.value = todaLista.results[index].id;
 
-        modalDataItem.textContent = todaLista.results[index].release_date;
+        modalDataItem.textContent = todaLista.results[index].first_air_date;
         modalDescItem.textContent = todaLista.results[index].overview;
         
     
@@ -241,7 +241,7 @@ function todosFilmes(pagina) {
             modal.appendChild(modalFechar);
 
             function puxarTrailer(idFilme) {
-                let urlVideos = "https://api.themoviedb.org/3/movie/"+ idFilme +"/videos"
+                let urlVideos = "https://api.themoviedb.org/3/tv/"+ idFilme +"/videos"
 
                 let request = new XMLHttpRequest();
                 request.open("GET", urlVideos, false);
@@ -277,7 +277,7 @@ let divPaginaAtual = document.createElement("div");
 
 
 
-function filmes(botao,pagina,classificar) {
+function series(botao,pagina,classificar) {
     
     divFilmesSeries.innerHTML = "";
     divPaginas.innerHTML="";
@@ -299,7 +299,7 @@ function filmes(botao,pagina,classificar) {
             let paginaAtual = document.createElement("h2");
             paginaAtual.textContent = "Pagina Atual: " + botoesPaginas.textContent;
             let nomeAlerta = document.createElement("h1");
-            nomeAlerta.textContent = "SELECIONE UM GÊNERO DE FILME";
+            nomeAlerta.textContent = "SELECIONE UM GÊNERO DE SÉRIE";
             
             
             modalAlerta.appendChild(nomeAlerta);
@@ -315,7 +315,7 @@ function filmes(botao,pagina,classificar) {
                 modalAlerta.style.display = "none";
                 modalAlerta.style.animation = "";
             }, 2500);
-            filmes(botao,this,classificar);
+            series(botao,this,classificar);
             console.log(botoesPaginas);
             divPaginaAtual.appendChild(paginaAtual);
             miniMenuLateral.appendChild(divPaginaAtual);
@@ -359,7 +359,7 @@ function filmes(botao,pagina,classificar) {
             divFiltros2.appendChild(filtrosSelecionados2);
             miniMenuLateral.appendChild(divFiltros2);
 
-           filmes(botao,pagina,this);
+           series(botao,pagina,this);
            console.log(botoesCategorias2)
         });
         divFaixaEtaria.appendChild(botoesCategorias2);
@@ -368,17 +368,17 @@ function filmes(botao,pagina,classificar) {
 
     let url = "";
     if (pagina === undefined && classificar === undefined) {
-        url = "https://api.themoviedb.org/3/discover/movie?language=pt-BR&with_genres=" + botao.value + "&page=" + "&sort_by=";
+        url = "https://api.themoviedb.org/3/discover/tv?language=pt-BR&with_genres=" + botao.value + "&page=" + "&sort_by=";
     }
     
     else if (classificar === undefined) {
-        url = "https://api.themoviedb.org/3/discover/movie?language=pt-BR&with_genres=" + botao.value + "&page="+ pagina.textContent + "&sort_by=";
+        url = "https://api.themoviedb.org/3/discover/tv?language=pt-BR&with_genres=" + botao.value + "&page="+ pagina.textContent + "&sort_by=";
     }
     else if (pagina === undefined){
-        url = "https://api.themoviedb.org/3/discover/movie?language=pt-BR&with_genres="+ botao.value +"&page=" + "&sort_by=" + classificar.value;
+        url = "https://api.themoviedb.org/3/discover/tv?language=pt-BR&with_genres="+ botao.value +"&page=" + "&sort_by=" + classificar.value;
     }
     else {
-        url = "https://api.themoviedb.org/3/discover/movie?language=pt-BR&with_genres=" + botao.value + "&page=" + pagina.textContent +"&sort_by=" + classificar.value;
+        url = "https://api.themoviedb.org/3/discover/tv?language=pt-BR&with_genres=" + botao.value + "&page=" + pagina.textContent +"&sort_by=" + classificar.value;
     }
 
     let request = new XMLHttpRequest();
@@ -408,7 +408,7 @@ function filmes(botao,pagina,classificar) {
         divAvaliacao.id = "divAvaliacao";
 
         imgItem.src = urlItens + todaLista.results[index].poster_path;
-        nomeItem.textContent = todaLista.results[index].title;
+        nomeItem.textContent = todaLista.results[index].name;
         avaliacaoItem.textContent = (todaLista.results[index].vote_average * 10).toFixed(0) + "%"
         
         divImg.appendChild(imgItem);
@@ -430,10 +430,10 @@ function filmes(botao,pagina,classificar) {
         modalFechar.textContent = "X";
         modalImgItem.src = urlItens + todaLista.results[index].poster_path;
 
-        modalNomeItem.textContent = todaLista.results[index].title;
+        modalNomeItem.textContent = todaLista.results[index].name;
         modalNomeItem.value = todaLista.results[index].id;
 
-        modalDataItem.textContent = todaLista.results[index].release_date;
+        modalDataItem.textContent = todaLista.results[index].first_air_date;
         modalDescItem.textContent = todaLista.results[index].overview;
         
     
@@ -460,7 +460,7 @@ function filmes(botao,pagina,classificar) {
             modal.appendChild(modalFechar);
 
             function puxarTrailer(idFilme) {
-                let urlVideos = "https://api.themoviedb.org/3/movie/"+ idFilme +"/videos"
+                let urlVideos = "https://api.themoviedb.org/3/tv/"+ idFilme +"/videos"
 
                 let request = new XMLHttpRequest();
                 request.open("GET", urlVideos, false);
@@ -496,8 +496,4 @@ function nomear(item) {
     generoSelecionado.textContent = "Gênero: " + item.textContent;
     divFiltros.appendChild(generoSelecionado);
     miniMenuLateral.appendChild(divFiltros);
-}
-
-function series() {
-    window.location.href = "../seriesOpcao/seriesopc.html";
 }
