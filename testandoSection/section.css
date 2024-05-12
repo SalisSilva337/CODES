@@ -1,0 +1,50 @@
+*{
+    margin: 0;
+    padding: 0;
+    
+}
+
+.container{
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    height: 100vh;
+    
+}
+
+section{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    scroll-snap-align: start;
+    animation: anim linear;
+    animation-timeline: view();
+    animation-range: entry 20% cover 50%;
+}
+
+@keyframes anim{
+    from{
+        scale: 0;
+    }
+    to{
+        scale: 1;
+    }   
+}
+h1{
+    color: white;
+    text-shadow: 1px 1px 1px black;
+    font-size: 100px;
+}
+
+.um{
+    background-color: brown;
+}
+.dois{
+    background-color: rgb(22, 22, 133);
+}
+.tres{
+    background-color: rgb(126, 126, 24);
+}
+.quatro{
+    background-color: rgb(145, 18, 18);
+}
