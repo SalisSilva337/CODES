@@ -151,6 +151,8 @@ function todosFilmes(pagina) {
         });
         
         divPaginas.appendChild(botoesPaginas);
+
+        window.location.href ="#"
     }
 
     
@@ -319,6 +321,7 @@ function filmes(botao,pagina,classificar) {
             console.log(botoesPaginas);
             divPaginaAtual.appendChild(paginaAtual);
             miniMenuLateral.appendChild(divPaginaAtual);
+            window.location.href ="#"
         });
         
         divPaginas.appendChild(botoesPaginas);
@@ -360,7 +363,8 @@ function filmes(botao,pagina,classificar) {
             miniMenuLateral.appendChild(divFiltros2);
 
            filmes(botao,pagina,this);
-           console.log(botoesCategorias2)
+           console.log(botoesCategorias2);
+           
         });
         divFaixaEtaria.appendChild(botoesCategorias2);
     };

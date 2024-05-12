@@ -39,7 +39,7 @@ body{
     padding: 10px;
     background-color: rgb(48, 47, 97);
     box-shadow: 0px 0px 10px black;
-    position: fixed;
+    position: relative;
     border-radius: 10px;
     width: 200px;
     height: 30px;
@@ -141,15 +141,17 @@ header{
 #miniMenuLateral{
     padding-top: 10px;
     float: right;
-    width: 12%;
-    height: 320px;
+    width: 10%;
+    height: 330px;
     display: none;
-    box-shadow: 0px 0px 10px black;
+    background-color: rgb(103, 36, 161);
+    box-shadow: 10px 10px 1px black;
     border-radius: 10px;
     padding: 10px;
     flex-direction: column;
     position: fixed;
-    left: 44vb;
+    text-align: center;
+    left: 45vb;
     top: 250px;
     gap: 50px;   
          
@@ -160,7 +162,7 @@ header{
         width: 0%;
     }
     to {
-        width: 12%;
+        width: 10%;
     }
 }
 
@@ -270,6 +272,10 @@ header{
     background-color: rgb(103, 36, 161);
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 #divCadaItem{
     width: 300px;
     height: 400px;
@@ -283,6 +289,21 @@ header{
     justify-content: center;
     align-items: center; 
     text-align: center;  
+    animation: aparecer linear both;
+    animation-timeline: view();
+    animation-range: entry 50% cover 30%;
+    
+}
+
+@keyframes aparecer {
+    from{
+        opacity: 0;
+        scale: 0.5;
+    }
+    to{
+        opacity: 1;
+        scale: 1;
+    }
 }
 
 #divCadaItem:hover{
@@ -339,6 +360,7 @@ header{
     height: 30px;
     padding: 10px;
     background-color: rgb(103, 36, 161);
+    color: white;
     top: -140px;
     left: 100px;
     display: flex;
