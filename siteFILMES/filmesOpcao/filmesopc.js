@@ -321,7 +321,7 @@ function filmes(botao,pagina,classificar) {
             console.log(botoesPaginas);
             divPaginaAtual.appendChild(paginaAtual);
             miniMenuLateral.appendChild(divPaginaAtual);
-            window.location.href ="#"
+            window.location.href ="#";
         });
         
         divPaginas.appendChild(botoesPaginas);

@@ -155,6 +155,7 @@ function todasSeries(pagina) {
         });
         
         divPaginas.appendChild(botoesPaginas);
+        window.location.href ="#";
     }
 
     
@@ -323,6 +324,7 @@ function series(botao,pagina,classificar) {
             console.log(botoesPaginas);
             divPaginaAtual.appendChild(paginaAtual);
             miniMenuLateral.appendChild(divPaginaAtual);
+            window.location.href ="#";
         });
         
         divPaginas.appendChild(botoesPaginas);
