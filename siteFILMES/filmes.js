@@ -9,7 +9,9 @@ let trocaModo = document.querySelector("#trocaModo");
 
 let contador = 0;
 
-
+function homee() {
+    window.location.href = "filmes.html";
+}
 
 
 botaoModo.addEventListener("click", function () {
@@ -233,6 +235,11 @@ function home(){
 
 };
 
+
 function filmes() {
     window.location.href = "filmesOpcao/filmesopc.html";
+}
+
+function series() {
+    window.location.href = "seriesOpcao/seriesopc.html";
 }

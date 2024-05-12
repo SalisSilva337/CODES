@@ -133,7 +133,11 @@ window.onload = todasSeries();
 
 
 function home() {
-    window.location.href = "../series.html";
+    window.location.href = "../filmes.html";
+}
+
+function filmes() {
+    window.location.href = "../filmesOpcao/filmesopc.html";
 }
 
 function todasSeries(pagina) {
