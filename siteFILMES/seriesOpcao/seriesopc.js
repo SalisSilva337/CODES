@@ -332,7 +332,7 @@ function series(botao,pagina,classificar) {
     
     divFaixaEtaria.innerHTML="";
 
-    for (let contador = 0; contador < 4; contador++) {
+    for (let contador = 0; contador < 6; contador++) {
 
         let botoesCategorias2 = document.createElement("button");
         let nomeBotao = "";
@@ -353,7 +353,14 @@ function series(botao,pagina,classificar) {
             nomeBotao = "Avaliação ⬇"
             valorBotao = "vote_average.desc"
         }
-
+        if (contador === 4) {
+            nomeBotao = "A-Z ⬆"
+            valorBotao = "name.asc"
+        }
+        if (contador === 5) {
+            nomeBotao = "A-Z ⬇"
+            valorBotao = "name.desc"
+        }
         botoesCategorias2.textContent = nomeBotao;
         botoesCategorias2.value = valorBotao;
         botoesCategorias2.className = "botoesCategorias2";

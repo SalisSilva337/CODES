@@ -329,7 +329,7 @@ function filmes(botao,pagina,classificar) {
     
     divFaixaEtaria.innerHTML="";
 
-    for (let contador = 0; contador < 4; contador++) {
+    for (let contador = 0; contador < 6; contador++) {
 
         let botoesCategorias2 = document.createElement("button");
         let nomeBotao = "";
@@ -349,6 +349,14 @@ function filmes(botao,pagina,classificar) {
         if (contador === 3) { 
             nomeBotao = "Avaliação ⬇"
             valorBotao = "vote_average.desc"
+        }
+        if (contador === 4) {
+            nomeBotao = "A-Z ⬆"
+            valorBotao = "title.asc"
+        }
+        if (contador === 5) {
+            nomeBotao = "A-Z ⬇"
+            valorBotao = "title.desc"
         }
 
         botoesCategorias2.textContent = nomeBotao;
