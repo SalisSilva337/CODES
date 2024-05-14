@@ -196,7 +196,6 @@ header{
 
 #divConjunto{
     display: flex;
-    
     border-radius: 10px;
     width: 1000px;
 }
