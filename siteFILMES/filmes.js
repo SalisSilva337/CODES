@@ -38,10 +38,15 @@ trocaModo.addEventListener("click", function () {
 
 
 
-let h1nome = document.createElement("h1")
-let h1nome2 = document.createElement("h1")
-let h1nome3 = document.createElement("h1")
-let h1nome4 = document.createElement("h1")
+let h1nome = document.createElement("h1");
+let h1nome2 = document.createElement("h1");
+let h1nome3 = document.createElement("h1");
+let h1nome4 = document.createElement("h1");
+let h1Div1 = document.createElement("div");
+let h1Div2 = document.createElement("div");
+let h1Div3 = document.createElement("div");
+let h1Div4 = document.createElement("div");
+
 h1nome.textContent = "Filmes Populares:";
 h1nome2.textContent = "Filmes Melhores Avaliados:";
 h1nome3.textContent = "Séries/TV Populares:";
@@ -200,7 +205,7 @@ function home(){
 
     let todaLista4 = JSON.parse(request.response);
     console.log(todaLista4);
-
+    
     divTvAvaliadas.appendChild(h1nome4);
 
     for (let index = 0; index < todaLista4.results.length; index++) {

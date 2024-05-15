@@ -111,6 +111,7 @@ body{
     display: none;
     padding: 10px;
     background-color: rgb(48, 47, 97);
+    
     box-shadow: 0px 0px 10px black;
     position: relative;
     border-radius: 10px;
@@ -285,7 +286,6 @@ header{
     border-radius: 10px;  
     background: #727682;
     outline: none;
-    
     -webkit-transition: .2s;
     
 }
