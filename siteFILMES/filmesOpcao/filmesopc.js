@@ -263,7 +263,7 @@ function filmes(botao,pagina,classificar) {
     
     divFilmesSeries.innerHTML = "";
     divPaginas.innerHTML="";
-    divPaginaAtual.innerHTML="";
+    
     
     
     for (let cont = 1; cont < 21; cont++) {
@@ -273,30 +273,9 @@ function filmes(botao,pagina,classificar) {
         botoesPaginas.className = "botoesPaginas";
         
         botoesPaginas.addEventListener("click", function () {
-            
-            modalAlerta.style.animation = "alertaAnim 1s";
-            modalAlerta.innerHTML="";
-            modalAlerta.style.display= "flex";
-            
+            divPaginaAtual.innerHTML="";
             let paginaAtual = document.createElement("h2");
             paginaAtual.textContent = "Pagina Atual: " + botoesPaginas.textContent;
-            let nomeAlerta = document.createElement("h1");
-            nomeAlerta.textContent = "SELECIONE UM GÊNERO DE FILME";
-            
-            
-            modalAlerta.appendChild(nomeAlerta);
-            setTimeout(() => {
-                modalAlerta.style.animation = "";
-            }, 1500);
-
-            setTimeout(() => {
-                modalAlerta.style.animation = "alertaAnim reverse 1s";
-            }, 1600);
-
-            setTimeout(() => {
-                modalAlerta.style.display = "none";
-                modalAlerta.style.animation = "";
-            }, 2500);
             filmes(botao,this,classificar);
             console.log(botoesPaginas);
             divPaginaAtual.appendChild(paginaAtual);
@@ -366,9 +345,11 @@ function filmes(botao,pagina,classificar) {
     else if (classificar === undefined) {
         url = "https://api.themoviedb.org/3/discover/movie?language=pt-BR&with_genres=" + botao.value + "&page="+ pagina.textContent + "&sort_by=";
     }
+
     else if (pagina === undefined){
         url = "https://api.themoviedb.org/3/discover/movie?language=pt-BR&with_genres="+ botao.value +"&page=" + "&sort_by=" + classificar.value;
     }
+    
     else {
         url = "https://api.themoviedb.org/3/discover/movie?language=pt-BR&with_genres=" + botao.value + "&page=" + pagina.textContent +"&sort_by=" + classificar.value;
     }
