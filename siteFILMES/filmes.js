@@ -52,6 +52,12 @@ h1nome2.textContent = "Filmes Melhores Avaliados:";
 h1nome3.textContent = "Séries/TV Populares:";
 h1nome4.textContent = "Séries/TV Melhores Avaliados:";
 
+h1Div1.className = "h1Div";
+h1Div2.className = "h1Div";
+h1Div3.className = "h1Div";
+h1Div4.className = "h1Div";
+
+
 window.onload = home();
 
 
@@ -73,7 +79,8 @@ function home(){
     let todaLista = JSON.parse(request.response);
     console.log(todaLista);
 
-    divPopulares.appendChild(h1nome);
+    h1Div1.appendChild(h1nome);
+    divPopulares.appendChild(h1Div1);
 
     for (let index = 0; index < todaLista.results.length; index++) {
         let urlItens = "https://media.themoviedb.org/t/p/w200";
@@ -120,8 +127,8 @@ function home(){
     let todaLista2 = JSON.parse(request.response);
     console.log(todaLista);
 
-    
-    divAvaliados.appendChild(h1nome2);
+    h1Div2.appendChild(h1nome2);
+    divAvaliados.appendChild(h1Div2);
 
     for (let index = 0; index < todaLista2.results.length; index++) {
         let urlItens = "https://media.themoviedb.org/t/p/w200";
@@ -163,8 +170,9 @@ function home(){
 
     let todaLista3 = JSON.parse(request.response);
     console.log(todaLista3);
-
-    divTvPopulares.appendChild(h1nome3);
+    
+    h1Div3.appendChild(h1nome3);
+    divTvPopulares.appendChild(h1Div3);
 
     for (let index = 0; index < todaLista3.results.length; index++) {
         let urlItens = "https://media.themoviedb.org/t/p/w200";
@@ -206,7 +214,8 @@ function home(){
     let todaLista4 = JSON.parse(request.response);
     console.log(todaLista4);
     
-    divTvAvaliadas.appendChild(h1nome4);
+    h1Div4.appendChild(h1nome4);
+    divTvAvaliadas.appendChild(h1Div4);
 
     for (let index = 0; index < todaLista4.results.length; index++) {
         let urlItens = "https://media.themoviedb.org/t/p/w200";

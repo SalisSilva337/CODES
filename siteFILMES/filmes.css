@@ -72,11 +72,6 @@
     }
 }
 
-
-
-
-
-
 body{
     background-color: rgb(25, 24, 24);
     color: white;
@@ -90,6 +85,12 @@ body{
     gap: 300px;
     height: 100%;
    
+}
+
+#divAll{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
 }
 
 #botaoModo{
@@ -155,6 +156,20 @@ header{
    border: 1px solid;
 }
 
+.h1Div{
+    position: sticky;
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;
+    padding: 15px;
+    background-color: rgb(15, 15, 144);
+    color: white;
+    z-index: 2;
+    left: 0;
+    writing-mode: vertical-lr;
+    text-orientation: sideways;
+}
+
 .divPopulares{
     display: flex;
     overflow-x: hidden;
@@ -204,6 +219,8 @@ header{
 #divCadaItem{
     width: 400px;
     gap: 10px;
+    border-radius: 20px;
+    text-align: center;
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -230,7 +247,7 @@ header{
 
 
 #divCadaItem:hover{
-    width: 600px;
+    width: 500px;
 
 }
 

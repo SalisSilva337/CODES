@@ -138,18 +138,21 @@ header{
     gap: 50px;   
          
 }
+
 #miniMenuLateral{
     padding-top: 10px;
     float: right;
-    width: 12%;
-    height: 320px;
+    width: 10%;
+    height: 330px;
     display: none;
-    box-shadow: 0px 0px 10px black;
+    background-color: rgb(103, 36, 161);
+    box-shadow: 10px 10px 1px black;
     border-radius: 10px;
     padding: 10px;
     flex-direction: column;
     position: fixed;
-    left: 44vb;
+    text-align: center;
+    left: 45vb;
     top: 250px;
     gap: 50px;   
          
@@ -161,7 +164,7 @@ header{
     }
     
     to {
-        width: 12%;
+        width: 10%;
     }
 }
 
