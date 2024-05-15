@@ -4,38 +4,13 @@ let divAvaliados = document.querySelector(".divAvaliados");
 let divTvPopulares = document.querySelector(".divTvPopulares");
 let divTvAvaliadas = document.querySelector(".divTvAvaliadas");
 let listar = document.querySelectorAll(".listar");
-let botaoModo = document.querySelector("#botaoModo");
-let trocaModo = document.querySelector("#trocaModo");
+
 
 let contador = 0;
 
 function homee() {
     window.location.href = "filmes.html";
 }
-
-
-botaoModo.addEventListener("click", function () {
-    if (divModos.style.display === "none") {
-        divModos.style.display = "flex";
-    }
-    else {
-        divModos.style.display = "none" ;
-    }
-});
-
-trocaModo.addEventListener("click", function () {
-    if (trocaModo.value === "1") {
-        body.style.backgroundColor = "white";
-        body.style.color = "black";
-        
-    }
-    else {
-        body.style.backgroundColor = "rgb(25, 24, 24)";
-        body.style.color = "white";
-       
-    }
-});
-
 
 
 let h1nome = document.createElement("h1");

@@ -34,26 +34,6 @@ abrirCategoria2.addEventListener("click", function () {
 
 });
 
-botaoModo.addEventListener("click", function () {
-    if (divModos.style.display === "none") {
-        divModos.style.display = "flex";
-    }
-    else {
-        divModos.style.display = "none" ;
-    }
-});
-
-trocaModo.addEventListener("click", function () {
-    if (trocaModo.value === "1") {
-        body.style.backgroundColor = "white";
-        body.style.color = "black";
-    }
-    else {
-        body.style.backgroundColor = "rgb(25, 24, 24)";
-        body.style.color = "white"; 
-    }
-});
-
 
 botaoFiltrar.addEventListener("click", function () {
     modalAlerta.style.animation = "alertaAnim 1s";
