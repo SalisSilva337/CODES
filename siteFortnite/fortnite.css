@@ -47,10 +47,16 @@
     text-align: center;
     align-items: center;
     gap: 1vh;
+    padding: 1px;
+}
+
+.vbucks h2{
+    position:relative;
 }
 
 .imgVbucks{
-    width: 7vh;
+    width: 4vh;
+    height: 4vh;
 }
 
 .addVbucks{
@@ -60,6 +66,11 @@
     border: 0px;
     height: 100%;
     width: 50%;
+}
+
+.addVbucks:hover{
+    opacity: 0.7;
+    cursor: pointer;
 }
 
 .amigos{
@@ -82,12 +93,13 @@ body{
 .vestiario{
     color: white;
     background-color: rgb(29, 34, 57,0.7);
-    border: 1px solid;
+    gap: 15px;
     height: 70vh;
     width: 70vh;
     display: flex;
     flex-direction: column;
     position: relative;
+    float: left;
     padding: 1vh;
     left: 5vh;
     top: 5vh;
@@ -103,18 +115,29 @@ body{
 }
 
 .botoesSelecionar{
-    padding: 10px;
+    padding-bottom: 10px;
     display: flex;
     justify-content: center;
-    gap: 50px;
+    gap: 20px;
 }
 
 .botoesSelecionar button{
     width: 20vh;
+    padding: 5px;
+    color: white;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    background-color: rgb(131, 128, 128,0.4);
+    border: 1px solid rgb(0, 0, 0,0.1);
+    transition: .2s;
+}
+
+.botoesSelecionar button:hover{
+   background-color: yellow;
+   color: black;
 }
 
 .conta{
-    border: 1px solid;
     width: fit-content;
     display: flex;
     flex-direction: row;
@@ -122,7 +145,6 @@ body{
 }
 
 .gestos{
-    border: 1px solid;
     width: fit-content;
     display: flex;
     flex-direction: row;
@@ -154,10 +176,50 @@ body{
 }
 
 .mostrarItem{
-    width: 50vh;
+    color: white;
+    background-color: rgb(29, 34, 57,0.7);
+    padding: 5px;
+    width: 60vh;
     height: 70vh;
     float: right;
+    border-radius: 10px;
+    position: relative;
+    top: 5vh;
+    right:  5vh;
+    overflow: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.mostrarItem::-webkit-scrollbar {
+  width: 10px;
+  background-color: #010824;
+  border-radius: 10px;
+}
+
+.mostrarItem::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: #1d2239;
+}
+
+
+.divCadaItem{
     border: 1px solid;
+    width: fit-content;
+    border-radius: 10px;
+    padding: 5px;
+
+}
+
+.divCadaItem:hover{
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+img{
+    width: 100px;
 }
 
 @keyframes backgroundAnim{
