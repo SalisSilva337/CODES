@@ -5,57 +5,59 @@
 }
 
 #modalEsquerda{
-    visibility: hidden;
     top: 0;
     left: 0;
     position: fixed;
     display: flex;
-    background-color: rgb(35, 32, 32);
+    background-color: rgb(48, 47, 97);
     width: 50%;
     height: 100%;
-    justify-content: center;
+    justify-content: right;
     align-items: center;
+    z-index: 3;
 }
 
 #modalDireita{
-    visibility: hidden;
     top: 0;
     right: 0;
     position: fixed;
-    background-color: rgb(209, 185, 185);
+    background-color: rgb(48, 47, 97);
     display: flex;
     width: 50%;
     height: 100%;
-    justify-content: center;
+    justify-content:left;
     align-items: center;
+    z-index: 3;
 }
 
 #loading1{
     border: 1px solid white;
+    border-right: 0px;
     width: 500px;
     height: 50px;
-    border-radius: 10px;
+    border-radius: 0px;
     background-position: left;
 }
 
 #loading2{
-    border: 1px solid black;
+    border: 1px solid rgb(255, 255, 255);
+    border-left: 0px;
     width: 500px;
     height: 50px;  
-    border-radius: 10px;
+    border-radius: 0px;
     background-position: left;
 }
 
 #conteudoLoading1{
-    background-color: rgb(209, 185, 185);
-    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 0px;
     width: 0%;
     height: 100%;
 }
 
 #conteudoLoading2{
-    background-color: rgb(35, 32, 32);
-    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 0px;
     width: 0%;
     height: 100%;
 }
@@ -296,35 +298,6 @@ header{
     transition: 1s;
 }
 
-#trocaModo{
-    width: 100%;
-    height: 25px;
-    -webkit-appearance: none;
-    border-radius: 10px;  
-    background: #727682;
-    outline: none;
-    -webkit-transition: .2s;
-    
-}
-  
-#trocaModo::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 25px;
-    height: 25px;
-    border-radius: 50%; 
-    background: #ffffff;
-    cursor: pointer;
-    transition: .3s;
-}
-
-#trocaModo::-webkit-slider-thumb:hover {
-    -webkit-appearance: none;
-    appearance: none;
-    opacity: 0.7;
-    background: black;
-
-}
 
 #divLateral{
     float: left;

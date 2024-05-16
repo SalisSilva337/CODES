@@ -26,7 +26,7 @@ let progresso1 = setInterval(() => {
 
     if (valorInicio === valorFinal) {
         clearInterval(progresso1);
-        conteudoLoading1.style.boxShadow ="0px 0px 1000px white";
+        
 
         let progresso2 = setInterval(() => {
             valorInicio2++;
@@ -34,7 +34,8 @@ let progresso1 = setInterval(() => {
 
             if (valorInicio2 === valorFinal2) {
                 clearInterval(progresso2);
-                conteudoLoading2.style.boxShadow ="0px 0px 1000px black";
+                conteudoLoading1.style.boxShadow ="0px 0px 1000px white";
+                conteudoLoading2.style.boxShadow ="0px 0px 1000px white";
                 modalDireita.style.animation = "modalInicioAnim 1s";
                 modalEsquerda.style.animation = "modalInicioAnim 1s";
                 modalDireita.style.width = "0%";
