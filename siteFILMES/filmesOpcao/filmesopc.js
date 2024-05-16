@@ -338,10 +338,12 @@ function filmes(botao,pagina,classificar) {
 
 
     let url = "";
-    if (pagina === undefined && classificar === undefined) {
+    if (pagina === undefined && classificar === undefined && botao === undefined) {
+        url = "https://api.themoviedb.org/3/discover/movie?language=pt-BR&page=";
+    }
+    else if (pagina === undefined && classificar === undefined) {
         url = "https://api.themoviedb.org/3/discover/movie?language=pt-BR&with_genres=" + botao.value + "&page=" + "&sort_by=";
     }
-    
     else if (classificar === undefined) {
         url = "https://api.themoviedb.org/3/discover/movie?language=pt-BR&with_genres=" + botao.value + "&page="+ pagina.textContent + "&sort_by=";
     }
