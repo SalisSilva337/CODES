@@ -341,6 +341,9 @@ function filmes(botao,pagina,classificar) {
     if (pagina === undefined && classificar === undefined && botao === undefined) {
         url = "https://api.themoviedb.org/3/discover/movie?language=pt-BR&page=";
     }
+    else if (pagina === undefined && botao === undefined) {
+        url = "https://api.themoviedb.org/3/discover/movie?language=pt-BR&page=" + "&sort_by=" + classificar.value;
+    }
     else if (pagina === undefined && classificar === undefined) {
         url = "https://api.themoviedb.org/3/discover/movie?language=pt-BR&with_genres=" + botao.value + "&page=" + "&sort_by=";
     }

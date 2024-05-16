@@ -279,27 +279,10 @@ function series(botao,pagina,classificar) {
             divPaginaAtual.innerHTML="";
             modalAlerta.style.animation = "alertaAnim 1s";
             modalAlerta.innerHTML="";
-            modalAlerta.style.display= "flex";
             
             let paginaAtual = document.createElement("h2");
             paginaAtual.textContent = "Pagina Atual: " + botoesPaginas.textContent;
-            let nomeAlerta = document.createElement("h1");
-            nomeAlerta.textContent = "SELECIONE UM GÊNERO DE SÉRIE";
             
-            
-            modalAlerta.appendChild(nomeAlerta);
-            setTimeout(() => {
-                modalAlerta.style.animation = "";
-            }, 1500);
-
-            setTimeout(() => {
-                modalAlerta.style.animation = "alertaAnim reverse 1s";
-            }, 1600);
-
-            setTimeout(() => {
-                modalAlerta.style.display = "none";
-                modalAlerta.style.animation = "";
-            }, 2500);
             series(botao,this,classificar);
             console.log(botoesPaginas);
             divPaginaAtual.appendChild(paginaAtual);
@@ -360,7 +343,14 @@ function series(botao,pagina,classificar) {
 
 
     let url = "";
-    if (pagina === undefined && classificar === undefined) {
+
+    if (pagina === undefined && classificar === undefined && botao === undefined) {
+        url = "https://api.themoviedb.org/3/discover/tv?language=pt-BR&with_genres=" + "&page=" + "&sort_by=";
+    }
+    else if (pagina === undefined && botao === undefined) {
+        url = "https://api.themoviedb.org/3/discover/tv?language=pt-BR&page=" + "&sort_by=" + classificar.value;
+    }
+    else if (pagina === undefined && classificar === undefined) {
         url = "https://api.themoviedb.org/3/discover/tv?language=pt-BR&with_genres=" + botao.value + "&page=" + "&sort_by=";
     }
     
