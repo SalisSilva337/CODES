@@ -266,7 +266,7 @@ function series(botao,pagina,classificar) {
     
     divFilmesSeries.innerHTML = "";
     divPaginas.innerHTML="";
-    divPaginaAtual.innerHTML="";
+    
     
     
     for (let cont = 1; cont < 21; cont++) {
@@ -276,7 +276,7 @@ function series(botao,pagina,classificar) {
         botoesPaginas.className = "botoesPaginas";
         
         botoesPaginas.addEventListener("click", function () {
-            
+            divPaginaAtual.innerHTML="";
             modalAlerta.style.animation = "alertaAnim 1s";
             modalAlerta.innerHTML="";
             modalAlerta.style.display= "flex";
