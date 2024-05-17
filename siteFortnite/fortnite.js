@@ -60,7 +60,7 @@ function cosmeticos(selecionado) {
         let divDescModal = document.createElement("div");
 
         skinDescModal.textContent = listaTrajes[index].description;
-        skinImgModal.src = listaTrajes[index].images.featured;
+        skinImgModal.src = listaTrajes[index].images.icon;
         skinNameModal.textContent = listaTrajes[index].name;
 
         skinImgModal.className = "skinImgModal";
