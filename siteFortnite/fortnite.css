@@ -216,6 +216,15 @@ body{
     cursor: pointer;
 }
 
+.selecionado{
+    border: 1px solid;
+    width: fit-content;
+    border-radius: 10px;
+    padding: 5px;
+    background-color: rgb(170, 255, 0);
+}
+
+
 .divMostrarItem{
     background-color: transparent;
     width: 62vh;
@@ -286,4 +295,14 @@ img{
     position: relative;
     background-color: #010824;
     border-radius: 10px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.skinImgModal{
+    height: 500px;
+    width: 500px;
 }
