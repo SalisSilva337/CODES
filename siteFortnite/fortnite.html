@@ -33,8 +33,8 @@
 <body>
     <div class="divAll">
         <nav class="botoesSelecionar">
-            <button>Vestiário</button>
-            <button>Loja</button>
+            <button onclick="vestiario()">Vestiário</button>
+            <button onclick="loja()">Loja</button>
         </nav>
         <div class="vestiario">
             <div class="vestiarioNome">
@@ -67,22 +67,22 @@
             <h3>----- Gestos ----------------------------------------------</h3>
             <div class="gestos">
                     
-                <div class="categorias2" onclick="gestos()">
+                <div class="categorias2" onclick="gestos(this)">
     
                 </div>
-                <div class="categorias2" onclick="gestos()">
+                <div class="categorias2" onclick="gestos(this)">
     
                 </div>
-                <div class="categorias2" onclick="gestos()">
+                <div class="categorias2" onclick="gestos(this)">
     
                 </div>
-                <div class="categorias2" onclick="gestos()">
+                <div class="categorias2" onclick="gestos(this)">
     
                 </div>
-                <div class="categorias2" onclick="gestos()">
+                <div class="categorias2" onclick="gestos(this)">
     
                 </div>
-                <div class="categorias2" onclick="gestos()">
+                <div class="categorias2" onclick="gestos(this)">
     
                 </div>
             </div>
@@ -100,6 +100,15 @@
         
     </div>
     
+    <div class="musicaLobby">
+        <button>⏪</button>
+        <audio class="audioMusica" src=""></audio>
+            <div class="centro">
+            <img class="imgMusica" src="" >
+                <button>Parar</button>
+            </div>
+        <button>⏩</button>
+    </div>
 
     <div class="modal">
         <div class="modalConteudo">

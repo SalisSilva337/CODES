@@ -1,12 +1,24 @@
 let botaoDetalhes = document.querySelector(".botaoDetalhes");
+let botaoSelecionar= document.querySelector(".botaoSelecionar");
+let divMostrarItem = document.querySelector(".divMostrarItem");
 let mostrarItem = document.querySelector(".mostrarItem");
 let addVbucks = document.querySelector(".addVbucks");
 let valorVbucks = document.querySelector(".valorVbucks");
 let modal = document.querySelector(".modal");
 let modalConteudo = document.querySelector(".modalConteudo");
+let categorias = document.querySelectorAll(".categorias");
+let categorias2 = document.querySelectorAll(".categorias2");
 
+let listaMusicaLobby = ["songs/OG.mp3","songs/Floss.mp3","songs/StormShredder.mp3"];
 
-window.onload = skins();
+let posicao = 0;
+
+for (let index = 0; index < listaMusicaLobby.length; index++) {
+    if (condition) {
+        
+    }
+    
+}
 
 
 
@@ -17,10 +29,16 @@ addVbucks.addEventListener("click", function () {
 });
 
   
+function vestiario() {
+    window.location.href = "fortnite.html";
+}
 
-
+function loja() {
+    window.location.href = "loja/loja.html";
+}
 
 function skins() {
+    divMostrarItem.style.display = "flex";
     mostrarItem.innerHTML="";
     let url = "https://fortnite-api.com/v2/cosmetics/br/search/all?language=pt-BR&type=outfit";
     let request = new XMLHttpRequest;
@@ -86,6 +104,12 @@ function skins() {
 
             });
             
+            botaoSelecionar.addEventListener("click", function () {
+                categorias[0].innerHTML="";
+                divMostrarItem.style.display = "none"
+                categorias[0].appendChild(skinImg);
+            });
+
             if (divCadaItem.className === "divCadaItem") {
                 divCadaItem.className = "selecionado";
                
@@ -100,6 +124,7 @@ function skins() {
     }
 }
 function mochilas() {
+    divMostrarItem.style.display = "flex";
     mostrarItem.innerHTML="";
     let url = "https://fortnite-api.com/v2/cosmetics/br/search/all?language=pt-BR&type=backpack";
     let request = new XMLHttpRequest;
@@ -162,6 +187,12 @@ function mochilas() {
 
             });
             
+            botaoSelecionar.addEventListener("click", function () {
+                categorias[1].innerHTML="";
+                divMostrarItem.style.display = "none"
+                categorias[1].appendChild(skinImg);
+            });
+
             if (divCadaItem.className === "divCadaItem") {
                 divCadaItem.className = "selecionado";
                
@@ -176,6 +207,7 @@ function mochilas() {
     }
 }
 function picaretas() {
+    divMostrarItem.style.display = "flex";
     mostrarItem.innerHTML="";
     let url = "https://fortnite-api.com/v2/cosmetics/br/search/all?language=pt-BR&type=pickaxe";
     let request = new XMLHttpRequest;
@@ -239,6 +271,12 @@ function picaretas() {
 
             });
             
+            botaoSelecionar.addEventListener("click", function () {
+                categorias[2].innerHTML="";
+                divMostrarItem.style.display = "none"
+                categorias[2].appendChild(skinImg);
+            });
+
             if (divCadaItem.className === "divCadaItem") {
                 divCadaItem.className = "selecionado";
                
@@ -254,6 +292,7 @@ function picaretas() {
 }
 
 function asadeltas() {
+    divMostrarItem.style.display = "flex";
     mostrarItem.innerHTML="";
     let url = "https://fortnite-api.com/v2/cosmetics/br/search/all?language=pt-BR&type=glider";
     let request = new XMLHttpRequest;
@@ -317,6 +356,12 @@ function asadeltas() {
 
             });
             
+            botaoSelecionar.addEventListener("click", function () {
+                categorias[3].innerHTML="";
+                divMostrarItem.style.display = "none"
+                categorias[3].appendChild(skinImg);
+            });
+
             if (divCadaItem.className === "divCadaItem") {
                 divCadaItem.className = "selecionado";
                
@@ -332,6 +377,7 @@ function asadeltas() {
 }
 
 function rastros() {
+    divMostrarItem.style.display = "flex";
     mostrarItem.innerHTML="";
     let url = "https://fortnite-api.com/v2/cosmetics/br/search/all?language=pt-BR&type=contrail";
     let request = new XMLHttpRequest;
@@ -394,7 +440,13 @@ function rastros() {
                 modalConteudo.appendChild(divDescModal)
 
             });
-            
+
+            botaoSelecionar.addEventListener("click", function () {
+                categorias[4].innerHTML="";
+                divMostrarItem.style.display = "none"
+                categorias[4].appendChild(skinImg);
+            });
+
             if (divCadaItem.className === "divCadaItem") {
                 divCadaItem.className = "selecionado";
                
@@ -410,6 +462,7 @@ function rastros() {
 }
 
 function telasdecarregamento() {
+    divMostrarItem.style.display = "flex";
     mostrarItem.innerHTML="";
 
     let url = "https://fortnite-api.com/v2/cosmetics/br/search/all?language=pt-BR&type=loadingscreen";
@@ -472,7 +525,13 @@ function telasdecarregamento() {
                 modalConteudo.appendChild(divDescModal)
 
             });
-            
+
+            botaoSelecionar.addEventListener("click", function () {
+                categorias[5].innerHTML="";
+                divMostrarItem.style.display = "none"
+                categorias[5].appendChild(skinImg);
+            });
+
             if (divCadaItem.className === "divCadaItem") {
                 divCadaItem.className = "selecionado";
                
@@ -487,7 +546,8 @@ function telasdecarregamento() {
     }
 }
 
-function gestos() {
+function gestos(penis) {
+    divMostrarItem.style.display = "flex";
     mostrarItem.innerHTML="";
 
     let url = "https://fortnite-api.com/v2/cosmetics/br/search/all?language=pt-BR&type=emote";
@@ -550,7 +610,16 @@ function gestos() {
                 modalConteudo.appendChild(divDescModal)
 
             });
+                botaoSelecionar.addEventListener("click", function () {
+                    penis.innerHTML="";
+                    divMostrarItem.style.display = "none"
+                    penis.appendChild(skinImg);
+                });
             
+                
+           
+            
+
             if (divCadaItem.className === "divCadaItem") {
                 divCadaItem.className = "selecionado";
                
