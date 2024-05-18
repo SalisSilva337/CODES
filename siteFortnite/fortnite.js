@@ -10,6 +10,7 @@ let categorias = document.querySelectorAll(".categorias");
 let categorias2 = document.querySelectorAll(".categorias2");
 
 let listaMusicaLobby = ["songs/OG.mp3","songs/Floss.mp3","songs/StormShredder.mp3"];
+let listaImg = ["imgs/og.webp","imgs/floss.webp","imgs/StormShredder.webp"];
 
 let posicao = 0;
 
