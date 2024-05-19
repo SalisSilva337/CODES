@@ -12,17 +12,31 @@ let imgMusica = document.querySelector(".imgMusica");
 let audioMusica = document.querySelector(".audioMusica");
 let fecharPlayer = document.querySelector(".fecharPlayer");
 let musicaLobby = document.querySelector(".musicaLobby");
+let fecharDiv = document.querySelector(".fecharDiv");
+
+
+fecharDiv.addEventListener("click", function () {
+   divMostrarItem.style.display = "none"
+});
+
 
 
 fecharPlayer.addEventListener("click", function () {
+    setTimeout(() => {
+        musicaLobby.style.animation = "";
+    }, 1000);
+
     if (musicaLobby.style.width === "30vh") {
         musicaLobby.style.width = "2vh";
+        musicaLobby.style.animation = "playerAnim 1s";
     }
 
+   
     else{
         musicaLobby.style.width = "30vh"
+        musicaLobby.style.animation = "playerAnim 1s reverse";
     }
-})
+});
 
 let listaMusicaLobby = ["songs/OG.mp3","songs/Floss.mp3","songs/StormShredder.mp3"];
 let listaImg = ["imgs/og.webp","imgs/floss.webp","imgs/StormShredder.webp"];
@@ -84,6 +98,9 @@ function loja() {
 
 function skins() {
     divMostrarItem.style.display = "flex";
+
+    divMostrarItem.style.animation="categoriaAnim 1s";
+
     mostrarItem.innerHTML="";
     let url = "https://fortnite-api.com/v2/cosmetics/br/search/all?language=pt-BR&type=outfit";
     let request = new XMLHttpRequest;
@@ -164,6 +181,7 @@ function skins() {
 }
 function mochilas() {
     divMostrarItem.style.display = "flex";
+    divMostrarItem.style.animation="categoriaAnim 1s";
     mostrarItem.innerHTML="";
     let url = "https://fortnite-api.com/v2/cosmetics/br/search/all?language=pt-BR&type=backpack";
     let request = new XMLHttpRequest;
@@ -239,6 +257,7 @@ function mochilas() {
 }
 function picaretas() {
     divMostrarItem.style.display = "flex";
+    divMostrarItem.style.animation="categoriaAnim 1s";
     mostrarItem.innerHTML="";
     let url = "https://fortnite-api.com/v2/cosmetics/br/search/all?language=pt-BR&type=pickaxe";
     let request = new XMLHttpRequest;
@@ -316,6 +335,7 @@ function picaretas() {
 
 function asadeltas() {
     divMostrarItem.style.display = "flex";
+    divMostrarItem.style.animation="categoriaAnim 1s";
     mostrarItem.innerHTML="";
     let url = "https://fortnite-api.com/v2/cosmetics/br/search/all?language=pt-BR&type=glider";
     let request = new XMLHttpRequest;
@@ -393,6 +413,7 @@ function asadeltas() {
 
 function rastros() {
     divMostrarItem.style.display = "flex";
+    divMostrarItem.style.animation="categoriaAnim 1s";
     mostrarItem.innerHTML="";
     let url = "https://fortnite-api.com/v2/cosmetics/br/search/all?language=pt-BR&type=contrail";
     let request = new XMLHttpRequest;
@@ -470,6 +491,7 @@ function rastros() {
 
 function telasdecarregamento() {
     divMostrarItem.style.display = "flex";
+    divMostrarItem.style.animation="categoriaAnim 1s";
     mostrarItem.innerHTML="";
 
     let url = "https://fortnite-api.com/v2/cosmetics/br/search/all?language=pt-BR&type=loadingscreen";
@@ -547,6 +569,7 @@ function telasdecarregamento() {
 
 function gestos(item) {
     divMostrarItem.style.display = "flex";
+    divMostrarItem.style.animation="categoriaAnim 1s";
     mostrarItem.innerHTML="";
 
     let url = "https://fortnite-api.com/v2/cosmetics/br/search/all?language=pt-BR&type=emote";

@@ -336,7 +336,7 @@ img{
 .musicaLobby{
     background-color: #010824;
     border-right: 0;
-    width: 30vh;
+    width: 2vh;
     height: 30vh;
     right: 0;
     position: absolute;
@@ -353,6 +353,33 @@ img{
 }
 
 .fecharPlayer:hover{
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+@keyframes playerAnim{
+    from{
+        width: 30vh;
+    }
+    to{
+        width: 2vh;
+    }
+}
+
+@keyframes categoriaAnim{
+    from{
+        scale: 0.1;
+    }
+    to{
+        scale: 1;
+    }
+}
+
+.fecharCategoria{
+    width: min-content;
+}
+
+.fecharDiv:hover{
     cursor: pointer;
     opacity: 0.8;
 }
