@@ -19,7 +19,9 @@
         <div class="containerVbucksAmigos">
             <div class="vbucks">
                 <img src="imgs/v-bucks.png" alt="" class="imgVbucks">
-                <h2 class="valorVbucks">0</h2>
+                <div class="divValorVbucks">
+                    <h2 class="valorVbucks">0</h2>
+                </div>
                 <button class="addVbucks">+</button>
             </div>
             <div class="amigos">
@@ -41,7 +43,7 @@
                 <h2>Vestiário</h2>
             </div>
 
-            <h3>----- Conta -----------------------------------------------</h3>
+            <h3>Conta:</h3>
             <div class="conta">
                 
                 <div class="categorias" onclick="skins()">
@@ -64,7 +66,7 @@
                 </div>
             </div>
 
-            <h3>----- Gestos ----------------------------------------------</h3>
+            <h3>Gestos:</h3>
             <div class="gestos">
                     
                 <div class="categorias2" onclick="gestos(this)">
@@ -101,13 +103,17 @@
     </div>
     
     <div class="musicaLobby">
-        <button>⏪</button>
+        <button onclick="anteriorMusica()">⏪</button>
         <audio class="audioMusica" src=""></audio>
             <div class="centro">
-            <img class="imgMusica" src="" >
-                <button>Parar</button>
+                <img class="imgMusica" src="" >
+                <div class="divMusicaBotoes">
+                    <button onclick="playMusica()">▶</button>
+                    <button onclick="pauseMusica()"></button>
+                </div>
+               
             </div>
-        <button>⏩</button>
+        <button onclick="proximaMusica()">⏩</button>
     </div>
 
     <div class="modal">

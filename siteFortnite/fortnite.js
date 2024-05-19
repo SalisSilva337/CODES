@@ -8,18 +8,50 @@ let modal = document.querySelector(".modal");
 let modalConteudo = document.querySelector(".modalConteudo");
 let categorias = document.querySelectorAll(".categorias");
 let categorias2 = document.querySelectorAll(".categorias2");
+let imgMusica = document.querySelector(".imgMusica");
+let audioMusica = document.querySelector(".audioMusica");
+
 
 let listaMusicaLobby = ["songs/OG.mp3","songs/Floss.mp3","songs/StormShredder.mp3"];
 let listaImg = ["imgs/og.webp","imgs/floss.webp","imgs/StormShredder.webp"];
 
 let posicao = 0;
 
-for (let index = 0; index < listaMusicaLobby.length; index++) {
-    if (condition) {
-        
+imgMusica.src = listaImg[posicao];
+audioMusica.src = listaMusicaLobby[posicao];
+
+function proximaMusica() {
+    if (posicao < listaImg.length-1) {
+        posicao++
+        imgMusica.src = listaImg[posicao];
+        audioMusica.src = listaMusicaLobby[posicao];
+        audioMusica.play()
+        audioMusica.volume = 0.2;
     }
     
 }
+
+function anteriorMusica() {
+    if (posicao > 0) {
+        posicao--
+        imgMusica.src = listaImg[posicao];
+        audioMusica.src = listaMusicaLobby[posicao];
+        audioMusica.play()
+        audioMusica.volume = 0.2;
+    }
+   
+}
+
+function playMusica() {
+   
+    audioMusica.play()
+    audioMusica.volume = 0.2;
+}
+
+function pauseMusica() {
+    audioMusica.pause()
+}
+
 
 
 
@@ -53,7 +85,7 @@ function skins() {
     for (let index = 0; index < 200; index++) {
         let skinImg = document.createElement("img");
 
-        let divCadaItem = document.createElement("div");
+        let divCadaItem = document.createElement("button");
 
         divCadaItem.className = "divCadaItem";
         
@@ -111,14 +143,8 @@ function skins() {
                 categorias[0].appendChild(skinImg);
             });
 
-            if (divCadaItem.className === "divCadaItem") {
-                divCadaItem.className = "selecionado";
-               
-            }
+                
             
-            else{
-                divCadaItem.className = "divCadaItem";
-            }
             
         });
         
@@ -139,7 +165,7 @@ function mochilas() {
     for (let index = 0; index < 200; index++) {
         let skinImg = document.createElement("img");
 
-        let divCadaItem = document.createElement("div");
+        let divCadaItem = document.createElement("button");
 
         divCadaItem.className = "divCadaItem";
         
@@ -194,14 +220,6 @@ function mochilas() {
                 categorias[1].appendChild(skinImg);
             });
 
-            if (divCadaItem.className === "divCadaItem") {
-                divCadaItem.className = "selecionado";
-               
-            }
-            
-            else{
-                divCadaItem.className = "divCadaItem";
-            }
             
         });
         
@@ -222,7 +240,7 @@ function picaretas() {
     for (let index = 0; index < 200; index++) {
         let skinImg = document.createElement("img");
 
-        let divCadaItem = document.createElement("div");
+        let divCadaItem = document.createElement("button");
 
         divCadaItem.className = "divCadaItem";
         
@@ -278,14 +296,6 @@ function picaretas() {
                 categorias[2].appendChild(skinImg);
             });
 
-            if (divCadaItem.className === "divCadaItem") {
-                divCadaItem.className = "selecionado";
-               
-            }
-            
-            else{
-                divCadaItem.className = "divCadaItem";
-            }
             
         });
         
@@ -307,7 +317,7 @@ function asadeltas() {
     for (let index = 0; index < 200; index++) {
         let skinImg = document.createElement("img");
 
-        let divCadaItem = document.createElement("div");
+        let divCadaItem = document.createElement("button");
 
         divCadaItem.className = "divCadaItem";
         
@@ -363,14 +373,6 @@ function asadeltas() {
                 categorias[3].appendChild(skinImg);
             });
 
-            if (divCadaItem.className === "divCadaItem") {
-                divCadaItem.className = "selecionado";
-               
-            }
-            
-            else{
-                divCadaItem.className = "divCadaItem";
-            }
             
         });
         
@@ -392,7 +394,7 @@ function rastros() {
     for (let index = 0; index < 200; index++) {
         let skinImg = document.createElement("img");
 
-        let divCadaItem = document.createElement("div");
+        let divCadaItem = document.createElement("button");
 
         divCadaItem.className = "divCadaItem";
         
@@ -448,14 +450,6 @@ function rastros() {
                 categorias[4].appendChild(skinImg);
             });
 
-            if (divCadaItem.className === "divCadaItem") {
-                divCadaItem.className = "selecionado";
-               
-            }
-            
-            else{
-                divCadaItem.className = "divCadaItem";
-            }
             
         });
         
@@ -478,7 +472,7 @@ function telasdecarregamento() {
     for (let index = 0; index < 200; index++) {
         let skinImg = document.createElement("img");
 
-        let divCadaItem = document.createElement("div");
+        let divCadaItem = document.createElement("button");
 
         divCadaItem.className = "divCadaItem";
         
@@ -533,21 +527,13 @@ function telasdecarregamento() {
                 categorias[5].appendChild(skinImg);
             });
 
-            if (divCadaItem.className === "divCadaItem") {
-                divCadaItem.className = "selecionado";
-               
-            }
-            
-            else{
-                divCadaItem.className = "divCadaItem";
-            }
             
         });
         
     }
 }
 
-function gestos(penis) {
+function gestos(item) {
     divMostrarItem.style.display = "flex";
     mostrarItem.innerHTML="";
 
@@ -563,7 +549,7 @@ function gestos(penis) {
     for (let index = 0; index < 200; index++) {
         let skinImg = document.createElement("img");
 
-        let divCadaItem = document.createElement("div");
+        let divCadaItem = document.createElement("button");
 
         divCadaItem.className = "divCadaItem";
         
@@ -612,23 +598,13 @@ function gestos(penis) {
 
             });
                 botaoSelecionar.addEventListener("click", function () {
-                    penis.innerHTML="";
+                    item.innerHTML="";
                     divMostrarItem.style.display = "none"
-                    penis.appendChild(skinImg);
+                    item.appendChild(skinImg);
                 });
             
                 
            
-            
-
-            if (divCadaItem.className === "divCadaItem") {
-                divCadaItem.className = "selecionado";
-               
-            }
-            
-            else{
-                divCadaItem.className = "divCadaItem";
-            }
             
         });
         
