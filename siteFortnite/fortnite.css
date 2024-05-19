@@ -5,7 +5,9 @@
     font-weight: 400;
     font-style: italic;
 }
-
+body{
+    overflow-x: hidden;
+}
 .containerLogo{
     display: flex;
     justify-content: left;
@@ -333,7 +335,6 @@ img{
 
 .musicaLobby{
     background-color: #010824;
-    border: 1px solid white;
     border-right: 0;
     width: 30vh;
     height: 30vh;
@@ -341,10 +342,32 @@ img{
     position: absolute;
     display: flex;
 }
+
+.fechar{
+    background-color: #010824;
+    width: 5vh;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fecharPlayer:hover{
+    cursor: pointer;
+    opacity: 0.8;
+}
+
 .musicaLobby button{
     width: 5vh;
     background-color: rgb(123, 123, 241);
     color: white;
+    font-size: 20px;
+}
+
+.musicaLobby button:hover{
+    opacity: 0.8;
+    cursor: pointer;
+    font-size: 25px;
 }
 
 .centro{

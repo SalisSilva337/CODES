@@ -10,7 +10,19 @@ let categorias = document.querySelectorAll(".categorias");
 let categorias2 = document.querySelectorAll(".categorias2");
 let imgMusica = document.querySelector(".imgMusica");
 let audioMusica = document.querySelector(".audioMusica");
+let fecharPlayer = document.querySelector(".fecharPlayer");
+let musicaLobby = document.querySelector(".musicaLobby");
 
+
+fecharPlayer.addEventListener("click", function () {
+    if (musicaLobby.style.width === "30vh") {
+        musicaLobby.style.width = "2vh";
+    }
+
+    else{
+        musicaLobby.style.width = "30vh"
+    }
+})
 
 let listaMusicaLobby = ["songs/OG.mp3","songs/Floss.mp3","songs/StormShredder.mp3"];
 let listaImg = ["imgs/og.webp","imgs/floss.webp","imgs/StormShredder.webp"];

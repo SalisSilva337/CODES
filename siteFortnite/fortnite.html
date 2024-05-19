@@ -6,6 +6,7 @@
     <title>BaseNite</title>
     <link rel="stylesheet" href="fortnite.css">
     <link rel="shortcut icon" href="imgs/FortniteF.png" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/995dcfb715.js" crossorigin="anonymous"></script>
     <script src="fortnite.js" defer></script>
 </head>
 
@@ -103,18 +104,21 @@
     </div>
     
     <div class="musicaLobby">
-        <button onclick="anteriorMusica()">⏪</button>
+        <div class="fechar">
+            <h1 class="fecharPlayer"><i class="fa-solid fa-angle-left"></i></h1>
+        </div>
+        <button onclick="anteriorMusica()"><i class="fa-solid fa-backward-step"></i></button>
         <audio class="audioMusica" src=""></audio>
             <div class="centro">
                 <img class="imgMusica" src="" >
-                
+
                 <div class="divMusicaBotoes">
-                    <button onclick="playMusica()">Play</button>
-                    <button onclick="pauseMusica()">Pause</button>
+                    <button onclick="playMusica()"><i class="fa-solid fa-play"></i></button>
+                    <button onclick="pauseMusica()"><i class="fa-solid fa-pause"></i></button>
                 </div>
                
             </div>
-        <button onclick="proximaMusica()">⏩</button>
+        <button onclick="proximaMusica()"><i class="fa-solid fa-forward-step"></i></button>
     </div>
 
     <div class="modal">
